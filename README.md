@@ -28,10 +28,10 @@ Aplicação web desenvolvida em React + TypeScript, utilizando Vite, React Hook 
 
 **Aplicação hospedada na Vercel:**
 
-- [https://conectar-app.vercel.app/dashboard](https://conectar-app.vercel.app/dashboard)
-- [https://conectar-app-erickmarllons-projects.vercel.app/dashboard](https://conectar-app-erickmarllons-projects.vercel.app/dashboard)
-- [https://conectar-app-git-main-erickmarllons-projects.vercel.app/dashboard](https://conectar-app-git-main-erickmarllons-projects.vercel.app/dashboard)
-- [https://conectar-kyiijwg4f-erickmarllons-projects.vercel.app/](https://conectar-kyiijwg4f-erickmarllons-projects.vercel.app/)
+- [https://conectar-app.vercel.app](https://conectar-app.vercel.app)
+- [https://conectar-app-erickmarllons-projects.vercel.app](https://conectar-app-erickmarllons-projects.vercel.app)
+- [https://conectar-app-git-main-erickmarllons-projects.vercel.app](https://conectar-app-git-main-erickmarllons-projects.vercel.app)
+- [https://conectar-kyiijwg4f-erickmarllons-projects.vercel.app](https://conectar-kyiijwg4f-erickmarllons-projects.vercel.app)
 
 ---
 
