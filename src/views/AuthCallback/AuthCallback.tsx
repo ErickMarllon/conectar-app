@@ -1,4 +1,3 @@
-import { useAuthContext } from '@/contexts/auth';
 import { useRedirectAfterLogin } from '@/hooks/useRedirectAfterAuth';
 import { use0Auth } from '@/queries/use0Auth/use0Auth';
 import { useEffect } from 'react';

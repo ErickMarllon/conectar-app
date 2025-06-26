@@ -1,8 +1,9 @@
-import type { IAccessData } from '@/views/Auth/interfaces/auth';
+interface IAccessHeaderProps {
+  title: string;
+  subtitle: string;
+}
 
-interface AccessHeaderProps extends Pick<IAccessData, 'title' | 'subtitle'> {}
-
-export function AccessHeader({ title, subtitle }: AccessHeaderProps) {
+export function AccessHeader({ title, subtitle }: IAccessHeaderProps) {
   return (
     <div className="flex flex-col items-center text-center">
       <h1 className="text-2xl font-bold">{title}</h1>

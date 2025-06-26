@@ -1,56 +1,47 @@
-// src/views/UserProfile.tsx
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-// import { format } from 'date-fns';
-// import { ptBR } from 'date-fns/locale';
-//
-const mockUser = {
-  email: 'johndoe@example.com',
-  first_name: 'John',
-  last_name: 'Doe',
-  role: 'ADMIN',
-  created_at: '2024-05-12T14:30:00Z',
-  updated_at: '2024-06-20T10:15:00Z',
-};
+import { useMe } from '@/queries/useMe/useMe';
+import { formatToDatetimeLocal } from '@/shared/utils/formatToDatetimeLocal';
 
 export function UserProfile() {
+  const { data } = useMe();
+
+  const initials = `${data?.first_name?.[0] || ''}${data?.first_name?.[0] || ''}`.toUpperCase();
+
   return (
-    <div className="mx-auto mt-12 max-w-96 px-4">
-      <Card>
-        <CardHeader>
-          <CardTitle>Perfil do Usuário</CardTitle>
-        </CardHeader>
-        <CardContent className="text-muted-foreground space-y-4 text-sm">
-          <div className="flex gap-2">
-            <span className="text-foreground font-medium">Email:</span>
-            <span>{mockUser.email}</span>
-          </div>
-          <div className="flex gap-2">
-            <span className="text-foreground font-medium">Primeiro Nome:</span>
-            <span>{mockUser.first_name}</span>
-          </div>
-          <div className="flex gap-2">
-            <span className="text-foreground font-medium">Último Nome:</span>
-            <span>{mockUser.last_name}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-foreground font-medium">Função:</span>
-            <Badge variant="secondary">{mockUser.role}</Badge>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-foreground font-medium">Criado em:</span>
-            <span>
-              {/* {format(new Date(mockUser.created_at), "dd 'de' MMMM yyyy HH:mm", { locale: ptBR })} */}
-            </span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-foreground font-medium">Atualizado em:</span>
-            <span>
-              {/* {format(new Date(mockUser.updated_at), "dd 'de' MMMM yyyy HH:mm", { locale: ptBR })} */}
-            </span>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
+    <Card className="mx-auto mt-10 w-full max-w-[425px] p-4">
+      <CardHeader className="flex flex-col items-center justify-center">
+        <Avatar className="mb-4 h-24 w-24">
+          <AvatarImage src={data?.picture} alt={`${data?.first_name} ${data?.last_name}`} />
+          <AvatarFallback>{initials}</AvatarFallback>
+        </Avatar>
+        <CardTitle className="text-xl">
+          {data?.first_name} {data?.last_name}
+        </CardTitle>
+        <p className="text-muted-foreground">{data?.email}</p>
+      </CardHeader>
+      <CardContent className="mt-4 space-y-2 text-sm">
+        <div className="flex justify-between border-b pb-1">
+          <span className="font-medium">ID:</span>
+          <span>{data?.id}</span>
+        </div>
+        <div className="flex justify-between border-b pb-1">
+          <span className="font-medium">Função:</span>
+          <span>{data?.role ?? '-'}</span>
+        </div>
+        <div className="flex justify-between border-b pb-1">
+          <span className="font-medium">Último login:</span>
+          <span>{formatToDatetimeLocal(data?.last_login_at)}</span>
+        </div>
+        <div className="flex justify-between border-b pb-1">
+          <span className="font-medium">Criado em:</span>
+          <span>{formatToDatetimeLocal(data?.created_at)}</span>
+        </div>
+        <div className="flex justify-between border-b pb-1">
+          <span className="font-medium">Atualizado em:</span>
+          <span>{formatToDatetimeLocal(data?.updated_at)}</span>
+        </div>
+      </CardContent>
+    </Card>
   );
 }

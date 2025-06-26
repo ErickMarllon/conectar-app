@@ -1,5 +1,5 @@
 import { apiAuth } from '@/http/apiAuth';
-import type { IUserAuth } from '@/shared/interfaces/IUser';
+import type { IUser, IUserAuth } from '@/shared/interfaces/IUser';
 import type { AxiosResponse } from 'axios';
 import type { IRefreshTokenDTO } from './dtos/IRefreshTokenDTO';
 import { LocalStorageService } from '../localStorageService';
@@ -34,6 +34,9 @@ class AuthService {
 
   public static async getToken(code: string): Promise<AxiosResponse<IUserAuth>> {
     return await apiAuth.get<IUserAuth>(`/token/${code}`);
+  }
+  public static async getMe(): Promise<AxiosResponse<IUser>> {
+    return await apiAuth.get<IUser>(`/me`);
   }
 
   public static async refreshToken(refreshToken: string): Promise<AxiosResponse<IRefreshTokenDTO>> {

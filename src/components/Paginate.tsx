@@ -36,7 +36,7 @@ export function Paginate({
   onPageChange,
   onLimitChange,
 }: PaginationProps) {
-  const { currentPage, totalPages, nextPage, previousPage, totalRecords } = meta;
+  const { currentPage, totalPages, nextPage, previousPage } = meta;
   const getPages = () => {
     const pages: number[] = [];
     const totalToShow = 5;
