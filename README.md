@@ -50,7 +50,7 @@ Aplicação web desenvolvida em React + TypeScript, utilizando Vite, React Hook 
 1. **Clone o repositório:**
 
    ```bash
-   git clone https://github.com/seu-usuario/conectar-app.git
+   git clone https://github.com/ErickMarllon/conectar-app.git
    cd conectar-app
    ```
 
