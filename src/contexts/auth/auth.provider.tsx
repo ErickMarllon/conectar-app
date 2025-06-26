@@ -41,6 +41,7 @@ function AuthProvider({ children }: IAuthProviderProps) {
   }, [isAuthorized, user, navigate]);
 
   const logout = useCallback(() => {
+    console.log('clicou');
     LocalStorageService.cleanStorage();
     setUser(null);
     navigate('/');
@@ -53,7 +54,7 @@ function AuthProvider({ children }: IAuthProviderProps) {
       logout,
       isAuthorized,
     }),
-    [user, logout],
+    [user, logout, isAuthorized],
   );
 
   return <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>;
