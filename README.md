@@ -114,7 +114,7 @@ VITE_API_URL=http://localhost:3000/api
 ### Usuário de Teste (Apenas Ambiente de Homologação)
 
 - **Login:** admin@conectar.com
-- **Senha:** admin123
+- **Senha:** Admin123@
 
 ---
 
