@@ -11,4 +11,5 @@ export type TStorageKeys = {
   PERMISSIONS: string;
   THEME: string;
   LOGO: string;
+  HISTORY: string;
 };

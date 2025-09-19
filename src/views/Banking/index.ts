@@ -1,0 +1,1 @@
+export { GeneralBankingPage } from './Banking';

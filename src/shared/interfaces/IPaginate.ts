@@ -1,6 +1,7 @@
 export interface IPaginatedRequest {
   limit: number;
   page: number;
+  cursor?: string;
 }
 export interface IPaginatedMeta {
   currentPage: number;

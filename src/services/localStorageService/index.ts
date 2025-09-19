@@ -1,1 +1,1 @@
-export * from "./LocalStorageService";
+export * from './LocalStorageService';

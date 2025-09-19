@@ -1,20 +1,29 @@
-import { useQuery } from '@tanstack/react-query';
-import type { IUser } from '@/shared/interfaces/IUser';
-import type { UseListParams } from './type';
+import type { IFilterGeneric } from '@/shared/interfaces/IFilter';
 import type { IPaginatedResponse } from '@/shared/interfaces/IPaginate';
-import { UsersService } from '@/services/users';
+import type { IUserAccountGeneral } from '@/shared/interfaces/IUser';
+import { useQuery, useQueryClient, type UseQueryOptions } from '@tanstack/react-query';
+import { AxiosError } from 'axios';
+import { listUsersQueryFn } from './listUsersQueryFn';
 
-export const useUsers = ({ email, order, sort, role, search, page, limit }: UseListParams) => {
-  return useQuery<IPaginatedResponse<IUser>>({
-    queryKey: ['users', email, order, sort, role, search, page, limit],
-    queryFn: async () => {
-      const res = await UsersService.list(order, sort, role, search, {
-        page,
-        limit,
-      });
-      return res.data;
-    },
-    staleTime: 1000 * 60 * 5,
-    refetchOnWindowFocus: false,
+type QueryError = AxiosError;
+type QueryFnData = IPaginatedResponse<IUserAccountGeneral>;
+type QueryKeyType = [string, Partial<IFilterGeneric>];
+type QueryOptions = UseQueryOptions<QueryFnData, QueryError, QueryFnData, QueryKeyType> & {
+  suspense?: boolean;
+};
+
+type useListProductsProps = {
+  params: Partial<IFilterGeneric>;
+  options?: QueryOptions;
+};
+export const useUsers = ({ params, options }: useListProductsProps) => {
+  const queryKey: QueryKeyType = ['users', params];
+  const queryClient = useQueryClient();
+  return useQuery<QueryFnData, QueryError, QueryFnData, QueryKeyType>({
+    queryKey,
+    queryFn: () => listUsersQueryFn(params),
+    throwOnError: () => false,
+    initialData: () => queryClient.getQueryData(queryKey),
+    ...options,
   });
 };

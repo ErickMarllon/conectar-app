@@ -1,0 +1,1 @@
+export { GeneralFilePage } from './File';

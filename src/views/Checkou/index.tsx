@@ -1,0 +1,1 @@
+export { EcommerceCheckoutPage } from './checkout';

@@ -1,26 +1,38 @@
-import { useRedirectAfterLogin } from '@/hooks/useRedirectAfterAuth';
+import Loading from '@/components/loading';
 import { use0Auth } from '@/queries/use0Auth/use0Auth';
+import { FIRST_ROUTES_USER, PATH_PAGE } from '@/routes/paths';
+import type { UserRole } from '@/shared/enums';
+import { useAuthStore } from '@/stores/userAuth.store';
 import { useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
 export function AuthCallback() {
   const [searchParams] = useSearchParams();
+  const { isAuthenticated, user } = useAuthStore();
 
   const navigate = useNavigate();
-  const { mutate, data } = use0Auth();
-  useRedirectAfterLogin(data?.data);
+  const { mutate, isPending, isSuccess, isError } = use0Auth();
 
   const code = searchParams.get('code');
-  const redirectUrl = searchParams.get('redirect_url');
 
   useEffect(() => {
-    if (!code || !redirectUrl) {
-      navigate('/');
+    if (!code) {
+      navigate(PATH_PAGE.page404);
       return;
     }
+  }, [code, navigate]);
 
-    mutate(code);
-  }, [code, redirectUrl, mutate, navigate]);
+  useEffect(() => {
+    if (code && !isPending && !isSuccess && !isError) {
+      mutate(code);
+    }
+  }, [code, isPending, isSuccess, mutate, isError]);
 
-  return <p>Autenticando...</p>;
+  useEffect(() => {
+    if (isSuccess && isAuthenticated() && user?.role) {
+      navigate(FIRST_ROUTES_USER[user.role as UserRole], { replace: true });
+    }
+  }, [isAuthenticated, isSuccess, navigate, user?.role]);
+
+  return <Loading mode="global" />;
 }

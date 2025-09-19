@@ -1,0 +1,1 @@
+export { GeneralBookingPage } from './Booking';

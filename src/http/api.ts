@@ -1,60 +1,44 @@
-import axios, { AxiosError } from 'axios';
-import { AppError } from '@/errors/appError/AppError';
 import { LocalStorageService } from '@/services/localStorageService';
-import { AuthService } from '@/services/authService';
+import { refreshAccessToken } from './utils/refreshAccessToken';
+import axios from 'axios';
+import { handleHttpErrorRedirect } from './utils/handleHttpErrorRedirect';
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
 });
 
 api.interceptors.request.use((config) => {
-  const tokens = LocalStorageService.getAuthTokens();
+  const { access_token } = LocalStorageService.getAuthTokens();
 
-  const configUpdated = config;
+  config.headers = config.headers || {};
 
-  if (tokens?.access_token && configUpdated.headers) {
-    configUpdated.headers.Authorization = `Bearer ${tokens.access_token}`;
-
-    if (import.meta.env.VITE_APP_URL) {
-      configUpdated.headers['force-origin'] = import.meta.env.VITE_APP_URL;
-    }
+  if (access_token) {
+    config.headers.Authorization = `Bearer ${access_token}`;
   }
 
-  return configUpdated;
+  return config;
 });
 
 api.interceptors.response.use(
-  async (success) => {
-    return success;
-  },
-  async (error: AxiosError) => {
-    const config = error.config;
+  (response) => response,
 
-    if (error.response && error.response.status === 401 && config?.url !== '/auth/refresh') {
+  async (error) => {
+    const status = handleHttpErrorRedirect(error.response?.status);
+
+    const originalConfig = error.config;
+    const isUnauthorized = status === 401;
+
+    if (isUnauthorized && originalConfig?.url !== '/auth/refresh') {
       try {
-        const tokensStorage = LocalStorageService.getAuthTokens();
-
-        if (!tokensStorage?.refresh_token) {
-          throw new AppError('Refresh Token não encontrado!');
-        }
-
-        const response = await AuthService.refreshToken(tokensStorage.refresh_token);
-
-        LocalStorageService.setAuthTokens({
-          refresh_token: response.data.refresh_token,
-          access_token: response.data.access_token,
-        });
-        if (config) {
-          return api(config);
-        }
-      } catch (error) {
-        if (error) {
-          AuthService.logout();
-        }
+        const tokens = await refreshAccessToken();
+        error.config.headers['Authorization'] = `Bearer ${tokens.access_token}`;
+        return api.request(error.config);
+      } catch (_error) {
+        LocalStorageService.cleanStorage();
+        window.location.href = '/';
       }
     }
-
-    return Promise.reject(error);
+    return Promise.reject(error.response?.data || error.message);
   },
 );
 

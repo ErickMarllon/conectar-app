@@ -1,34 +1,30 @@
-import { Button } from '@/components/ui/button';
-import { useNavigate, useNavigationType } from 'react-router-dom';
+import Lottie from 'lottie-react';
+import animationData from '../../assets/animation/notfound.json';
+import { Link as RouterLink } from 'react-router-dom';
+import { Button, Typography } from '@mui/material';
+import { m } from 'framer-motion';
+import { MotionContainer, varBounce } from '@/components/animate';
 
 export function NotFound() {
-  const navigate = useNavigate();
-  const navType = useNavigationType();
-
-  const handleGoBack = () => {
-    if (navType === 'POP' || navType === 'PUSH') {
-      navigate('/');
-    } else {
-      navigate(-1);
-    }
-  };
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center px-6 py-12 text-center">
-      <div className="max-w-md">
-        <h1 className="text-primary mb-4 text-6xl font-bold tracking-tight">404</h1>
-        <h2 className="mb-2 text-2xl font-semibold">Page not found</h2>
-        <p className="text-muted-foreground mb-6">
+    <MotionContainer display="grid" gap={2}>
+      <m.div variants={varBounce().in}>
+        <Lottie animationData={animationData} loop autoplay renderer="svg" />
+      </m.div>
+
+      <m.div variants={varBounce().in}>
+        <Typography variant="h3">Page not found</Typography>
+      </m.div>
+
+      <m.div variants={varBounce().in}>
+        <Typography sx={{ color: 'text.secondary' }}>
           The page you are trying to access does not exist or you don&apos;t have permission.
-        </p>
-        <div className="flex flex-col justify-center gap-4 sm:flex-row">
-          <Button variant="default" onClick={handleGoBack}>
-            Go back
-          </Button>
-          <Button variant="outline" onClick={() => navigate('/')}>
-            Go to home
-          </Button>
-        </div>
-      </div>
-    </div>
+        </Typography>
+      </m.div>
+
+      <Button component={RouterLink} to="/" size="large" variant="contained">
+        Go to Home
+      </Button>
+    </MotionContainer>
   );
 }

@@ -15,4 +15,5 @@ export const STORAGE_KEYS: TStorageKeys = {
   PERMISSIONS: `${KEY_BASE}/permissions`,
   THEME: `${KEY_BASE}/theme`,
   LOGO: `${KEY_BASE}/theme`,
+  HISTORY: `${KEY_BASE}/history`,
 };

@@ -1,4 +1,5 @@
 import { STORAGE_KEYS } from '@/shared/constants/storageKeys';
+import type { ITheme } from '@/shared/interfaces/ITheme';
 import type { ITokens } from '@/shared/interfaces/ITokens';
 import type { IUserAuth } from '@/shared/interfaces/IUser';
 
@@ -36,17 +37,48 @@ class LocalStorageService {
   }
 
   public static getUser(): IUserAuth {
-    const tokens = localStorage.getItem(STORAGE_KEYS.USER);
+    const tokensState = localStorage.getItem(STORAGE_KEYS.USER);
 
-    if (tokens) {
-      return JSON.parse(tokens) as IUserAuth;
-    }
-
-    return {} as IUserAuth;
+    const tokens = tokensState ? JSON.parse(tokensState) : {};
+    return tokens as IUserAuth;
   }
 
   public static removeUser(): void {
     localStorage.removeItem(STORAGE_KEYS.USER);
+  }
+
+  public static setTheme({ mode, theme }: ITheme): void {
+    localStorage.setItem(STORAGE_KEYS.THEME, JSON.stringify({ mode, theme }));
+  }
+
+  public static getTheme(): ITheme {
+    const theme = localStorage.getItem(STORAGE_KEYS.THEME);
+
+    if (theme) {
+      return JSON.parse(theme);
+    }
+
+    return {} as ITheme;
+  }
+
+  public static removeTheme(): void {
+    localStorage.removeItem(STORAGE_KEYS.THEME);
+  }
+
+  public static setHistory(value: string): void {
+    localStorage.setItem(STORAGE_KEYS.HISTORY, JSON.stringify(value));
+  }
+
+  public static getHistory(): string | undefined {
+    const history = localStorage.getItem(STORAGE_KEYS.HISTORY);
+
+    if (history) {
+      return JSON.parse(history);
+    }
+  }
+
+  public static removeHistory(): void {
+    localStorage.removeItem(STORAGE_KEYS.HISTORY);
   }
 
   public static cleanStorage() {

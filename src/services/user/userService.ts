@@ -1,22 +1,82 @@
-import type { IUser } from '@/shared/interfaces/IUser';
+import type { IUserAccountGeneral, IUserProfile, IUserSocialLink } from '@/shared/interfaces/IUser';
 import type { AxiosResponse } from 'axios';
 import { api } from '@/http/api';
+import type { IUserAddress } from '@/schemas/address-user-schema';
+import type { IUserSchema } from '@/schemas/user-schema';
+import type { IUserSocialSchema } from '@/schemas/social-schema';
 
 class UserService {
-  public static async userById(id: string): Promise<AxiosResponse<IUser>> {
-    return await api.get<IUser>(`users/${id}`);
+  public static async userById(id: string): Promise<AxiosResponse<IUserAccountGeneral>> {
+    return await api.get(`user/${id}`);
   }
-  public static async userPath(user: Partial<IUser>): Promise<AxiosResponse<IUser>> {
-    return await api.patch<IUser>(`users/${user.id}`, {
-      first_name: user.first_name,
-      last_name: user.last_name,
-      email: user.email,
-      password: 'newpassword123',
-      role: user.role,
+
+  public static async userDelete(id: string | string[]): Promise<AxiosResponse<void>> {
+    return await api.delete(`user`, {
+      params: {
+        id,
+      },
     });
   }
-  public static async userDelete(id: string): Promise<void> {
-    await api.delete<IUser>(`users/${id}`);
+
+  public static async getUserProfile(id?: string): Promise<AxiosResponse<IUserProfile>> {
+    return await api.get(`user/profile${id ? `/${id}` : ''}`);
+  }
+
+  public static async create(
+    user: Partial<IUserSchema>,
+  ): Promise<AxiosResponse<IUserAccountGeneral>> {
+    return await api.post(`user`, user, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+  }
+
+  public static async userPath(
+    user: Partial<IUserSchema>,
+  ): Promise<AxiosResponse<IUserAccountGeneral>> {
+    const { id, ...body } = user;
+    return await api.patch(`user/${id}`, body, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+  }
+
+  public static async userPathStatus(id: string): Promise<AxiosResponse<IUserAccountGeneral>> {
+    return await api.patch(`user/${id}/status`);
+  }
+
+  // USER ADDRESS
+  public static async newAddress(
+    data: Partial<IUserAddress>,
+  ): Promise<AxiosResponse<IUserAccountGeneral>> {
+    const { user_id, address } = data;
+
+    return await api.post(`user/address/${user_id}`, address);
+  }
+
+  public static async patchAddress(
+    data: Partial<IUserAddress>,
+  ): Promise<AxiosResponse<IUserAccountGeneral>> {
+    const { user_id, address } = data;
+    return await api.patch(`user/${user_id}/address`, address);
+  }
+
+  public static async deleteAddress(user_id: string): Promise<AxiosResponse<void>> {
+    return await api.delete(`user/${user_id}/address`);
+  }
+
+  // USER SOCIAL
+  public static async socialByUserId(id: string): Promise<AxiosResponse<IUserSocialLink>> {
+    return await api.get(`user/${id}/social`);
+  }
+
+  public static async socialPathByUserId(
+    user: Partial<IUserSocialSchema>,
+  ): Promise<AxiosResponse<IUserSocialLink>> {
+    const { user_id, ...data } = user;
+    return await api.patch(`user/${user_id}/social`, data);
   }
 }
 

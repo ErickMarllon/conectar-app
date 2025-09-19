@@ -1,54 +1,54 @@
-import { apiAuth } from '@/http/apiAuth';
-import type { IUser, IUserAuth } from '@/shared/interfaces/IUser';
+import type { IUserAuth } from '@/shared/interfaces/IUser';
 import type { AxiosResponse } from 'axios';
 import type { IRefreshTokenDTO } from './dtos/IRefreshTokenDTO';
-import { LocalStorageService } from '../localStorageService';
-import type { ISignInDto } from '@/components/access-form/dto/sign-in.dto';
-import type { ISignUpDto } from '@/components/access-form/dto/sign-up.dto';
+import { api } from '@/http/api';
+import type { ISignIn } from '@/schemas/sign-in.schema';
+import type { ISignUp } from '@/schemas/sign-up.schema';
+import type { IChangePassword } from '@/schemas/change-password-schema';
 
 class AuthService {
-  public static async login({ email, password }: ISignInDto): Promise<AxiosResponse<IUserAuth>> {
-    return await apiAuth.post<IUserAuth>('/signin', {
-      email,
-      password,
-    });
+  public static async login({ ...body }: ISignIn): Promise<AxiosResponse<IUserAuth>> {
+    return await api.post<IUserAuth>('/auth/login', body);
   }
 
-  public static async register({
-    email,
-    password,
-    first_name,
-    last_name,
-  }: ISignUpDto): Promise<AxiosResponse<IUserAuth>> {
-    return await apiAuth.post<IUserAuth>('/signup', {
-      first_name,
-      last_name,
-      email,
-      password,
-    });
+  public static async register({ ...body }: ISignUp): Promise<AxiosResponse<IUserAuth>> {
+    return await api.post<IUserAuth>('/auth/register', body);
   }
 
-  public static async googleOAuth() {
-    window.location.href = `${import.meta.env.VITE_API_URL}/auth/google`;
+  public static async googleOAuth(redirectUrl: string, tenant?: string) {
+    const url = `${import.meta.env.VITE_API_URL}/auth/google?redirect=${redirectUrl}${tenant ? `&tenant=${tenant}` : ''}`;
+    window.location.href = url;
+  }
+  public static async metaeOAuth(redirectUrl: string, tenant?: string) {
+    const url = `${import.meta.env.VITE_API_URL}/auth/meta?redirect=${redirectUrl}${tenant ? `&tenant=${tenant}` : ''}`;
+    window.location.href = url;
   }
 
   public static async getToken(code: string): Promise<AxiosResponse<IUserAuth>> {
-    return await apiAuth.get<IUserAuth>(`/token/${code}`);
-  }
-  public static async getMe(): Promise<AxiosResponse<IUser>> {
-    return await apiAuth.get<IUser>(`/me`);
+    return await api.get<IUserAuth>(`/auth/token/${code}`);
   }
 
-  public static async refreshToken(refreshToken: string): Promise<AxiosResponse<IRefreshTokenDTO>> {
-    return await apiAuth.post<IRefreshTokenDTO>('/refresh', {
-      refreshToken: refreshToken,
-    });
+  public static async refreshToken(
+    refresh_token: string,
+  ): Promise<AxiosResponse<IRefreshTokenDTO>> {
+    return await api.post<IRefreshTokenDTO>(
+      '/auth/refresh',
+      {},
+      {
+        headers: {
+          'x-refresh-token': refresh_token,
+        },
+      },
+    );
   }
 
-  public static logout() {
-    LocalStorageService.cleanStorage();
+  public static async logout(): Promise<void> {
+    await api.patch('/auth/logout');
+  }
 
-    window.location.href = '/';
+  public static async userPathPassword(data: IChangePassword): Promise<AxiosResponse<IUserAuth>> {
+    const { user_id, ...formData } = data;
+    return await api.patch(`/auth/change-password/${user_id}`, formData);
   }
 }
 
