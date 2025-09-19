@@ -29,6 +29,7 @@ import {
 import { useThemesStore } from '@/stores/themes.store';
 import DateRangePicker, { useDateRangePicker } from '@/components/date-range-picker';
 import type { IFile } from '@/shared/interfaces/File';
+import { OrderDirection } from '@/shared/enums/orderDirection';
 
 // ----------------------------------------------------------------------
 
@@ -84,7 +85,7 @@ export function FileManagerPage() {
 
   const dataFiltered = applyFilter({
     inputData: tableData,
-    comparator: getComparator(table.order, table.orderBy),
+    comparator: getComparator(table.order ?? OrderDirection.DESC, table.orderBy ?? 'created_at'),
     filterName,
     filterType,
     filterStartDate: startDate,

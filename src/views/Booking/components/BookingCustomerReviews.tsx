@@ -52,7 +52,7 @@ export default function BookingCustomerReviews({ title, subheader, list, ...othe
     slidesToScroll: 1,
     adaptiveHeight: true,
     rtl: Boolean(theme.direction === 'rtl'),
-    beforeChange: (current: number, next: number) => setSelectCustomer(next),
+    beforeChange: (_: number, next: number) => setSelectCustomer(next),
   };
 
   const handlePrev = () => {

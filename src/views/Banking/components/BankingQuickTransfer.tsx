@@ -74,10 +74,9 @@ export default function BankingQuickTransfer({ title, subheader, list, sx, ...ot
     centerPadding: '0px',
     slidesToShow: list.length > 7 ? 7 : list.length,
     rtl: Boolean(theme.direction === 'rtl'),
-    beforeChange: (current: number, next: number) => setSelectContact(next),
+    beforeChange: (_: number, next: number) => setSelectContact(next),
     responsive: [
       {
-        // Down xl
         breakpoint: theme.breakpoints.values.xl,
         settings: {
           slidesToShow: list.length > 5 ? 5 : list.length,

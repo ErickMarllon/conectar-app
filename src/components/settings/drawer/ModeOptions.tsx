@@ -13,7 +13,11 @@ export default function ModeOptions() {
   const { themeMode, setThemeMode } = useThemesStore();
 
   return (
-    <RadioGroup name="themeMode" value={themeMode} onChange={(e) => setThemeMode(e.target.value)}>
+    <RadioGroup
+      name="themeMode"
+      value={themeMode}
+      onChange={(e) => setThemeMode(e.target.value as 'light' | 'dark')}
+    >
       <StyledWrap>
         {OPTIONS.map((mode) => (
           <StyledCard key={mode} selected={themeMode === mode}>

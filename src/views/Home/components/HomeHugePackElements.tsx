@@ -317,7 +317,7 @@ function Content() {
           <Slider
             valueLabelDisplay="on"
             value={slider}
-            onChange={(event: Event, newValue: number | number[]) => {
+            onChange={(_: Event, newValue: number | number[]) => {
               setSlider(newValue as number);
             }}
             sx={{ maxWidth: 220 }}

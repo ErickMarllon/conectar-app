@@ -11,7 +11,8 @@ interface UserFilterState extends IFilterGeneric {
 const defaultFilters: IFilterGeneric = {
   searchTerm: undefined,
   orderBy: OrderDirection.DESC,
-  sortBy: [],
+  sort: [],
+  sortBy: 'created_at',
   filters: {},
   page: 1,
   limit: 5,

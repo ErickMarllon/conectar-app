@@ -121,6 +121,7 @@ export const PROTECTED_ROUTES: Record<string, UserRole[]> = {
 export const FIRST_ROUTES_USER: Record<UserRole, string> = {
   [UserRole.ADMIN]: PATH_DASHBOARD.general.app,
   [UserRole.OWNER]: PATH_DASHBOARD.general.app,
+  [UserRole.STAFF]: PATH_DASHBOARD.general.app,
   [UserRole.USER]: PATH_DASHBOARD.user.account,
 };
 

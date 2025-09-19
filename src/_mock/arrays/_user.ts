@@ -99,6 +99,7 @@ export const _userAddresses = [...Array(4)].map((_, index) => ({
   state: 'New Hampshire',
   city: 'East Sambury',
   street: '41256 Kamille Turnpike',
+  neighborhood: 'dasdsae',
   zip_code: '85807',
   street_number: '41256',
   is_default: true,

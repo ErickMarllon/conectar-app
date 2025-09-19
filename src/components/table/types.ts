@@ -6,8 +6,8 @@ export type TableProps = {
   dense: boolean;
   page: number;
   rowsPerPage: number;
-  order: OrderDirection | undefined;
-  orderBy: string | undefined;
+  order?: OrderDirection;
+  orderBy?: string;
   //
   selected: string[];
   onSelectRow: (id: string) => void;

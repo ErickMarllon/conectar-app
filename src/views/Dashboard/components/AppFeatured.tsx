@@ -48,7 +48,7 @@ export default function AppFeatured({ list, ...other }: Props) {
     slidesToShow: 1,
     slidesToScroll: 1,
     rtl: Boolean(theme.direction === 'rtl'),
-    beforeChange: (current: number, next: number) => setCurrentIndex(next),
+    beforeChange: (_: number, next: number) => setCurrentIndex(next),
     ...CarouselDots({
       sx: {
         top: 20,
