@@ -20,7 +20,7 @@ import InvoiceDetails from './components/details';
 export function InvoiceDetailsPage() {
   const { themeStretch } = useThemesStore();
   const { slug } = useParams<{ slug: string }>();
-  const { id, name } = parseIdentifier(slug);
+  const { id } = parseIdentifier(slug);
 
   const currentInvoice = _invoices.find((invoice) => invoice.id === id);
 

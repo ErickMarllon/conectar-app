@@ -1,12 +1,12 @@
 // ----------------------------------------------------------------------
 
-import type { IOrderDirection } from '@/shared/enums/orderDirection';
+import type { OrderDirection } from '@/shared/enums/orderDirection';
 
 export type TableProps = {
   dense: boolean;
   page: number;
   rowsPerPage: number;
-  order: IOrderDirection | undefined;
+  order: OrderDirection | undefined;
   orderBy: string | undefined;
   //
   selected: string[];
@@ -20,7 +20,7 @@ export type TableProps = {
   //
   setPage: React.Dispatch<React.SetStateAction<number>>;
   setDense: React.Dispatch<React.SetStateAction<boolean>>;
-  setOrder: React.Dispatch<React.SetStateAction<IOrderDirection | undefined>>;
+  setOrder: React.Dispatch<React.SetStateAction<OrderDirection | undefined>>;
   setOrderBy: React.Dispatch<React.SetStateAction<string | undefined>>;
   setSelected: React.Dispatch<React.SetStateAction<string[]>>;
   setRowsPerPage: React.Dispatch<React.SetStateAction<number>>;

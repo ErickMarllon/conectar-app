@@ -107,7 +107,7 @@ export default function ProductDetailsCarousel({ product }: Props) {
     draggable: false,
     slidesToScroll: 1,
     adaptiveHeight: true,
-    beforeChange: (current: number, next: number) => setCurrentIndex({ index: next }),
+    beforeChange: (_: number, next: number) => setCurrentIndex({ index: next }),
   };
 
   const carouselSettings2 = {

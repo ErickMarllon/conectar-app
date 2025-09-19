@@ -40,6 +40,7 @@ export const fetchAddressByZip = async (zip: string) => {
       state: data.uf ?? '',
       country: 'Brasil',
     };
+    // eslint-disable-next-line unused-imports/no-unused-vars
   } catch (_error) {
     toast.error('CEP inválido ou não encontrado');
     return null;

@@ -58,6 +58,7 @@ export default function InvoiceNewEditDetails() {
   useEffect(() => {
     setValue('totalPrice', totalPrice);
     setValue('subTotalPrice', sum(totalOnRow));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setValue, totalPrice]);
 
   const handleAdd = () => {

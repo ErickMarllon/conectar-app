@@ -8,7 +8,7 @@ class ProductsService {
   public static async list(
     params?: useListProductsParams,
   ): Promise<AxiosResponse<IPaginatedResponse<IProduct>>> {
-    const { limit = 10, page = 1, orderBy, filters, sortBy, cursor, searchTerm } = params || {};
+    const { limit = 10, page = 1 } = params || {};
 
     // return await api.get<IPaginatedResponse<IProduct>>(`/products`, {
     //   params: {

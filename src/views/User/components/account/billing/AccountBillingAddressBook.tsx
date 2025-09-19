@@ -26,6 +26,7 @@ type Props = {
 export default function AccountBillingAddressBook({ addressBook, userId }: Props) {
   const { mutate: handleDelete, isPending: isLoadingDelete } = useUserDeleteAddress();
   const { mutate: handlePath, isPending: isLoadingPath } = useUserPathAddress();
+  const isLoading = isLoadingDelete || isLoadingPath;
 
   const [openConfirm, setOpenConfirm] = useState<boolean>(false);
   const [addressState, setAddressState] = useState<IAddressSchema | null>(null);
@@ -67,7 +68,7 @@ export default function AccountBillingAddressBook({ addressBook, userId }: Props
     if (!userId) return;
     return handlePath(
       {
-        id: userId,
+        user_id: userId,
         address,
       },
       {
@@ -84,7 +85,7 @@ export default function AccountBillingAddressBook({ addressBook, userId }: Props
 
   const handleEditAddress = (address?: IAddressSchema) => {
     reset({
-      id: userId,
+      user_id: userId,
       address: { ...address, is_default: address?.is_default ?? true },
     });
     setAddressState(address ?? null);
@@ -152,6 +153,7 @@ export default function AccountBillingAddressBook({ addressBook, userId }: Props
                 onClick={() => handleOpenConfirm(address)}
                 size="small"
                 startIcon={<Iconify icon="eva:trash-2-outline" />}
+                loading={isLoading}
               >
                 Delete
               </Button>

@@ -36,7 +36,7 @@ const fontsMap: Record<string, string> = {
 // LEARN MORE
 // https://nextjs.org/docs/basic-features/font-optimization#google-fonts
 
-export function typography(fontFamily: ThemeFontFamily, fontSize: ThemeFontSize) {
+export function typography(fontFamily: ThemeFontFamily, _fontSize: ThemeFontSize) {
   return {
     fontFamily: fontsMap[fontFamily],
     fontWeightRegular: 400,

@@ -3,8 +3,6 @@ export enum OrderDirection {
   DESC = 'desc',
 }
 
-export type IOrderDirection = 'asc' | 'desc';
-
 export enum Order {
   ASC = 'ASC',
   DESC = 'DESC',

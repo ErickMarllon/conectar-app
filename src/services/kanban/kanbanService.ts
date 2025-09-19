@@ -15,27 +15,21 @@ const api = axios.create({
 class KanbanService {
   public static async get(slug: string): Promise<AxiosResponse<IKanbanBoard>> {
     return await api.get<IKanbanBoard>(`/kanban/board`, {
-      // params: { slug },
+      params: { slug },
     });
   }
 
   public static async update({
     slug,
-    columnId,
     data,
   }: IKanbanCommonParams): Promise<AxiosResponse<IKanbanBoard>> {
-    return await api.put<IKanbanBoard>(
-      `/kanban/columns/update`,
-      data,
-      //   {
-      //   params: { slug },
-      // }
-    );
+    return await api.put<IKanbanBoard>(`/kanban/columns/update`, data, {
+      params: { slug },
+    });
   }
 
   public static async create({
     slug,
-    columnId,
     data,
   }: IKanbanCommonParams): Promise<AxiosResponse<IKanbanBoard>> {
     return await api.post<IKanbanBoard>(`/kanban/columns/new`, data, {

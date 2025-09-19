@@ -66,6 +66,7 @@ export const useFetchAddressByZip = () => {
 
       setAddress(fetchedAddress);
       return fetchedAddress;
+      // eslint-disable-next-line unused-imports/no-unused-vars
     } catch (_error) {
       if (showToast) toast.error('CEP inválido ou não encontrado');
       setAddress(null);

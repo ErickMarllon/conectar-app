@@ -107,13 +107,6 @@ export function EcommerceProductListPage() {
     }
   }, [data]);
 
-  // const dataFiltered = applyFilter({
-  //   inputData: tableData,
-  //   comparator: getComparator(order, orderBy),
-  //   filterName,
-  //   filterStatus,
-  // });
-
   const dataFiltered = data?.data ?? [];
 
   const dataInPage = dataFiltered.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage);
@@ -327,40 +320,4 @@ export function EcommerceProductListPage() {
       />
     </>
   );
-}
-
-// ----------------------------------------------------------------------
-
-function applyFilter({
-  inputData,
-  comparator,
-  filterName,
-  filterStatus,
-}: {
-  inputData: IProduct[];
-  comparator: (a: any, b: any) => number;
-  filterName: string;
-  filterStatus: string[];
-}) {
-  const stabilizedThis = inputData.map((el, index) => [el, index] as const);
-
-  stabilizedThis.sort((a, b) => {
-    const order = comparator(a[0], b[0]);
-    if (order !== 0) return order;
-    return a[1] - b[1];
-  });
-
-  inputData = stabilizedThis.map((el) => el[0]);
-
-  if (filterName) {
-    inputData = inputData.filter(
-      (product) => product.name.toLowerCase().indexOf(filterName.toLowerCase()) !== -1,
-    );
-  }
-
-  if (filterStatus.length) {
-    inputData = inputData.filter((product) => filterStatus.includes(product.inventoryType));
-  }
-
-  return inputData;
 }

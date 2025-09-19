@@ -1,6 +1,6 @@
 // ----------------------------------------------------------------------
 
-import type { IOrderDirection } from '@/shared/enums/orderDirection';
+import type { OrderDirection } from '@/shared/enums/orderDirection';
 
 export function emptyRows(page: number, rowsPerPage: number, arrayLength: number) {
   return page > 0 ? Math.max(0, (1 + page) * rowsPerPage - arrayLength) : 0;
@@ -17,7 +17,7 @@ function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
 }
 
 export function getComparator<Key extends keyof any>(
-  order: IOrderDirection,
+  order: OrderDirection,
   orderBy: Key,
 ): (a: { [key in Key]: number | string }, b: { [key in Key]: number | string }) => number {
   return order === 'desc'

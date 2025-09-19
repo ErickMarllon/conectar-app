@@ -1,18 +1,3 @@
-import {
-  alpha,
-  Badge,
-  Button,
-  Divider,
-  Drawer,
-  Grid,
-  IconButton,
-  Input,
-  InputAdornment,
-  MenuItem,
-  Stack,
-  Typography,
-} from '@mui/material';
-import { NAV } from '@/configs/global';
 import { ColorMultiPicker } from '@/components/color-utils';
 import {
   RHFMultiCheckbox,
@@ -24,6 +9,20 @@ import {
 } from '@/components/hook-form';
 import Iconify from '@/components/iconify';
 import Scrollbar from '@/components/scrollbar';
+import { NAV } from '@/configs/global';
+import {
+  alpha,
+  Badge,
+  Button,
+  Divider,
+  Drawer,
+  Grid,
+  IconButton,
+  Input,
+  MenuItem,
+  Stack,
+  Typography,
+} from '@mui/material';
 import { Controller, useFormContext } from 'react-hook-form';
 
 export type IFormOptions = {

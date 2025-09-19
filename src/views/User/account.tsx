@@ -1,21 +1,21 @@
-import { _userAbout, _userInvoices, _userPayment, _socials } from '@/_mock/arrays';
+import { _userInvoices, _userPayment } from '@/_mock/arrays';
 import CustomBreadcrumbs from '@/components/custom-breadcrumbs';
 import Iconify from '@/components/iconify';
+import { useSocialByUser } from '@/queries/user/social/get/useSocialByUser';
 import { PATH_DASHBOARD } from '@/routes/paths';
 import { UserRole } from '@/shared/enums/role.enum';
 import { useThemesStore } from '@/stores/themes.store';
 import { useAuthStore } from '@/stores/userAuth.store';
+import { parseIdentifier } from '@/utils/parseIdentifierSlug';
 import { Box, Container, Tab, Tabs } from '@mui/material';
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import {
   AccountBilling,
   AccountChangePassword,
   AccountGeneral,
   AccountSocialLinks,
 } from './components/account';
-import { useSocialByUser } from '@/queries/user/social/get/useSocialByUser';
-import { useParams } from 'react-router-dom';
-import { parseIdentifier } from '@/utils/parseIdentifierSlug';
 
 export function UserAccountPage() {
   const { themeStretch } = useThemesStore();

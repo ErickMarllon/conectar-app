@@ -48,6 +48,7 @@ import { useNavigate } from 'react-router-dom';
 import type { IInvoice } from '@/shared/interfaces/IInvoice';
 import InvoiceAnalytic from './components/InvoiceAnalytic';
 import { InvoiceTableRow, InvoiceTableToolbar } from './components/list';
+import { OrderDirection } from '@/shared/enums/orderDirection';
 
 // ----------------------------------------------------------------------
 
@@ -115,7 +116,7 @@ export function InvoiceListPage() {
 
   const dataFiltered = applyFilter({
     inputData: tableData,
-    comparator: getComparator(order, orderBy),
+    comparator: getComparator(order ?? OrderDirection.DESC, orderBy ?? 'created_at'),
     filterName,
     filterService,
     filterStatus,
@@ -168,7 +169,7 @@ export function InvoiceListPage() {
     setOpenConfirm(false);
   };
 
-  const handleFilterStatus = (event: React.SyntheticEvent<Element, Event>, newValue: string) => {
+  const handleFilterStatus = (_: React.SyntheticEvent<Element, Event>, newValue: string) => {
     setPage(0);
     setFilterStatus(newValue);
   };

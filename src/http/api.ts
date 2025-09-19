@@ -33,6 +33,7 @@ api.interceptors.response.use(
         const tokens = await refreshAccessToken();
         error.config.headers['Authorization'] = `Bearer ${tokens.access_token}`;
         return api.request(error.config);
+        // eslint-disable-next-line unused-imports/no-unused-vars
       } catch (_error) {
         LocalStorageService.cleanStorage();
         window.location.href = '/';

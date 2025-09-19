@@ -173,6 +173,7 @@ export type IUserAccountBillingAddress = {
   street: string;
   street_number: string;
   city: string;
+  neighborhood: string;
   state: string;
   country: string;
   phone_number?: string;

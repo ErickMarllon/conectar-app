@@ -4,7 +4,7 @@ import { tv, type VariantProps } from 'tailwind-variants';
 import animationData from '../assets/animation/Animation-Loading.json';
 import { MotionContainer } from './animate';
 
-const loadingVariants = tv({
+const _loadingVariants = tv({
   base: 'flex items-center justify-center z-50 p-0 ',
   variants: {
     mode: {
@@ -28,7 +28,7 @@ const loadingVariants = tv({
     size: 'full',
   },
 });
-interface LoadingProps extends VariantProps<typeof loadingVariants> {
+interface LoadingProps extends VariantProps<typeof _loadingVariants> {
   className?: string;
 }
 
@@ -42,7 +42,7 @@ const animation = (
   />
 );
 
-export default function Loading({ mode, size = 'full', className }: LoadingProps) {
+export default function Loading({ mode }: LoadingProps) {
   if (mode === 'modal') return LoadingModal();
   if (mode === 'global') return LoadingGlobal();
 

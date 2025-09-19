@@ -169,7 +169,7 @@ export function EcommerceProductDetailsPage() {
             <Card>
               <Tabs
                 value={currentTab}
-                onChange={(event, newValue) => setCurrentTab(newValue)}
+                onChange={(_, newValue) => setCurrentTab(newValue)}
                 sx={{ px: 3, bgcolor: 'background.neutral' }}
               >
                 {TABS.map((tab) => (
