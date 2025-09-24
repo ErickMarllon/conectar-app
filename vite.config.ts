@@ -17,6 +17,10 @@ export default defineConfig(({ mode }) => {
         allow: ['..'],
       },
     },
+    build: {
+      chunkSizeWarningLimit: 2000,
+      outDir: 'dist',
+    },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './src'),
