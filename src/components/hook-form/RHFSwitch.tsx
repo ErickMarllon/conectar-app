@@ -15,7 +15,7 @@ import {
 interface Props extends Omit<FormControlLabelProps, 'control' | 'label'> {
   name: string;
   helperText?: React.ReactNode;
-  labelTitle?: string;
+  label?: string;
   labelDescription?: string;
   switchProps?: SwitchProps;
 }
@@ -23,7 +23,7 @@ interface Props extends Omit<FormControlLabelProps, 'control' | 'label'> {
 export default function RHFSwitch({
   name,
   helperText,
-  labelTitle,
+  label,
   labelDescription,
   switchProps,
   ...other
@@ -40,11 +40,11 @@ export default function RHFSwitch({
             control={<Switch {...field} id={name} {...switchProps} />}
             sx={{ mx: 0, mb: 3, width: 1, justifyContent: 'space-between' }}
             label={
-              (labelTitle || labelDescription) && (
+              (label || labelDescription) && (
                 <>
-                  {labelTitle && (
+                  {label && (
                     <Typography variant="subtitle2" sx={{ mb: 0.5 }}>
-                      {labelTitle}
+                      {label}
                     </Typography>
                   )}
                   {labelDescription && (

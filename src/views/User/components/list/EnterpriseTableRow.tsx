@@ -8,7 +8,7 @@ type Props = {
   isNavigate?: boolean;
 };
 
-export default function EnterpriseTableRow({ row, isNavigate = false }: Props) {
+export default function EnterpriseTableRow({ row }: Props) {
   const { logo_url, name, email, phone_number, whatsapp, created_at, addresses } = row;
   const addressDefault = addresses?.find((a) => a.is_default);
   return (

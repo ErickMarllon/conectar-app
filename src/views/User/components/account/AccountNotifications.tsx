@@ -83,7 +83,7 @@ export default function AccountNotifications() {
             <RHFSwitch
               key={activity.value}
               name={activity.value}
-              labelTitle={activity.label}
+              label={activity.label}
               sx={{ m: 0 }}
             />
           ))}
@@ -98,7 +98,7 @@ export default function AccountNotifications() {
             <RHFSwitch
               key={application.value}
               name={application.value}
-              labelTitle={application.label}
+              label={application.label}
               sx={{ m: 0 }}
             />
           ))}

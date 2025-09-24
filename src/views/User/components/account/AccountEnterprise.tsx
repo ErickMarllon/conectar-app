@@ -167,7 +167,7 @@ export default function AccountEnterprise() {
             <RHFSwitch
               name="is_public"
               labelPlacement="start"
-              labelTitle="Public Profile"
+              label="Public Profile"
               switchProps={{
                 checked: formValues.is_public,
                 onChange: (_, checked) => {
@@ -182,7 +182,7 @@ export default function AccountEnterprise() {
             <RHFSwitch
               name="enable_service_schedule"
               labelPlacement="start"
-              labelTitle="Enable Service Schedule"
+              label="Enable Service Schedule"
               switchProps={{
                 checked: formValues.enable_service_schedule,
                 onChange: (_, checked) => {
@@ -201,7 +201,7 @@ export default function AccountEnterprise() {
               <RHFSwitch
                 name="enable_google_calendar"
                 labelPlacement="start"
-                labelTitle="Enable Google Calendar"
+                label="Enable Google Calendar"
                 switchProps={{
                   checked: formValues.enable_google_calendar,
                   onChange: (_, checked) => {

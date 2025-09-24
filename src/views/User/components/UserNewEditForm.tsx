@@ -193,7 +193,7 @@ export default function UserNewEditForm({ isEdit = false }: Props) {
               <>
                 <RHFSwitch
                   name="status"
-                  labelTitle="Banned"
+                  label="Banned"
                   labelDescription="Apply disable account"
                   labelPlacement="start"
                   switchProps={{
@@ -208,7 +208,7 @@ export default function UserNewEditForm({ isEdit = false }: Props) {
                 />
                 <RHFSwitch
                   name="is_verified"
-                  labelTitle="Email Verified"
+                  label="Email Verified"
                   labelDescription="Disabling this will automatically send the user a verification email"
                   labelPlacement="start"
                   switchProps={{

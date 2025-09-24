@@ -45,7 +45,7 @@ export function UserEditPage() {
           <Loading />
         </Box>
       ) : (
-        <UserNewEditForm isEdit currentUser={currentUser} />
+        <UserNewEditForm isEdit />
       )}
     </Container>
   );
