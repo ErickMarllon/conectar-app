@@ -51,7 +51,6 @@ export type IUserProfileCover = {
 
 export type IUserProfileAbout = {
   about: string;
-  // country: string;
   email: string;
   role?: string;
   addresses?: IAddress[];
@@ -138,7 +137,7 @@ export type IUserAccountGeneral = {
   addresses?: IAddress[];
   phone_number?: string;
   avatar_url?: string;
-  role?: UserRole | string;
+  role?: UserRole;
   about?: string;
   isPublic?: boolean;
 

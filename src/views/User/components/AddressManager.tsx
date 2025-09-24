@@ -2,35 +2,40 @@ import ConfirmDialog from '@/components/confirm-dialog';
 import Iconify from '@/components/iconify';
 import Loading from '@/components/loading';
 import { useFetchAddressByZip } from '@/hooks/useAddressByZip';
+import { useTenantPathAddress } from '@/queries/tenant/address/path/useTenantPathAddress';
 import { useUserDeleteAddress } from '@/queries/user/address/delete/useUserDeleteAddress';
 import { useUserPathAddress } from '@/queries/user/address/path/useUserPathAddress';
 import type { IAddressSchema } from '@/schemas/address-schema';
-import { addressUserSchema, type IUserAddress } from '@/schemas/address-user-schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Box, Button, Grid, Typography } from '@mui/material';
 import { useCallback, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { AddressFormDialog } from './AddressFormDialog';
-import { AddressCard } from './cards/AddressCard';
+import { addressPayloadSchema, type IAddressPayloadSchema } from '@/schemas/address-payload-schema';
+import { AddressCard } from './cards';
 
 interface Props {
-  userId?: string;
+  user_id?: string;
+  tenant_id?: string;
   addresses?: IAddressSchema[];
   isEdit?: boolean;
 }
 
-export default function AddressManager({ userId, addresses }: Props) {
+export default function AddressManager({ user_id, tenant_id, addresses }: Props) {
   const [address, setAddress] = useState<IAddressSchema | null>(null);
   const [openDialog, setOpenDialog] = useState(false);
   const [editingAddress, setEditingAddress] = useState<IAddressSchema | null>(null);
   const [openConfirm, setOpenConfirm] = useState(false);
-  const { mutate: handlePath, isPending: isLoadingPath } = useUserPathAddress({ userId });
+  const { mutate: handlePath, isPending: isLoadingPath } = useUserPathAddress({ user_id });
+  const { mutate: handlePathTenant, isPending: isLoadingPathTenant } = useTenantPathAddress({
+    tenant_id,
+  });
   const { mutate: handleDelete, isPending: isLoadingDelete } = useUserDeleteAddress();
-  const isLoading = isLoadingPath || isLoadingDelete;
+  const isLoading = isLoadingPath || isLoadingDelete || isLoadingPathTenant;
 
-  const methods = useForm<IUserAddress>({
-    resolver: zodResolver(addressUserSchema),
+  const methods = useForm<IAddressPayloadSchema>({
+    resolver: zodResolver(addressPayloadSchema),
   });
 
   const { watch, setValue, reset, trigger } = methods;
@@ -42,14 +47,7 @@ export default function AddressManager({ userId, addresses }: Props) {
 
   const handleDeleteAddress = () => {
     if (address && address?.id) {
-      handleDelete(address.id, {
-        onSuccess: () => {
-          toast.success('Delete success!');
-        },
-        onError: () => {
-          toast.error('Delete failed!');
-        },
-      });
+      handleDelete(address.id);
       setOpenConfirm(false);
     }
   };
@@ -59,10 +57,11 @@ export default function AddressManager({ userId, addresses }: Props) {
   };
 
   const handleAddAddress = () => {
-    if (!userId) return;
+    if (!user_id && !tenant_id) return;
 
     reset({
-      user_id: userId,
+      user_id,
+      tenant_id,
       address: {
         is_default: true,
       },
@@ -73,10 +72,11 @@ export default function AddressManager({ userId, addresses }: Props) {
   };
 
   const handleEditAddress = (address: IAddressSchema) => {
-    if (!userId) return;
+    if (!user_id && !tenant_id) return;
 
     reset({
-      user_id: userId,
+      user_id,
+      tenant_id,
       address,
     });
 
@@ -87,32 +87,38 @@ export default function AddressManager({ userId, addresses }: Props) {
   const onSubmit = async () => {
     const address = watch('address');
     if (!(await trigger())) return;
-    return handlePath(
-      {
-        user_id: userId,
-        address,
+
+    const payload = { user_id, tenant_id, address };
+
+    const callbacks = {
+      onSuccess: () => {
+        toast.success(address ? 'Create success!' : 'Update success!');
+        setOpenDialog(false);
       },
-      {
-        onSuccess: () => {
-          toast.success(address ? 'Create success!' : 'Update success!');
-          setOpenDialog(false);
-        },
-        onError: () => {
-          toast.error('Update failed!');
-        },
+      onError: () => {
+        toast.error('Update failed!');
       },
-    );
+    };
+
+    const action = user_id ? handlePath : handlePathTenant;
+
+    return action(payload, callbacks);
   };
 
   const handleSetDefault = (address: IAddressSchema) => {
-    if (!userId) return;
-    handlePath({
-      user_id: userId,
+    if (!user_id && !tenant_id) return;
+
+    const payload = {
+      user_id,
+      tenant_id,
       address: {
         ...address,
         is_default: true,
       },
-    });
+    };
+
+    const action = user_id ? handlePath : handlePathTenant;
+    return action(payload);
   };
 
   const addressesOrdenad = [...(addresses ?? [])].sort(

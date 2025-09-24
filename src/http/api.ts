@@ -2,6 +2,7 @@ import { LocalStorageService } from '@/services/localStorageService';
 import { refreshAccessToken } from './utils/refreshAccessToken';
 import axios from 'axios';
 import { handleHttpErrorRedirect } from './utils/handleHttpErrorRedirect';
+import { PATH_AUTH } from '@/routes/paths';
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
@@ -26,9 +27,10 @@ api.interceptors.response.use(
     const status = handleHttpErrorRedirect(error.response?.status);
 
     const originalConfig = error.config;
-    const isUnauthorized = status === 401;
 
-    if (isUnauthorized && originalConfig?.url !== '/auth/refresh') {
+    const isAuth = Object.values(PATH_AUTH).includes(originalConfig?.url);
+
+    if (status === 401 && !isAuth) {
       try {
         const tokens = await refreshAccessToken();
         error.config.headers['Authorization'] = `Bearer ${tokens.access_token}`;
@@ -36,9 +38,10 @@ api.interceptors.response.use(
         // eslint-disable-next-line unused-imports/no-unused-vars
       } catch (_error) {
         LocalStorageService.cleanStorage();
-        window.location.href = '/';
+        window.location.href = PATH_AUTH.login;
       }
     }
+
     return Promise.reject(error.response?.data || error.message);
   },
 );

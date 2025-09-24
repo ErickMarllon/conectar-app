@@ -2,6 +2,7 @@ import { handleError } from '@/errors/handleError';
 import { useMutation, useQueryClient, type UseMutationOptions } from '@tanstack/react-query';
 import type { AxiosError, AxiosResponse } from 'axios';
 import { userDeleteAddressMutationFn } from './userDeleteAddressMutationFn';
+import { toast } from 'react-toastify';
 
 type MutationError = AxiosError;
 type MutationData = AxiosResponse<void>;
@@ -15,9 +16,12 @@ export const useUserDeleteAddress = (options?: MutationOptions) => {
   return useMutation<MutationData, MutationError, MutationVars>({
     mutationKey: key,
     mutationFn: (user_id) => userDeleteAddressMutationFn(user_id),
-    onError: (error) => handleError({ error }),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: key });
+    onError: (error) => handleError({ error, customMessage: 'Delete failed!' }),
+    onSuccess: (_, variables) => {
+      const userId = variables;
+      const message = 'Delete success!';
+      toast.success(message, { containerId: message });
+      queryClient.invalidateQueries({ queryKey: ['user', userId ?? ''] });
     },
     ...options,
   });

@@ -21,7 +21,7 @@ export function handleError({
   }
 
   if (showToast) {
-    toast.error(message);
+    toast.error(message, { containerId: message });
   }
 
   return {

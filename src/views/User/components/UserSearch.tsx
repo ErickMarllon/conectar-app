@@ -1,14 +1,12 @@
 import Iconify from '@/components/iconify';
-import type { IUserAccountGeneral } from '@/shared/interfaces/IUser';
-import { InputAdornment, TextField } from '@mui/material';
+import { InputAdornment, TextField, type TextFieldProps } from '@mui/material';
 import { useState } from 'react';
 
-interface IUserSearch {
-  data?: IUserAccountGeneral[];
+type IUserSearch = TextFieldProps & {
   onSearch: (value?: string) => void;
   onCleanChange: VoidFunction;
-}
-export default function UserSearch({ onSearch, onCleanChange }: IUserSearch) {
+};
+export default function UserSearch({ onSearch, onCleanChange, ...other }: IUserSearch) {
   const [search, setSearch] = useState<string | undefined>(undefined);
 
   const handleKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -29,7 +27,6 @@ export default function UserSearch({ onSearch, onCleanChange }: IUserSearch) {
 
   return (
     <TextField
-      size="small"
       placeholder="Search..."
       onKeyUp={handleKeyUp}
       onChange={handleChange}
@@ -52,6 +49,7 @@ export default function UserSearch({ onSearch, onCleanChange }: IUserSearch) {
           ),
         },
       }}
+      {...other}
     />
   );
 }

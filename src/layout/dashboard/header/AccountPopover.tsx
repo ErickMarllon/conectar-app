@@ -1,19 +1,14 @@
-import { useState } from 'react';
-
-import { useNavigate } from 'react-router-dom';
-// @mui
-import { alpha } from '@mui/material/styles';
-import { Box, Divider, Typography, Stack, MenuItem } from '@mui/material';
-// routes
-import { PATH_DASHBOARD, PATH_AUTH } from '@/routes/paths';
-// auth
-// components
+import { IconButtonAnimate } from '@/components/animate';
 import { CustomAvatar } from '@/components/custom-avatar';
 import MenuPopover from '@/components/menu-popover';
-import { IconButtonAnimate } from '@/components/animate';
+import { PATH_DASHBOARD } from '@/routes/paths';
+import { UserRole } from '@/shared/enums/role.enum';
 import { useAuthStore } from '@/stores/userAuth.store';
 import { formatFullName } from '@/utils/format/formatFullName';
-import { UserRole } from '@/shared/enums/role.enum';
+import { Box, Divider, MenuItem, Stack, Typography } from '@mui/material';
+import { alpha } from '@mui/material/styles';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // ----------------------------------------------------------------------
 
@@ -23,8 +18,8 @@ const OPTIONS = [
     linkTo: '/',
   },
   {
-    label: 'Profile',
-    linkTo: PATH_DASHBOARD.enterprise.profile,
+    label: 'Enterprise',
+    linkTo: PATH_DASHBOARD.enterprise.account,
   },
   {
     label: 'Settings',
@@ -50,9 +45,8 @@ export default function AccountPopover() {
   };
 
   const handleLogout = async () => {
-    logout();
-    navigate(PATH_AUTH.login, { replace: true });
     handleClosePopover();
+    logout();
   };
 
   const handleClickItem = (path: string) => {
@@ -61,8 +55,21 @@ export default function AccountPopover() {
   };
   const fullNameUser = formatFullName(user?.first_name, user?.last_name);
 
-  const visibleOptions = OPTIONS.filter(
-    (opt) => !(opt.label === 'Profile' && user?.role === UserRole.USER),
+  const visibleOptions = OPTIONS.reduce(
+    (acc, opt) => {
+      if (opt.label === 'Enterprise' && user?.role !== UserRole.USER) acc.push(opt);
+
+      if (opt.label === 'Settings' && user?.id)
+        acc.push({
+          ...opt,
+          linkTo: PATH_DASHBOARD.user.accountSlug(user.id),
+        });
+
+      if (opt.label !== 'Enterprise' && opt.label !== 'Settings') acc.push(opt);
+
+      return acc;
+    },
+    [] as typeof OPTIONS,
   );
 
   return (

@@ -4,53 +4,55 @@ import FormProvider, {
   RHFUpload,
   RHFUploadAvatar,
 } from '@/components/hook-form';
+import Iconify from '@/components/iconify';
 import Loading from '@/components/loading';
 import { useFetchAddressByZip } from '@/hooks/useAddressByZip';
-import { useUserById } from '@/queries/useUserById/useUserById';
-import { useUserPath } from '@/queries/user/path/useUserPath';
+import useCopyToClipboard from '@/hooks/useCopyToClipboard';
+import { useFileDrop } from '@/hooks/useFileDrop';
+import { useTenantPath } from '@/queries/tenant/path/useTenantPath';
+import { useGetTenant } from '@/queries/tenant/useGet/useGetTenant';
 import type { IAddressSchema } from '@/schemas/address-schema';
-import { useAuthStore } from '@/stores/userAuth.store';
+import { tenantSchema, type ITenantSchema } from '@/schemas/tenant-schema';
+import { diffObjects } from '@/utils/diffObjects';
 import { fData } from '@/utils/formatNumber';
-import { Box, Button, Card, Grid, Stack, Typography } from '@mui/material';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Box, Button, Card, Grid, InputAdornment, Stack, Typography } from '@mui/material';
 import { useCallback, useEffect, useMemo } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
-import type { z } from 'zod';
 import { AddressForm } from '../AddressForm';
 import AddressManager from '../AddressManager';
-import { tenantSchemaWithAddress, type ITenantSchemaWithAddress } from '@/schemas/tenant-schema';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { generateSlug } from '../generate-slug';
+import { generateSlug } from '@/utils/generate-slug';
 
-type FormValuesProps = z.infer<typeof tenantSchemaWithAddress>;
+type FormValuesProps = ITenantSchema;
 
 export default function AccountEnterprise() {
-  const { user } = useAuthStore();
-  const { data, isLoading } = useUserById(user?.id);
-  const { mutate: handlePath } = useUserPath();
-
-  const AddressDefault = data?.addresses?.find((a) => a.is_default);
+  const { data: tenantData, isLoading: isLoadingTenant } = useGetTenant();
+  const { mutate: handlePath, isPending: isLoadingPatchTenant } = useTenantPath();
+  const { handleFileDrop } = useFileDrop<FormValuesProps>();
+  const { copy } = useCopyToClipboard();
+  const isLoading = isLoadingTenant || isLoadingPatchTenant;
   const parsedDefaultValues = useMemo(
     () => ({
-      id: data?.id ?? '',
-      logo: data?.avatar_url ?? '',
-      first_name: data?.first_name ?? '',
-      last_name: data?.last_name ?? '',
-      cover: '',
-      // cover: 'http://localhost:5170/assets/images/covers/cover_2.jpg',
-      email: data?.email ?? '',
-      role: data?.role ?? '',
-      phone_number: data?.phone_number ?? '',
-      address: {
-        ...AddressDefault,
-        is_default: AddressDefault?.is_default ?? true,
-      },
+      id: tenantData?.id ?? '',
+      name: tenantData?.name ?? '',
+      slug: tenantData?.slug ?? '',
+      email: tenantData?.email ?? '',
+      phone_number: tenantData?.phone_number ?? '',
+      whatsapp: tenantData?.whatsapp ?? '',
+      logo: tenantData?.logo_url,
+      cover: tenantData?.cover_url,
+      status: tenantData?.status ?? '',
+      about: tenantData?.about ?? '',
+      is_public: tenantData?.is_public ?? false,
+      enable_google_calendar: tenantData?.enable_google_calendar ?? false,
+      enable_service_schedule: tenantData?.enable_service_schedule ?? false,
     }),
-    [AddressDefault, data],
+    [tenantData],
   );
 
-  const methods = useForm<ITenantSchemaWithAddress>({
-    resolver: zodResolver(tenantSchemaWithAddress),
+  const methods = useForm<FormValuesProps>({
+    resolver: zodResolver(tenantSchema),
     defaultValues: parsedDefaultValues,
   });
 
@@ -58,52 +60,18 @@ export default function AccountEnterprise() {
     watch,
     setValue,
     handleSubmit,
-    formState: { isSubmitting },
+    formState: { isValid },
     reset,
   } = methods;
-  console.log('🚀 ~ AccountEnterprise ~ watch:', watch());
-
-  const onSubmit = async (data: FormValuesProps) => {
-    return handlePath(data, {
-      onSuccess: () => {
-        toast.success('Update success!');
-      },
-      onError: () => {
-        toast.error('Update failed!');
-      },
-    });
-  };
-
-  const handleDrop = useCallback(
-    (acceptedFiles: File[]) => {
-      const file = acceptedFiles[0];
-
-      const newFile = Object.assign(file, {
-        preview: URL.createObjectURL(file),
-      });
-
-      if (file) {
-        setValue('logo', newFile, { shouldValidate: true });
-      }
-    },
-    [setValue],
-  );
-  const handleDropCover = useCallback(
-    (acceptedFiles: File[]) => {
-      const file = acceptedFiles[0];
-
-      const newFile = Object.assign(file, {
-        preview: URL.createObjectURL(file),
-      });
-
-      if (file) {
-        setValue('cover', newFile, { shouldValidate: true });
-      }
-    },
-    [setValue],
-  );
-
   const formValues = watch();
+
+  const { diffForm, hasDiff } = useMemo(
+    () => diffObjects<any>(parsedDefaultValues, formValues),
+    [parsedDefaultValues, formValues],
+  );
+
+  const onSubmit = async (data: FormValuesProps) => handlePath({ ...diffForm, id: data.id });
+
   const { fetchAddress } = useFetchAddressByZip();
 
   const handleFocusZipCode = useCallback(() => {
@@ -123,10 +91,8 @@ export default function AccountEnterprise() {
   }, [fetchAddress, formValues?.address, setValue]);
 
   useEffect(() => {
-    reset(parsedDefaultValues);
-  }, [reset, parsedDefaultValues]);
-
-  if (isLoading) return <Loading mode="global" />;
+    if (isLoadingTenant === false) reset(parsedDefaultValues);
+  }, [parsedDefaultValues, isLoadingTenant, reset]);
 
   const handleBlurLink = () => {
     if (!formValues?.name) return;
@@ -134,8 +100,21 @@ export default function AccountEnterprise() {
     setValue('slug', url);
   };
 
+  const handleCopy = () => {
+    const fieldValue = watch('slug') ?? '';
+    if (!fieldValue) return;
+
+    copy(fieldValue);
+    toast.info('Copied!');
+  };
+
   return (
-    <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)} key={data?.id ?? 'account'}>
+    <FormProvider
+      methods={methods}
+      onSubmit={handleSubmit(onSubmit)}
+      key={tenantData?.id ?? 'enterprise'}
+    >
+      {isLoading && <Loading mode="global" />}
       <Grid container spacing={3} position={'relative'}>
         <Grid size={{ xs: 12 }}>
           <Card sx={{ p: 3 }}>
@@ -144,7 +123,7 @@ export default function AccountEnterprise() {
               placeholderTitle="Upload image"
               placeholderDescription="Drag and drop an image here or click browse to select from your device"
               maxSize={3145728}
-              onDrop={handleDropCover}
+              onDrop={(files) => handleFileDrop(files, 'cover', setValue)}
               helperText={
                 <Typography
                   variant="caption"
@@ -168,7 +147,7 @@ export default function AccountEnterprise() {
             <RHFUploadAvatar
               name="logo"
               maxSize={3145728}
-              onDrop={handleDrop}
+              onDrop={(files) => handleFileDrop(files, 'logo', setValue)}
               helperText={
                 <Typography
                   variant="caption"
@@ -186,11 +165,54 @@ export default function AccountEnterprise() {
               }
             />
             <RHFSwitch
-              name="isPublic"
+              name="is_public"
               labelPlacement="start"
-              label="Public Profile"
-              sx={{ mt: 5 }}
+              labelTitle="Public Profile"
+              switchProps={{
+                checked: formValues.is_public,
+                onChange: (_, checked) => {
+                  setValue('is_public', checked);
+                  if (formValues?.id) {
+                    handlePath({ id: formValues.id, is_public: checked });
+                  }
+                },
+              }}
             />
+
+            <RHFSwitch
+              name="enable_service_schedule"
+              labelPlacement="start"
+              labelTitle="Enable Service Schedule"
+              switchProps={{
+                checked: formValues.enable_service_schedule,
+                onChange: (_, checked) => {
+                  setValue('enable_service_schedule', checked);
+                  if (formValues?.id) {
+                    handlePath({
+                      id: formValues.id,
+                      enable_service_schedule: checked,
+                      enable_google_calendar: checked ? formValues.enable_google_calendar : false,
+                    });
+                  }
+                },
+              }}
+            />
+            {formValues.enable_service_schedule && (
+              <RHFSwitch
+                name="enable_google_calendar"
+                labelPlacement="start"
+                labelTitle="Enable Google Calendar"
+                switchProps={{
+                  checked: formValues.enable_google_calendar,
+                  onChange: (_, checked) => {
+                    setValue('enable_google_calendar', checked);
+                    if (formValues?.id) {
+                      handlePath({ id: formValues.id, enable_google_calendar: checked });
+                    }
+                  },
+                }}
+              />
+            )}
           </Card>
         </Grid>
 
@@ -207,7 +229,28 @@ export default function AccountEnterprise() {
             >
               <RHFTextField name="name" label="Name" onBlur={handleBlurLink} />
 
-              <RHFTextField name="slug" label="Link" disabled />
+              <RHFTextField
+                name="slug"
+                label="Link"
+                disabled
+                slotProps={{
+                  input: {
+                    endAdornment: (
+                      <InputAdornment
+                        id="slug"
+                        onClick={handleCopy}
+                        sx={{
+                          mr: 0,
+                          cursor: 'pointer',
+                        }}
+                        position="end"
+                      >
+                        <Iconify icon="eva:link-2-fill" />
+                      </InputAdornment>
+                    ),
+                  },
+                }}
+              />
 
               <RHFTextField name="phone_number" label="Phone Number" />
 
@@ -215,16 +258,32 @@ export default function AccountEnterprise() {
 
               <RHFTextField name="email" label="Email Address" />
             </Box>
-            {data?.addresses && data?.addresses?.length > 0 ? (
-              <AddressManager userId={data.id} addresses={data?.addresses} />
+            {tenantData?.addresses && tenantData?.addresses?.length > 0 ? (
+              <AddressManager tenant_id={tenantData.id} addresses={tenantData?.addresses} />
             ) : (
               <AddressForm onBlur={handleFocusZipCode} />
             )}
-            <RHFTextField name="about" multiline rows={4} label="About" />
+            <RHFTextField id="about" name="about" multiline rows={4} label="About" />
             <Stack spacing={3} alignItems="flex-end" sx={{ mt: 3 }}>
-              <Button type="submit" variant="contained" loading={isSubmitting}>
-                Save Changes
-              </Button>
+              <Grid display={'flex'} justifyContent={'flex-end'} gap={2}>
+                <Button
+                  type="button"
+                  variant="contained"
+                  onClick={() => reset()}
+                  disabled={!hasDiff}
+                  color="success"
+                >
+                  reset
+                </Button>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  disabled={!hasDiff || !isValid}
+                  color="success"
+                >
+                  Save Changes
+                </Button>
+              </Grid>
             </Stack>
           </Card>
         </Grid>

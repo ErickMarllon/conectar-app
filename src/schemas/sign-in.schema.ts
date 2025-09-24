@@ -15,7 +15,7 @@ export const signInSchema = z.object({
     .refine((val) => /\d/.test(val), {
       message: 'One number required',
     })
-    .refine((val) => /[@$!%*?&]/.test(val), {
+    .refine((val) => /[@$!%*?&.]/.test(val), {
       message: 'One special character required',
     }),
 });

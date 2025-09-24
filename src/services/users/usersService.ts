@@ -14,14 +14,14 @@ class UsersService {
         ? JSON.stringify(sort)
         : undefined;
 
-    return await api.get<IPaginatedResponse<IUserAccountGeneral>>('user/list', {
+    return await api.get('user/list', {
       params: {
         searchTerm,
         ...filters,
       },
       headers: {
         'rest-mode': 'offset',
-        'rest-order': orderBy ? orderBy.toUpperCase() : undefined,
+        'rest-order': orderBy?.toUpperCase() ?? undefined,
         'rest-sortBy': sortBy,
         'rest-sort': serializedSort,
         'rest-offset': page !== 0 ? page : 1,

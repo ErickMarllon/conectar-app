@@ -1,18 +1,16 @@
 import { useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
-// @mui
 import { Box } from '@mui/material';
-// hooks
 import { useThemesStore } from '@/stores/themes.store';
 import useResponsive from '../../hooks/useResponsive';
-// auth
 import { useAuthStore } from '@/stores/userAuth.store';
-// components
 import Main from './Main';
 import Header from './header';
 import NavHorizontal from './nav/NavHorizontal';
 import NavMini from './nav/NavMini';
 import NavVertical from './nav/NavVertical';
+import { PATH_AUTH } from '@/routes/paths';
+import AuthGuard from '@/guard/AuthGuard';
 
 //
 
@@ -22,8 +20,9 @@ export default function DashboardLayout() {
   const location = useLocation();
 
   useEffect(() => {
-    if (!isAuthenticated()) window.location.href = '/';
+    if (!isAuthenticated()) window.location.href = PATH_AUTH.login;
   }, [isAuthenticated, location]);
+
   const isDesktop = useResponsive('up', 'lg');
 
   const [open, setOpen] = useState(false);
@@ -98,6 +97,5 @@ export default function DashboardLayout() {
     );
   };
 
-  // return <AuthGuard> {renderContent()} </AuthGuard>;
-  return <>{renderContent()}</>;
+  return <AuthGuard>{renderContent()}</AuthGuard>;
 }

@@ -21,7 +21,7 @@ export const ChangePasswordSchema = (role?: UserRole) =>
         .refine((val) => /\d/.test(val), {
           message: 'One number required',
         })
-        .refine((val) => /[@$!%*?&]/.test(val), {
+        .refine((val) => /[@$!%*?&.]/.test(val), {
           message: 'One special character required',
         }),
       confirm_new_password: z.string().nonempty('Please confirm your new password'),

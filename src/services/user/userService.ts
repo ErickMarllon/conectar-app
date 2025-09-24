@@ -1,7 +1,7 @@
 import type { IUserAccountGeneral, IUserProfile, IUserSocialLink } from '@/shared/interfaces/IUser';
 import type { AxiosResponse } from 'axios';
 import { api } from '@/http/api';
-import type { IUserAddress } from '@/schemas/address-user-schema';
+import { type IAddressPayloadSchema } from '@/schemas/address-payload-schema';
 import type { IUserSchema } from '@/schemas/user-schema';
 import type { IUserSocialSchema } from '@/schemas/social-schema';
 
@@ -49,7 +49,7 @@ class UserService {
 
   // USER ADDRESS
   public static async newAddress(
-    data: Partial<IUserAddress>,
+    data: Partial<IAddressPayloadSchema>,
   ): Promise<AxiosResponse<IUserAccountGeneral>> {
     const { user_id, address } = data;
 
@@ -57,7 +57,7 @@ class UserService {
   }
 
   public static async patchAddress(
-    data: Partial<IUserAddress>,
+    data: Partial<IAddressPayloadSchema>,
   ): Promise<AxiosResponse<IUserAccountGeneral>> {
     const { user_id, address } = data;
     return await api.patch(`user/${user_id}/address`, address);

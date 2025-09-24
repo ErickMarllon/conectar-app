@@ -37,6 +37,7 @@ export default function TableHeadCustom({
         {onSelectAllRows && (
           <TableCell padding="checkbox">
             <Checkbox
+              id={'toggle-all'}
               indeterminate={numSelected > 0 && numSelected < rowCount}
               checked={rowCount > 0 && numSelected === rowCount}
               onChange={(event) => onSelectAllRows(event.target.checked)}
@@ -49,7 +50,7 @@ export default function TableHeadCustom({
             key={headCell.id}
             align={headCell.align || 'left'}
             sortDirection={orderBy === headCell.id ? order : false}
-            sx={{ width: headCell.width, minWidth: headCell.minWidth }}
+            sx={{ ...headCell.sx, width: headCell.width, minWidth: headCell.minWidth }}
           >
             {onSort && headCell.label ? (
               <TableSortLabel
@@ -57,7 +58,10 @@ export default function TableHeadCustom({
                 active={orderBy === headCell.id}
                 direction={orderBy === headCell.id ? order : OrderDirection.ASC}
                 onClick={() => onSort(headCell.id)}
-                sx={{ textTransform: 'capitalize', whiteSpace: 'nowrap' }}
+                sx={{
+                  textTransform: 'capitalize',
+                  whiteSpace: 'nowrap',
+                }}
               >
                 {headCell.label}
               </TableSortLabel>

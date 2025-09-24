@@ -5,37 +5,29 @@ import FormProvider, {
   RHFUploadAvatar,
 } from '@/components/hook-form';
 import Label from '@/components/label';
+import Loading from '@/components/loading';
 import { useFetchAddressByZip } from '@/hooks/useAddressByZip';
 import { useUserCreate } from '@/queries/user/create/useUserCreate';
 import { useUserPath } from '@/queries/user/path/useUserPath';
 import { useUserPathStatus } from '@/queries/user/pathStatus/useUserPath';
+import { useUserById } from '@/queries/user/useUserById/useUserById';
 import { PATH_DASHBOARD } from '@/routes/paths';
 import type { IAddressSchema } from '@/schemas/address-schema';
 import { userSchema, type IUserSchema } from '@/schemas/user-schema';
-import type { IUserAccountGeneral } from '@/shared/interfaces/IUser';
+import { UserStatus } from '@/shared/enums';
 import { useAuthStore } from '@/stores/userAuth.store';
+import { diffObjects } from '@/utils/diffObjects';
 import { fData } from '@/utils/formatNumber';
+import { parseIdentifier } from '@/utils/parseIdentifierSlug';
 import { zodResolver } from '@hookform/resolvers/zod';
-import {
-  Box,
-  Button,
-  Card,
-  FormControlLabel,
-  Grid,
-  MenuItem,
-  Stack,
-  Switch,
-  Typography,
-} from '@mui/material';
-import { useCallback } from 'react';
-import { Controller, useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { Box, Button, Card, Grid, MenuItem, Typography } from '@mui/material';
+import { useCallback, useEffect, useMemo } from 'react';
+import { useForm } from 'react-hook-form';
+import { useNavigate, useParams } from 'react-router-dom';
 import { AddressForm } from './AddressForm';
 import AddressManager from './AddressManager';
 import { ROLE_OPTIONS } from './constants/userRoles';
 import { statusColorMap } from './constants/userStatusColor';
-import { getChangedFields } from './utils/getChangedFields';
 
 // ----------------------------------------------------------------------
 
@@ -43,63 +35,57 @@ type FormValuesProps = IUserSchema;
 
 type Props = {
   isEdit?: boolean;
-  currentUser?: IUserAccountGeneral;
+  isLoadingUser?: boolean;
 };
 
-export default function UserNewEditForm({ isEdit = false, currentUser }: Props) {
-  console.log('🚀 ~ UserNewEditForm ~ currentUser:', currentUser);
+// ----------------------------------------------------------------------
+
+export default function UserNewEditForm({ isEdit = false }: Props) {
+  const navigate = useNavigate();
   const { user } = useAuthStore();
+  const { slug } = useParams<{ slug: string }>();
+  const { id: idParams } = parseIdentifier(slug);
+  const userId = isEdit ? (idParams ?? user?.id) : undefined;
+  const { data: currentUser, isPending: isLoadingUser } = useUserById(userId);
   const { mutate: handlePath, isPending: isLoadingPath } = useUserPath();
   const { mutate: handleCreate, isPending: isLoadingCreate } = useUserCreate();
-  const { mutate: handlePathStatus } = useUserPathStatus();
-  const isLoading = isLoadingPath || isLoadingCreate;
+  const { mutate: handlePathStatus, isPending: isLoadingStatus } = useUserPathStatus();
+  const isLoading = isLoadingPath || isLoadingCreate || isLoadingStatus || isLoadingUser;
 
-  const defaultValues: FormValuesProps = {
-    ...((currentUser?.id && { id: currentUser?.id }) ?? {}),
-    first_name: currentUser?.first_name ?? '',
-    last_name: currentUser?.last_name ?? '',
-    email: currentUser?.email ?? '',
-    phone_number: currentUser?.phone_number ?? '',
-    avatar: currentUser?.avatar_url ?? undefined,
-    is_verified: currentUser?.is_verified ?? false,
-    status: currentUser?.status,
-    role: currentUser?.role?.toLowerCase() ?? 'user',
-  };
+  const defaultValues = useMemo(
+    () => ({
+      id: currentUser?.id ?? '',
+      first_name: currentUser?.first_name ?? '',
+      last_name: currentUser?.last_name ?? '',
+      email: currentUser?.email ?? '',
+      phone_number: currentUser?.phone_number ?? '',
+      avatar: currentUser?.avatar_url ?? undefined,
+      is_verified: currentUser?.is_verified ?? false,
+      status: currentUser?.status ?? UserStatus.PENDING,
+      role: currentUser?.role?.toLowerCase() ?? 'user',
+    }),
+    [currentUser],
+  );
 
   const methods = useForm<FormValuesProps>({
     resolver: zodResolver(userSchema),
     defaultValues,
   });
 
-  const { watch, control, setValue, handleSubmit } = methods;
+  const {
+    watch,
+    setValue,
+    reset,
+    handleSubmit,
+    formState: { isValid },
+  } = methods;
 
   const formValues = watch();
 
-  const navigate = useNavigate();
-
-  const onSubmit = async (data: FormValuesProps) => {
-    if (isEdit) {
-      const userData = getChangedFields(defaultValues, formValues);
-      return handlePath(userData, {
-        onSuccess: () => {
-          toast.success('Update success!');
-        },
-        onError: () => {
-          toast.error('Update failed!');
-        },
-      });
-    }
-
-    return handleCreate(data, {
-      onSuccess: (response) => {
-        toast.success('Create success!');
-        navigate(PATH_DASHBOARD.user.editSlug.replace(':slug', response.data.id));
-      },
-      onError: () => {
-        toast.error('Create failed!');
-      },
-    });
-  };
+  const { diffForm, hasDiff } = useMemo(
+    () => diffObjects<any>(defaultValues, formValues),
+    [defaultValues, formValues],
+  );
 
   const handleDrop = useCallback(
     (acceptedFiles: File[]) => {
@@ -134,16 +120,27 @@ export default function UserNewEditForm({ isEdit = false, currentUser }: Props) 
     });
   }, [fetchAddress, formValues?.address, setValue]);
 
-  const handleToggleStatusRow = (id: string) => {
-    handlePathStatus(id, {
-      onSuccess: () => {
-        toast.success('Update success!');
-      },
-      onError: () => {
-        toast.error('Update failed!');
+  const handleToggleStatusRow = (id: string) => handlePathStatus(id);
+
+  const handleToggleEmail = (id: string, is_verified: boolean) => handlePath({ id, is_verified });
+
+  const handleCreateUser = (data: FormValuesProps) =>
+    handleCreate(data, {
+      onSuccess: (response) => {
+        navigate(PATH_DASHBOARD.user.editSlug(response.data.id));
       },
     });
+
+  const handlePathUser = (id: string) => handlePath({ ...diffForm, id });
+
+  const onSubmit = async (data: FormValuesProps) => {
+    if (isEdit && data.id) return handlePathUser(data.id);
+    if (!isEdit) return handleCreateUser(data);
   };
+
+  useEffect(() => {
+    if (isLoadingUser === false) reset(defaultValues);
+  }, [defaultValues, isEdit, isLoadingUser, reset]);
 
   return (
     <FormProvider
@@ -151,15 +148,20 @@ export default function UserNewEditForm({ isEdit = false, currentUser }: Props) 
       onSubmit={handleSubmit(onSubmit)}
       key={currentUser?.id ?? 'new-user'}
     >
+      {isLoading && <Loading mode="global" />}
       <Grid container spacing={3}>
         <Grid size={{ xs: 12, md: 4 }}>
           <Card sx={{ pt: 10, pb: 5, px: 3 }}>
             {isEdit && (
               <Label
-                color={
-                  statusColorMap[formValues.status ? formValues.status.toLowerCase() : 'default']
-                }
-                sx={{ textTransform: 'uppercase', position: 'absolute', top: 24, right: 24 }}
+                color={statusColorMap[formValues.status ?? 'DEFAULT']}
+                sx={{
+                  textTransform: 'uppercase',
+                  position: 'absolute',
+                  top: 24,
+                  right: 24,
+                  minWidth: 25,
+                }}
               >
                 {formValues.status}
               </Label>
@@ -187,53 +189,37 @@ export default function UserNewEditForm({ isEdit = false, currentUser }: Props) 
                 }
               />
             </Box>
-            {isEdit && (
+            {isEdit && idParams && user?.id !== idParams && (
               <>
-                <FormControlLabel
+                <RHFSwitch
+                  name="status"
+                  labelTitle="Banned"
+                  labelDescription="Apply disable account"
                   labelPlacement="start"
-                  control={
-                    <Controller
-                      name="status"
-                      control={control}
-                      render={({ field }) => (
-                        <Switch
-                          {...field}
-                          checked={field.value === 'banned'}
-                          onChange={(event) => {
-                            field.onChange(event.target.checked ? 'banned' : 'active');
-                            if (currentUser?.id) handleToggleStatusRow(currentUser.id);
-                          }}
-                        />
-                      )}
-                    />
-                  }
-                  label={
-                    <>
-                      <Typography variant="subtitle2" sx={{ mb: 0.5 }}>
-                        Banned
-                      </Typography>
-                      <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                        Apply disable account
-                      </Typography>
-                    </>
-                  }
-                  sx={{ mx: 0, mb: 3, width: 1, justifyContent: 'space-between' }}
+                  switchProps={{
+                    checked: formValues.status === UserStatus.ACTIVE,
+                    onChange: (_, checked) => {
+                      setValue('status', checked ? UserStatus.ACTIVE : UserStatus.BANNED);
+                      if (currentUser?.id) {
+                        handleToggleStatusRow(currentUser.id);
+                      }
+                    },
+                  }}
                 />
-
                 <RHFSwitch
                   name="is_verified"
+                  labelTitle="Email Verified"
+                  labelDescription="Disabling this will automatically send the user a verification email"
                   labelPlacement="start"
-                  label={
-                    <>
-                      <Typography variant="subtitle2" sx={{ mb: 0.5 }}>
-                        Email Verified
-                      </Typography>
-                      <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                        Disabling this will automatically send the user a verification email
-                      </Typography>
-                    </>
-                  }
-                  sx={{ mx: 0, width: 1, justifyContent: 'space-between' }}
+                  switchProps={{
+                    checked: formValues.is_verified,
+                    onChange: (_, checked) => {
+                      setValue('is_verified', checked);
+                      if (currentUser?.id) {
+                        handleToggleEmail(currentUser.id, checked);
+                      }
+                    },
+                  }}
                 />
               </>
             )}
@@ -278,17 +264,31 @@ export default function UserNewEditForm({ isEdit = false, currentUser }: Props) 
             {currentUser?.addresses && currentUser?.addresses?.length > 0 ? (
               <AddressManager
                 isEdit={isEdit}
-                userId={currentUser.id}
+                user_id={currentUser.id}
                 addresses={currentUser?.addresses}
               />
             ) : (
               <AddressForm onBlur={handleFocusZipCode} />
             )}
-            <Stack alignItems="flex-end">
-              <Button type="submit" variant="contained" color="success" loading={isLoading}>
+            <Grid display={'flex'} justifyContent={'flex-end'} gap={2}>
+              <Button
+                type="button"
+                variant="contained"
+                onClick={() => reset()}
+                disabled={!hasDiff}
+                color="success"
+              >
+                reset
+              </Button>
+              <Button
+                type="submit"
+                variant="contained"
+                disabled={!hasDiff || !isValid}
+                color="success"
+              >
                 {!isEdit ? 'Create User' : 'Save Changes'}
               </Button>
-            </Stack>
+            </Grid>
           </Card>
         </Grid>
       </Grid>

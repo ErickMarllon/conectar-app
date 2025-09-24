@@ -1,13 +1,13 @@
 import { handleError } from '@/errors/handleError';
 import { TenantService } from '@/services/tenant';
-import type { IFilterGeneric } from '@/shared/interfaces/IFilter';
+import type { IFilterEnterpriseGeneric } from '@/shared/interfaces/IFilter';
 import type { IPaginatedResponse } from '@/shared/interfaces/IPaginate';
-import type { IUserAccountGeneral } from '@/shared/interfaces/IUser';
+import type { ITenantAccountGeneral } from '@/shared/interfaces/ITenant';
 import { AxiosError } from 'axios';
 
 export const queryFn = async (
-  params: Partial<IFilterGeneric>,
-): Promise<IPaginatedResponse<IUserAccountGeneral>> => {
+  params: Partial<IFilterEnterpriseGeneric>,
+): Promise<IPaginatedResponse<ITenantAccountGeneral>> => {
   try {
     const response = await TenantService.list(params);
     return response.data;

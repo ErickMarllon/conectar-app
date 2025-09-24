@@ -42,8 +42,8 @@ class AuthService {
     );
   }
 
-  public static async logout(): Promise<void> {
-    await api.patch('/auth/logout');
+  public static async logout(): Promise<AxiosResponse> {
+    return await api.patch('/auth/logout');
   }
 
   public static async userPathPassword(data: IChangePassword): Promise<AxiosResponse<IUserAuth>> {

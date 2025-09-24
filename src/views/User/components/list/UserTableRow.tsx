@@ -1,25 +1,22 @@
-import { useState } from 'react';
-// @mui
-import {
-  Stack,
-  Avatar,
-  Button,
-  Checkbox,
-  TableRow,
-  MenuItem,
-  TableCell,
-  IconButton,
-  Typography,
-} from '@mui/material';
-// @types
-// components
-import Label from '@/components/label';
-import Iconify from '@/components/iconify';
-import MenuPopover from '@/components/menu-popover';
 import ConfirmDialog from '@/components/confirm-dialog';
+import Iconify from '@/components/iconify';
+import Label from '@/components/label';
+import MenuPopover from '@/components/menu-popover';
 import type { IUserAccountGeneral } from '@/shared/interfaces/IUser';
 import { formatFullName } from '@/utils/format/formatFullName';
 import { fDateTime } from '@/utils/formatTime';
+import {
+  Avatar,
+  Button,
+  Checkbox,
+  IconButton,
+  MenuItem,
+  Stack,
+  TableCell,
+  TableRow,
+  Typography,
+} from '@mui/material';
+import { useState } from 'react';
 import { statusColorMap } from '../constants/userStatusColor';
 
 type Props = {
@@ -39,7 +36,8 @@ export default function UserTableRow({
   onDeleteRow,
   onStatusRow,
 }: Props) {
-  const { first_name, last_name, email, avatar_url, role, is_verified, status, created_at } = row;
+  const { id, first_name, last_name, email, avatar_url, role, is_verified, status, created_at } =
+    row;
   const [openConfirm, setOpenConfirm] = useState(false);
   const [openPopover, setOpenPopover] = useState<HTMLElement | null>(null);
 
@@ -63,7 +61,7 @@ export default function UserTableRow({
     <>
       <TableRow hover selected={selected}>
         <TableCell padding="checkbox">
-          <Checkbox checked={selected} onClick={onSelectRow} />
+          <Checkbox name={id} id={id} checked={selected} onClick={onSelectRow} />
         </TableCell>
 
         <TableCell>
@@ -120,7 +118,6 @@ export default function UserTableRow({
           </IconButton>
         </TableCell>
       </TableRow>
-
       <MenuPopover
         open={openPopover}
         onClose={handleClosePopover}
@@ -165,7 +162,6 @@ export default function UserTableRow({
           {status !== 'active' ? 'Active' : 'Banned'}
         </MenuItem>
       </MenuPopover>
-
       <ConfirmDialog
         open={openConfirm}
         onClose={handleCloseConfirm}

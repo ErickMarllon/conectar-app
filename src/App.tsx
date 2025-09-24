@@ -10,10 +10,10 @@ import { PATH_AUTH, PATH_DASHBOARD, PATH_PAGE } from './routes/paths';
 import { ToastContainer } from 'react-toastify';
 
 // Layouts
-import MainLayout from './layout/main';
 import CompactLayout from './layout/compact';
-import SimpleLayout from './layout/simple';
 import DashboardLayout from './layout/dashboard';
+import MainLayout from './layout/main';
+import SimpleLayout from './layout/simple';
 
 // Views
 import {
@@ -42,7 +42,6 @@ import {
   InvoiceListPage,
   KanbanPage,
   LoginPage,
-  LoginUnprotectedPage,
   MaintenancePage,
   NewPasswordPage,
   NotFound,
@@ -52,14 +51,12 @@ import {
   PaymentPage,
   PricingPage,
   RegisterPage,
-  RegisterUnprotectedPage,
   ResetPasswordPage,
   UserAccountPage,
   UserCardsPage,
   UserCreatePage,
   UserEditPage,
   UserListPage,
-  UserProfilePage,
   VerifyCodePage,
 } from './views';
 
@@ -67,9 +64,9 @@ import {
 import ThemeProvider from './providers/themeProvider';
 
 // lazy motion
-import { MotionLazyContainer } from './components/animate';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { MotionLazyContainer } from './components/animate';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -89,7 +86,6 @@ function App() {
             <BrowserRouter>
               <Routes>
                 <Route>
-                  <Route path="/login" element={<Navigate to={PATH_AUTH.login} replace />} />
                   <Route
                     path={PATH_AUTH.root}
                     element={<Navigate to={PATH_AUTH.login} replace />}
@@ -99,12 +95,7 @@ function App() {
 
                   <Route path={PATH_AUTH.loginSlug} element={<LoginPage />} />
                   <Route path={PATH_AUTH.registerSlug} element={<RegisterPage />} />
-                  <Route path={PATH_AUTH.loginUnprotected} element={<LoginUnprotectedPage />} />
-                  <Route
-                    path={PATH_AUTH.registerUnprotected}
-                    element={<RegisterUnprotectedPage />}
-                  />
-                  <Route path={PATH_AUTH.callbak} element={<AuthCallback />} />
+
                   <Route path={PATH_AUTH.callbak} element={<AuthCallback />} />
                 </Route>
 
@@ -136,13 +127,11 @@ function App() {
                     path={PATH_DASHBOARD.user.root}
                     element={<Navigate to={PATH_DASHBOARD.user.account} replace />}
                   />
-                  <Route path={PATH_DASHBOARD.user.new} element={<UserCreatePage />} />
                   <Route path={PATH_DASHBOARD.user.list} element={<UserListPage />} />
                   <Route path={PATH_DASHBOARD.user.cards} element={<UserCardsPage />} />
-                  {/* <Route path={PATH_DASHBOARD.user.profile} element={<UserProfilePage />} /> */}
                   <Route path={PATH_DASHBOARD.user.account} element={<UserAccountPage />} />
-                  <Route path={PATH_DASHBOARD.user.accountSettings} element={<UserAccountPage />} />
-                  <Route path={PATH_DASHBOARD.user.editSlug} element={<UserEditPage />} />
+                  <Route path={PATH_DASHBOARD.user.new} element={<UserCreatePage />} />
+                  <Route path={PATH_DASHBOARD.user.edit} element={<UserEditPage />} />
                 </Route>
 
                 <Route element={<DashboardLayout />}>
@@ -153,13 +142,7 @@ function App() {
                   <Route path={PATH_DASHBOARD.enterprise.new} element={<UserCreatePage />} />
                   <Route path={PATH_DASHBOARD.enterprise.list} element={<UserListPage />} />
                   <Route path={PATH_DASHBOARD.enterprise.cards} element={<UserCardsPage />} />
-                  <Route path={PATH_DASHBOARD.enterprise.profile} element={<UserProfilePage />} />
                   <Route path={PATH_DASHBOARD.enterprise.account} element={<UserAccountPage />} />
-                  <Route
-                    path={PATH_DASHBOARD.enterprise.accountSettings}
-                    element={<UserAccountPage />}
-                  />
-                  <Route path={PATH_DASHBOARD.enterprise.editSlug} element={<UserEditPage />} />
                 </Route>
 
                 <Route element={<DashboardLayout />}>

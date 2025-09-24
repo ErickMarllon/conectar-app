@@ -1,14 +1,14 @@
 // @mui
-import { alpha, styled } from '@mui/material/styles';
-import { Box, Card, Avatar, Typography, Stack, IconButton } from '@mui/material';
-import Image from '@/components/image';
 import Iconify from '@/components/iconify';
+import Image from '@/components/image';
 import SvgColor from '@/components/svg-color';
-import type { IUserCard, IUserSocialLink } from '@/shared/interfaces/IUser';
-import { socials_link } from '@/shared/constants/socials_links';
-import { formatFullName } from '@/utils/format/formatFullName';
-import { NavLink } from 'react-router-dom';
 import { PATH_DASHBOARD } from '@/routes/paths';
+import { socials_link } from '@/shared/constants/socials_links';
+import type { IUserCard, IUserSocialLink } from '@/shared/interfaces/IUser';
+import { formatFullName } from '@/utils/format/formatFullName';
+import { Avatar, Box, Card, IconButton, Stack, Typography } from '@mui/material';
+import { alpha, styled } from '@mui/material/styles';
+import { NavLink } from 'react-router-dom';
 
 // ----------------------------------------------------------------------
 
@@ -34,57 +34,59 @@ export default function UserCard({ user }: Props) {
   const name = formatFullName(first_name, last_name);
   return (
     <Card sx={{ textAlign: 'center' }}>
-      <Box sx={{ position: 'relative' }}>
-        <SvgColor
-          src="/assets/shape_avatar.svg"
-          sx={{
-            width: 144,
-            height: 62,
-            zIndex: 10,
-            left: 0,
-            right: 0,
-            bottom: -26,
-            mx: 'auto',
-            position: 'absolute',
-            color: 'background.paper',
-          }}
-        />
-        <NavLink
-          to={PATH_DASHBOARD.user.accountSettings.replace(':slug', user.id)}
-          style={{ textDecoration: 'none' }}
-        >
-          <Avatar
-            alt={name}
-            src={avatar_url}
+      <NavLink
+        to={PATH_DASHBOARD.user.accountSlug(user.id)}
+        style={{ textDecoration: 'none', cursor: 'pointer', zIndex: 100 }}
+      >
+        <Box sx={{ position: 'relative' }}>
+          <SvgColor
+            src="/assets/shape_avatar.svg"
             sx={{
-              width: 64,
-              height: 64,
-              zIndex: 11,
+              width: 144,
+              height: 62,
+              zIndex: 10,
               left: 0,
               right: 0,
-              bottom: -32,
+              bottom: -26,
               mx: 'auto',
               position: 'absolute',
-              cursor: 'pointer',
+              color: 'background.paper',
             }}
           />
-        </NavLink>
+          <NavLink to={PATH_DASHBOARD.user.accountSlug(user.id)} style={{ textDecoration: 'none' }}>
+            <Avatar
+              alt={name}
+              src={avatar_url}
+              sx={{
+                width: 64,
+                height: 64,
+                zIndex: 11,
+                left: 0,
+                right: 0,
+                bottom: -32,
+                mx: 'auto',
+                position: 'absolute',
+                cursor: 'pointer',
+              }}
+            />
+          </NavLink>
 
-        <StyledOverlay />
+          <StyledOverlay />
 
-        {cover ? (
-          <Image src={cover} alt={cover} ratio="16/9" />
-        ) : (
-          <Box
-            sx={{
-              width: '100%',
-              position: 'relative',
-              aspectRatio: '16/9',
-              bgcolor: (theme) => theme.palette.primary.main,
-            }}
-          />
-        )}
-      </Box>
+          {cover ? (
+            <Image src={cover} alt={cover} ratio="16/9" />
+          ) : (
+            <Box
+              sx={{
+                width: '100%',
+                position: 'relative',
+                aspectRatio: '16/9',
+                bgcolor: (theme) => theme.palette.primary.main,
+              }}
+            />
+          )}
+        </Box>
+      </NavLink>
       <Typography variant="subtitle1" sx={{ mt: 6, mb: 0.5 }}>
         {name}
       </Typography>

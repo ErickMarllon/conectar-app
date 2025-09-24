@@ -29,7 +29,11 @@ export default function RHFTextField({ name, isClean, helperText, ...other }: Pr
               endAdornment: field.value && isClean && (
                 <InputAdornment
                   position="end"
-                  onClick={() => resetField(name, undefined)}
+                  onClick={() =>
+                    resetField(name, {
+                      defaultValue: null,
+                    })
+                  }
                   sx={{ cursor: 'pointer', m: 0 }}
                 >
                   <Iconify icon="eva:close-fill" sx={{ color: 'text.disabled' }} />
@@ -37,7 +41,7 @@ export default function RHFTextField({ name, isClean, helperText, ...other }: Pr
               ),
             },
           }}
-          value={typeof field.value === 'number' && field.value === 0 ? '' : (field.value ?? '')}
+          value={field.value ?? ''}
           onChange={(e) => field.onChange(e.target.value.trimStart())}
           error={!!error}
           helperText={error ? error?.message : helperText}

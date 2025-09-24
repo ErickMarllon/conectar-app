@@ -43,6 +43,8 @@ export function RHFSelect({
         <TextField
           {...field}
           select
+          name={name}
+          id={name}
           value={field.value ?? ''}
           fullWidth
           slotProps={{
@@ -141,6 +143,8 @@ export function RHFMultiSelect({
 
           <Select
             {...field}
+            name={name}
+            id={name}
             multiple
             displayEmpty={!!placeholder}
             labelId={name}

@@ -1,4 +1,3 @@
-export { default as AccountGeneral } from './AccountGeneral';
 export { default as AccountSocialLinks } from './AccountSocialLinks';
 export { default as AccountEnterprise } from './AccountEnterprise';
 export { default as AccountNotifications } from './AccountNotifications';

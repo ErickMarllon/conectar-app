@@ -29,21 +29,12 @@ export default function AccountSocialLinks({ social_links, user_id }: Props) {
 
   const methods = useForm<IUserSocialSchema>({
     resolver: zodResolver(userSocialSchema),
-    defaultValues: social_links,
+    defaultValues: { ...social_links, user_id },
   });
 
   const { handleSubmit, reset, watch } = methods;
 
-  const onSubmit = async (data: FormValuesProps) => {
-    mutate(
-      { ...data, user_id },
-      {
-        onSuccess: () => {
-          toast.success('Update success!');
-        },
-      },
-    );
-  };
+  const onSubmit = async (data: FormValuesProps) => mutate(data);
 
   const { copy } = useCopyToClipboard();
 

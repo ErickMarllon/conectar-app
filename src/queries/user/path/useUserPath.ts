@@ -5,6 +5,7 @@ import { useMutation, useQueryClient, type UseMutationOptions } from '@tanstack/
 import type { AxiosError, AxiosResponse } from 'axios';
 import { userPathMutationFn } from './userPathMutationFn';
 import { useAuthStore } from '@/stores/userAuth.store';
+import { toast } from 'react-toastify';
 
 type MutationError = AxiosError;
 type MutationData = AxiosResponse<IUserAccountGeneral>;
@@ -20,10 +21,13 @@ export const useUserPath = (options?: MutationOptions) => {
   return useMutation<MutationData, MutationError, MutationVars>({
     mutationKey: key,
     mutationFn: (user) => userPathMutationFn(user),
-    onError: (error) => handleError({ error }),
-    onSuccess: ({ data }) => {
-      if (data.id === userStore?.id) setUser(data);
-      queryClient.invalidateQueries({ queryKey: key });
+    onError: (error) => handleError({ error, customMessage: 'Update failed!' }),
+    onSuccess: (data, variables) => {
+      if (variables.id === userStore?.id) setUser(data.data);
+      const userId = variables.id;
+      const message = 'Update success!';
+      toast.success(message, { containerId: message });
+      queryClient.invalidateQueries({ queryKey: ['user', userId ?? ''] });
     },
     ...options,
   });

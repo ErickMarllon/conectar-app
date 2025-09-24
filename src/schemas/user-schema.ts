@@ -6,7 +6,7 @@ export const userSchema = z.object({
   id: z.string().optional(),
   first_name: z.string().min(3, 'first name is required'),
   last_name: z.string().min(3, 'Last name is required'),
-  email: z.string().email('Email is required'),
+  email: z.string().email('Invalid email format'),
   phone_number: z.string(),
   avatar: AvatarSchema.optional(),
   is_verified: z.boolean().optional(),

@@ -65,10 +65,11 @@ export const PATH_DASHBOARD = {
     new: path(ROOTS_DASHBOARD, '/user/new'),
     list: path(ROOTS_DASHBOARD, '/user/list'),
     cards: path(ROOTS_DASHBOARD, '/user/cards'),
-    profile: path(ROOTS_DASHBOARD, '/user/profile'),
-    account: path(ROOTS_DASHBOARD, '/user/account'),
-    accountSettings: path(ROOTS_DASHBOARD, `/user/:slug/account`),
-    editSlug: path(ROOTS_DASHBOARD, `/user/:slug/edit`),
+    edit: path(ROOTS_DASHBOARD, `/user/:slug/edit`),
+    account: path(ROOTS_DASHBOARD, '/user/:slug/account'),
+    //
+    editSlug: (slug: string) => path(ROOTS_DASHBOARD, `/user/${slug}/edit`),
+    accountSlug: (slug: string) => path(ROOTS_DASHBOARD, `/user/${slug}/account`),
   },
   enterprise: {
     root: path(ROOTS_DASHBOARD, '/enterprise'),
@@ -77,8 +78,8 @@ export const PATH_DASHBOARD = {
     cards: path(ROOTS_DASHBOARD, '/enterprise/cards'),
     profile: path(ROOTS_DASHBOARD, '/enterprise/profile'),
     account: path(ROOTS_DASHBOARD, '/enterprise/account'),
-    accountSettings: path(ROOTS_DASHBOARD, `/enterprise/:slug/account`),
-    editSlug: path(ROOTS_DASHBOARD, `/enterprise/:slug/edit`),
+    accountSlug: (slug: string) => path(ROOTS_DASHBOARD, `/enterprise/${slug}/account`),
+    editSlug: (slug: string) => path(ROOTS_DASHBOARD, `/enterprise/${slug}/edit`),
   },
   eCommerce: {
     root: path(ROOTS_DASHBOARD, '/e-commerce'),
@@ -115,7 +116,17 @@ export const PATH_DASHBOARD = {
 
 export const PROTECTED_ROUTES: Record<string, UserRole[]> = {
   [PATH_DASHBOARD.general.app]: [UserRole.ADMIN],
-  [PATH_DASHBOARD.user.account]: [UserRole.USER, UserRole.ADMIN],
+  [PATH_DASHBOARD.user.cards]: [UserRole.OWNER, UserRole.ADMIN, UserRole.STAFF],
+  [PATH_DASHBOARD.user.list]: [UserRole.OWNER, UserRole.ADMIN, UserRole.STAFF],
+  [PATH_DASHBOARD.user.new]: [UserRole.OWNER, UserRole.ADMIN, UserRole.STAFF],
+  [PATH_DASHBOARD.user.edit]: [UserRole.OWNER, UserRole.ADMIN, UserRole.STAFF],
+  [PATH_DASHBOARD.user.account]: [UserRole.OWNER, UserRole.ADMIN, UserRole.STAFF, UserRole.USER],
+  [PATH_DASHBOARD.enterprise.account]: [
+    UserRole.OWNER,
+    UserRole.ADMIN,
+    UserRole.STAFF,
+    UserRole.USER,
+  ],
 };
 
 export const FIRST_ROUTES_USER: Record<UserRole, string> = {
@@ -124,8 +135,6 @@ export const FIRST_ROUTES_USER: Record<UserRole, string> = {
   [UserRole.STAFF]: PATH_DASHBOARD.general.app,
   [UserRole.USER]: PATH_DASHBOARD.user.account,
 };
-
-export const AUTH_ROUTES = [PATH_AUTH.login, PATH_AUTH.register, PATH_AUTH.resetPassword];
 
 export const PATH_ZONE_ON_STORE = 'https://mui.com/store/items/zone-landing-page/';
 

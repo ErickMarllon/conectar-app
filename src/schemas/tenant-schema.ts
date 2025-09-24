@@ -6,7 +6,7 @@ export const tenantSchema = z.object({
   id: z.string(),
   name: z.string().min(3, 'name is required'),
   slug: z.string().min(3, 'slug is required'),
-  email: z.string().email('Email is required'),
+  email: z.string().optional(),
   phone_number: z.string(),
   whatsapp: z.string(),
   logo: AvatarSchema.optional(),
@@ -14,7 +14,9 @@ export const tenantSchema = z.object({
   status: z.string().optional(),
   address: addressSchema.optional(),
   about: z.string().optional(),
-  isPublic: z.boolean().optional(),
+  is_public: z.boolean().optional(),
+  enable_google_calendar: z.boolean().optional(),
+  enable_service_schedule: z.boolean().optional(),
 });
 
 export const tenantSchemaWithAddress = tenantSchema.extend({

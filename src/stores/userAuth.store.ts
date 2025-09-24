@@ -1,7 +1,6 @@
-import { PROTECTED_ROUTES } from '@/routes/paths';
+import { PATH_AUTH, PROTECTED_ROUTES } from '@/routes/paths';
 import { AuthService } from '@/services/authService';
 import { LocalStorageService } from '@/services/localStorageService';
-import { UserRole } from '@/shared/enums';
 import type { IUserAuth } from '@/shared/interfaces/IUser';
 import { create } from 'zustand';
 
@@ -30,8 +29,8 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     const { user, isAuthenticated } = get();
     if (!isAuthenticated() || !user?.role) return false;
 
-    const allowedRoles = PROTECTED_ROUTES[pathname];
-    return !allowedRoles || allowedRoles.includes(user.role as UserRole);
+    const allowedRoles = PROTECTED_ROUTES[pathname]?.includes(user.role);
+    return allowedRoles ?? true;
   },
 
   isAdmin: () => {
@@ -56,7 +55,9 @@ export const useAuthStore = create<AuthState>((set, get) => ({
 
   logout: async () => {
     await AuthService.logout();
+
     LocalStorageService.cleanStorage();
     set({ user: null });
+    window.location.href = PATH_AUTH.login;
   },
 }));

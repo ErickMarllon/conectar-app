@@ -4,6 +4,7 @@ import type { IUserSocialLink } from '@/shared/interfaces/IUser';
 import { useMutation, useQueryClient, type UseMutationOptions } from '@tanstack/react-query';
 import type { AxiosError, AxiosResponse } from 'axios';
 import { queryFn } from './queryFn';
+import { toast } from 'react-toastify';
 
 type MutationError = AxiosError;
 type MutationData = AxiosResponse<IUserSocialLink>;
@@ -20,6 +21,8 @@ export const useUserSocialPath = (options?: MutationOptions) => {
     onError: (error) => handleError({ error }),
     onSuccess: (_, variable) => {
       const userId = variable.user_id;
+      const message = 'Update success!';
+      toast.success(message, { containerId: message });
       queryClient.invalidateQueries({
         queryKey: ['user-social', userId ?? ''],
       });

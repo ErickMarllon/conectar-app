@@ -28,10 +28,16 @@ export function AddressFormDialog({
       {isLoading && <Loading mode="modal" />}
       <FormProvider methods={methods} key={editingAddress?.id ?? 'new-user-address'}>
         <DialogTitle>{editingAddress ? 'Editar Endereço' : 'Adicionar Novo Endereço'}</DialogTitle>
-        <DialogContent>
+        <DialogContent
+          dividers
+          sx={{
+            pt: 1,
+            borderTop: 'none',
+            borderBottom: 'none',
+          }}
+        >
           <AddressForm onFocus={onFocus} onBlur={onBlur} />
         </DialogContent>
-
         <DialogActions>
           <Button onClick={onClose} sx={{ color: 'grey.400' }}>
             Cancelar

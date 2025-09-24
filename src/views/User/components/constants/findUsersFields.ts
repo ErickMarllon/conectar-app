@@ -1,4 +1,4 @@
-import type { IFormOptions } from '@/views/User/components/UserFilterDrawer';
+import type { IFormOptions } from '@/components/FilterDrawer';
 
 export const formFindUsersFields: IFormOptions[] = [
   { name: 'first_name', label: 'Nome', type: 'text', placeholder: 'Digite o nome' },

@@ -1,19 +1,14 @@
-// form
-import { useForm } from 'react-hook-form';
-// @mui
-import { Stack, Card, InputAdornment, IconButton } from '@mui/material';
-import { LoadingButton } from '@mui/lab';
-
-// components
-import Iconify from '@/components/iconify';
 import FormProvider, { RHFTextField } from '@/components/hook-form';
-import { toast } from 'react-toastify';
-import { ChangePasswordSchema, type IChangePassword } from '@/schemas/change-password-schema';
-import { zodResolver } from '@hookform/resolvers/zod';
+import Iconify from '@/components/iconify';
 import { useUserPathPassword } from '@/queries/user/pathPassword/useUserPathPassword';
-import { useState } from 'react';
-import { useAuthStore } from '@/stores/userAuth.store';
+import { ChangePasswordSchema, type IChangePassword } from '@/schemas/change-password-schema';
 import { UserRole } from '@/shared/enums';
+import { useAuthStore } from '@/stores/userAuth.store';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { LoadingButton } from '@mui/lab';
+import { Card, IconButton, InputAdornment, Stack } from '@mui/material';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 
 // ----------------------------------------------------------------------
 
@@ -22,6 +17,9 @@ type FormValuesProps = IChangePassword;
 type Props = {
   user_id?: string;
 };
+
+// ----------------------------------------------------------------------
+
 export default function AccountChangePassword({ user_id }: Props) {
   const [showOldPassword, setShowOldPassword] = useState(false);
   const [showNewPassword, setShowNewPassword] = useState(false);
@@ -41,19 +39,9 @@ export default function AccountChangePassword({ user_id }: Props) {
   const { handleSubmit, trigger } = methods;
 
   const onSubmit = async (data: FormValuesProps) => {
-    if (!user_id) return;
-    mutate(
-      { ...data, user_id },
-      {
-        onSuccess: () => {
-          toast.success('Update success');
-          reset();
-        },
-        onError: () => {
-          toast.error('Update failed');
-        },
-      },
-    );
+    mutate(data, {
+      onSuccess: () => reset(),
+    });
   };
 
   return (

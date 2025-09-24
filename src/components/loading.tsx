@@ -3,6 +3,7 @@ import Lottie from 'lottie-react';
 import { tv, type VariantProps } from 'tailwind-variants';
 import animationData from '../assets/animation/Animation-Loading.json';
 import { MotionContainer } from './animate';
+import { useEffect } from 'react';
 
 const _loadingVariants = tv({
   base: 'flex items-center justify-center z-50 p-0 ',
@@ -60,17 +61,29 @@ export default function Loading({ mode }: LoadingProps) {
 }
 
 export function LoadingGlobal() {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
   return (
     <Backdrop
       invisible={true}
       sx={(theme) => ({
         background: alpha(theme.palette.grey[900], 0.4),
         zIndex: theme.zIndex.drawer + 10,
-        position: 'absolute',
+        position: 'fixed',
         overflow: 'hidden',
+        maxHeight: '100dvh',
+        minHeight: '100dvh',
+        height: '100dvh',
         '& > div': {
           zIndex: `${theme.zIndex.drawer + 20} `,
-          position: 'absolute',
+          position: 'fixed',
+          maxHeight: '100dvh',
+          minHeight: '100dvh',
+          height: '100dvh',
         },
       })}
       open={true}

@@ -10,7 +10,7 @@ import AccountBillingAddressBook from './AccountBillingAddressBook';
 import AccountBillingPaymentMethod from './AccountBillingPaymentMethod';
 import AccountBillingInvoiceHistory from './AccountBillingInvoiceHistory';
 import { useAuthStore } from '@/stores/userAuth.store';
-import { useUserById } from '@/queries/useUserById/useUserById';
+import { useUserById } from '@/queries/user/useUserById/useUserById';
 
 // ----------------------------------------------------------------------
 

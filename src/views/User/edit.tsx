@@ -1,6 +1,6 @@
 import CustomBreadcrumbs from '@/components/custom-breadcrumbs';
 import Loading from '@/components/loading';
-import { useUserById } from '@/queries/useUserById/useUserById';
+import { useUserById } from '@/queries/user/useUserById/useUserById';
 import { PATH_DASHBOARD } from '@/routes/paths';
 import { useThemesStore } from '@/stores/themes.store';
 import { formatFullName } from '@/utils/format/formatFullName';

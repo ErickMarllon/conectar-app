@@ -11,7 +11,7 @@ import ConfirmDialog from '@/components/confirm-dialog';
 import { useEffect, useState } from 'react';
 import { AddressFormDialog } from '../../AddressFormDialog';
 import { useForm } from 'react-hook-form';
-import { addressUserSchema, type IUserAddress } from '@/schemas/address-user-schema';
+import { addressPayloadSchema, type IAddressPayloadSchema } from '@/schemas/address-payload-schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { fetchAddressByZip } from '@/services/fetchAddressByZip';
 import type { IAddressSchema } from '@/schemas/address-schema';
@@ -56,8 +56,8 @@ export default function AccountBillingAddressBook({ addressBook, userId }: Props
     setOpenConfirm(false);
   };
 
-  const methods = useForm<IUserAddress>({
-    resolver: zodResolver(addressUserSchema),
+  const methods = useForm<IAddressPayloadSchema>({
+    resolver: zodResolver(addressPayloadSchema),
   });
 
   const { watch, reset, setValue } = methods;

@@ -1,31 +1,43 @@
 // @mui
-import { Button, Grid, InputAdornment, MenuItem, Stack, TextField } from '@mui/material';
+import { Button, Grid, MenuItem, Stack, TextField } from '@mui/material';
 // components
 import Iconify from '@/components/iconify';
+import UserSearch from '../UserSearch';
+import { useMemo } from 'react';
 
 // ----------------------------------------------------------------------
 
 type Props = {
-  filterName: string;
-  filterRole: string;
   isFiltered: boolean;
-  optionsRole: string[];
   onResetFilter: VoidFunction;
-  onFilterName: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onFilterRole: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onSearch: (value?: string) => void;
   advancedFilter?: React.ReactNode;
+  filterRole?: string;
+  optionsRole?: string[];
+  onFilterRole?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export default function UserTableToolbar({
   isFiltered,
-  filterName,
+  onSearch,
+  onResetFilter,
+  advancedFilter,
   filterRole,
   optionsRole,
   onFilterRole,
-  onFilterName,
-  onResetFilter,
-  advancedFilter,
 }: Props) {
+  const lastColumnWidth = useMemo(() => {
+    const cols: string[] = [];
+
+    if (onFilterRole) cols.push('1fr');
+
+    if (isFiltered) cols.push('85px');
+
+    cols.push('85px');
+
+    return cols.join(' ');
+  }, [isFiltered, onFilterRole]);
+
   return (
     <Stack
       gap={2}
@@ -40,30 +52,39 @@ export default function UserTableToolbar({
         py: 3,
         gridTemplateColumns: {
           xs: '1fr',
-          md: '0.4fr 1fr',
+          sm: `${onFilterRole ? '1fr 0.6fr' : '1fr 0.3fr'}`,
         },
       }}
     >
+      <Stack>
+        <UserSearch fullWidth onSearch={onSearch} onCleanChange={onResetFilter} />
+      </Stack>
+
       <Grid
         display={'grid'}
-        gridTemplateColumns="85px 1fr"
-        direction="row"
+        gridTemplateColumns={`${lastColumnWidth}`}
+        gridAutoFlow="row"
         alignItems="center"
-        sx={{ gap: 4 }}
+        justifyContent={{
+          xs: 'normal',
+          sm: onFilterRole ? 'normal' : 'center',
+        }}
+        sx={{ gap: 2 }}
       >
-        {advancedFilter && advancedFilter}
         {onFilterRole && (
           <TextField
             fullWidth
             select
+            id="role-label"
+            name="role"
             label="Role"
-            value={filterRole?.toLowerCase()}
+            value={filterRole}
             onChange={onFilterRole}
             sx={{
               textTransform: 'capitalize',
             }}
           >
-            {optionsRole.map((option) => (
+            {optionsRole?.map((option) => (
               <MenuItem
                 key={option}
                 value={option}
@@ -74,36 +95,16 @@ export default function UserTableToolbar({
                   textTransform: 'capitalize',
                 }}
               >
-                {option}
+                {option?.toLowerCase()}
               </MenuItem>
             ))}
           </TextField>
         )}
-      </Grid>
-      <Stack direction="row" sx={{ gap: 2 }}>
-        <TextField
-          value={filterName}
-          onChange={onFilterName}
-          placeholder="Search..."
-          fullWidth
-          slotProps={{
-            input: {
-              startAdornment: (
-                <InputAdornment position="start">
-                  <Iconify icon="eva:search-fill" sx={{ color: 'text.disabled' }} />
-                </InputAdornment>
-              ),
-              endAdornment: filterName && (
-                <InputAdornment position="end" onClick={onResetFilter} sx={{ cursor: 'pointer' }}>
-                  <Iconify icon="eva:close-fill" sx={{ mr: 1, color: 'text.disabled' }} />
-                </InputAdornment>
-              ),
-            },
-          }}
-        />
+        {advancedFilter && advancedFilter}
 
         {isFiltered && (
           <Button
+            size="large"
             color="error"
             sx={{ flexShrink: 0 }}
             onClick={onResetFilter}
@@ -112,7 +113,7 @@ export default function UserTableToolbar({
             Clear
           </Button>
         )}
-      </Stack>
+      </Grid>
     </Stack>
   );
 }

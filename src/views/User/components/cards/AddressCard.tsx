@@ -2,7 +2,7 @@ import Iconify from '@/components/iconify';
 import type { IAddressSchema } from '@/schemas/address-schema';
 import { alpha, Box, Button, Card, CardContent, Chip, IconButton, Typography } from '@mui/material';
 
-export function AddressCard({
+export default function AddressCard({
   address,
   onEdit,
   onDelete,
