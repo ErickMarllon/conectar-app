@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "title": "Quản lý thông minh cho doanh nghiệp của bạn",
+    "highlightName": "Flux",
+    "description": "Nắm quyền kiểm soát hoàn toàn doanh nghiệp của bạn với hệ thống quản lý đầy đủ của chúng tôi, cung cấp lịch hẹn trực tuyến, tổ chức thông minh và công cụ để tối ưu hóa quy trình. Quản lý khách hàng hiệu quả, tăng cường lòng trung thành, giảm thiểu sự cố vận hành và thúc đẩy doanh số bán hàng của bạn với các chiến lược thông minh. Chuyển đổi quy trình làm việc của bạn và đạt được thành công mà doanh nghiệp của bạn xứng đáng!"
+  },
+  "helpyou": {
+    "online_scheduling": "Lịch hẹn trực tuyến",
+    "online_scheduling_description": "Fluxo là một nền tảng thanh lịch và trực quan với các tính năng đặt lịch trực tuyến mạnh mẽ. Quản lý dễ dàng tất cả các đặt chỗ của tiệm làm đẹp của bạn — từ lịch hẹn đến thanh toán — ở một nơi, với hỗ trợ điểm bán hàng, thanh toán an toàn và ứng dụng di động.",
+    "inventory_control": "Kiểm soát kho hàng",
+    "inventory_control_description": "Luôn giữ kho hàng của bạn dưới sự kiểm soát với Fluxo. Theo dõi sản phẩm, ghi lại các giao dịch mua định kỳ và tránh hết hàng với cảnh báo thông minh và báo cáo thời gian thực.",
+    "team_management": "Quản lý nhóm hiệu quả",
+    "team_management_description": "Tổ chức nhóm của bạn một cách dễ dàng. Fluxo cung cấp bảng điều khiển đầy đủ, kiểm soát thời gian, lập lịch trình tối ưu và thông báo tự động để đảm bảo mọi người luôn đồng bộ và hiệu quả.",
+    "humanized_support": "Hỗ trợ nhân văn, thực sự",
+    "humanized_support_description": "Đội ngũ của chúng tôi luôn sẵn sàng hỗ trợ. Hãy tin tưởng vào sự hỗ trợ thực sự, nhanh chóng và chu đáo — không có phản hồi tự động hoặc dịch vụ lạnh lùng.",
+    "insights_analytics": "Thông tin chi tiết và phân tích",
+    "insights_analytics_description": "Bảng điều khiển Fluxo cung cấp báo cáo chi tiết và số liệu chiến lược giúp hỗ trợ ra quyết định, thúc đẩy hiệu suất nhóm và giữ bạn kiểm soát doanh nghiệp.",
+    "effortless_marketing": "Tiếp thị không cần nỗ lực",
+    "effortless_marketing_description": "Củng cố thương hiệu và giữ chân khách hàng với các công cụ tiếp thị tích hợp của Fluxo. Tự động hóa chiến dịch, gửi lời nhắc được cá nhân hóa và mở rộng cơ sở khách hàng một cách dễ dàng.",
+    "what_flux_helps_you": "Flux giúp bạn<0/>như thế nào?"
+  },
+  "elevateMarketing": {
+    "title": "Nâng tầm tiếp thị<0/>lên cấp độ tiếp theo",
+    "whatsapp_marketing": "Tiếp thị WhatsApp",
+    "whatsapp_marketing_description": "Nâng cao tương tác với khách hàng bằng cách sử dụng các tính năng liên lạc WhatsApp của chúng tôi. Kết nối hiệu quả với khách hàng để thúc đẩy lòng trung thành.",
+    "personalized_messages": "Tin nhắn cá nhân hóa",
+    "personalized_messages_description": "Nâng cao tương tác với khách hàng bằng cách sử dụng các tính năng liên lạc WhatsApp của chúng tôi. Kết nối hiệu quả với khách hàng để thúc đẩy lòng trung thành.",
+    "customer_management": "Quản lý khách hàng",
+    "customer_management_description": "Nâng cao tương tác với khách hàng bằng cách sử dụng các tính năng liên lạc WhatsApp của chúng tôi. Kết nối hiệu quả với khách hàng để thúc đẩy lòng trung thành."
+  },
+  "homeForDesigner": {
+    "overline": "Hệ thống quản lý doanh nghiệp toàn diện nhất",
+    "title": "Một giải pháp duy nhất để quản lý khách hàng, lịch hẹn và vận hành một cách tự tin, được các chuyên gia từ nhiều lĩnh vực khác nhau chấp nhận.",
+    "description": "Có mặt tại 12 quốc gia. Lịch hẹn được đặt bởi khách hàng. Flux là phần mềm doanh nghiệp cung cấp tất cả các công cụ thiết yếu để tăng doanh số và tối ưu hóa hoạt động của bạn."
+  },
+  "pricingPlans": {
+    "overline": "gói giá",
+    "title": "Kế hoạch phù hợp cho<br /> doanh nghiệp của bạn",
+    "description": "Chọn gói hoàn hảo cho nhu cầu của bạn. Luôn linh hoạt để phát triển",
+    "questions": "Vẫn còn thắc mắc?",
+    "advice": "Vui lòng mô tả trường hợp của bạn để nhận được lời khuyên chính xác nhất.",
+    "contact": "Liên hệ chúng tôi",
+    "monthly": "Hàng Tháng",
+    "yearly": "Hàng Năm",
+    "plusApplicableTaxes": "Cộng thêm thuế áp dụng",
+    "savePercent": "Tiết kiệm {{percent}}%"
+  },
+  "homeAdvertisement": {
+    "getstarted": "Bắt đầu"
+  }
+}

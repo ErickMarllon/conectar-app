@@ -9,7 +9,7 @@ type ThemeState = ThemeSettings & ThemeActions;
 const getInitialSettings = (): ThemeSettings => ({
   ...defaultSettings,
   presetsOption,
-  language: CookiesService.getItem('i18nextLng') ?? defaultSettings.language,
+  language: CookiesService.getItem('i18next') ?? defaultSettings.language,
   themeMode: CookiesService.getItem('theme_Mode') ?? defaultSettings.themeMode,
   themeLayout: CookiesService.getItem('theme_Layout') ?? defaultSettings.themeLayout,
   themeStretch: CookiesService.getItem('theme_Stretch') ?? defaultSettings.themeStretch,
@@ -24,7 +24,7 @@ export const useThemesStore = create<ThemeState>()((set, get) => ({
   ...getInitialSettings(),
   setLanguage: (language) => {
     set({ language });
-    CookiesService.setItem('i18nextLng', language);
+    CookiesService.setItem('i18next', language);
   },
   setThemeMode: (themeMode) => {
     set({ themeMode });

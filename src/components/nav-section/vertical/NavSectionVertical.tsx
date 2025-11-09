@@ -1,16 +1,11 @@
-// @mui
 import { List, Stack } from '@mui/material';
-// locales
-import useLocales from '@/hooks/useLocales';
-//
 import type { NavSectionProps } from '../types';
-import { StyledSubheader } from './styles';
 import NavList from './NavList';
-
-// ----------------------------------------------------------------------
+import { StyledSubheader } from './styles';
+import { useTranslation } from 'react-i18next';
 
 export default function NavSectionVertical({ data, sx, ...other }: NavSectionProps) {
-  const { translate } = useLocales();
+  const { t } = useTranslation('nav');
 
   return (
     <Stack sx={sx} {...other}>
@@ -20,7 +15,7 @@ export default function NavSectionVertical({ data, sx, ...other }: NavSectionPro
         return (
           <List key={key} disablePadding sx={{ px: 2 }}>
             {group.subheader && (
-              <StyledSubheader disableSticky>{`${translate(group.subheader)}`}</StyledSubheader>
+              <StyledSubheader disableSticky>{`${t(group.subheader)}`}</StyledSubheader>
             )}
 
             {group.items.map((list) => (

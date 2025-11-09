@@ -14,7 +14,7 @@ import AccessLayout from '@/layout/access';
 // ----------------------------------------------------------------------
 export default function Register() {
   return (
-    <AccessLayout title="Manage the job more effectively with Fluxo">
+    <AccessLayout title="Manage the job more effectively with Flux">
       <Stack spacing={2} sx={{ mb: 5, position: 'relative' }}>
         <Typography variant="h4">Get started absolutely free.</Typography>
 

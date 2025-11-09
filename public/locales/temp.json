@@ -1,0 +1,51 @@
+{
+  "ns": "pricingPlans",
+  "zh-CN": {
+    "title": "灵活适应您企业<br />规模和需求的计划。",
+    "description": "选择适合您需求的完美计划。始终灵活成长"
+  },
+  "de-DE": {
+    "title": "Flexible Pläne, die sich an die Größe<br />und Bedürfnisse Ihres Unternehmens anpassen.",
+    "description": "Wählen Sie den perfekten Plan für Ihre Bedürfnisse. Immer flexibel zum Wachsen"
+  },
+  "en-US": {
+    "title": "Flexible plans that adapt<br />to the size and needs of your business.",
+    "description": "Choose the perfect plan for your needs. Always flexible to grow"
+  },
+  "es-ES": {
+    "title": "Planes flexibles que se adaptan<br />al tamaño y necesidades de su negocio.",
+    "description": "Elija el plan perfecto para sus necesidades. Siempre flexible para crecer"
+  },
+  "fr-FR": {
+    "title": "Des plans flexibles qui s'adaptent<br />à la taille et aux besoins de votre entreprise.",
+    "description": "Choisissez le plan parfait pour vos besoins. Toujours flexible pour grandir"
+  },
+  "it-IT": {
+    "title": "Piani flessibili che si adattano<br />alle dimensioni e alle esigenze della tua azienda.",
+    "description": "Scegli il piano perfetto per le tue esigenze. Sempre flessibile per crescere"
+  },
+  "ja-JP": {
+    "title": "ビジネスの規模とニーズに<br />適応する柔軟なプラン。",
+    "description": "あなたのニーズに合った完璧なプランを選択してください。常に成長に対応可能"
+  },
+  "ko-KR": {
+    "title": "비즈니스 규모와 요구에 맞춰<br />조정되는 유연한 플랜.",
+    "description": "요구에 맞는 완벽한 플랜을 선택하세요. 항상 성장할 수 있는 유연성"
+  },
+  "pt-BR": {
+    "title": "Planos flexíveis que se adaptam<br />ao tamanho e necessidades do seu negócio.",
+    "description": "Escolha o plano perfeito para suas necessidades. Sempre flexível para crescer"
+  },
+  "pt-PT": {
+    "title": "Planos flexíveis que se adaptam<br />ao tamanho e necessidades do seu negócio.",
+    "description": "Escolha o plano perfeito para as suas necessidades. Sempre flexível para crescer"
+  },
+  "ru-RU": {
+    "title": "Гибкие планы, которые адаптируются<br />к размеру и потребностям вашего бизнеса.",
+    "description": "Выберите идеальный план для ваших потребностей. Всегда гибкий для роста"
+  },
+  "vi-VN": {
+    "title": "Các gói linh hoạt thích ứng<br />với quy mô và nhu cầu kinh doanh của bạn.",
+    "description": "Chọn gói hoàn hảo cho nhu cầu của bạn. Luôn linh hoạt để phát triển"
+  }
+}

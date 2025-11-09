@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "title": "智能管理您的业务",
+    "highlightName": "Flux",
+    "description": "通过我们完整的管理系统全面掌控您的业务，提供在线预约、智能组织和流程优化工具。高效管理客户，提高客户忠诚度，减少运营失误，并通过智能策略推动销售。改变您的工作流程，实现您的业务应得的成功！"
+  },
+  "helpyou": {
+    "online_scheduling": "在线预约",
+    "online_scheduling_description": "Fluxo是一个优雅直观的平台，具有强大的在线预约功能。轻松管理您美容院的所有预订——从预约到付款——一站式解决，支持销售点、安全支付和移动应用程序。",
+    "inventory_control": "库存管理",
+    "inventory_control_description": "使用Fluxo始终保持库存可控。跟踪产品，记录定期采购，通过智能警报和实时报告避免缺货。",
+    "team_management": "高效团队管理",
+    "team_management_description": "便捷地组织您的团队。Fluxo提供完整的仪表板、时间控制、优化排班和自动通知，确保所有人始终保持一致和高效。",
+    "humanized_support": "真正人性化的支持",
+    "humanized_support_description": "我们的团队随时准备提供帮助。享受真实、快速、周到的支持——没有自动回复或冷漠的接待。",
+    "insights_analytics": "洞察与分析",
+    "insights_analytics_description": "Fluxo仪表板提供详细的报告和战略指标，帮助决策制定，提升团队绩效，让您全面掌控业务。",
+    "effortless_marketing": "轻松营销",
+    "effortless_marketing_description": "通过Fluxo集成的营销工具加强您的品牌并留住客户。自动化营销活动，发送个性化提醒，轻松扩大客户群。",
+    "what_flux_helps_you": "Flux 如何<0/>帮助您？"
+  },
+  "elevateMarketing": {
+    "title": "将您的营销<0/>提升到新水平",
+    "whatsapp_marketing": "WhatsApp营销",
+    "whatsapp_marketing_description": "使用我们的WhatsApp通信功能增强客户互动。有效连接客户以推动客户忠诚度。",
+    "personalized_messages": "个性化消息",
+    "personalized_messages_description": "使用我们的WhatsApp通信功能增强客户互动。有效连接客户以推动客户忠诚度。",
+    "customer_management": "客户管理",
+    "customer_management_description": "使用我们的WhatsApp通信功能增强客户互动。有效连接客户以推动客户忠诚度。"
+  },
+  "homeForDesigner": {
+    "overline": "最全面的商业管理系统",
+    "title": "一个统一的解决方案，让您能够自信地管理客户、日程安排和运营，已被不同行业的专业人士采用。",
+    "description": "在12个国家可用。由客户进行预约。Flux是一款商业软件，提供所有基本工具来增加销售额并优化运营。"
+  },
+  "pricingPlans": {
+    "overline": "定价计划",
+    "title": "适合您业务的<br />正确计划",
+    "description": "选择适合您需求的完美计划。始终灵活增长",
+    "questions": "还有问题？",
+    "advice": "请描述您的情况以获得最准确的建议。",
+    "contact": "联系我们",
+    "monthly": "月付",
+    "yearly": "年付",
+    "plusApplicableTaxes": "加上适用税费",
+    "savePercent": "节省{{percent}}%"
+  },
+  "homeAdvertisement": {
+    "getstarted": "开始使用"
+  }
+}

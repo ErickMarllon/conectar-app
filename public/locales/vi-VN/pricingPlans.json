@@ -1,0 +1,154 @@
+{
+  "free": "Miễn Phí",
+  "pro": "Pro",
+  "enterprise": "Doanh Nghiệp",
+  "annually": "Hàng Năm",
+  "monthly": "Hàng Tháng",
+  "billingPeriod": "Chu Kỳ Thanh Toán",
+  "discountedAnnualPlan": "Gói năm được giảm giá",
+  "advancedFeaturesAnnual": "Gói năm – tính năng nâng cao",
+  "contactForQuote": "Giá theo yêu cầu (năm)",
+  "choosePlan": "Chọn Gói",
+  "perMonth": "mỗi tháng",
+  "perYear": "mỗi năm",
+  "users": "người dùng",
+  "products": "sản phẩm",
+  "services": "dịch vụ",
+  "unlimited": "Không giới hạn",
+  "includedFeatures": "Tính Năng Bao Gồm",
+  "clientManagement": "Quản lý khách hàng và lịch trình",
+  "financialControl": "Kiểm soát tài chính",
+  "webMobileAccess": "Truy cập qua web và di động",
+  "allProFeatures": "Tất cả tính năng Pro",
+  "digitalSignatures": "Chữ ký số và tự động hóa phức tạp",
+  "dedicatedSupport": "Hỗ trợ chuyên dụng và SLA doanh nghiệp",
+  "customization": "Tùy chỉnh mô-đun và thương hiệu",
+  "features": {
+    "clientManagement": "Quản lý khách hàng và lịch hẹn",
+    "financialControl": "Kiểm soát tài chính hoàn chỉnh",
+    "customReports": "Báo cáo và biểu đồ tùy chỉnh",
+    "messageAutomation": "Tự động hóa tin nhắn và chiến dịch",
+    "whatsappIntegration": "Tích hợp WhatsApp Business",
+    "prioritySupport": "Hỗ trợ kỹ thuật ưu tiên"
+  },
+  "yearly": "Hàng Năm",
+  "plusapplicabletaxes": "Cộng thêm thuế áp dụng",
+  "savepercent": "Tiết kiệm {{percent}}%",
+  "plans": {
+    "free": {
+      "name": "Miễn Phí",
+      "tier": "Miễn Phí",
+      "description": "Chủ Sở Hữu Hệ Thống",
+      "annually": {
+        "billingperiod": "Gói năm được giảm giá",
+        "ctalabel": "Chọn Miễn Phí Năm",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "Quản lý khách hàng và lịch trình",
+          "controlefinanceiro": "Kiểm soát tài chính",
+          "acessoviawebemobile": "Truy cập qua web và di động"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "Quản lý khách hàng và lịch hẹn",
+          "controlefinanceirocompleto": "Kiểm soát tài chính hoàn chỉnh",
+          "relatoriosegraficospersonalizados": "Báo cáo và biểu đồ tùy chỉnh",
+          "automacaodemensagensecampanhas": "Tự động hóa tin nhắn và chiến dịch",
+          "integracaocomwhatsappbusiness": "Tích hợp WhatsApp Business",
+          "suportetecnicoprioritario": "Hỗ trợ kỹ thuật ưu tiên"
+        }
+      },
+      "monthly": {
+        "billingperiod": "Gói tháng - không giảm giá",
+        "ctalabel": "Chọn Miễn Phí Tháng",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "Quản lý khách hàng và lịch trình",
+          "controlefinanceiro": "Kiểm soát tài chính",
+          "acessoviawebemobile": "Truy cập qua web và di động"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "Quản lý khách hàng và lịch hẹn",
+          "controlefinanceirocompleto": "Kiểm soát tài chính hoàn chỉnh",
+          "relatoriosegraficospersonalizados": "Báo cáo và biểu đồ tùy chỉnh",
+          "automacaodemensagensecampanhas": "Tự động hóa tin nhắn và chiến dịch",
+          "integracaocomwhatsappbusiness": "Tích hợp WhatsApp Business",
+          "suportetecnicoprioritario": "Hỗ trợ kỹ thuật ưu tiên"
+        }
+      }
+    },
+    "pro": {
+      "name": "Pro",
+      "tier": "Pro",
+      "description": "Quản Lý Hệ Thống",
+      "annually": {
+        "billingperiod": "Gói năm - tính năng nâng cao",
+        "ctalabel": "Chọn Pro Năm",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "Quản lý khách hàng và lịch trình",
+          "controlefinanceiro": "Kiểm soát tài chính",
+          "acessoviawebemobile": "Truy cập qua web và di động"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "Quản lý khách hàng và lịch hẹn",
+          "controlefinanceirocompleto": "Kiểm soát tài chính hoàn chỉnh",
+          "integracaocomwhatsappbusiness": "Tích hợp WhatsApp Business",
+          "relatoriosegraficospersonalizados": "Báo cáo và biểu đồ tùy chỉnh",
+          "suportetecnicoprioritario": "Hỗ trợ kỹ thuật ưu tiên",
+          "automacaodemensagensecampanhas": "Tự động hóa tin nhắn và chiến dịch"
+        }
+      },
+      "monthly": {
+        "billingperiod": "Gói tháng - tính năng nâng cao",
+        "ctalabel": "Chọn Pro Tháng",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "Quản lý khách hàng và lịch trình",
+          "controlefinanceiro": "Kiểm soát tài chính",
+          "acessoviawebemobile": "Truy cập qua web và di động"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "Quản lý khách hàng và lịch hẹn",
+          "controlefinanceirocompleto": "Kiểm soát tài chính hoàn chỉnh",
+          "integracaocomwhatsappbusiness": "Tích hợp WhatsApp Business",
+          "relatoriosegraficospersonalizados": "Báo cáo và biểu đồ tùy chỉnh",
+          "suportetecnicoprioritario": "Hỗ trợ kỹ thuật ưu tiên",
+          "automacaodemensagensecampanhas": "Tự động hóa tin nhắn và chiến dịch"
+        }
+      }
+    },
+    "enterprise": {
+      "name": "Doanh Nghiệp",
+      "tier": "Doanh Nghiệp",
+      "description": "Nhân Viên Hệ Thống",
+      "annually": {
+        "billingperiod": "Giá theo yêu cầu (năm)",
+        "ctalabel": "Chọn Doanh Nghiệp Năm",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "Quản lý khách hàng và lịch trình",
+          "controlefinanceiro": "Kiểm soát tài chính",
+          "acessoviawebemobile": "Truy cập qua web và di động"
+        },
+        "features": {
+          "todososrecursosdopro": "Tất cả tính năng Pro",
+          "assinaturadigitaleautomacoescomplexas": "Chữ ký số và tự động hóa phức tạp",
+          "suportededicadoeslaempresarial": "Hỗ trợ chuyên dụng và SLA doanh nghiệp",
+          "customizacaodemodulosebranding": "Tùy chỉnh mô-đun và thương hiệu"
+        }
+      },
+      "monthly": {
+        "billingperiod": "Giá theo yêu cầu (tháng)",
+        "ctalabel": "Chọn Doanh Nghiệp Tháng",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "Quản lý khách hàng và lịch trình",
+          "controlefinanceiro": "Kiểm soát tài chính",
+          "acessoviawebemobile": "Truy cập qua web và di động"
+        },
+        "features": {
+          "todososrecursosdopro": "Tất cả tính năng Pro",
+          "assinaturadigitaleautomacoescomplexas": "Chữ ký số và tự động hóa phức tạp",
+          "suportededicadoeslaempresarial": "Hỗ trợ chuyên dụng và SLA doanh nghiệp",
+          "customizacaodemodulosebranding": "Tùy chỉnh mô-đun và thương hiệu"
+        }
+      }
+    }
+  },
+  "title": "Các gói linh hoạt thích ứng<br />với quy mô và nhu cầu kinh doanh của bạn.",
+  "description": "Chọn gói hoàn hảo cho nhu cầu của bạn. Luôn linh hoạt để phát triển"
+}

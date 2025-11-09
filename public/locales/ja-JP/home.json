@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "title": "ビジネスのためのスマート管理",
+    "highlightName": "Flux",
+    "description": "オンライン予約、スマートな組織化、プロセスを最適化するツールを提供する当社の包括的管理システムで、ビジネスを完全にコントロールしましょう。顧客を効率的に管理し、ロイヤルティを高め、運用上の失敗を減らし、スマートな戦略で売上を伸ばします。ワークフローを変革し、あなたのビジネスにふさわしい成功を達成しましょう！"
+  },
+  "helpyou": {
+    "online_scheduling": "オンライン予約",
+    "online_scheduling_description": "Fluxoは、強力なオンライン予約機能を備えたエレガントで直感的なプラットフォームです。美容院のすべての予約を、予約から支払いまで、POSサポート、安全な決済、モバイルアプリを備えた一元的な場所で簡単に管理できます。",
+    "inventory_control": "在庫管理",
+    "inventory_control_description": "Fluxoで在庫を常に管理しましょう。製品を追跡し、定期的な購入を記録し、スマートアラートとリアルタイムレポートで在庫切れを回避します。",
+    "team_management": "効率的なチーム管理",
+    "team_management_description": "チームを簡単に組織化。Fluxoは、完全なダッシュボード、時間管理、最適化されたスケジューリング、自動通知を提供し、全員が常に連携し生産的であることを保証します。",
+    "humanized_support": "本当に人間らしいサポート",
+    "humanized_support_description": "私たちのチームは常にサポートの準備ができています。自動返信や冷たい対応ではなく、本当の、迅速で、親身なサポートをご利用ください。",
+    "insights_analytics": "インサイトと分析",
+    "insights_analytics_description": "Fluxoのダッシュボードは、意思決定を支援し、チームのパフォーマンスを向上させ、ビジネスをコントロールするための詳細なレポートと戦略的メトリクスを提供します。",
+    "effortless_marketing": " effortlessマーケティング",
+    "effortless_marketing_description": "Fluxoの統合マーケティングツールでブランドを強化し、顧客を維持しましょう。キャンペーンを自動化し、パーソナライズされたリマインダーを送信し、顧客基盤を簡単に拡大します。",
+    "what_flux_helps_you": "Flux がどのように<0/>お手伝いするか？"
+  },
+  "elevateMarketing": {
+    "title": "マーケティングを<0/>次のレベルに引き上げましょう",
+    "whatsapp_marketing": "WhatsAppマーケティング",
+    "whatsapp_marketing_description": "WhatsApp通信機能を使用して顧客とのインタラクションを強化します。効果的に顧客とつながり、ロイヤルティを促進します。",
+    "personalized_messages": "パーソナライズされたメッセージ",
+    "personalized_messages_description": "WhatsApp通信機能を使用して顧客とのインタラクションを強化します。効果的に顧客とつながり、ロイヤルティを促進します。",
+    "customer_management": "顧客管理",
+    "customer_management_description": "WhatsApp通信機能を使用して顧客とのインタラクションを強化します。効果的に顧客とつながり、ロイヤルティを促進します。"
+  },
+  "homeForDesigner": {
+    "overline": "ビジネス管理のための最も完全なシステム",
+    "title": "さまざまな分野の専門家に採用されている、クライアント、予約、業務を自信を持って管理する単一ソリューション。",
+    "description": "12か国で利用可能。クライアントによる予約。Fluxは、売上を増加させ、業務を最適化するためのすべての必須ツールを提供するビジネスソフトウェアです。"
+  },
+  "pricingPlans": {
+    "overline": "料金プラン",
+    "title": "あなたのビジネスに<br />合った適切なプラン",
+    "description": "ニーズに合った完璧なプランをお選びください。成長に合わせて常に柔軟",
+    "questions": "まだ質問がありますか？",
+    "advice": "正確なアドバイスを受けるために、あなたのケースを説明してください。",
+    "contact": "お問い合わせ",
+    "monthly": "月額",
+    "yearly": "年額",
+    "plusApplicableTaxes": "適用税金別",
+    "savePercent": "{{percent}}%節約"
+  },
+  "homeAdvertisement": {
+    "getstarted": "始める"
+  }
+}

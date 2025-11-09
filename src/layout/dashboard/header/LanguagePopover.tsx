@@ -8,11 +8,12 @@ import Image from '@/components/image';
 import MenuPopover from '@/components/menu-popover';
 import { IconButtonAnimate } from '@/components/animate';
 import type { ThemeLangs } from '@/components/settings/types';
+import { allLangsArray } from '@/locales/config-lang';
 
 // ----------------------------------------------------------------------
 
 export default function LanguagePopover() {
-  const { allLangs, currentLang, onChangeLang } = useLocales();
+  const { currentLang, onChangeLang } = useLocales();
 
   const [openPopover, setOpenPopover] = useState<HTMLElement | null>(null);
 
@@ -44,9 +45,19 @@ export default function LanguagePopover() {
         <Image disabledEffect src={currentLang.icon} alt={currentLang.label} />
       </IconButtonAnimate>
 
-      <MenuPopover open={openPopover} onClose={handleClosePopover} sx={{ width: 180 }}>
+      <MenuPopover
+        open={openPopover}
+        onClose={handleClosePopover}
+        sx={{
+          width: 180,
+          top: {
+            xs: '56px !important',
+            md: '80px !important',
+          },
+        }}
+      >
         <Stack spacing={0.75}>
-          {allLangs.map((option) => (
+          {allLangsArray.map((option) => (
             <MenuItem
               key={option.value}
               selected={option.value === currentLang.value}

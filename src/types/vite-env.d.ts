@@ -1,4 +1,4 @@
-/// <reference types="vite/client" />
+/// <reference types="./vite-env-override.d.ts" />
 
 interface ImportMetaEnv {
   readonly VITE_API_URL: string;

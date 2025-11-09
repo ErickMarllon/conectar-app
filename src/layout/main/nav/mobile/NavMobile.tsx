@@ -52,10 +52,12 @@ export default function NavMobile({ isOffset, data }: NavProps) {
       <Drawer
         open={open}
         onClose={handleClose}
-        PaperProps={{
-          sx: {
-            pb: 5,
-            width: NAV.W_BASE,
+        slotProps={{
+          paper: {
+            sx: {
+              pb: 5,
+              width: NAV.W_BASE,
+            },
           },
         }}
       >

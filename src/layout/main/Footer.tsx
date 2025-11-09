@@ -40,35 +40,7 @@ const LINKS = [
 // ----------------------------------------------------------------------
 
 export default function Footer() {
-  const { pathname } = useLocation();
-
-  const isHome = pathname === '/';
-
-  const simpleFooter = (
-    <Box
-      component="footer"
-      sx={{
-        py: 5,
-        textAlign: 'center',
-        position: 'relative',
-        bgcolor: 'background.default',
-      }}
-    >
-      <Container>
-        <Logo sx={{ mb: 1, mx: 'auto' }} />
-
-        <Typography variant="caption" component="div">
-          © All rights reserved
-          <br /> made by &nbsp;
-          <Link href="https://minimals.cc/" target="_blank" rel="noopener">
-            minimals.cc
-          </Link>
-        </Typography>
-      </Container>
-    </Box>
-  );
-
-  const mainFooter = (
+  return (
     <Box
       component="footer"
       sx={{
@@ -119,36 +91,35 @@ export default function Footer() {
             </Stack>
           </Grid>
 
-          <Grid size={{ xs: 12, md: 7 }}>
-            <Stack
-              spacing={5}
-              justifyContent="space-between"
-              direction={{ xs: 'column', md: 'row' }}
-            >
-              {LINKS.map((list) => (
-                <Stack
-                  key={list.headline}
-                  spacing={2}
-                  alignItems={{ xs: 'center', md: 'flex-start' }}
-                >
-                  <Typography component="div" variant="overline">
-                    {list.headline}
-                  </Typography>
+          <Grid
+            sx={{
+              display: 'grid',
+              gridTemplate: 'repeat(3,1fr)',
+            }}
+          >
+            {LINKS.map((list) => (
+              <Stack
+                key={list.headline}
+                spacing={2}
+                alignItems={{ xs: 'center', md: 'flex-start' }}
+              >
+                <Typography component="div" variant="overline">
+                  {list.headline}
+                </Typography>
 
-                  {list.children.map((link) => (
-                    <Link
-                      key={link.name}
-                      component={RouterLink}
-                      to={link.href}
-                      color="inherit"
-                      variant="body2"
-                    >
-                      {link.name}
-                    </Link>
-                  ))}
-                </Stack>
-              ))}
-            </Stack>
+                {list.children.map((link) => (
+                  <Link
+                    key={link.name}
+                    component={RouterLink}
+                    to={link.href}
+                    color="inherit"
+                    variant="body2"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </Stack>
+            ))}
           </Grid>
         </Grid>
 
@@ -166,6 +137,4 @@ export default function Footer() {
       </Container>
     </Box>
   );
-
-  return isHome ? simpleFooter : mainFooter;
 }

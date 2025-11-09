@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "title": "Gestão Inteligente para o Seu Negócio",
+    "highlightName": "Flux",
+    "description": "Assuma o controlo total do seu negócio com o nosso sistema completo de gestão, que oferece agendamento online, organização inteligente e ferramentas para optimizar processos. Gerencie clientes com eficiência, aumente a fidelização, reduza falhas operacionais e impulsione as suas vendas com estratégias inteligentes. Transforme o seu fluxo de trabalho e alcance o sucesso que o seu negócio merece!"
+  },
+  "helpyou": {
+    "online_scheduling": "Agendamento online",
+    "online_scheduling_description": "O Fluxo é uma plataforma elegante e intuitiva com recursos poderosos de agendamento online. Gerencie com facilidade todas as reservas do seu salão de beleza — desde o agendamento até ao pagamento — num só local, com suporte a ponto de venda, pagamentos seguros e aplicações móveis.",
+    "inventory_control": "Controlo de stock",
+    "inventory_control_description": "Mantenha o seu stock sempre sob controlo com o Fluxo. Acompanhe produtos, registre compras recorrentes e evite ruturas com alertas inteligentes e relatórios em tempo real.",
+    "team_management": "Gestão eficiente de equipas",
+    "team_management_description": "Organize a sua equipa com praticidade. O Fluxo oferece dashboards completos, controlo de horários, agendamento optimizado e notificações automáticas para garantir que todos estejam sempre alinhados e produtivos.",
+    "humanized_support": "Suporte humanizado, a sério",
+    "humanized_support_description": "A nossa equipa está sempre pronta para ajudar. Conte com um suporte real, rápido e atencioso — nada de respostas automáticas ou atendimentos frios.",
+    "insights_analytics": "Insights e análises",
+    "insights_analytics_description": "O painel do Fluxo fornece relatórios detalhados e métricas estratégicas que ajudam na tomada de decisões, impulsionam o desempenho da equipa e mantêm-no no controlo do negócio.",
+    "effortless_marketing": "Marketing sem esforço",
+    "effortless_marketing_description": "Fortaleça a sua marca e fidelize clientes com as ferramentas de marketing integradas do Fluxo. Automatize campanhas, envie lembretes personalizados e aumente a sua base de clientes com facilidade.",
+    "what_flux_helps_you": "Como o Flux<0/>ajuda você?"
+  },
+  "elevateMarketing": {
+    "title": "Eleve o seu marketing<0/>ao próximo nível",
+    "whatsapp_marketing": "Marketing WhatsApp",
+    "whatsapp_marketing_description": "Melhore a interação com o cliente usando os nossos recursos de comunicação via WhatsApp. Conecte-se de forma eficaz com os clientes para impulsionar a fidelização.",
+    "personalized_messages": "Mensagens personalizadas",
+    "personalized_messages_description": "Melhore a interação com o cliente usando os nossos recursos de comunicação via WhatsApp. Conecte-se de forma eficaz com os clientes para impulsionar a fidelização.",
+    "customer_management": "Gestão de clientes",
+    "customer_management_description": "Melhore a interação com o cliente usando os nossos recursos de comunicação via WhatsApp. Conecte-se de forma eficaz com os clientes para impulsionar a fidelização."
+  },
+  "homeForDesigner": {
+    "overline": "O sistema mais completo para gestão do seu negócio",
+    "title": "Uma solução única para gerir os seus clientes, agendamentos e operações com confiança, adotada por profissionais de diferentes segmentos.",
+    "description": "Disponível em 12 países. Agendamentos feitos pelos clientes. O Flux é um software para negócios que oferece todas as ferramentas essenciais para aumentar as suas vendas e otimizar a sua operação."
+  },
+  "pricingPlans": {
+    "overline": "planos de preços",
+    "title": "O plano certo para<br />o seu negócio",
+    "description": "Escolha o plano perfeito para as suas necessidades. Sempre flexível para crescer",
+    "questions": "Ainda tem dúvidas?",
+    "advice": "Descreva o seu caso para receber o aconselhamento mais preciso.",
+    "contact": "Contacte-nos",
+    "monthly": "Mensal",
+    "yearly": "Anual",
+    "plusApplicableTaxes": "Mais impostos aplicáveis",
+    "savePercent": "Poupe {{percent}}%"
+  },
+  "homeAdvertisement": {
+    "getstarted": "Começar agora"
+  }
+}

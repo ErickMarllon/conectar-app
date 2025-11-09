@@ -12,8 +12,6 @@ import NavVertical from './nav/NavVertical';
 import { PATH_AUTH } from '@/routes/paths';
 import AuthGuard from '@/guard/AuthGuard';
 
-//
-
 export default function DashboardLayout() {
   const { themeLayout } = useThemesStore();
   const { isAuthenticated } = useAuthStore();

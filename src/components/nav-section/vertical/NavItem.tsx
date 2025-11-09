@@ -3,7 +3,6 @@ import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Box, Tooltip, Link, ListItemText } from '@mui/material';
 // locales
-import useLocales from '@/hooks/useLocales';
 // auth
 import RoleBasedGuard from '@/auth/RoleBasedGuard';
 //
@@ -11,6 +10,7 @@ import Iconify from '../../iconify';
 //
 import type { NavItemProps } from '../types';
 import { StyledItem, StyledIcon, StyledDotIcon } from './styles';
+import { useTranslation } from 'react-i18next';
 
 // ----------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ export default function NavItem({
   isExternalLink,
   ...other
 }: NavItemProps) {
-  const { translate } = useLocales();
+  const { t } = useTranslation('nav');
 
   const { title, path, icon, info, children, disabled, caption, roles } = item;
 
@@ -39,11 +39,11 @@ export default function NavItem({
       )}
 
       <ListItemText
-        primary={`${translate(title)}`}
+        primary={`${t(title)}`}
         secondary={
           caption && (
-            <Tooltip title={`${translate(caption)}`} placement="top-start">
-              <span>{`${translate(caption)}`}</span>
+            <Tooltip title={`${t(caption)}`} placement="top-start">
+              <span>{`${t(caption)}`}</span>
             </Tooltip>
           )
         }

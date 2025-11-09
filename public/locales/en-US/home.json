@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "title": "Smart Management for Your Business",
+    "highlightName": "Flux",
+    "description": "Take full control of your business with our complete management system, which offers online scheduling, smart organization and tools to optimize processes. Manage customers efficiently, increase loyalty, reduce operational failures and boost your sales with smart strategies. Transform your workflow and achieve the success your business deserves!"
+  },
+  "helpyou": {
+    "online_scheduling": "Online scheduling",
+    "online_scheduling_description": "Fluxo is an elegant and intuitive platform with powerful online scheduling features. Easily manage all your beauty salon bookings — from scheduling to payment — in one place, with point of sale support, secure payments, and mobile apps.",
+    "inventory_control": "Inventory control",
+    "inventory_control_description": "Keep your inventory always under control with Fluxo. Track products, record recurring purchases and avoid stockouts with smart alerts and real-time reports.",
+    "team_management": "Efficient team management",
+    "team_management_description": "Organize your team with ease. Fluxo offers complete dashboards, time control, optimized scheduling and automatic notifications to ensure everyone is always aligned and productive.",
+    "humanized_support": "Humanized support, for real",
+    "humanized_support_description": "Our team is always ready to help. Count on real, fast and attentive support — no automated responses or cold service.",
+    "insights_analytics": "Insights and analytics",
+    "insights_analytics_description": "The Fluxo dashboard provides detailed reports and strategic metrics that help in decision making, boost team performance and keep you in control of the business.",
+    "effortless_marketing": "Effortless marketing",
+    "effortless_marketing_description": "Strengthen your brand and retain customers with Fluxo's integrated marketing tools. Automate campaigns, send personalized reminders and grow your customer base with ease.",
+    "what_flux_helps_you": "What Flux<0/>helps you?"
+  },
+  "elevateMarketing": {
+    "title": "Elevate your marketing<0/>to the next level",
+    "whatsapp_marketing": "WhatsApp Marketing",
+    "whatsapp_marketing_description": "Enhance customer interaction using our WhatsApp communication features. Effectively connect with customers to drive loyalty.",
+    "personalized_messages": "Personalized messages",
+    "personalized_messages_description": "Enhance customer interaction using our WhatsApp communication features. Effectively connect with customers to drive loyalty.",
+    "customer_management": "Customer management",
+    "customer_management_description": "Enhance customer interaction using our WhatsApp communication features. Effectively connect with customers to drive loyalty."
+  },
+  "homeForDesigner": {
+    "overline": "The most complete system for your business management",
+    "title": "A single solution to manage your clients, appointments and operations with confidence, adopted by professionals from different segments.",
+    "description": "Available in 12 countries. Appointments made by clients. Flux is business software that provides all the essential tools to increase your sales and optimize your operation."
+  },
+  "pricingPlans": {
+    "overline": "pricing plans",
+    "title": "The right plan for<br />your business",
+    "description": "Choose the perfect plan for your needs. Always flexible to grow",
+    "questions": "Still have questions?",
+    "advice": "Please describe your case to receive the most accurate advice.",
+    "contact": "Contact us",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "plusApplicableTaxes": "Plus applicable taxes",
+    "savePercent": "Save {{percent}}%"
+  },
+  "homeAdvertisement": {
+    "getstarted": "Get started"
+  }
+}

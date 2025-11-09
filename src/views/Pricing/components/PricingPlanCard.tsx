@@ -1,34 +1,45 @@
-// @mui
-import { Card, Button, Typography, Box, Stack, type CardProps } from '@mui/material';
-// components
+import { Card, Button, Typography, Box, Stack, type CardProps, Divider } from '@mui/material';
 import Label from '@/components/label';
 import Iconify from '@/components/iconify';
-// assets
 import { PlanFreeIcon, PlanStarterIcon, PlanPremiumIcon } from '@/assets/icons';
+import type { IPlan } from '@/shared/interfaces/IPlan';
+import { useCurrencyConverter } from '@/hooks/ useCurrencyConverter';
+import { useTranslation } from 'react-i18next';
+import { allLangs } from '@/locales/config-lang';
+import useLocales from '@/hooks/useLocales';
 
 // ----------------------------------------------------------------------
 
 interface Props extends CardProps {
-  card: {
-    subscription: string;
-    price: number;
-    caption: string;
-    labelAction: string;
-    lists: {
-      text: string;
-      isAvailable: boolean;
-    }[];
-  };
+  card: IPlan;
   index: number;
 }
 
 export default function PricingPlanCard({ card, index, sx, ...other }: Props) {
-  const { subscription, price, caption, lists, labelAction } = card;
+  const { convert } = useCurrencyConverter();
+  const { t } = useTranslation();
+  const { currentLang } = useLocales();
+
+  const { tier, interval, features, details } = card;
+  function cleanString(str?: string): string {
+    return str
+      ? str
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .replace(/[^a-zA-Z0-9]/g, '')
+          .toLowerCase()
+      : '';
+  }
 
   return (
     <Card
       sx={{
         p: 5,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        height: '100%',
+
         boxShadow: (theme) => theme.customShadows.z24,
         ...((index === 0 || index === 2) && {
           boxShadow: 'none',
@@ -44,66 +55,106 @@ export default function PricingPlanCard({ card, index, sx, ...other }: Props) {
           POPULAR
         </Label>
       )}
+      <Stack>
+        <Typography variant="overline" sx={{ color: 'text.secondary' }}>
+          {t(`pricingPlans:${tier}`)}
+        </Typography>
 
-      <Typography variant="overline" sx={{ color: 'text.secondary' }}>
-        {subscription}
-      </Typography>
+        <Stack spacing={1} direction="row" sx={{ my: 2 }}>
+          {(index === 1 || index === 2) && (
+            <Typography variant="h5">{currentLang.currencySymbol}</Typography>
+          )}
 
-      <Stack spacing={1} direction="row" sx={{ my: 2 }}>
-        {(index === 1 || index === 2) && <Typography variant="h5">$</Typography>}
-
-        <Typography variant="h2">{price === 0 ? 'Free' : price}</Typography>
-
-        {(index === 1 || index === 2) && (
-          <Typography component="span" sx={{ alignSelf: 'center', color: 'text.secondary' }}>
-            /mo
+          <Typography variant="h2">
+            {!details?.price || details?.price === 0
+              ? 'Free'
+              : convert(details.price, allLangs['pt-BR'].currency, currentLang.currency)}
           </Typography>
-        )}
+
+          {(index === 1 || index === 2) && (
+            <Typography component="span" sx={{ alignSelf: 'center', color: 'text.secondary' }}>
+              {t(`pricingPlans:${interval?.toLowerCase()}`)}
+            </Typography>
+          )}
+        </Stack>
+
+        <Typography
+          variant="caption"
+          sx={{
+            color: 'primary.main',
+            textTransform: 'capitalize',
+          }}
+        >
+          {t(`pricingPlans:plans.${tier.toLowerCase()}.${interval.toLowerCase()}.billingperiod`)}
+        </Typography>
+
+        <Box sx={{ width: 80, height: 80, mt: 5 }}>
+          {(tier === 'Free' && <PlanFreeIcon />) || (tier === 'Pro' && <PlanStarterIcon />) || (
+            <PlanPremiumIcon />
+          )}
+        </Box>
+
+        <Stack component="ul" spacing={2} sx={{ p: 0, my: 5 }}>
+          {details?.included_features?.map((option) => (
+            <Stack key={option} component="li" direction="row" alignItems="center" spacing={1}>
+              <Iconify icon="eva:checkmark-fill" width={16} />
+              <Typography variant="body2" component="p">
+                {t(
+                  `pricingPlans:plans.${tier.toLowerCase()}.${interval.toLowerCase()}.includedfeatures.${cleanString(option.toLowerCase())}`,
+                )}
+              </Typography>
+            </Stack>
+          ))}
+
+          <Divider sx={{ borderStyle: 'dashed' }} />
+
+          {features?.map((option, optionIndex) => {
+            const disabled = !option.is_available;
+
+            return (
+              <Stack
+                spacing={1}
+                direction="row"
+                alignItems="center"
+                sx={{
+                  ...(disabled && { color: 'text.disabled' }),
+                }}
+                key={`${optionIndex}-${option.feature_text}`}
+              >
+                {option.feature_text && (
+                  <Iconify icon={disabled ? 'eva:close-fill' : 'eva:checkmark-fill'} width={16} />
+                )}
+                <Typography variant="body2" component="p">
+                  {t(
+                    `pricingPlans:plans.${tier.toLowerCase()}.${interval.toLowerCase()}.features.${cleanString(option.feature_text.toLowerCase())}`,
+                  )}
+                </Typography>
+              </Stack>
+            );
+          })}
+        </Stack>
       </Stack>
 
-      <Typography
-        variant="caption"
+      <Stack
         sx={{
-          color: 'primary.main',
-          textTransform: 'capitalize',
+          paddingTop: 0,
+          paddingBottom: 6,
+          position: 'relative',
         }}
       >
-        {caption}
-      </Typography>
-
-      <Box sx={{ width: 80, height: 80, mt: 5 }}>
-        {(subscription === 'basic' && <PlanFreeIcon />) ||
-          (subscription === 'starter' && <PlanStarterIcon />) || <PlanPremiumIcon />}
-      </Box>
-
-      <Stack component="ul" spacing={2} sx={{ p: 0, my: 5 }}>
-        {lists.map((item) => (
-          <Stack
-            key={item.text}
-            component="li"
-            direction="row"
-            alignItems="center"
-            spacing={1}
-            sx={{
-              typography: 'body2',
-              color: item.isAvailable ? 'text.primary' : 'text.disabled',
-            }}
-          >
-            <Iconify
-              icon={item.isAvailable ? 'eva:checkmark-fill' : 'eva:close-fill'}
-              width={16}
-              sx={{
-                color: item.isAvailable ? 'primary.main' : 'inherit',
-              }}
-            />
-            <Typography variant="body2">{item.text}</Typography>
-          </Stack>
-        ))}
+        <Button
+          fullWidth
+          size="large"
+          variant="contained"
+          sx={{
+            position: 'absolute',
+          }}
+        >
+          {t(
+            `actions:${!details?.price || details?.price === 0 ? 'startFreeTrial' : 'purchasenow'}`,
+          )}
+        </Button>
       </Stack>
-
-      <Button fullWidth size="large" variant="contained" disabled={index === 0}>
-        {labelAction}
-      </Button>
     </Card>
   );
 }

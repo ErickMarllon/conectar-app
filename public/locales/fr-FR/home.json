@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "title": "Gestion Intelligente pour Votre Entreprise",
+    "highlightName": "Flux",
+    "description": "Prenez le contrôle total de votre entreprise avec notre système de gestion complet, qui offre la planification en ligne, l'organisation intelligente et des outils pour optimiser les processus. Gérez les clients efficacement, augmentez la fidélisation, réduisez les défaillances opérationnelles et boostez vos ventes avec des stratégies intelligentes. Transformez votre flux de travail et atteignez le succès que votre entreprise mérite !"
+  },
+  "helpyou": {
+    "online_scheduling": "Planification en ligne",
+    "online_scheduling_description": "Fluxo est une plateforme élégante et intuitive avec des fonctionnalités de planification en ligne puissantes. Gérez facilement toutes les réservations de votre salon de beauté — de la planification au paiement — en un seul endroit, avec support de point de vente, paiements sécurisés et applications mobiles.",
+    "inventory_control": "Contrôle des stocks",
+    "inventory_control_description": "Gardez toujours votre stock sous contrôle avec Fluxo. Suivez les produits, enregistrez les achats récurrents et évitez les ruptures avec des alertes intelligentes et des rapports en temps réel.",
+    "team_management": "Gestion d'équipe efficace",
+    "team_management_description": "Organisez votre équipe avec facilité. Fluxo offre des tableaux de bord complets, le contrôle des horaires, une planification optimisée et des notifications automatiques pour garantir que tout le monde soit toujours aligné et productif.",
+    "humanized_support": "Support humanisé, pour de vrai",
+    "humanized_support_description": "Notre équipe est toujours prête à aider. Comptez sur un support réel, rapide et attentif — pas de réponses automatiques ou de services froids.",
+    "insights_analytics": "Informations et analyses",
+    "insights_analytics_description": "Le tableau de bord Fluxo fournit des rapports détaillés et des métriques stratégiques qui aident à la prise de décision, améliorent les performances de l'équipe et vous gardent en contrôle de l'entreprise.",
+    "effortless_marketing": "Marketing sans effort",
+    "effortless_marketing_description": "Renforcez votre marque et fidélisez les clients avec les outils de marketing intégrés de Fluxo. Automatisez les campagnes, envoyez des rappels personnalisés et développez votre base de clients en toute simplicité.",
+    "what_flux_helps_you": "Comment Flux<0/>vous aide ?"
+  },
+  "elevateMarketing": {
+    "title": "Élevez votre marketing<0/>au niveau supérieur",
+    "whatsapp_marketing": "Marketing WhatsApp",
+    "whatsapp_marketing_description": "Améliorez l'interaction avec le client en utilisant nos fonctionnalités de communication via WhatsApp. Connectez-vous efficacement avec les clients pour renforcer la fidélisation.",
+    "personalized_messages": "Messages personnalisés",
+    "personalized_messages_description": "Améliorez l'interaction avec le client en utilisant nos fonctionnalités de communication via WhatsApp. Connectez-vous efficacement avec les clients pour renforcer la fidélisation.",
+    "customer_management": "Gestion de la clientèle",
+    "customer_management_description": "Améliorez l'interaction avec le client en utilisant nos fonctionnalités de communication via WhatsApp. Connectez-vous efficacement avec les clients pour renforcer la fidélisation."
+  },
+  "homeForDesigner": {
+    "overline": "Le système le plus complet pour la gestion de votre entreprise",
+    "title": "Une solution unique pour gérer vos clients, rendez-vous et opérations en toute confiance, adoptée par des professionnels de différents secteurs.",
+    "description": "Disponible dans 12 pays. Rendez-vous pris par les clients. Flux est un logiciel professionnel qui fournit tous les outils essentiels pour augmenter vos ventes et optimiser votre fonctionnement."
+  },
+  "pricingPlans": {
+    "overline": "plans tarifaires",
+    "title": "Le bon plan pour<br />votre entreprise",
+    "description": "Choisissez le plan parfait pour vos besoins. Toujours flexible pour grandir",
+    "questions": "Encore des questions ?",
+    "advice": "Veuillez décrire votre cas pour recevoir les conseils les plus précis.",
+    "contact": "Contactez-nous",
+    "monthly": "Mensuel",
+    "yearly": "Annuel",
+    "plusApplicableTaxes": "Plus taxes applicables",
+    "savePercent": "Économisez {{percent}}%"
+  },
+  "homeAdvertisement": {
+    "getstarted": "Commencer"
+  }
+}

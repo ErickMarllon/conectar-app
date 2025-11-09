@@ -1,0 +1,154 @@
+{
+  "free": "免费",
+  "pro": "专业版",
+  "enterprise": "企业版",
+  "annually": "年付",
+  "monthly": "月付",
+  "billingPeriod": "计费周期",
+  "discountedAnnualPlan": "年度优惠计划",
+  "advancedFeaturesAnnual": "年度计划 - 高级功能",
+  "contactForQuote": "联系询价（年度）",
+  "choosePlan": "选择计划",
+  "perMonth": "每月",
+  "perYear": "每年",
+  "users": "用户",
+  "products": "产品",
+  "services": "服务",
+  "unlimited": "无限制",
+  "includedFeatures": "包含功能",
+  "clientManagement": "客户与日程管理",
+  "financialControl": "财务管理",
+  "webMobileAccess": "网页和移动端访问",
+  "allProFeatures": "包含专业版所有功能",
+  "digitalSignatures": "数字签名和复杂自动化",
+  "dedicatedSupport": "专属支持和SLA企业服务",
+  "customization": "模块定制和品牌化",
+  "features": {
+    "clientManagement": "客户与预约管理",
+    "financialControl": "全面财务管理",
+    "customReports": "个性化报告和图表",
+    "messageAutomation": "消息和营销活动自动化",
+    "whatsappIntegration": "WhatsApp Business集成",
+    "prioritySupport": "优先技术支持"
+  },
+  "yearly": "年付",
+  "plusapplicabletaxes": "加上适用税费",
+  "savepercent": "节省{{percent}}%",
+  "plans": {
+    "free": {
+      "name": "免费",
+      "tier": "免费版",
+      "description": "系统所有者",
+      "annually": {
+        "billingperiod": "年度折扣计划",
+        "ctalabel": "选择免费年度版",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "客户与日程管理",
+          "controlefinanceiro": "财务管理",
+          "acessoviawebemobile": "网页和移动端访问"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "客户与预约管理",
+          "controlefinanceirocompleto": "全面财务管理",
+          "relatoriosegraficospersonalizados": "个性化报告和图表",
+          "automacaodemensagensecampanhas": "消息和营销活动自动化",
+          "integracaocomwhatsappbusiness": "WhatsApp Business集成",
+          "suportetecnicoprioritario": "优先技术支持"
+        }
+      },
+      "monthly": {
+        "billingperiod": "月度计划 - 无折扣",
+        "ctalabel": "选择免费月度版",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "客户与日程管理",
+          "controlefinanceiro": "财务管理",
+          "acessoviawebemobile": "网页和移动端访问"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "客户与预约管理",
+          "controlefinanceirocompleto": "全面财务管理",
+          "relatoriosegraficospersonalizados": "个性化报告和图表",
+          "automacaodemensagensecampanhas": "消息和营销活动自动化",
+          "integracaocomwhatsappbusiness": "WhatsApp Business集成",
+          "suportetecnicoprioritario": "优先技术支持"
+        }
+      }
+    },
+    "pro": {
+      "name": "专业版",
+      "tier": "专业版",
+      "description": "系统管理员",
+      "annually": {
+        "billingperiod": "年度计划 - 高级功能",
+        "ctalabel": "选择专业年度版",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "客户与日程管理",
+          "controlefinanceiro": "财务管理",
+          "acessoviawebemobile": "网页和移动端访问"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "客户与预约管理",
+          "controlefinanceirocompleto": "全面财务管理",
+          "integracaocomwhatsappbusiness": "WhatsApp Business集成",
+          "relatoriosegraficospersonalizados": "个性化报告和图表",
+          "suportetecnicoprioritario": "优先技术支持",
+          "automacaodemensagensecampanhas": "消息和营销活动自动化"
+        }
+      },
+      "monthly": {
+        "billingperiod": "月度计划 - 高级功能",
+        "ctalabel": "选择专业月度版",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "客户与日程管理",
+          "controlefinanceiro": "财务管理",
+          "acessoviawebemobile": "网页和移动端访问"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "客户与预约管理",
+          "controlefinanceirocompleto": "全面财务管理",
+          "integracaocomwhatsappbusiness": "WhatsApp Business集成",
+          "relatoriosegraficospersonalizados": "个性化报告和图表",
+          "suportetecnicoprioritario": "优先技术支持",
+          "automacaodemensagensecampanhas": "消息和营销活动自动化"
+        }
+      }
+    },
+    "enterprise": {
+      "name": "企业版",
+      "tier": "企业版",
+      "description": "系统员工",
+      "annually": {
+        "billingperiod": "价格咨询（年度）",
+        "ctalabel": "选择企业年度版",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "客户与日程管理",
+          "controlefinanceiro": "财务管理",
+          "acessoviawebemobile": "网页和移动端访问"
+        },
+        "features": {
+          "todososrecursosdopro": "包含专业版所有功能",
+          "assinaturadigitaleautomacoescomplexas": "数字签名和复杂自动化",
+          "suportededicadoeslaempresarial": "专属支持和企业SLA",
+          "customizacaodemodulosebranding": "模块定制和品牌化"
+        }
+      },
+      "monthly": {
+        "billingperiod": "价格咨询（月度）",
+        "ctalabel": "选择企业月度版",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "客户与日程管理",
+          "controlefinanceiro": "财务管理",
+          "acessoviawebemobile": "网页和移动端访问"
+        },
+        "features": {
+          "todososrecursosdopro": "包含专业版所有功能",
+          "assinaturadigitaleautomacoescomplexas": "数字签名和复杂自动化",
+          "suportededicadoeslaempresarial": "专属支持和企业SLA",
+          "customizacaodemodulosebranding": "模块定制和品牌化"
+        }
+      }
+    }
+  },
+  "title": "灵活适应您企业<br />规模和需求的计划。",
+  "description": "选择适合您需求的完美计划。始终灵活成长"
+}

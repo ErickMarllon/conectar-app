@@ -1,0 +1,154 @@
+{
+  "free": "무료",
+  "pro": "프로",
+  "enterprise": "엔터프라이즈",
+  "annually": "연간",
+  "monthly": "월간",
+  "billingPeriod": "결제 주기",
+  "discountedAnnualPlan": "할인 연간 플랜",
+  "advancedFeaturesAnnual": "연간 플랜 – 고급 기능",
+  "contactForQuote": "견적 문의 (연간)",
+  "choosePlan": "플랜 선택",
+  "perMonth": "월",
+  "perYear": "년",
+  "users": "사용자",
+  "products": "제품",
+  "services": "서비스",
+  "unlimited": "무제한",
+  "includedFeatures": "포함된 기능",
+  "clientManagement": "고객 및 스케줄 관리",
+  "financialControl": "재무 관리",
+  "webMobileAccess": "웹 및 모바일 접근",
+  "allProFeatures": "모든 프로 기능 포함",
+  "digitalSignatures": "디지털 서명 및 복잡한 자동화",
+  "dedicatedSupport": "전담 지원 및 엔터프라이즈 SLA",
+  "customization": "모듈 사용자 지정 및 브랜딩",
+  "features": {
+    "clientManagement": "고객 관리 및 스케줄링",
+    "financialControl": "완전한 재무 관리",
+    "customReports": "맞춤형 보고서 및 차트",
+    "messageAutomation": "메시지 및 캠페인 자동화",
+    "whatsappIntegration": "WhatsApp Business 연동",
+    "prioritySupport": "우선 기술 지원"
+  },
+  "yearly": "연간",
+  "plusapplicabletaxes": "적용 가능한 세금 별도",
+  "savepercent": "{{percent}}% 절약",
+  "plans": {
+    "free": {
+      "name": "무료",
+      "tier": "무료판",
+      "description": "시스템 소유자",
+      "annually": {
+        "billingperiod": "할인 연간 플랜",
+        "ctalabel": "무료 연간판 선택",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "고객 및 스케줄 관리",
+          "controlefinanceiro": "재무 관리",
+          "acessoviawebemobile": "웹 및 모바일 접근"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "고객 관리 및 스케줄링",
+          "controlefinanceirocompleto": "완전한 재무 관리",
+          "relatoriosegraficospersonalizados": "맞춤형 보고서 및 차트",
+          "automacaodemensagensecampanhas": "메시지 및 캠페인 자동화",
+          "integracaocomwhatsappbusiness": "WhatsApp Business 연동",
+          "suportetecnicoprioritario": "우선 기술 지원"
+        }
+      },
+      "monthly": {
+        "billingperiod": "월간 플랜 - 할인 없음",
+        "ctalabel": "무료 월간판 선택",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "고객 및 스케줄 관리",
+          "controlefinanceiro": "재무 관리",
+          "acessoviawebemobile": "웹 및 모바일 접근"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "고객 관리 및 스케줄링",
+          "controlefinanceirocompleto": "완전한 재무 관리",
+          "relatoriosegraficospersonalizados": "맞춤형 보고서 및 차트",
+          "automacaodemensagensecampanhas": "메시지 및 캠페인 자동화",
+          "integracaocomwhatsappbusiness": "WhatsApp Business 연동",
+          "suportetecnicoprioritario": "우선 기술 지원"
+        }
+      }
+    },
+    "pro": {
+      "name": "프로",
+      "tier": "프로판",
+      "description": "시스템 관리자",
+      "annually": {
+        "billingperiod": "연간 플랜 - 고급 기능",
+        "ctalabel": "프로 연간판 선택",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "고객 및 스케줄 관리",
+          "controlefinanceiro": "재무 관리",
+          "acessoviawebemobile": "웹 및 모바일 접근"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "고객 관리 및 스케줄링",
+          "controlefinanceirocompleto": "완전한 재무 관리",
+          "integracaocomwhatsappbusiness": "WhatsApp Business 연동",
+          "relatoriosegraficospersonalizados": "맞춤형 보고서 및 차트",
+          "suportetecnicoprioritario": "우선 기술 지원",
+          "automacaodemensagensecampanhas": "메시지 및 캠페인 자동화"
+        }
+      },
+      "monthly": {
+        "billingperiod": "월간 플랜 - 고급 기능",
+        "ctalabel": "프로 월간판 선택",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "고객 및 스케줄 관리",
+          "controlefinanceiro": "재무 관리",
+          "acessoviawebemobile": "웹 및 모바일 접근"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "고객 관리 및 스케줄링",
+          "controlefinanceirocompleto": "완전한 재무 관리",
+          "integracaocomwhatsappbusiness": "WhatsApp Business 연동",
+          "relatoriosegraficospersonalizados": "맞춤형 보고서 및 차트",
+          "suportetecnicoprioritario": "우선 기술 지원",
+          "automacaodemensagensecampanhas": "메시지 및 캠페인 자동화"
+        }
+      }
+    },
+    "enterprise": {
+      "name": "엔터프라이즈",
+      "tier": "엔터프라이즈판",
+      "description": "시스템 직원",
+      "annually": {
+        "billingperiod": "견적 문의 (연간)",
+        "ctalabel": "엔터프라이즈 연간판 선택",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "고객 및 스케줄 관리",
+          "controlefinanceiro": "재무 관리",
+          "acessoviawebemobile": "웹 및 모바일 접근"
+        },
+        "features": {
+          "todososrecursosdopro": "프로 기능 모두 포함",
+          "assinaturadigitaleautomacoescomplexas": "디지털 서명 및 복잡한 자동화",
+          "suportededicadoeslaempresarial": "전담 지원 및 엔터프라이즈 SLA",
+          "customizacaodemodulosebranding": "모듈 사용자 지정 및 브랜딩"
+        }
+      },
+      "monthly": {
+        "billingperiod": "견적 문의 (월간)",
+        "ctalabel": "엔터프라이즈 월간판 선택",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "고객 및 스케줄 관리",
+          "controlefinanceiro": "재무 관리",
+          "acessoviawebemobile": "웹 및 모바일 접근"
+        },
+        "features": {
+          "todososrecursosdopro": "프로 기능 모두 포함",
+          "assinaturadigitaleautomacoescomplexas": "디지털 서명 및 복잡한 자동화",
+          "suportededicadoeslaempresarial": "전담 지원 및 엔터프라이즈 SLA",
+          "customizacaodemodulosebranding": "모듈 사용자 지정 및 브랜딩"
+        }
+      }
+    }
+  },
+  "title": "비즈니스 규모와 요구에 맞춰<br />조정되는 유연한 플랜.",
+  "description": "요구에 맞는 완벽한 플랜을 선택하세요. 항상 성장할 수 있는 유연성"
+}

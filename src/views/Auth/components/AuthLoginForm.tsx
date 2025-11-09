@@ -26,12 +26,6 @@ export default function AuthLoginForm() {
   const { mutate, error: submitError, isPending } = useAuthUser({ type: AuthActionType.SIGNIN });
   const { slug: tenant } = useParams<{ slug: string }>();
 
-  const url = '/auth/login';
-  console.log('🚀 ~ PATH_AUTH:', PATH_AUTH);
-  console.log(
-    '🚀 ~  Object.entries(PATH_AUTH).includes(originalConfig?.url):',
-    Object.values(PATH_AUTH).includes(url),
-  );
   const methods = useForm<FormValuesProps>({
     resolver: zodResolver(signInSchema),
     defaultValues: { tenant },

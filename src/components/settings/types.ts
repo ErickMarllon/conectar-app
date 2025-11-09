@@ -21,7 +21,7 @@ export type ThemeLayoutValue = 'vertical' | 'horizontal' | 'mini';
 export type ThemeColorPresetsValue = 'default' | 'cyan' | 'purple' | 'blue' | 'orange' | 'red';
 export type ThemeFontFamily = 'Public_Sans' | 'Inter' | 'DM_Sans' | 'Nunito_Sans' | 'Poppins';
 export type ThemeFontSize = number;
-export type ThemeLangs = 'en' | 'fr' | 'vn' | 'cn' | 'ar';
+export type ThemeLangs = string;
 
 export type SettingsBase = {
   themeMode: ThemeModeValue;

@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "title": "비즈니스를 위한 스마트 관리",
+    "highlightName": "Flux",
+    "description": "온라인 스케줄링, 스마트 조직 및 프로세스 최적화 도구를 제공하는 당사의 완전한 관리 시스템으로 비즈니스를 완전히 제어하세요. 고객을 효율적으로 관리하고, 충성도를 높이며, 운영 실패를 줄이고, 스마트 전략으로 판매를 촉진하세요. 워크플로를 변환하고 비즈니스가 누려야 할 성공을 달성하세요!"
+  },
+  "helpyou": {
+    "online_scheduling": "온라인 스케줄링",
+    "online_scheduling_description": "Fluxo는 강력한 온라인 스케줄링 기능을 갖춘 우아하고 직관적인 플랫폼입니다. 뷰티 살롱의 모든 예약을 스케줄링부터 결제까지 한 곳에서 쉽게 관리하세요. POS 지원, 안전한 결제 및 모바일 앱을 제공합니다.",
+    "inventory_control": "재고 관리",
+    "inventory_control_description": "Fluxo로 항상 재고를 통제하세요. 제품을 추적하고 반복 구매를 기록하며 스마트 알림과 실시간 보고서로 품절을 방지합니다.",
+    "team_management": "효율적인 팀 관리",
+    "team_management_description": "쉽게 팀을 조직하세요. Fluxo는 완전한 대시보드, 시간 관리, 최적화된 스케줄링 및 자동 알림을 제공하여 모든 구성원이 항상 정렬되고 생산적이도록 보장합니다.",
+    "humanized_support": "진정한 인간화된 지원",
+    "humanized_support_description": "저희 팀은 항상 도움을 드릴 준비가 되어 있습니다. 자동 응답이나 차가운 서비스가 아닌 진정하고 빠르며 세심한 지원을 믿으세요.",
+    "insights_analytics": "인사이트와 분석",
+    "insights_analytics_description": "Fluxo 대시보드는 의사 결정을 지원하고 팀 성과를 향상시키며 비즈니스를 통제할 수 있도록 상세한 보고서와 전략적 메트릭을 제공합니다.",
+    "effortless_marketing": "effortless 마케팅",
+    "effortless_marketing_description": "Fluxo의 통합 마케팅 도구로 브랜드를 강화하고 고객을 유지하세요. 캠페인을 자동화하고 맞춤형 알림을 보내며 고객 기반을 쉽게 확장하세요.",
+    "what_flux_helps_you": "Flux가 어떻게<0/>도움이 되나요?"
+  },
+  "elevateMarketing": {
+    "title": "마케팅을<0/>다음 단계로 높이세요",
+    "whatsapp_marketing": "WhatsApp 마케팅",
+    "whatsapp_marketing_description": "WhatsApp 통신 기능을 사용하여 고객 상호 작용을 강화하세요. 효과적으로 고객과 연결하여 충성도를 높이세요.",
+    "personalized_messages": "맞춤형 메시지",
+    "personalized_messages_description": "WhatsApp 통신 기능을 사용하여 고객 상호 작용을 강화하세요. 효과적으로 고객과 연결하여 충성도를 높이세요.",
+    "customer_management": "고객 관리",
+    "customer_management_description": "WhatsApp 통신 기능을 사용하여 고객 상호 작용을 강화하세요. 효과적으로 고객과 연결하여 충성도를 높이세요."
+  },
+  "homeForDesigner": {
+    "overline": "비즈니스 관리를 위한 가장 완벽한 시스템",
+    "title": "다른 분야의 전문가들이 채택한 고객, 약속 및 운영을 자신 있게 관리할 수 있는 단일 솔루션입니다.",
+    "description": "12개국에서 사용 가능. 고객이 직접 예약. Flux는 판매를 증가시키고 운영을 최적화하는 데 필요한 모든 필수 도구를 제공하는 비즈니스 소프트웨어입니다."
+  },
+  "pricingPlans": {
+    "overline": "가격計劃",
+    "title": "귀사에 딱 맞는<br />플랜",
+    "description": "필요에 맞는 완벽한 플랜을 선택하세요. 성장에 따라 항상 유연하게",
+    "questions": "아직 궁금한 점이 있으신가요?",
+    "advice": "가장 정확한 조언을 받으려면 귀하의 사례를 설명해 주세요.",
+    "contact": "문의하기",
+    "monthly": "월간",
+    "yearly": "연간",
+    "plusApplicableTaxes": "적용 가능한 세금 별도",
+    "savePercent": "{{percent}}% 절약"
+  },
+  "homeAdvertisement": {
+    "getstarted": "시작하기"
+  }
+}

@@ -1,15 +1,24 @@
-import { Box, useTheme } from '@mui/material';
-import HomeHero from './components/HomeHero';
-import HomeMinimal from './components/HomeMinimal';
-import HomeHugePackElements from './components/HomeHugePackElements';
-import HomeForDesigner from './components/HomeForDesigner';
-import HomeDarkMode from './components/HomeDarkMode';
-import HomeColorPresets from './components/HomeColorPresets';
-import HomeCleanInterfaces from './components/HomeCleanInterfaces';
-import HomePricingPlans from './components/HomePricingPlans';
-import HomeLookingFor from './components/HomeLookingFor';
-import HomeAdvertisement from './components/HomeAdvertisement';
+import { Box, styled, useTheme } from '@mui/material';
 import { m, useScroll, useSpring } from 'framer-motion';
+import ElevateMarketing from './components/ElevateMarketing';
+import GlobalReachSection from './components/GlobalReachSection';
+import HelpYou from './components/HelpYou';
+import HomeHero from './components/HomeHero';
+import HomePricingPlans from './components/HomePricingPlans';
+import HomeAdvertisement from './components/HomeAdvertisement';
+const StyledBg = styled('div')(() => ({
+  position: 'relative',
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    inset: 0,
+    backgroundImage: `url('/assets/background/overlay_4.jpg')`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: '50% 100%',
+    zIndex: 0,
+  },
+}));
 
 export function Home() {
   const theme = useTheme();
@@ -37,6 +46,7 @@ export function Home() {
       }}
     />
   );
+
   return (
     <Box>
       {progress}
@@ -48,15 +58,13 @@ export function Home() {
           bgcolor: 'background.default',
         }}
       >
-        <HomeMinimal />
-        <HomeHugePackElements />
-        <HomeForDesigner />
-        <HomeDarkMode />
-        <HomeColorPresets />
-        <HomeCleanInterfaces />
-        <HomePricingPlans />
-        <HomeLookingFor />
-        <HomeAdvertisement />
+        <HelpYou />
+        <ElevateMarketing />
+        <GlobalReachSection />
+        <StyledBg>
+          <HomePricingPlans />
+          <HomeAdvertisement />
+        </StyledBg>
       </Box>
     </Box>
   );

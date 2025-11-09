@@ -21,5 +21,7 @@ import 'react-quill/dist/quill.snow.css';
 import 'yet-another-react-lightbox/styles.css';
 import 'yet-another-react-lightbox/plugins/captions.css';
 import 'yet-another-react-lightbox/plugins/thumbnails.css';
+// import { reportWebVitals } from './reportWebVitals.ts';
 
 createRoot(document.getElementById('root')!).render(<App />);
+// reportWebVitals(console.info);

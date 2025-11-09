@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "title": "Intelligentes Management für Ihr Unternehmen",
+    "highlightName": "Flux",
+    "description": "Übernehmen Sie die vollständige Kontrolle über Ihr Unternehmen mit unserem umfassenden Managementsystem, das Online-Terminvereinbarung, intelligente Organisation und Tools zur Prozessoptimierung bietet. Verwalten Sie Kunden effizient, steigern Sie die Kundenbindung, reduzieren Sie Betriebsfehler und steigern Sie Ihren Umsatz mit intelligenten Strategien. Transformieren Sie Ihren Workflow und erreichen Sie den Erfolg, den Ihr Unternehmen verdient!"
+  },
+  "helpyou": {
+    "online_scheduling": "Online-Terminvereinbarung",
+    "online_scheduling_description": "Fluxo ist eine elegante und intuitive Plattform mit leistungsstarken Online-Terminvereinbarungsfunktionen. Verwalten Sie ganz einfach alle Buchungen Ihres Schönheitssalons – von der Terminvereinbarung bis zur Zahlung – an einem Ort, mit Unterstützung für Point-of-Sale, sichere Zahlungen und mobile Apps.",
+    "inventory_control": "Bestandskontrolle",
+    "inventory_control_description": "Behalten Sie Ihren Bestand mit Fluxo immer unter Kontrolle. Verfolgen Sie Produkte, erfassen Sie wiederkehrende Einkäufe und vermeiden Sie Engpässe mit intelligenten Warnungen und Echtzeit-Berichten.",
+    "team_management": "Effizientes Teammanagement",
+    "team_management_description": "Organisieren Sie Ihr Team mit Leichtigkeit. Fluxo bietet umfassende Dashboards, Zeiterfassung, optimierte Terminplanung und automatische Benachrichtigungen, um sicherzustellen, dass alle stets auf dem gleichen Stand und produktiv sind.",
+    "humanized_support": "Humanisierter Support, wirklich",
+    "humanized_support_description": "Unser Team ist immer bereit zu helfen. Profitieren Sie von echtem, schnellem und aufmerksamem Support – keine automatischen Antworten oder kalte Betreuung.",
+    "insights_analytics": "Einblicke und Analysen",
+    "insights_analytics_description": "Das Fluxo-Dashboard bietet detaillierte Berichte und strategische Metriken, die bei der Entscheidungsfindung helfen, die Teamleistung steigern und Ihnen die Kontrolle über Ihr Geschäft geben.",
+    "effortless_marketing": "Müheloses Marketing",
+    "effortless_marketing_description": "Stärken Sie Ihre Marke und binden Sie Kunden mit den integrierten Marketing-Tools von Fluxo. Automatisieren Sie Kampagnen, senden Sie personalisierte Erinnerungen und erweitern Sie Ihre Kundenbasis mit Leichtigkeit.",
+    "what_flux_helps_you": "Wie hilft Flux<0/>Ihnen?"
+  },
+  "elevateMarketing": {
+    "title": "Bringen Sie Ihr Marketing<0/>auf das nächste Level",
+    "whatsapp_marketing": "WhatsApp Marketing",
+    "whatsapp_marketing_description": "Verbessern Sie die Kundeninteraktion mit unseren WhatsApp-Kommunikationsfunktionen. Verbinden Sie sich effektiv mit Kunden, um die Kundenbindung zu steigern.",
+    "personalized_messages": "Personalisierte Nachrichten",
+    "personalized_messages_description": "Verbessern Sie die Kundeninteraktion mit unseren WhatsApp-Kommunikationsfunktionen. Verbinden Sie sich effektiv mit Kunden, um die Kundenbindung zu steigern.",
+    "customer_management": "Kundenmanagement",
+    "customer_management_description": "Verbessern Sie die Kundeninteraktion mit unseren WhatsApp-Kommunikationsfunktionen. Verbinden Sie sich effektiv mit Kunden, um die Kundenbindung zu steigern."
+  },
+  "homeForDesigner": {
+    "overline": "Das umfassendste System für Ihr Geschäftsmanagement",
+    "title": "Eine einzige Lösung zur Verwaltung Ihrer Kunden, Termine und Betriebsabläufe mit Vertrauen, die von Fachleuten verschiedener Branchen übernommen wurde.",
+    "description": "Verfügbar in 12 Ländern. Terminvereinbarungen durch Kunden. Flux ist eine Geschäftssoftware, die alle wesentlichen Tools zur Steigerung Ihres Umsatzes und zur Optimierung Ihres Betriebs bietet."
+  },
+  "pricingPlans": {
+    "overline": "Preispläne",
+    "title": "Der richtige Plan für<br />Ihr Unternehmen",
+    "description": "Wählen Sie den perfekten Plan für Ihre Bedürfnisse. Immer flexibel zum Wachsen",
+    "questions": "Noch Fragen?",
+    "advice": "Bitte beschreiben Sie Ihren Fall, um die genaueste Beratung zu erhalten.",
+    "contact": "Kontaktieren Sie uns",
+    "monthly": "Monatlich",
+    "yearly": "Jährlich",
+    "plusApplicableTaxes": "Plus anfallende Steuern",
+    "savePercent": "{{percent}}% sparen"
+  },
+  "homeAdvertisement": {
+    "getstarted": "Loslegen"
+  }
+}

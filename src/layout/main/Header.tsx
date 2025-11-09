@@ -1,5 +1,5 @@
 // @mui
-import { AppBar, Box, Button, Container, Link, Stack, Toolbar, type BoxProps } from '@mui/material';
+import { AppBar, Box, Button, Container, Stack, Toolbar, type BoxProps } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 // hooks
 import useOffSetTop from '@/hooks/useOffSetTop';
@@ -9,20 +9,23 @@ import { bgBlur } from '@/utils/cssStyles';
 // config
 import { HEADER } from '@/configs/global';
 // routes
-import { PATH_DOCS, PATH_MINIMAL_ON_STORE } from '@/routes/paths';
+import { PATH_PAGE } from '@/routes/paths';
 // components
-import Label from '@/components/label';
 import Logo from '@/components/logo';
 //
+import SettingsDrawer from '@/components/settings/drawer';
 import navConfig from './nav/config-navigation';
 import NavDesktop from './nav/desktop';
 import NavMobile from './nav/mobile';
-import SettingsDrawer from '@/components/settings/drawer';
+import { Link as RouterLink } from 'react-router-dom';
+import LanguagePopover from '../dashboard/header/LanguagePopover';
+import { useTranslation } from 'react-i18next';
 
 // ----------------------------------------------------------------------
 
 export default function Header() {
   const theme = useTheme();
+  const { t } = useTranslation();
 
   const isDesktop = useResponsive('up', 'md');
 
@@ -49,37 +52,47 @@ export default function Header() {
           }),
         }}
       >
-        <Container sx={{ height: 1, display: 'flex', gap: 1.2, alignItems: 'center' }}>
+        <Container
+          sx={{
+            height: 1,
+            display: 'flex',
+            gap: { md: 1.2 },
+            alignItems: 'center',
+          }}
+        >
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
             <Logo />
-            <Link href={PATH_DOCS.changelog} target="_blank" rel="noopener" underline="none">
-              <Label color="info"> v1.0 </Label>
-            </Link>
           </Box>
 
-          {isDesktop && <Box sx={{ flexGrow: 1 }} />}
+          <Box sx={{ flexGrow: 1 }} />
 
           {isDesktop && <NavDesktop isOffset={isOffset} data={navConfig} />}
 
           <Stack
             component="div"
             direction="row"
-            gap={1.5}
-            sx={{ mr: theme.direction == 'ltr' ? 0 : 4, ml: theme.direction == 'ltr' ? 4 : 0 }}
+            alignItems={'center'}
+            gap={{ md: 1.5 }}
+            sx={{
+              mr: theme.direction == 'ltr' ? 0 : 4,
+              ml: theme.direction == 'ltr' ? 4 : 0,
+            }}
           >
-            <SettingsDrawer />
-
             <Button
               variant="contained"
-              target="_blank"
+              component={RouterLink}
+              size={isDesktop ? 'medium' : 'small'}
               rel="noopener"
               sx={{
                 whiteSpace: 'nowrap',
               }}
-              href={PATH_MINIMAL_ON_STORE}
+              to={PATH_PAGE.pricing}
             >
-              Purchase Now
+              {t('actions:purchasenow')}
             </Button>
+
+            <LanguagePopover />
+            <SettingsDrawer />
           </Stack>
 
           {!isDesktop && <NavMobile isOffset={isOffset} data={navConfig} />}

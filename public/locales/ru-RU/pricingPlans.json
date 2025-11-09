@@ -1,0 +1,154 @@
+{
+  "free": "Бесплатно",
+  "pro": "Про",
+  "enterprise": "Предприятие",
+  "annually": "Ежегодно",
+  "monthly": "Ежемесячно",
+  "billingPeriod": "Период оплаты",
+  "discountedAnnualPlan": "Годовой план со скидкой",
+  "advancedFeaturesAnnual": "Годовой план – расширенные функции",
+  "contactForQuote": "Цена по запросу (годовая)",
+  "choosePlan": "Выбрать План",
+  "perMonth": "в месяц",
+  "perYear": "в год",
+  "users": "пользователи",
+  "products": "продукты",
+  "services": "услуги",
+  "unlimited": "Неограниченно",
+  "includedFeatures": "Включенные Функции",
+  "clientManagement": "Управление клиентами и расписанием",
+  "financialControl": "Финансовый контроль",
+  "webMobileAccess": "Доступ через веб и мобильные",
+  "allProFeatures": "Все функции Pro",
+  "digitalSignatures": "Цифровые подписи и сложные автоматизации",
+  "dedicatedSupport": "Выделенная поддержка и корпоративный SLA",
+  "customization": "Настройка модулей и брендинг",
+  "features": {
+    "clientManagement": "Управление клиентами и расписаниями",
+    "financialControl": "Полный финансовый контроль",
+    "customReports": "Пользовательские отчеты и графики",
+    "messageAutomation": "Автоматизация сообщений и кампаний",
+    "whatsappIntegration": "Интеграция с WhatsApp Business",
+    "prioritySupport": "Приоритетная техническая поддержка"
+  },
+  "yearly": "Ежегодно",
+  "plusapplicabletaxes": "Плюс применимые налоги",
+  "savepercent": "Экономия {{percent}}%",
+  "plans": {
+    "free": {
+      "name": "Бесплатно",
+      "tier": "Бесплатно",
+      "description": "Владелец Системы",
+      "annually": {
+        "billingperiod": "Годовой план со скидкой",
+        "ctalabel": "Выбрать Бесплатный Годовой",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "Управление клиентами и расписанием",
+          "controlefinanceiro": "Финансовый контроль",
+          "acessoviawebemobile": "Доступ через веб и мобильные"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "Управление клиентами и расписаниями",
+          "controlefinanceirocompleto": "Полный финансовый контроль",
+          "relatoriosegraficospersonalizados": "Пользовательские отчеты и графики",
+          "automacaodemensagensecampanhas": "Автоматизация сообщений и кампаний",
+          "integracaocomwhatsappbusiness": "Интеграция с WhatsApp Business",
+          "suportetecnicoprioritario": "Приоритетная техническая поддержка"
+        }
+      },
+      "monthly": {
+        "billingperiod": "Месячный план - без скидки",
+        "ctalabel": "Выбрать Бесплатный Месячный",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "Управление клиентами и расписанием",
+          "controlefinanceiro": "Финансовый контроль",
+          "acessoviawebemobile": "Доступ через веб и мобильные"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "Управление клиентами и расписаниями",
+          "controlefinanceirocompleto": "Полный финансовый контроль",
+          "relatoriosegraficospersonalizados": "Пользовательские отчеты и графики",
+          "automacaodemensagensecampanhas": "Автоматизация сообщений и кампаний",
+          "integracaocomwhatsappbusiness": "Интеграция с WhatsApp Business",
+          "suportetecnicoprioritario": "Приоритетная техническая поддержка"
+        }
+      }
+    },
+    "pro": {
+      "name": "Про",
+      "tier": "Про",
+      "description": "Менеджер Системы",
+      "annually": {
+        "billingperiod": "Годовой план - расширенные функции",
+        "ctalabel": "Выбрать Про Годовой",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "Управление клиентами и расписанием",
+          "controlefinanceiro": "Финансовый контроль",
+          "acessoviawebemobile": "Доступ через веб и мобильные"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "Управление клиентами и расписаниями",
+          "controlefinanceirocompleto": "Полный финансовый контроль",
+          "integracaocomwhatsappbusiness": "Интеграция с WhatsApp Business",
+          "relatoriosegraficospersonalizados": "Пользовательские отчеты и графики",
+          "suportetecnicoprioritario": "Приоритетная техническая поддержка",
+          "automacaodemensagensecampanhas": "Автоматизация сообщений и кампаний"
+        }
+      },
+      "monthly": {
+        "billingperiod": "Месячный план - расширенные функции",
+        "ctalabel": "Выбрать Про Месячный",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "Управление клиентами и расписанием",
+          "controlefinanceiro": "Финансовый контроль",
+          "acessoviawebemobile": "Доступ через веб и мобильные"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "Управление клиентами и расписаниями",
+          "controlefinanceirocompleto": "Полный финансовый контроль",
+          "integracaocomwhatsappbusiness": "Интеграция с WhatsApp Business",
+          "relatoriosegraficospersonalizados": "Пользовательские отчеты и графики",
+          "suportetecnicoprioritario": "Приоритетная техническая поддержка",
+          "automacaodemensagensecampanhas": "Автоматизация сообщений и кампаний"
+        }
+      }
+    },
+    "enterprise": {
+      "name": "Предприятие",
+      "tier": "Предприятие",
+      "description": "Сотрудник Системы",
+      "annually": {
+        "billingperiod": "Цена по запросу (годовая)",
+        "ctalabel": "Выбрать Предприятие Годовой",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "Управление клиентами и расписанием",
+          "controlefinanceiro": "Финансовый контроль",
+          "acessoviawebemobile": "Доступ через веб и мобильные"
+        },
+        "features": {
+          "todososrecursosdopro": "Все функции Pro",
+          "assinaturadigitaleautomacoescomplexas": "Цифровые подписи и сложные автоматизации",
+          "suportededicadoeslaempresarial": "Выделенная поддержка и корпоративный SLA",
+          "customizacaodemodulosebranding": "Настройка модулей и брендинг"
+        }
+      },
+      "monthly": {
+        "billingperiod": "Цена по запросу (месячная)",
+        "ctalabel": "Выбрать Предприятие Месячный",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "Управление клиентами и расписанием",
+          "controlefinanceiro": "Финансовый контроль",
+          "acessoviawebemobile": "Доступ через веб и мобильные"
+        },
+        "features": {
+          "todososrecursosdopro": "Все функции Pro",
+          "assinaturadigitaleautomacoescomplexas": "Цифровые подписи и сложные автоматизации",
+          "suportededicadoeslaempresarial": "Выделенная поддержка и корпоративный SLA",
+          "customizacaodemodulosebranding": "Настройка модулей и брендинг"
+        }
+      }
+    }
+  },
+  "title": "Гибкие планы, которые адаптируются<br />к размеру и потребностям вашего бизнеса.",
+  "description": "Выберите идеальный план для ваших потребностей. Всегда гибкий для роста"
+}

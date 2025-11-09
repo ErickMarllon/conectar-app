@@ -1,0 +1,154 @@
+{
+  "free": "Free",
+  "pro": "Pro",
+  "enterprise": "Enterprise",
+  "annually": "Annually",
+  "monthly": "Monthly",
+  "billingPeriod": "Billing Period",
+  "discountedAnnualPlan": "Discounted annual plan",
+  "advancedFeaturesAnnual": "Annual plan – advanced features",
+  "contactForQuote": "Contact for quote (annual)",
+  "choosePlan": "Choose Plan",
+  "perMonth": "per month",
+  "perYear": "per year",
+  "users": "users",
+  "products": "products",
+  "services": "services",
+  "unlimited": "Unlimited",
+  "includedFeatures": "Included Features",
+  "clientManagement": "Client and schedule management",
+  "financialControl": "Financial control",
+  "webMobileAccess": "Web and mobile access",
+  "allProFeatures": "All Pro features included",
+  "digitalSignatures": "Digital signatures and complex automations",
+  "dedicatedSupport": "Dedicated support and enterprise SLA",
+  "customization": "Module customization and branding",
+  "features": {
+    "clientManagement": "Client management and scheduling",
+    "financialControl": "Complete financial control",
+    "customReports": "Custom reports and charts",
+    "messageAutomation": "Message and campaign automation",
+    "whatsappIntegration": "WhatsApp Business integration",
+    "prioritySupport": "Priority technical support"
+  },
+  "yearly": "Yearly",
+  "plusapplicabletaxes": "Plus applicable taxes",
+  "savepercent": "Save {{percent}}%",
+  "plans": {
+    "free": {
+      "name": "Free",
+      "tier": "Free",
+      "description": "System Owner",
+      "annually": {
+        "billingperiod": "Discounted annual plan",
+        "ctalabel": "Choose Free Annual",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "Client and schedule management",
+          "controlefinanceiro": "Financial control",
+          "acessoviawebemobile": "Web and mobile access"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "Client management and scheduling",
+          "controlefinanceirocompleto": "Complete financial control",
+          "relatoriosegraficospersonalizados": "Custom reports and charts",
+          "automacaodemensagensecampanhas": "Message and campaign automation",
+          "integracaocomwhatsappbusiness": "WhatsApp Business integration",
+          "suportetecnicoprioritario": "Priority technical support"
+        }
+      },
+      "monthly": {
+        "billingperiod": "Monthly plan - no discount",
+        "ctalabel": "Choose Free Monthly",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "Client and schedule management",
+          "controlefinanceiro": "Financial control",
+          "acessoviawebemobile": "Web and mobile access"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "Client management and scheduling",
+          "controlefinanceirocompleto": "Complete financial control",
+          "relatoriosegraficospersonalizados": "Custom reports and charts",
+          "automacaodemensagensecampanhas": "Message and campaign automation",
+          "integracaocomwhatsappbusiness": "WhatsApp Business integration",
+          "suportetecnicoprioritario": "Priority technical support"
+        }
+      }
+    },
+    "pro": {
+      "name": "Pro",
+      "tier": "Pro",
+      "description": "System Manager",
+      "annually": {
+        "billingperiod": "Annual plan - advanced features",
+        "ctalabel": "Choose Pro Annual",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "Client and schedule management",
+          "controlefinanceiro": "Financial control",
+          "acessoviawebemobile": "Web and mobile access"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "Client management and scheduling",
+          "controlefinanceirocompleto": "Complete financial control",
+          "integracaocomwhatsappbusiness": "WhatsApp Business integration",
+          "relatoriosegraficospersonalizados": "Custom reports and charts",
+          "suportetecnicoprioritario": "Priority technical support",
+          "automacaodemensagensecampanhas": "Message and campaign automation"
+        }
+      },
+      "monthly": {
+        "billingperiod": "Monthly plan - advanced features",
+        "ctalabel": "Choose Pro Monthly",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "Client and schedule management",
+          "controlefinanceiro": "Financial control",
+          "acessoviawebemobile": "Web and mobile access"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "Client management and scheduling",
+          "controlefinanceirocompleto": "Complete financial control",
+          "integracaocomwhatsappbusiness": "WhatsApp Business integration",
+          "relatoriosegraficospersonalizados": "Custom reports and charts",
+          "suportetecnicoprioritario": "Priority technical support",
+          "automacaodemensagensecampanhas": "Message and campaign automation"
+        }
+      }
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "tier": "Enterprise",
+      "description": "System Employee",
+      "annually": {
+        "billingperiod": "Contact for quote (annual)",
+        "ctalabel": "Choose Enterprise Annual",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "Client and schedule management",
+          "controlefinanceiro": "Financial control",
+          "acessoviawebemobile": "Web and mobile access"
+        },
+        "features": {
+          "todososrecursosdopro": "All Pro features included",
+          "assinaturadigitaleautomacoescomplexas": "Digital signatures and complex automations",
+          "suportededicadoeslaempresarial": "Dedicated support and enterprise SLA",
+          "customizacaodemodulosebranding": "Module customization and branding"
+        }
+      },
+      "monthly": {
+        "billingperiod": "Contact for quote (monthly)",
+        "ctalabel": "Choose Enterprise Monthly",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "Client and schedule management",
+          "controlefinanceiro": "Financial control",
+          "acessoviawebemobile": "Web and mobile access"
+        },
+        "features": {
+          "todososrecursosdopro": "All Pro features included",
+          "assinaturadigitaleautomacoescomplexas": "Digital signatures and complex automations",
+          "suportededicadoeslaempresarial": "Dedicated support and enterprise SLA",
+          "customizacaodemodulosebranding": "Module customization and branding"
+        }
+      }
+    }
+  },
+  "title": "Flexible plans that adapt<br />to the size and needs of your business.",
+  "description": "Choose the perfect plan for your needs. Always flexible to grow"
+}

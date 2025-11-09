@@ -23,19 +23,21 @@ export default function MenuPopover({
       anchorEl={open}
       anchorOrigin={anchorOrigin as PopoverOrigin}
       transformOrigin={transformOrigin as PopoverOrigin}
-      PaperProps={{
-        sx: {
-          p: 1,
-          width: 'auto',
-          overflow: 'inherit',
-          ...style,
-          '& .MuiMenuItem-root': {
-            px: 1,
-            typography: 'body2',
-            borderRadius: 0.75,
-            '& svg': { mr: 2, width: 20, height: 20, flexShrink: 0 },
+      slotProps={{
+        paper: {
+          sx: {
+            p: 1,
+            width: 'auto',
+            overflow: 'inherit',
+            ...style,
+            '& .MuiMenuItem-root': {
+              px: 1,
+              typography: 'body2',
+              borderRadius: 0.75,
+              '& svg': { mr: 2, width: 20, height: 20, flexShrink: 0 },
+            },
+            ...sx,
           },
-          ...sx,
         },
       }}
       {...other}

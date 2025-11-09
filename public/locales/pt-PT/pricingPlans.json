@@ -1,0 +1,154 @@
+{
+  "free": "Grátis",
+  "pro": "Pro",
+  "enterprise": "Enterprise",
+  "annually": "Anual",
+  "monthly": "Mensal",
+  "billingPeriod": "Período de Faturação",
+  "discountedAnnualPlan": "plano anual com desconto",
+  "advancedFeaturesAnnual": "plano anual – funcionalidades avançadas",
+  "contactForQuote": "valor sob consulta (anual)",
+  "choosePlan": "escolher Plano",
+  "perMonth": "por mês",
+  "perYear": "por ano",
+  "users": "utilizadores",
+  "products": "produtos",
+  "services": "serviços",
+  "unlimited": "Ilimitado",
+  "includedFeatures": "Funcionalidades Incluídas",
+  "clientManagement": "Gestão de clientes e agenda",
+  "financialControl": "Controlo financeiro",
+  "webMobileAccess": "Acesso via web e mobile",
+  "allProFeatures": "Todas as funcionalidades do Pro",
+  "digitalSignatures": "Assinatura digital e automações complexas",
+  "dedicatedSupport": "Suporte dedicado e SLA empresarial",
+  "customization": "Personalização de módulos e branding",
+  "features": {
+    "clientManagement": "Gestão de clientes e agendamentos",
+    "financialControl": "Controlo financeiro completo",
+    "customReports": "Relatórios e gráficos personalizados",
+    "messageAutomation": "Automação de mensagens e campanhas",
+    "whatsappIntegration": "Integração com WhatsApp Business",
+    "prioritySupport": "Suporte técnico prioritário"
+  },
+  "yearly": "Anual",
+  "plusapplicabletaxes": "Mais impostos aplicáveis",
+  "savepercent": "Poupe {{percent}}%",
+  "plans": {
+    "free": {
+      "name": "Grátis",
+      "tier": "Grátis",
+      "description": "Proprietário do Sistema",
+      "annually": {
+        "billingperiod": "Plano anual com desconto",
+        "ctalabel": "Escolher Grátis Anual",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "Gestão de clientes e agenda",
+          "controlefinanceiro": "Controlo financeiro",
+          "acessoviawebemobile": "Acesso via web e mobile"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "Gestão de clientes e agendamentos",
+          "controlefinanceirocompleto": "Controlo financeiro completo",
+          "relatoriosegraficospersonalizados": "Relatórios e gráficos personalizados",
+          "automacaodemensagensecampanhas": "Automação de mensagens e campanhas",
+          "integracaocomwhatsappbusiness": "Integração com WhatsApp Business",
+          "suportetecnicoprioritario": "Suporte técnico prioritário"
+        }
+      },
+      "monthly": {
+        "billingperiod": "Plano mensal - sem desconto",
+        "ctalabel": "Escolher Grátis Mensal",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "Gestão de clientes e agenda",
+          "controlefinanceiro": "Controlo financeiro",
+          "acessoviawebemobile": "Acesso via web e mobile"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "Gestão de clientes e agendamentos",
+          "controlefinanceirocompleto": "Controlo financeiro completo",
+          "relatoriosegraficospersonalizados": "Relatórios e gráficos personalizados",
+          "automacaodemensagensecampanhas": "Automação de mensagens e campanhas",
+          "integracaocomwhatsappbusiness": "Integração com WhatsApp Business",
+          "suportetecnicoprioritario": "Suporte técnico prioritário"
+        }
+      }
+    },
+    "pro": {
+      "name": "Pro",
+      "tier": "Pro",
+      "description": "Gestor do Sistema",
+      "annually": {
+        "billingperiod": "Plano anual - funcionalidades avançadas",
+        "ctalabel": "Escolher Pro Anual",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "Gestão de clientes e agenda",
+          "controlefinanceiro": "Controlo financeiro",
+          "acessoviawebemobile": "Acesso via web e mobile"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "Gestão de clientes e agendamentos",
+          "controlefinanceirocompleto": "Controlo financeiro completo",
+          "integracaocomwhatsappbusiness": "Integração com WhatsApp Business",
+          "relatoriosegraficospersonalizados": "Relatórios e gráficos personalizados",
+          "suportetecnicoprioritario": "Suporte técnico prioritário",
+          "automacaodemensagensecampanhas": "Automação de mensagens e campanhas"
+        }
+      },
+      "monthly": {
+        "billingperiod": "Plano mensal - funcionalidades avançadas",
+        "ctalabel": "Escolher Pro Mensal",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "Gestão de clientes e agenda",
+          "controlefinanceiro": "Controlo financeiro",
+          "acessoviawebemobile": "Acesso via web e mobile"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "Gestão de clientes e agendamentos",
+          "controlefinanceirocompleto": "Controlo financeiro completo",
+          "integracaocomwhatsappbusiness": "Integração com WhatsApp Business",
+          "relatoriosegraficospersonalizados": "Relatórios e gráficos personalizados",
+          "suportetecnicoprioritario": "Suporte técnico prioritário",
+          "automacaodemensagensecampanhas": "Automação de mensagens e campanhas"
+        }
+      }
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "tier": "Enterprise",
+      "description": "Funcionário do Sistema",
+      "annually": {
+        "billingperiod": "Valor sob consulta (anual)",
+        "ctalabel": "Escolher Enterprise Anual",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "Gestão de clientes e agenda",
+          "controlefinanceiro": "Controlo financeiro",
+          "acessoviawebemobile": "Acesso via web e mobile"
+        },
+        "features": {
+          "todososrecursosdopro": "Todas as funcionalidades do Pro",
+          "assinaturadigitaleautomacoescomplexas": "Assinatura digital e automações complexas",
+          "suportededicadoeslaempresarial": "Suporte dedicado e SLA empresarial",
+          "customizacaodemodulosebranding": "Personalização de módulos e branding"
+        }
+      },
+      "monthly": {
+        "billingperiod": "Valor sob consulta (mensal)",
+        "ctalabel": "Escolher Enterprise Mensal",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "Gestão de clientes e agenda",
+          "controlefinanceiro": "Controlo financeiro",
+          "acessoviawebemobile": "Acesso via web e mobile"
+        },
+        "features": {
+          "todososrecursosdopro": "Todas as funcionalidades do Pro",
+          "assinaturadigitaleautomacoescomplexas": "Assinatura digital e automações complexas",
+          "suportededicadoeslaempresarial": "Suporte dedicado e SLA empresarial",
+          "customizacaodemodulosebranding": "Personalização de módulos e branding"
+        }
+      }
+    }
+  },
+  "title": "Planos flexíveis que se adaptam<br />ao tamanho e necessidades do seu negócio.",
+  "description": "Escolha o plano perfeito para as suas necessidades. Sempre flexível para crescer"
+}

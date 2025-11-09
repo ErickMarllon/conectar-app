@@ -1,0 +1,154 @@
+{
+  "free": "無料",
+  "pro": "プロ",
+  "enterprise": "エンタープライズ",
+  "annually": "年間",
+  "monthly": "月額",
+  "billingPeriod": "請求期間",
+  "discountedAnnualPlan": "割引年間プラン",
+  "advancedFeaturesAnnual": "年間プラン - 高度な機能",
+  "contactForQuote": "お見積り（年間）",
+  "choosePlan": "プランを選択",
+  "perMonth": "月額",
+  "perYear": "年額",
+  "users": "ユーザー",
+  "products": "製品",
+  "services": "サービス",
+  "unlimited": "無制限",
+  "includedFeatures": "含まれる機能",
+  "clientManagement": "顧客とスケジュール管理",
+  "financialControl": "財務管理",
+  "webMobileAccess": "Webとモバイルアクセス",
+  "allProFeatures": "Pro機能すべて含む",
+  "digitalSignatures": "デジタル署名と複雑な自動化",
+  "dedicatedSupport": "専任サポートと企業SLA",
+  "customization": "モジュールカスタマイズとブランディング",
+  "features": {
+    "clientManagement": "顧客管理とスケジューリング",
+    "financialControl": "完全な財務管理",
+    "customReports": "カスタムレポートとグラフ",
+    "messageAutomation": "メッセージとキャンペーン自動化",
+    "whatsappIntegration": "WhatsApp Business連携",
+    "prioritySupport": "優先技術サポート"
+  },
+  "yearly": "年額",
+  "plusapplicabletaxes": "適用税金別",
+  "savepercent": "{{percent}}%節約",
+  "plans": {
+    "free": {
+      "name": "無料",
+      "tier": "無料版",
+      "description": "システム所有者",
+      "annually": {
+        "billingperiod": "割引年間プラン",
+        "ctalabel": "無料年間版を選択",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "顧客とスケジュール管理",
+          "controlefinanceiro": "財務管理",
+          "acessoviawebemobile": "Webとモバイルアクセス"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "顧客管理とスケジューリング",
+          "controlefinanceirocompleto": "完全な財務管理",
+          "relatoriosegraficospersonalizados": "カスタムレポートとグラフ",
+          "automacaodemensagensecampanhas": "メッセージとキャンペーン自動化",
+          "integracaocomwhatsappbusiness": "WhatsApp Business連携",
+          "suportetecnicoprioritario": "優先技術サポート"
+        }
+      },
+      "monthly": {
+        "billingperiod": "月額プラン - 割引なし",
+        "ctalabel": "無料月額版を選択",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "顧客とスケジュール管理",
+          "controlefinanceiro": "財務管理",
+          "acessoviawebemobile": "Webとモバイルアクセス"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "顧客管理とスケジューリング",
+          "controlefinanceirocompleto": "完全な財務管理",
+          "relatoriosegraficospersonalizados": "カスタムレポートとグラフ",
+          "automacaodemensagensecampanhas": "メッセージとキャンペーン自動化",
+          "integracaocomwhatsappbusiness": "WhatsApp Business連携",
+          "suportetecnicoprioritario": "優先技術サポート"
+        }
+      }
+    },
+    "pro": {
+      "name": "プロ",
+      "tier": "プロ版",
+      "description": "システム管理者",
+      "annually": {
+        "billingperiod": "年間プラン - 高度な機能",
+        "ctalabel": "プロ年間版を選択",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "顧客とスケジュール管理",
+          "controlefinanceiro": "財務管理",
+          "acessoviawebemobile": "Webとモバイルアクセス"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "顧客管理とスケジューリング",
+          "controlefinanceirocompleto": "完全な財務管理",
+          "integracaocomwhatsappbusiness": "WhatsApp Business連携",
+          "relatoriosegraficospersonalizados": "カスタムレポートとグラフ",
+          "suportetecnicoprioritario": "優先技術サポート",
+          "automacaodemensagensecampanhas": "メッセージとキャンペーン自動化"
+        }
+      },
+      "monthly": {
+        "billingperiod": "月額プラン - 高度な機能",
+        "ctalabel": "プロ月額版を選択",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "顧客とスケジュール管理",
+          "controlefinanceiro": "財務管理",
+          "acessoviawebemobile": "Webとモバイルアクセス"
+        },
+        "features": {
+          "gestaodeclienteseagendamentos": "顧客管理とスケジューリング",
+          "controlefinanceirocompleto": "完全な財務管理",
+          "integracaocomwhatsappbusiness": "WhatsApp Business連携",
+          "relatoriosegraficospersonalizados": "カスタムレポートとグラフ",
+          "suportetecnicoprioritario": "優先技術サポート",
+          "automacaodemensagensecampanhas": "メッセージとキャンペーン自動化"
+        }
+      }
+    },
+    "enterprise": {
+      "name": "エンタープライズ",
+      "tier": "エンタープライズ版",
+      "description": "システム従業員",
+      "annually": {
+        "billingperiod": "お見積り（年間）",
+        "ctalabel": "エンタープライズ年間版を選択",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "顧客とスケジュール管理",
+          "controlefinanceiro": "財務管理",
+          "acessoviawebemobile": "Webとモバイルアクセス"
+        },
+        "features": {
+          "todososrecursosdopro": "プロ版すべての機能を含む",
+          "assinaturadigitaleautomacoescomplexas": "デジタル署名と複雑な自動化",
+          "suportededicadoeslaempresarial": "専任サポートと企業SLA",
+          "customizacaodemodulosebranding": "モジュールカスタマイズとブランディング"
+        }
+      },
+      "monthly": {
+        "billingperiod": "お見積り（月間）",
+        "ctalabel": "エンタープライズ月額版を選択",
+        "includedfeatures": {
+          "gestaodeclienteseagenda": "顧客とスケジュール管理",
+          "controlefinanceiro": "財務管理",
+          "acessoviawebemobile": "Webとモバイルアクセス"
+        },
+        "features": {
+          "todososrecursosdopro": "プロ版すべての機能を含む",
+          "assinaturadigitaleautomacoescomplexas": "デジタル署名と複雑な自動化",
+          "suportededicadoeslaempresarial": "専任サポートと企業SLA",
+          "customizacaodemodulosebranding": "モジュールカスタマイズとブランディング"
+        }
+      }
+    }
+  },
+  "title": "ビジネスの規模とニーズに<br />適応する柔軟なプラン。",
+  "description": "あなたのニーズに合った完璧なプランを選択してください。常に成長に対応可能"
+}

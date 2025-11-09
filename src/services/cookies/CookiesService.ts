@@ -12,12 +12,21 @@ class CookiesService {
   }
 
   public static setItem(name: string, value: unknown, days = 365) {
-    Cookies.set(name, JSON.stringify(value), {
-      expires: days,
-      path: '/',
-      secure: true,
-      sameSite: 'strict',
-    });
+    if (typeof value === 'string') {
+      Cookies.set(name, value, {
+        expires: days,
+        path: '/',
+        secure: true,
+        sameSite: 'strict',
+      });
+    } else {
+      Cookies.set(name, JSON.stringify(value), {
+        expires: days,
+        path: '/',
+        secure: true,
+        sameSite: 'strict',
+      });
+    }
   }
 
   public static removeItem(name: string) {
