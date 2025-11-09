@@ -1,3 +1,4 @@
+import { allLangsArray, defaultLang } from '@/locales/config-lang';
 import { getCachedRates, type ExchangeRates } from '@/services/currencyService';
 import { useState, useEffect } from 'react';
 
@@ -61,6 +62,11 @@ export const useCurrencyConverter = (): UseCurrencyConverterReturn => {
       return amount;
     }
   };
+  const getCurrencySymbol = (currency: string): string => {
+    const foundLang = allLangsArray.find((lang) => lang.currency === currency) ?? defaultLang;
+
+    return foundLang?.currencySymbol ?? currency;
+  };
 
   const formatCurrency = (amount: number, currency: string, locale: string): string => {
     try {
@@ -70,8 +76,8 @@ export const useCurrencyConverter = (): UseCurrencyConverterReturn => {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2,
       }).format(amount);
-    } catch (err) {
-      // Fallback para formatação básica
+      // eslint-disable-next-line unused-imports/no-unused-vars
+    } catch (_err) {
       const symbol = getCurrencySymbol(currency);
       return `${symbol} ${amount.toFixed(2)}`;
     }

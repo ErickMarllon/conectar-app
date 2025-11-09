@@ -1,32 +1,31 @@
+import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
 import { useState } from 'react';
-import { Font, PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
-import PublicSansRegular from '/fonts/Public_Sans/static/PublicSans-Regular.ttf';
 
-Font.register({
-  family: 'Public Sans',
-  src: PublicSansRegular,
-  fonts: [
-    {
-      src: PublicSansRegular,
-      fontWeight: 400,
-    },
-    {
-      src: PublicSansRegular,
-      fontWeight: 700,
-    },
-  ],
-});
+// Font.register({
+//   family: 'Public Sans',
+//   src: PublicSansRegular,
+//   fonts: [
+//     {
+//       src: PublicSansRegular,
+//       fontWeight: 400,
+//     },
+//     {
+//       src: PublicSansRegular,
+//       fontWeight: 700,
+//     },
+//   ],
+// });
 
 // @mui
 import {
   Box,
-  Stack,
   Button,
-  Dialog,
-  Tooltip,
-  IconButton,
-  DialogActions,
   CircularProgress,
+  Dialog,
+  DialogActions,
+  IconButton,
+  Stack,
+  Tooltip,
 } from '@mui/material';
 // routes
 import { PATH_DASHBOARD } from '@/routes/paths';
@@ -35,8 +34,8 @@ import type { IInvoice } from '@/shared/interfaces/IInvoice';
 // components
 import Iconify from '@/components/iconify';
 //
-import InvoicePDF from './InvoicePDF';
 import { useNavigate } from 'react-router-dom';
+import InvoicePDF from './InvoicePDF';
 
 // ----------------------------------------------------------------------
 

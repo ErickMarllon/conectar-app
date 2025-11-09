@@ -1,23 +1,23 @@
-import { Page, View, Text, Image, Document, Font } from '@react-pdf/renderer';
-import PublicSansRegular from '/fonts/Public_Sans/static/PublicSans-Regular.ttf';
+import { Document, Image, Page, Text, View } from '@react-pdf/renderer';
+// import PublicSansRegular from '/fonts/Public_Sans/static/PublicSans-Regular.ttf';
 
-Font.register({
-  family: 'Public Sans',
-  src: PublicSansRegular,
-  fonts: [
-    {
-      src: PublicSansRegular,
-      fontWeight: 400,
-    },
-    {
-      src: PublicSansRegular,
-      fontWeight: 700,
-    },
-  ],
-});
+// Font.register({
+//   family: 'Public Sans',
+//   src: PublicSansRegular,
+//   fonts: [
+//     {
+//       src: PublicSansRegular,
+//       fontWeight: 400,
+//     },
+//     {
+//       src: PublicSansRegular,
+//       fontWeight: 700,
+//     },
+//   ],
+// });
 // utils
-import { fDate } from '@/utils/formatTime';
 import { fCurrency } from '@/utils/formatNumber';
+import { fDate } from '@/utils/formatTime';
 // @types
 import type { IInvoice } from '@/shared/interfaces/IInvoice';
 //

@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet.fullscreen';
-import 'leaflet.fullscreen/Control.FullScreen.css';
 
 export default function FullscreenControl() {
   const map = useMap();

@@ -1,14 +1,14 @@
 // react-router-dom
-import { Link as RouterLink, useLocation } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 // @mui
-import { Box, Grid, Link, Stack, Divider, Container, Typography, IconButton } from '@mui/material';
+import { Box, Container, Divider, Grid, IconButton, Link, Stack, Typography } from '@mui/material';
 // routes
 import { PATH_PAGE } from '../../routes/paths';
 // _mock
 import { _socials } from '../../_mock/arrays';
 // components
-import Logo from '../../components/logo';
 import Iconify from '../../components/iconify';
+import Logo from '../../components/logo';
 
 // ----------------------------------------------------------------------
 
@@ -29,8 +29,6 @@ const LINKS = [
     ],
   },
 ];
-
-// ----------------------------------------------------------------------
 
 export default function Footer() {
   return (

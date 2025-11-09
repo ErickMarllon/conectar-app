@@ -1,17 +1,6 @@
-// @mui
-import { Box, Switch, Container, Typography, Stack } from '@mui/material';
-// _mock_
-import { _pricingPlans } from '@/_mock/arrays';
-
-// sections
-import PricingPlanCard from './components/PricingPlanCard';
-import { useListPlan } from '@/queries/plan/list/useListPlan';
-import { useMemo, useState } from 'react';
-import { PlanInterval } from '@/shared/enums';
-import Description from './components/Description';
+import { Container } from '@mui/material';
 import { Content } from './components/Content';
-
-// ----------------------------------------------------------------------
+import Description from './components/Description';
 
 export function PricingPage() {
   return (

@@ -1,39 +1,6 @@
-// routes
-
 import { PATH_DASHBOARD } from '@/routes/paths';
 
-// API
-// ----------------------------------------------------------------------
-
-export const HOST_API_KEY = import.meta.env.VITE_HOST_API_KEY || '';
-
-export const FIREBASE_API = {
-  apiKey: import.meta.env.FIREBASE_API_KEY,
-  authDomain: import.meta.env.FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.FIREBASE_APPID,
-  measurementId: import.meta.env.FIREBASE_MEASUREMENT_ID,
-};
-
-export const COGNITO_API = {
-  userPoolId: import.meta.env.AWS_COGNITO_USER_POOL_ID,
-  clientId: import.meta.env.AWS_COGNITO_CLIENT_ID,
-};
-
-export const AUTH0_API = {
-  clientId: import.meta.env.AUTH0_CLIENT_ID,
-  domain: import.meta.env.AUTH0_DOMAIN,
-};
-
-export const MAP_API = import.meta.env.MAPBOX_API;
-
-// ROOT PATH AFTER LOGIN SUCCESSFUL
-export const PATH_AFTER_LOGIN = PATH_DASHBOARD.general.app; // as '/dashboard/app'
-
-// LAYOUT
-// ----------------------------------------------------------------------
+export const PATH_AFTER_LOGIN = PATH_DASHBOARD.general.app;
 
 export const HEADER = {
   H_MOBILE: 64,
