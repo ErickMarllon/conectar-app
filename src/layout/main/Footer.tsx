@@ -28,13 +28,6 @@ const LINKS = [
       { name: 'Privacy Policy', href: '#' },
     ],
   },
-  {
-    headline: 'Contact',
-    children: [
-      { name: 'support@minimals.cc', href: '#' },
-      { name: 'Los Angeles, 359  Hidden Valley Road', href: '#' },
-    ],
-  },
 ];
 
 // ----------------------------------------------------------------------
@@ -94,15 +87,16 @@ export default function Footer() {
           <Grid
             sx={{
               display: 'grid',
-              gridTemplate: 'repeat(3,1fr)',
+              rowGap: { xs: 4, md: 10 },
+              gridTemplateColumns: {
+                xs: 'repeat(2, 1fr)',
+                md: 'repeat(2, 1fr)',
+                lg: 'repeat(3, 1fr)',
+              },
             }}
           >
             {LINKS.map((list) => (
-              <Stack
-                key={list.headline}
-                spacing={2}
-                alignItems={{ xs: 'center', md: 'flex-start' }}
-              >
+              <Stack key={list.headline} spacing={2}>
                 <Typography component="div" variant="overline">
                   {list.headline}
                 </Typography>
