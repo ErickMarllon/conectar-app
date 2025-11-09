@@ -2,6 +2,7 @@ import { createRoot } from 'react-dom/client';
 import '../src/locales/i18n.ts';
 import App from './App.tsx';
 import './styles/global.css';
+
 // Slick Carousel
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
