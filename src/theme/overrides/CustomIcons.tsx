@@ -1,8 +1,5 @@
 import { SvgIcon, type SvgIconProps } from '@mui/material';
 
-// ----------------------------------------------------------------------
-
-// CloseIcon
 export function CloseIcon(props: SvgIconProps) {
   return (
     <SvgIcon {...props}>
@@ -11,7 +8,6 @@ export function CloseIcon(props: SvgIconProps) {
   );
 }
 
-// StarIcon
 export function StarIcon(props: SvgIconProps) {
   return (
     <SvgIcon {...props}>
@@ -20,7 +16,6 @@ export function StarIcon(props: SvgIconProps) {
   );
 }
 
-// Using for Alert
 export function InfoIcon(props: SvgIconProps) {
   return (
     <SvgIcon {...props}>

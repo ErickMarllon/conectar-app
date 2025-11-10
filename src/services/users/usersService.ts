@@ -1,8 +1,8 @@
-import { api } from '@/http/api';
 import type { IFilterGeneric } from '@/shared/interfaces/IFilter';
 import type { IPaginatedResponse } from '@/shared/interfaces/IPaginate';
 import type { IUserAccountGeneral } from '@/shared/interfaces/IUser';
 import type { AxiosResponse } from 'axios';
+import { api } from '@/http/api';
 
 class UsersService {
   public static async list(

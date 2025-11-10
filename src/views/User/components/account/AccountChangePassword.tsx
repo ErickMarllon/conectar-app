@@ -1,24 +1,20 @@
+import { zodResolver } from '@hookform/resolvers/zod';
+import { LoadingButton } from '@mui/lab';
+import { Card, IconButton, InputAdornment, Stack } from '@mui/material';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import FormProvider, { RHFTextField } from '@/components/hook-form';
 import Iconify from '@/components/iconify';
 import { useUserPathPassword } from '@/queries/user/pathPassword/useUserPathPassword';
 import { ChangePasswordSchema, type IChangePassword } from '@/schemas/change-password-schema';
 import { UserRole } from '@/shared/enums';
 import { useAuthStore } from '@/stores/userAuth.store';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { LoadingButton } from '@mui/lab';
-import { Card, IconButton, InputAdornment, Stack } from '@mui/material';
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-
-// ----------------------------------------------------------------------
 
 type FormValuesProps = IChangePassword;
 
 type Props = {
   user_id?: string;
 };
-
-// ----------------------------------------------------------------------
 
 export default function AccountChangePassword({ user_id }: Props) {
   const [showOldPassword, setShowOldPassword] = useState(false);

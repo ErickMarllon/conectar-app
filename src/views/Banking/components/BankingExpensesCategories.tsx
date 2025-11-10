@@ -1,13 +1,9 @@
-import type { ApexOptions } from 'apexcharts';
-// @mui
-import { useTheme, styled } from '@mui/material/styles';
-import { Box, Card, Stack, Divider, CardHeader, Typography, type CardProps } from '@mui/material';
-// hooks
-import useResponsive from '@/hooks/useResponsive';
-// components
-import Chart, { useChart } from '@/components/chart';
 
-// ----------------------------------------------------------------------
+import { Box, Card, CardHeader, Divider, Stack, Typography, type CardProps } from '@mui/material';
+import { styled, useTheme } from '@mui/material/styles';
+import type { ApexOptions } from 'apexcharts';
+import Chart, { useChart } from '@/components/chart';
+import useResponsive from '@/hooks/useResponsive';
 
 const StyledRoot = styled(Card)(({ theme }) => ({
   '& .apexcharts-legend': {
@@ -23,8 +19,6 @@ const StyledRoot = styled(Card)(({ theme }) => ({
     display: 'none',
   },
 }));
-
-// ----------------------------------------------------------------------
 
 interface Props extends CardProps {
   title?: string;

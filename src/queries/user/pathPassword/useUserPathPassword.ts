@@ -1,10 +1,10 @@
-import { handleError } from '@/errors/handleError';
+import { useMutation, useQueryClient, type UseMutationOptions } from '@tanstack/react-query';
+import { toast } from 'react-toastify';
 import type { IChangePassword } from '@/schemas/change-password-schema';
 import type { IUserAccountGeneral } from '@/shared/interfaces/IUser';
-import { useMutation, useQueryClient, type UseMutationOptions } from '@tanstack/react-query';
 import type { AxiosError, AxiosResponse } from 'axios';
 import { userPathPasswordMutationFn } from './userPathMutationFn';
-import { toast } from 'react-toastify';
+import { handleError } from '@/errors/handleError';
 
 type MutationError = AxiosError;
 type MutationData = AxiosResponse<IUserAccountGeneral>;

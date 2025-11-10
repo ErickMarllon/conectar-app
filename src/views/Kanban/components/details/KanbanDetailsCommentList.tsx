@@ -1,15 +1,10 @@
+import { Avatar, Stack, Typography } from '@mui/material';
 import { useState } from 'react';
-// @mui
-import { Stack, Avatar, Typography } from '@mui/material';
-// utils
-import { fToNow } from '@/utils/formatTime';
-// @types
-// components
+import type { IKanbanComment } from '@/shared/interfaces/IKanban';
 import Image from '@/components/image';
 import Lightbox from '@/components/lightbox';
-import type { IKanbanComment } from '@/shared/interfaces/IKanban';
+import { fToNow } from '@/utils/formatTime';
 
-// ----------------------------------------------------------------------
 
 type Props = {
   comments: IKanbanComment[];

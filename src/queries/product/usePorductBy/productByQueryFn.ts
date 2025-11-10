@@ -1,7 +1,7 @@
+import { AxiosError } from 'axios';
+import type { IProduct } from '@/shared/interfaces/IProduct';
 import { handleError } from '@/errors/handleError';
 import { ProductService } from '@/services/product/productService';
-import type { IProduct } from '@/shared/interfaces/IProduct';
-import { AxiosError } from 'axios';
 
 export const productByQueryFn = async (id: string): Promise<IProduct> => {
   try {

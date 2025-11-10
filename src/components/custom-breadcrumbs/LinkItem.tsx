@@ -1,11 +1,6 @@
-// react router dom
-import { Link as RouterLink } from 'react-router-dom';
-// @mui
 import { Box, Link } from '@mui/material';
-//
+import { Link as RouterLink } from 'react-router-dom';
 import type { BreadcrumbsLinkProps } from './types';
-
-// ----------------------------------------------------------------------
 
 type Props = {
   link: BreadcrumbsLinkProps;

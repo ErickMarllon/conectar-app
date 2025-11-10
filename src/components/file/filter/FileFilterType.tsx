@@ -1,16 +1,11 @@
-import { useState } from 'react';
-// @mui
+import { Box, Button, CardActionArea, Stack, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
-import { Box, Stack, Button, Typography, CardActionArea } from '@mui/material';
-// components
-import Label from '@/components/label';
-import Iconify from '@/components/iconify';
-import MenuPopover from '@/components/menu-popover';
-import FileFilterButton from './FileFilterButton';
+import { useState } from 'react';
 import FileThumbnail from '../thumbnail';
-//
-
-// ----------------------------------------------------------------------
+import FileFilterButton from './FileFilterButton';
+import Iconify from '@/components/iconify';
+import Label from '@/components/label';
+import MenuPopover from '@/components/menu-popover';
 
 type Props = {
   filterType: string[];

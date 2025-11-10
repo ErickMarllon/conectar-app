@@ -1,18 +1,13 @@
-// @mui
-import { Box, Grid, Card, Button, Typography, Stack } from '@mui/material';
-// @types
+import { Box, Button, Card, Grid, Stack, Typography } from '@mui/material';
 import type {
   IUserAccountBillingCreditCard,
   IUserAccountBillingInvoice,
 } from '@/shared/interfaces/IUser';
-//
 import AccountBillingAddressBook from './AccountBillingAddressBook';
-import AccountBillingPaymentMethod from './AccountBillingPaymentMethod';
 import AccountBillingInvoiceHistory from './AccountBillingInvoiceHistory';
-import { useAuthStore } from '@/stores/userAuth.store';
+import AccountBillingPaymentMethod from './AccountBillingPaymentMethod';
 import { useUserById } from '@/queries/user/useUserById/useUserById';
-
-// ----------------------------------------------------------------------
+import { useAuthStore } from '@/stores/userAuth.store';
 
 type Props = {
   cards: IUserAccountBillingCreditCard[];

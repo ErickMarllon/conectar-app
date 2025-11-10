@@ -1,7 +1,7 @@
-import { MotionViewport, varFade } from '@/components/animate';
 import { Container, Stack, Typography } from '@mui/material';
 import { motion } from 'motion/react';
 import type React from 'react';
+import { MotionViewport, varFade } from '@/components/animate';
 
 type HelpYouHeaderProps = {
   title?: string;

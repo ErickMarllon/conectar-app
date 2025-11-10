@@ -1,6 +1,6 @@
 import { Box, Container } from '@mui/material';
-import { MotionViewport } from '@/components/animate';
 import HelpYouCard from './HelpYouCard';
+import { MotionViewport } from '@/components/animate';
 
 type SectionProps = {
   cards: {

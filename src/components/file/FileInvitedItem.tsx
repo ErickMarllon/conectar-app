@@ -1,23 +1,17 @@
-import { useState } from 'react';
-// @mui
 import {
   Avatar,
   Button,
   Divider,
-  Tooltip,
   ListItem,
-  MenuItem,
-  ListItemText,
   ListItemAvatar,
+  ListItemText,
+  MenuItem,
+  Tooltip,
 } from '@mui/material';
-// @types
+import { useState } from 'react';
 import type { IFileShared } from '@/shared/interfaces/File';
-// components
 import Iconify from '@/components/iconify';
-
 import MenuPopover from '@/components/menu-popover';
-
-// ----------------------------------------------------------------------
 
 type Props = {
   person: IFileShared;

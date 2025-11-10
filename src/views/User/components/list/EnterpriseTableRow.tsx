@@ -1,7 +1,7 @@
+import { Avatar, Stack, TableCell, TableRow, Typography } from '@mui/material';
 import type { ITenantAccountGeneral } from '@/shared/interfaces/ITenant';
 import { fTableFallback } from '@/utils/format/formatTableFallback';
 import { fDateTime } from '@/utils/formatTime';
-import { Avatar, Stack, TableCell, TableRow, Typography } from '@mui/material';
 
 type Props = {
   row: ITenantAccountGeneral;

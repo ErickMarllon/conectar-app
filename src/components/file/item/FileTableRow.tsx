@@ -1,36 +1,30 @@
-import { useState } from 'react';
-// @mui
 import {
-  Stack,
   Avatar,
-  Button,
-  Divider,
-  Checkbox,
-  TableRow,
-  MenuItem,
-  TableCell,
-  IconButton,
-  Typography,
   AvatarGroup,
+  Button,
+  Checkbox,
+  Divider,
+  IconButton,
+  MenuItem,
+  Stack,
+  TableCell,
+  TableRow,
+  Typography,
 } from '@mui/material';
-// hooks
-import useDoubleClick from '@/hooks/useDoubleClick';
-import useCopyToClipboard from '@/hooks/useCopyToClipboard';
-// utils
-import { fDate } from '@/utils/formatTime';
-import { fData } from '@/utils/formatNumber';
-// @types
+import { useState } from 'react';
+import { toast } from 'react-toastify';
 import type { IFileManager } from '@/shared/interfaces/File';
-// components
-import Iconify from '@/components/iconify';
-import MenuPopover from '@/components/menu-popover';
+import { FileDetailsDrawer, FileShareDialog } from '../portal';
 import ConfirmDialog from '@/components/confirm-dialog';
 import FileThumbnail from '@/components/file/thumbnail';
-//
-import { toast } from 'react-toastify';
-import { FileDetailsDrawer, FileShareDialog } from '../portal';
+import Iconify from '@/components/iconify';
+import MenuPopover from '@/components/menu-popover';
+import useCopyToClipboard from '@/hooks/useCopyToClipboard';
+import useDoubleClick from '@/hooks/useDoubleClick';
+import { fData } from '@/utils/formatNumber';
+import { fDate } from '@/utils/formatTime';
 
-// ----------------------------------------------------------------------
+
 
 type Props = {
   row: IFileManager;

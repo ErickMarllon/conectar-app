@@ -1,7 +1,7 @@
-import { varFade } from '@/components/animate';
-import Image from '@/components/image';
 import { Stack } from '@mui/material';
 import { m } from 'framer-motion';
+import { varFade } from '@/components/animate';
+import Image from '@/components/image';
 
 export default function Content() {
   return (

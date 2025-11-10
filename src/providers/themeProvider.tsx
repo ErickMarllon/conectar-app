@@ -1,5 +1,4 @@
-import { useEffect, useMemo } from 'react';
-// @mui
+
 import { CssBaseline } from '@mui/material';
 import {
   createTheme,
@@ -7,8 +6,8 @@ import {
   useTheme,
   type ThemeOptions,
 } from '@mui/material/styles';
-// components
-//
+import { useEffect, useMemo } from 'react';
+import { getPresets } from '@/components/settings/presets';
 import useLocales from '@/hooks/useLocales';
 import { useThemesStore } from '@/stores/themes.store';
 import customShadows from '@/theme/customShadows';
@@ -17,7 +16,6 @@ import componentsOverride from '@/theme/overrides';
 import palette from '@/theme/palette';
 import shadows from '@/theme/shadows';
 import { typography } from '@/theme/typography';
-import { getPresets } from '@/components/settings/presets';
 
 type Props = {
   children: React.ReactNode;

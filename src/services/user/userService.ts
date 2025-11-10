@@ -1,9 +1,9 @@
+import type { IUserSocialSchema } from '@/schemas/social-schema';
+import type { IUserSchema } from '@/schemas/user-schema';
 import type { IUserAccountGeneral, IUserProfile, IUserSocialLink } from '@/shared/interfaces/IUser';
 import type { AxiosResponse } from 'axios';
 import { api } from '@/http/api';
 import { type IAddressPayloadSchema } from '@/schemas/address-payload-schema';
-import type { IUserSchema } from '@/schemas/user-schema';
-import type { IUserSocialSchema } from '@/schemas/social-schema';
 
 class UserService {
   public static async userById(id: string): Promise<AxiosResponse<IUserAccountGeneral>> {

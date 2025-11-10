@@ -1,15 +1,9 @@
-import { sentenceCase } from 'change-case';
-// form
-import { useFormContext } from 'react-hook-form';
-// @mui
+import { Box, Button, Chip, Stack, type StackProps } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { Chip, Stack, Button, Box, type StackProps } from '@mui/material';
-// @type
+import { sentenceCase } from 'change-case';
+import { useFormContext } from 'react-hook-form';
 import type { IProductFilter } from '@/shared/interfaces/IProduct';
-// components
 import Iconify from '@/components/iconify';
-
-// ----------------------------------------------------------------------
 
 type Props = {
   isFiltered: boolean;
@@ -147,8 +141,6 @@ export default function ShopTagFiltered({ isFiltered, onResetFilter }: Props) {
     </Stack>
   );
 }
-
-// ----------------------------------------------------------------------
 
 interface PanelProps extends StackProps {
   label: string;

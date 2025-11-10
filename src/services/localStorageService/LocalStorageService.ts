@@ -1,7 +1,7 @@
-import { STORAGE_KEYS } from '@/shared/constants/storageKeys';
 import type { ITheme } from '@/shared/interfaces/ITheme';
 import type { ITokens } from '@/shared/interfaces/ITokens';
 import type { IUserAuth } from '@/shared/interfaces/IUser';
+import { STORAGE_KEYS } from '@/shared/constants/storageKeys';
 
 class LocalStorageService {
   public static setAuthTokens(tokens: ITokens): void {

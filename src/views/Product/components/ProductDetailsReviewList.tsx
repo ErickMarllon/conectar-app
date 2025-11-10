@@ -1,15 +1,11 @@
+import { Avatar, Button, Pagination, Rating, Stack, Typography } from '@mui/material';
 import { useState } from 'react';
-// @mui
-import { Stack, Button, Rating, Avatar, Pagination, Typography } from '@mui/material';
-// utils
-import { fDate } from '@/utils/formatTime';
-import { fShortenNumber } from '@/utils/formatNumber';
-// @types
 import type { IProductReview } from '@/shared/interfaces/IProduct';
-// components
 import Iconify from '@/components/iconify';
+import { fShortenNumber } from '@/utils/formatNumber';
+import { fDate } from '@/utils/formatTime';
 
-// ----------------------------------------------------------------------
+
 
 type Props = {
   reviews: IProductReview[];
@@ -52,8 +48,6 @@ export default function ProductDetailsReviewList({ reviews }: Props) {
     </>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type ReviewItemProps = {
   review: IProductReview;

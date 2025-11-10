@@ -1,18 +1,10 @@
-// react router dom
-import { Link as RouterLink } from 'react-router-dom';
-// @mui
-import { styled, alpha } from '@mui/material/styles';
 import { Box, Link, Typography } from '@mui/material';
-// auth
-import { useAuthStore } from '@/stores/userAuth.store';
-
-// routes
-import { PATH_DASHBOARD } from '@/routes/paths';
-// components
+import { alpha, styled } from '@mui/material/styles';
+import { Link as RouterLink } from 'react-router-dom';
 import { CustomAvatar } from '@/components/custom-avatar';
+import { PATH_DASHBOARD } from '@/routes/paths';
+import { useAuthStore } from '@/stores/userAuth.store';
 import { formatFullName } from '@/utils/format/formatFullName';
-
-// ----------------------------------------------------------------------
 
 const StyledRoot = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -24,8 +16,6 @@ const StyledRoot = styled('div')(({ theme }) => ({
     duration: theme.transitions.duration.shorter,
   }),
 }));
-
-// ----------------------------------------------------------------------
 
 export default function NavAccount() {
   const { user } = useAuthStore();

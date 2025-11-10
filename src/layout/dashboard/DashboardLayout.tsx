@@ -1,16 +1,16 @@
+import { Box } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
-import { Box } from '@mui/material';
-import { useThemesStore } from '@/stores/themes.store';
 import useResponsive from '../../hooks/useResponsive';
-import { useAuthStore } from '@/stores/userAuth.store';
-import Main from './Main';
 import Header from './header';
+import Main from './Main';
 import NavHorizontal from './nav/NavHorizontal';
 import NavMini from './nav/NavMini';
 import NavVertical from './nav/NavVertical';
-import { PATH_AUTH } from '@/routes/paths';
 import AuthGuard from '@/guard/AuthGuard';
+import { PATH_AUTH } from '@/routes/paths';
+import { useThemesStore } from '@/stores/themes.store';
+import { useAuthStore } from '@/stores/userAuth.store';
 
 export default function DashboardLayout() {
   const { themeLayout } = useThemesStore();

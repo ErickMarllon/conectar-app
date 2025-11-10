@@ -1,21 +1,17 @@
-// React Query
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-// React Router
+import { I18nextProvider } from 'react-i18next';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-
-// Router
-import { PATH_AUTH, PATH_DASHBOARD, PATH_PAGE } from './routes/paths';
-
-// Toast notifications
 import { ToastContainer } from 'react-toastify';
-
-// Layouts
+import { MotionLazyContainer } from './components/animate';
 import CompactLayout from './layout/compact';
 import DashboardLayout from './layout/dashboard';
 import MainLayout from './layout/main';
 import SimpleLayout from './layout/simple';
-
-// Views
+import i18n from './locales/i18n';
+import ThemeProvider from './providers/themeProvider';
+import { PATH_AUTH, PATH_DASHBOARD, PATH_PAGE } from './routes/paths';
 import {
   AboutPage,
   AuthCallback,
@@ -58,16 +54,6 @@ import {
   UserListPage,
   VerifyCodePage,
 } from './views';
-
-// (MUI ThemeProvider)
-import ThemeProvider from './providers/themeProvider';
-
-// lazy motion
-import { LocalizationProvider } from '@mui/x-date-pickers';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { MotionLazyContainer } from './components/animate';
-import { I18nextProvider } from 'react-i18next';
-import i18n from './locales/i18n';
 
 const queryClient = new QueryClient({
   defaultOptions: {

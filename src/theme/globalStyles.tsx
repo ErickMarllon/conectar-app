@@ -1,7 +1,4 @@
-// @mui
 import { alpha, GlobalStyles as MUIGlobalStyles } from '@mui/material';
-
-// ----------------------------------------------------------------------
 
 export default function GlobalStyles() {
   const inputGlobalStyles = (

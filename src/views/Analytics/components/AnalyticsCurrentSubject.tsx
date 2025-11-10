@@ -1,11 +1,8 @@
-import type { ApexOptions } from 'apexcharts';
-// @mui
-import { styled, useTheme } from '@mui/material/styles';
-import { Card, CardHeader, type CardProps } from '@mui/material';
-// components
-import Chart, { useChart } from '@/components/chart';
 
-// ----------------------------------------------------------------------
+import { Card, CardHeader, type CardProps } from '@mui/material';
+import { styled, useTheme } from '@mui/material/styles';
+import type { ApexOptions } from 'apexcharts';
+import Chart, { useChart } from '@/components/chart';
 
 const CHART_HEIGHT = 400;
 
@@ -28,8 +25,6 @@ const StyledChart = styled('div')(({ theme }) => ({
     top: `calc(${CHART_HEIGHT - LEGEND_HEIGHT}px) !important`,
   },
 }));
-
-// ----------------------------------------------------------------------
 
 interface Props extends CardProps {
   title?: string;

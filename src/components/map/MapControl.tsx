@@ -3,8 +3,6 @@ import { ZoomControl } from 'react-leaflet';
 import FullscreenControl from './FullscreenControl';
 import { StyledMapControls } from './styles';
 
-// ----------------------------------------------------------------------
-
 type Props = {
   hideScaleControl?: boolean;
   hideGeolocateControl?: boolean;

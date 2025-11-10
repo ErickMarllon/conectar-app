@@ -1,24 +1,20 @@
-import { useState, useRef } from 'react';
-// @mui
-import { useTheme } from '@mui/material/styles';
-import {
-  Card,
-  Chip,
-  Stack,
-  Avatar,
-  Rating,
-  Button,
-  type CardProps,
-  CardHeader,
-  Typography,
-} from '@mui/material';
-// utils
-import { fDateTime } from '@/utils/formatTime';
-// components
-import Iconify from '@/components/iconify';
-import Carousel, { CarouselArrows } from '@/components/carousel';
 
-// ----------------------------------------------------------------------
+import {
+  Avatar,
+  Button,
+  Card,
+  CardHeader,
+  Chip,
+  Rating,
+  Stack,
+  Typography,
+  type CardProps,
+} from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import { useRef, useState } from 'react';
+import Carousel, { CarouselArrows } from '@/components/carousel';
+import Iconify from '@/components/iconify';
+import { fDateTime } from '@/utils/formatTime';
 
 type ItemProps = {
   id: string;
@@ -111,8 +107,6 @@ export default function BookingCustomerReviews({ title, subheader, list, ...othe
     </Card>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type ReviewItemProps = {
   item: ItemProps;

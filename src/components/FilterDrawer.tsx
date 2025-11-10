@@ -1,15 +1,3 @@
-import { ColorMultiPicker } from '@/components/color-utils';
-import {
-  RHFMultiCheckbox,
-  RHFRadioGroup,
-  RHFRating,
-  RHFSelect,
-  RHFSlider,
-  RHFTextField,
-} from '@/components/hook-form';
-import Iconify from '@/components/iconify';
-import Scrollbar from '@/components/scrollbar';
-import { NAV } from '@/configs/global';
 import {
   alpha,
   Badge,
@@ -25,6 +13,18 @@ import {
   type ButtonProps,
 } from '@mui/material';
 import { Controller, useFormContext } from 'react-hook-form';
+import { ColorMultiPicker } from '@/components/color-utils';
+import {
+  RHFMultiCheckbox,
+  RHFRadioGroup,
+  RHFRating,
+  RHFSelect,
+  RHFSlider,
+  RHFTextField,
+} from '@/components/hook-form';
+import Iconify from '@/components/iconify';
+import Scrollbar from '@/components/scrollbar';
+import { NAV } from '@/configs/global';
 
 export type IFormOptions = {
   name: string;
@@ -239,7 +239,6 @@ export default function FilterDrawer({
   );
 }
 
-// ----------------------------------------------------------------------
 type InputRangeProps = {
   type: 'min' | 'max';
   name: string;

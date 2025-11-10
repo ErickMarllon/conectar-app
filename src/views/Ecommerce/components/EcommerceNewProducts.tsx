@@ -1,13 +1,8 @@
-// @mui
-import { alpha, useTheme, styled } from '@mui/material/styles';
-import { Box, Card, Button, CardContent, Typography, type CardProps } from '@mui/material';
-// utils
-import { bgGradient } from '@/utils/cssStyles';
-// components
-import Image from '@/components/image';
+import { Box, Button, Card, CardContent, Typography, type CardProps } from '@mui/material';
+import { alpha, styled, useTheme } from '@mui/material/styles';
 import Carousel, { CarouselDots } from '@/components/carousel';
-
-// ----------------------------------------------------------------------
+import Image from '@/components/image';
+import { bgGradient } from '@/utils/cssStyles';
 
 const StyledOverlay = styled('div')(({ theme }) => ({
   ...bgGradient({
@@ -21,8 +16,6 @@ const StyledOverlay = styled('div')(({ theme }) => ({
   zIndex: 8,
   position: 'absolute',
 }));
-
-// ----------------------------------------------------------------------
 
 type ItemProps = {
   id: string;
@@ -64,8 +57,6 @@ export default function EcommerceNewProducts({ list, ...other }: Props) {
     </Card>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type CarouselItemProps = {
   item: ItemProps;

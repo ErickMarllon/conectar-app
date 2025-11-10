@@ -1,7 +1,7 @@
+import { useTheme, alpha } from '@mui/material/styles';
 import merge from 'lodash/merge';
 import type { ApexOptions } from 'apexcharts';
 // @mui
-import { useTheme, alpha } from '@mui/material/styles';
 
 // ----------------------------------------------------------------------
 

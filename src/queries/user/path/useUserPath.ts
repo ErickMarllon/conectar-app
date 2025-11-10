@@ -1,11 +1,11 @@
-import { handleError } from '@/errors/handleError';
+import { useMutation, useQueryClient, type UseMutationOptions } from '@tanstack/react-query';
+import { toast } from 'react-toastify';
 import type { IUserSchema } from '@/schemas/user-schema';
 import type { IUserAccountGeneral } from '@/shared/interfaces/IUser';
-import { useMutation, useQueryClient, type UseMutationOptions } from '@tanstack/react-query';
 import type { AxiosError, AxiosResponse } from 'axios';
 import { userPathMutationFn } from './userPathMutationFn';
+import { handleError } from '@/errors/handleError';
 import { useAuthStore } from '@/stores/userAuth.store';
-import { toast } from 'react-toastify';
 
 type MutationError = AxiosError;
 type MutationData = AxiosResponse<IUserAccountGeneral>;

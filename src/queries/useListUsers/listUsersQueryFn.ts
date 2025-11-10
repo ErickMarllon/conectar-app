@@ -1,9 +1,9 @@
-import { handleError } from '@/errors/handleError';
-import { UsersService } from '@/services/users';
+import { AxiosError } from 'axios';
 import type { IFilterGeneric } from '@/shared/interfaces/IFilter';
 import type { IPaginatedResponse } from '@/shared/interfaces/IPaginate';
 import type { IUserAccountGeneral } from '@/shared/interfaces/IUser';
-import { AxiosError } from 'axios';
+import { handleError } from '@/errors/handleError';
+import { UsersService } from '@/services/users';
 
 export const listUsersQueryFn = async (
   params: Partial<IFilterGeneric>,

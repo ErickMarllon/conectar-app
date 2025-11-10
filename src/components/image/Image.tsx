@@ -1,12 +1,8 @@
+import { Box } from '@mui/material';
 import { forwardRef } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-// @mui
-import { Box } from '@mui/material';
-//
-import getRatio from './getRatio';
 import type { ImageProps } from './types';
-
-// ----------------------------------------------------------------------
+import getRatio from './getRatio';
 
 const Image = forwardRef<HTMLSpanElement, ImageProps>(
   ({ ratio, disabledEffect = false, effect = 'blur', sx, ...other }, ref) => {

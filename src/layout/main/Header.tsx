@@ -1,10 +1,3 @@
-import Logo from '@/components/logo';
-import SettingsDrawer from '@/components/settings/drawer';
-import { HEADER } from '@/configs/global';
-import useOffSetTop from '@/hooks/useOffSetTop';
-import useResponsive from '@/hooks/useResponsive';
-import { PATH_PAGE } from '@/routes/paths';
-import { bgBlur } from '@/utils/cssStyles';
 import { AppBar, Box, Button, Container, Link, Stack, Toolbar, type BoxProps } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useTranslation } from 'react-i18next';
@@ -13,6 +6,13 @@ import LanguagePopover from '../dashboard/header/LanguagePopover';
 import navConfig from './nav/config-navigation';
 import NavDesktop from './nav/desktop';
 import NavMobile from './nav/mobile';
+import Logo from '@/components/logo';
+import SettingsDrawer from '@/components/settings/drawer';
+import { HEADER } from '@/configs/global';
+import useOffSetTop from '@/hooks/useOffSetTop';
+import useResponsive from '@/hooks/useResponsive';
+import { PATH_PAGE } from '@/routes/paths';
+import { bgBlur } from '@/utils/cssStyles';
 
 export default function Header() {
   const theme = useTheme();
@@ -100,8 +100,6 @@ export default function Header() {
     </AppBar>
   );
 }
-
-// ----------------------------------------------------------------------
 
 function Shadow({ sx, ...other }: BoxProps) {
   return (

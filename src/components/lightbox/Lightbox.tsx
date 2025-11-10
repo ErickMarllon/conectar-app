@@ -1,15 +1,10 @@
+import { Typography } from '@mui/material';
 import ReactLightbox from 'yet-another-react-lightbox';
 import { useLightboxState } from 'yet-another-react-lightbox/core';
-// @mui
-import { Typography } from '@mui/material';
-//
-import Iconify from '../iconify';
-//
 import type { LightBoxProps } from './types';
+import Iconify from '../iconify';
 import StyledLightbox from './styles';
 import { getPlugins } from './utils/getPlugins';
-
-// ----------------------------------------------------------------------
 
 const ICON_SIZE = 24;
 
@@ -78,10 +73,6 @@ export default function Lightbox({
     </>
   );
 }
-
-// ----------------------------------------------------------------------
-
-// ----------------------------------------------------------------------
 
 type DisplayTotalProps = {
   totalItems: number;

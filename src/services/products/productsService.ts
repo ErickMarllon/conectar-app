@@ -1,7 +1,7 @@
-import type { AxiosResponse } from 'axios';
-import type { IProduct } from '@/shared/interfaces/IProduct';
-import type { IPaginatedResponse } from '@/shared/interfaces/IPaginate';
 import type { useListProductsParams } from '@/queries/products/useList/type';
+import type { IPaginatedResponse } from '@/shared/interfaces/IPaginate';
+import type { IProduct } from '@/shared/interfaces/IProduct';
+import type { AxiosResponse } from 'axios';
 import { products } from '@/_mock/_products';
 
 class ProductsService {

@@ -1,16 +1,10 @@
-import { useState, useEffect } from 'react';
-// react router dom
+import { Fade, Portal, Stack } from '@mui/material';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-// @mui
-import { Stack, Fade, Portal } from '@mui/material';
-// hooks
-import useActiveLink from '@/hooks/useActiveLink';
-//
 import type { NavItemProps } from '../types';
 import { NavItem, NavItemDashboard } from './NavItem';
-import { StyledSubheader, StyledMenu } from './styles';
-
-// ----------------------------------------------------------------------
+import { StyledMenu, StyledSubheader } from './styles';
+import useActiveLink from '@/hooks/useActiveLink';
 
 type NavListProps = {
   item: NavItemProps;
@@ -75,8 +69,6 @@ export default function NavList({ item, isOffset }: NavListProps) {
     </>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type NavSubListProps = {
   isDashboard: boolean;

@@ -1,14 +1,8 @@
-// react router dom
-import { Link as RouterLink } from 'react-router-dom';
-// @mui
-import { styled } from '@mui/material/styles';
 import { Badge, Link } from '@mui/material';
-// routes
-import { PATH_DASHBOARD } from '@/routes/paths';
-// components
+import { styled } from '@mui/material/styles';
+import { Link as RouterLink } from 'react-router-dom';
 import Iconify from '@/components/iconify';
-
-// ----------------------------------------------------------------------
+import { PATH_DASHBOARD } from '@/routes/paths';
 
 const StyledRoot = styled('div')(({ theme }) => ({
   zIndex: 999,
@@ -30,8 +24,6 @@ const StyledRoot = styled('div')(({ theme }) => ({
   transition: theme.transitions.create('opacity'),
   '&:hover': { opacity: 0.72 },
 }));
-
-// ----------------------------------------------------------------------
 
 type Props = {
   totalItems: number;

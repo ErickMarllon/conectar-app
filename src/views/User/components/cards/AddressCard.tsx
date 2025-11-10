@@ -1,6 +1,6 @@
-import Iconify from '@/components/iconify';
-import type { IAddressSchema } from '@/schemas/address-schema';
 import { alpha, Box, Button, Card, CardContent, Chip, IconButton, Typography } from '@mui/material';
+import type { IAddressSchema } from '@/schemas/address-schema';
+import Iconify from '@/components/iconify';
 
 export default function AddressCard({
   address,

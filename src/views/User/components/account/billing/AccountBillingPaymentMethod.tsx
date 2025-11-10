@@ -1,15 +1,9 @@
+import { Button, Card, IconButton, Paper, Stack, Typography } from '@mui/material';
 import { useState } from 'react';
-// @mui
-import { Card, Stack, Paper, Button, Typography, IconButton } from '@mui/material';
-// @types
 import type { IUserAccountBillingCreditCard } from '@/shared/interfaces/IUser';
-// components
-import Image from '@/components/image';
 import Iconify from '@/components/iconify';
+import Image from '@/components/image';
 import PaymentNewCardDialog from '@/views/Payment/components/PaymentNewCardDialog';
-// section
-
-// ----------------------------------------------------------------------
 
 type Props = {
   cards: IUserAccountBillingCreditCard[];

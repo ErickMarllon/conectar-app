@@ -1,11 +1,6 @@
-// form
-import { useFormContext, Controller } from 'react-hook-form';
-// @mui
 import { FormHelperText } from '@mui/material';
-//
+import { Controller, useFormContext } from 'react-hook-form';
 import Editor, { type EditorProps } from '../editor';
-
-// ----------------------------------------------------------------------
 
 interface Props extends EditorProps {
   name: string;

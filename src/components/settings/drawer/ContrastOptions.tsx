@@ -1,12 +1,8 @@
-// @mui
 import { RadioGroup } from '@mui/material';
-//
-import SvgColor from '../../svg-color';
-import { StyledCard, StyledWrap, MaskControl } from '../styles';
-import { useThemesStore } from '@/stores/themes.store';
 import type { ThemeContrastValue } from '../types';
-
-// ----------------------------------------------------------------------
+import SvgColor from '../../svg-color';
+import { MaskControl, StyledCard, StyledWrap } from '../styles';
+import { useThemesStore } from '@/stores/themes.store';
 
 const OPTIONS = ['default', 'bold'] as const;
 

@@ -1,9 +1,5 @@
-// auth
-import GuestGuard from '@/guard/GuestGuard';
-// sections
 import Register from './components/Register';
-
-// ----------------------------------------------------------------------
+import GuestGuard from '@/guard/GuestGuard';
 
 export function RegisterPage() {
   return (

@@ -1,21 +1,16 @@
-// @mui
-import { styled } from '@mui/material/styles';
 import {
   Card,
   CardHeader,
-  Typography,
   Stack,
-  type StackProps,
+  Typography,
   type CardProps,
+  type StackProps,
 } from '@mui/material';
-// utils
-import { fShortenNumber } from '@/utils/formatNumber';
-// components
-import Image from '@/components/image';
+import { styled } from '@mui/material/styles';
 import Iconify from '@/components/iconify';
+import Image from '@/components/image';
 import Scrollbar from '@/components/scrollbar';
-
-// ----------------------------------------------------------------------
+import { fShortenNumber } from '@/utils/formatNumber';
 
 const StyledBlock = styled((props: StackProps) => (
   <Stack direction="row" alignItems="center" {...props} />
@@ -30,8 +25,6 @@ const StyledItemIcon = styled(Iconify)(({ theme }) => ({
   marginRight: theme.spacing(0.5),
   color: theme.palette.text.disabled,
 }));
-
-// ----------------------------------------------------------------------
 
 type ItemProps = {
   id: string;
@@ -63,8 +56,6 @@ export default function AppTopInstalledCountries({ title, subheader, list, ...ot
     </Card>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type CountryItemProps = {
   country: ItemProps;

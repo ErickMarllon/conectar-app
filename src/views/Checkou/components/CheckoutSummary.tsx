@@ -1,22 +1,17 @@
-// @mui
 import {
   Box,
-  Card,
-  Stack,
   Button,
-  Divider,
-  TextField,
-  CardHeader,
-  Typography,
+  Card,
   CardContent,
+  CardHeader,
+  Divider,
   InputAdornment,
+  Stack,
+  TextField,
+  Typography,
 } from '@mui/material';
-// utils
-import { fCurrency } from '@/utils/formatNumber';
-// components
 import Iconify from '@/components/iconify';
-
-// ----------------------------------------------------------------------
+import { fCurrency } from '@/utils/formatNumber';
 
 type Props = {
   total: number;

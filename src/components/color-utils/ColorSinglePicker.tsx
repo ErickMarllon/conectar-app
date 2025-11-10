@@ -1,11 +1,7 @@
-import { forwardRef } from 'react';
-// @mui
 import { Radio, RadioGroup } from '@mui/material';
-//
-import Icon from './Icon';
+import { forwardRef } from 'react';
 import type { ColorSinglePickerProps } from './types';
-
-// ----------------------------------------------------------------------
+import Icon from './Icon';
 
 const ColorSinglePicker = forwardRef<HTMLDivElement, ColorSinglePickerProps>(
   ({ colors, ...other }, ref) => (

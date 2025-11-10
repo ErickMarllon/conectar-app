@@ -1,14 +1,8 @@
-// react router dom
+import { Link, ListItemIcon, ListItemText } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
-// @mui
-import { Link, ListItemText, ListItemIcon } from '@mui/material';
-// components
-import Iconify from '@/components/iconify';
-//
 import type { NavItemMobileProps } from '../types';
 import { ListItem } from './styles';
-
-// ----------------------------------------------------------------------
+import Iconify from '@/components/iconify';
 
 export default function NavItem({
   item,

@@ -1,13 +1,9 @@
-import orderBy from 'lodash/orderBy';
-// @mui
-import { alpha } from '@mui/material/styles';
-import { Box, Stack, Card, Avatar, CardHeader, Typography, type CardProps } from '@mui/material';
-// utils
-import { fShortenNumber } from '@/utils/formatNumber';
-// components
-import Iconify from '@/components/iconify';
 
-// ----------------------------------------------------------------------
+import { Avatar, Box, Card, CardHeader, Stack, Typography, type CardProps } from '@mui/material';
+import { alpha } from '@mui/material/styles';
+import orderBy from 'lodash/orderBy';
+import Iconify from '@/components/iconify';
+import { fShortenNumber } from '@/utils/formatNumber';
 
 type ItemProps = {
   id: string;
@@ -35,8 +31,6 @@ export default function AppTopAuthors({ title, subheader, list, ...other }: Prop
     </Card>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type AuthorItemProps = {
   author: ItemProps;

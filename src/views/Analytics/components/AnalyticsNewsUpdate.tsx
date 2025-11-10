@@ -1,23 +1,18 @@
-// @mui
 import {
   Box,
-  Stack,
-  Link,
-  Card,
   Button,
-  Divider,
-  Typography,
+  Card,
   CardHeader,
+  Divider,
+  Link,
+  Stack,
+  Typography,
   type CardProps,
 } from '@mui/material';
-// utils
-import { fToNow } from '@/utils/formatTime';
-// components
-import Image from '@/components/image';
 import Iconify from '@/components/iconify';
+import Image from '@/components/image';
 import Scrollbar from '@/components/scrollbar';
-
-// ----------------------------------------------------------------------
+import { fToNow } from '@/utils/formatTime';
 
 type ItemProps = {
   id: string;
@@ -60,8 +55,6 @@ export default function AnalyticsNewsUpdate({ title, subheader, list, ...other }
     </Card>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type NewsItemProps = {
   news: ItemProps;

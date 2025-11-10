@@ -1,9 +1,7 @@
+import { Box, IconButton, type IconButtonProps } from '@mui/material';
 import { m } from 'framer-motion';
 import { forwardRef } from 'react';
-// @mui
-import { Box, IconButton, type IconButtonProps } from '@mui/material';
 
-// ----------------------------------------------------------------------
 
 const IconButtonAnimate = forwardRef<HTMLButtonElement, IconButtonProps>(
   ({ children, size = 'medium', ...other }, ref) => (
@@ -16,8 +14,6 @@ const IconButtonAnimate = forwardRef<HTMLButtonElement, IconButtonProps>(
 );
 
 export default IconButtonAnimate;
-
-// ----------------------------------------------------------------------
 
 type AnimateWrapProp = {
   children: React.ReactNode;

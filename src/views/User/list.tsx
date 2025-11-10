@@ -1,6 +1,6 @@
-import { PATH_DASHBOARD } from '@/routes/paths';
 import { useLocation } from 'react-router-dom';
 import { EnterpriseList, UserList } from './components/list';
+import { PATH_DASHBOARD } from '@/routes/paths';
 
 export function UserListPage() {
   const locale = useLocation();

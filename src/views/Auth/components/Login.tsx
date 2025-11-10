@@ -1,17 +1,9 @@
-// react router dom
+import { Alert, Box, Link, Stack, Typography } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
-
-// @mui
-import { Alert, Stack, Typography, Link, Box } from '@mui/material';
-
-// routes
-import { PATH_AUTH } from '@/routes/paths';
-//
 import AuthLoginForm from './AuthLoginForm';
 import AuthWithSocial from './AuthWithSocial';
 import AccessLayout from '@/layout/access';
-
-// ----------------------------------------------------------------------
+import { PATH_AUTH } from '@/routes/paths';
 
 export default function Login() {
   return (

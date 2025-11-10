@@ -1,15 +1,9 @@
-// form
-import { useForm } from 'react-hook-form';
-// @mui
-import { Card, Stack, Typography } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
-// @types
-import type { IUserAccountNotificationSettings } from '@/shared/interfaces/IUser';
-// components
-import FormProvider, { RHFSwitch } from '@/components/hook-form';
+import { Card, Stack, Typography } from '@mui/material';
+import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
-
-// ----------------------------------------------------------------------
+import type { IUserAccountNotificationSettings } from '@/shared/interfaces/IUser';
+import FormProvider, { RHFSwitch } from '@/components/hook-form';
 
 const ACTIVITY_OPTIONS = [
   {
@@ -37,8 +31,6 @@ const NOTIFICATION_SETTINGS = {
   applicationProduct: false,
   applicationBlog: false,
 };
-
-// ----------------------------------------------------------------------
 
 type FormValuesProps = IUserAccountNotificationSettings;
 

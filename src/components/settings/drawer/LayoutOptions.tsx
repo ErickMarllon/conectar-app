@@ -1,11 +1,7 @@
-// @mui
 import { RadioGroup } from '@mui/material';
-//
-import { StyledCard, StyledWrap, MaskControl, LayoutIcon } from '../styles';
-import { useThemesStore } from '@/stores/themes.store';
 import type { ThemeLayoutValue } from '../types';
-
-// ----------------------------------------------------------------------
+import { LayoutIcon, MaskControl, StyledCard, StyledWrap } from '../styles';
+import { useThemesStore } from '@/stores/themes.store';
 
 const OPTIONS = ['vertical', 'horizontal', 'mini'] as const;
 

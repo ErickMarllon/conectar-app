@@ -1,18 +1,10 @@
-// react router dom
-import { Link as RouterLink } from 'react-router-dom';
-// @mui
-import { Box, Tooltip, Link, ListItemText } from '@mui/material';
-// locales
-// auth
-import RoleBasedGuard from '@/auth/RoleBasedGuard';
-//
-import Iconify from '../../iconify';
-//
-import type { NavItemProps } from '../types';
-import { StyledItem, StyledIcon, StyledDotIcon } from './styles';
+import { Box, Link, ListItemText, Tooltip } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-
-// ----------------------------------------------------------------------
+import { Link as RouterLink } from 'react-router-dom';
+import type { NavItemProps } from '../types';
+import Iconify from '../../iconify';
+import { StyledDotIcon, StyledIcon, StyledItem } from './styles';
+import RoleBasedGuard from '@/auth/RoleBasedGuard';
 
 export default function NavItem({
   item,
@@ -77,7 +69,6 @@ export default function NavItem({
   );
 
   const renderItem = () => {
-    // ExternalLink
     if (isExternalLink)
       return (
         <Link href={path} target="_blank" rel="noopener" underline="none">
@@ -85,12 +76,10 @@ export default function NavItem({
         </Link>
       );
 
-    // Has child
     if (children) {
       return renderContent;
     }
 
-    // Default
     return (
       <Link component={RouterLink} to={path} underline="none">
         {renderContent}

@@ -1,12 +1,7 @@
-// @mui
-import { Stack, Box } from '@mui/material';
-//
+import { Box, Stack } from '@mui/material';
 import Iconify from '../../iconify';
-//
 import { StyledCard } from '../styles';
 import { useThemesStore } from '@/stores/themes.store';
-
-// ----------------------------------------------------------------------
 
 export default function StretchOptions() {
   const { themeStretch, setStretchValue } = useThemesStore();

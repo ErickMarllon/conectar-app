@@ -1,13 +1,9 @@
-import type { ApexOptions } from 'apexcharts';
-// @mui
-import { useTheme } from '@mui/material/styles';
-import { Card, Typography, type CardProps, Stack, Avatar } from '@mui/material';
-// utils
-import { fData } from '@/utils/formatNumber';
-// components
-import Chart, { useChart } from '@/components/chart';
 
-// ----------------------------------------------------------------------
+import { Avatar, Card, Stack, Typography, type CardProps } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import type { ApexOptions } from 'apexcharts';
+import Chart, { useChart } from '@/components/chart';
+import { fData } from '@/utils/formatNumber';
 
 interface Props extends CardProps {
   total: number;

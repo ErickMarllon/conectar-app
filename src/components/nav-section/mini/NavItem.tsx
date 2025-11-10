@@ -1,18 +1,11 @@
+import { Link, ListItemText, Tooltip } from '@mui/material';
 import { forwardRef } from 'react';
-// react router dom
-import { Link as RouterLink } from 'react-router-dom';
-// @mui
-import { Tooltip, Link, ListItemText } from '@mui/material';
-// locales
-// auth
-import RoleBasedGuard from '@/auth/RoleBasedGuard';
-//
-import Iconify from '../../iconify';
-import type { NavItemProps } from '../types';
-import { StyledItem, StyledIcon } from './styles';
 import { useTranslation } from 'react-i18next';
-
-// ----------------------------------------------------------------------
+import { Link as RouterLink } from 'react-router-dom';
+import type { NavItemProps } from '../types';
+import Iconify from '../../iconify';
+import { StyledIcon, StyledItem } from './styles';
+import RoleBasedGuard from '@/auth/RoleBasedGuard';
 
 const NavItem = forwardRef<HTMLDivElement, NavItemProps>(
   ({ item, depth, open, active, isExternalLink, ...other }, ref) => {
@@ -83,7 +76,6 @@ const NavItem = forwardRef<HTMLDivElement, NavItemProps>(
     );
 
     const renderItem = () => {
-      // ExternalLink
       if (isExternalLink)
         return (
           <Link href={path} target="_blank" rel="noopener" underline="none">
@@ -91,7 +83,6 @@ const NavItem = forwardRef<HTMLDivElement, NavItemProps>(
           </Link>
         );
 
-      // Default
       return (
         <Link component={RouterLink} to={path} underline="none">
           {renderContent}

@@ -1,10 +1,10 @@
-import { NavSectionVertical } from '@/components/nav-section';
-import useActiveLink from '@/hooks/useActiveLink';
 import { Collapse } from '@mui/material';
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import type { NavItemProps } from '../types';
 import NavItem from './NavItem';
+import { NavSectionVertical } from '@/components/nav-section';
+import useActiveLink from '@/hooks/useActiveLink';
 
 type NavListProps = {
   item: NavItemProps;

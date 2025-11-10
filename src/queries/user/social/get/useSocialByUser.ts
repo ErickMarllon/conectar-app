@@ -1,5 +1,5 @@
-import type { IUserSocialLink } from '@/shared/interfaces/IUser';
 import { useQuery, useQueryClient, type UseQueryOptions } from '@tanstack/react-query';
+import type { IUserSocialLink } from '@/shared/interfaces/IUser';
 import type { AxiosError } from 'axios';
 import { queryFn } from './queryFn';
 

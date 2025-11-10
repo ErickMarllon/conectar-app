@@ -1,13 +1,8 @@
-// @mui
-import { Stack, Paper, Button, Tooltip, IconButton, InputBase } from '@mui/material';
-// auth
-import { useAuthStore } from '@/stores/userAuth.store';
-// components
-import Iconify from '@/components/iconify';
+import { Button, IconButton, InputBase, Paper, Stack, Tooltip } from '@mui/material';
 import { CustomAvatar } from '@/components/custom-avatar';
+import Iconify from '@/components/iconify';
+import { useAuthStore } from '@/stores/userAuth.store';
 import { formatFullName } from '@/utils/format/formatFullName';
-
-// ----------------------------------------------------------------------
 
 export default function KanbanDetailsCommentInput() {
   const { user } = useAuthStore();

@@ -1,8 +1,8 @@
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
+import type { IAddressSchema } from '@/schemas/address-schema';
+import { AddressForm } from './AddressForm';
 import FormProvider from '@/components/hook-form';
 import Loading from '@/components/loading';
-import type { IAddressSchema } from '@/schemas/address-schema';
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
-import { AddressForm } from './AddressForm';
 
 export function AddressFormDialog({
   open,

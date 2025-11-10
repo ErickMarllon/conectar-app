@@ -3,9 +3,9 @@ import { m, useScroll, useSpring } from 'framer-motion';
 import ElevateMarketing from './components/ElevateMarketing';
 import GlobalReachSection from './components/GlobalReachSection';
 import HelpYou from './components/HelpYou';
+import HomeAdvertisement from './components/HomeAdvertisement';
 import HomeHero from './components/HomeHero';
 import HomePricingPlans from './components/HomePricingPlans';
-import HomeAdvertisement from './components/HomeAdvertisement';
 const StyledBg = styled('div')(() => ({
   position: 'relative',
   '&::before': {

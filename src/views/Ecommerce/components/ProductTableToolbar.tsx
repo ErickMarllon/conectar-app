@@ -1,22 +1,18 @@
-import { sentenceCase } from 'change-case';
-// @mui
 import {
-  Stack,
   Button,
-  Select,
-  MenuItem,
   Checkbox,
-  TextField,
-  InputLabel,
   FormControl,
-  OutlinedInput,
   InputAdornment,
+  InputLabel,
+  MenuItem,
+  OutlinedInput,
+  Select,
+  Stack,
+  TextField,
 } from '@mui/material';
+import { sentenceCase } from 'change-case';
 import type { SelectChangeEvent } from '@mui/material/Select';
-// components
 import Iconify from '@/components/iconify';
-
-// ----------------------------------------------------------------------
 
 type Props = {
   isFiltered: boolean;

@@ -1,13 +1,8 @@
+import { Box, Button, MenuItem } from '@mui/material';
 import { useState } from 'react';
-// form
 import { Controller, useFormContext } from 'react-hook-form';
-// @mui
-import { Button, MenuItem, Box } from '@mui/material';
-// components
 import Iconify from '@/components/iconify';
 import MenuPopover from '@/components/menu-popover';
-
-// ----------------------------------------------------------------------
 
 const OPTIONS = [
   { value: 'featured', label: 'Featured' },
@@ -24,8 +19,6 @@ function renderLabel(label: string) {
     priceAsc: 'Price: Low - High',
   }[label];
 }
-
-// ----------------------------------------------------------------------
 
 export default function ShopProductSort() {
   const { control } = useFormContext();

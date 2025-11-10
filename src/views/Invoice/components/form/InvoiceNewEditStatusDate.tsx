@@ -1,17 +1,11 @@
-// form
-import { useFormContext, Controller } from 'react-hook-form';
-// @mui
-import { DatePicker } from '@mui/x-date-pickers';
-import { Stack, MenuItem } from '@mui/material';
-// components
-import { RHFSelect, RHFTextField } from '@/components/hook-form';
-import dayjs, { Dayjs } from 'dayjs';
 
-// ----------------------------------------------------------------------
+import { MenuItem, Stack } from '@mui/material';
+import { DatePicker } from '@mui/x-date-pickers';
+import dayjs, { Dayjs } from 'dayjs';
+import { Controller, useFormContext } from 'react-hook-form';
+import { RHFSelect, RHFTextField } from '@/components/hook-form';
 
 const STATUS_OPTIONS = ['paid', 'unpaid', 'overdue', 'draft'];
-
-// ----------------------------------------------------------------------
 
 export default function InvoiceNewEditStatusDate() {
   const { control, watch } = useFormContext();

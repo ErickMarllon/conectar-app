@@ -1,12 +1,12 @@
+import { Box, Button, Divider, Stack, Typography, type StackProps } from '@mui/material';
+import { useTranslation } from 'react-i18next';
+import type { IPlan } from '@/shared/interfaces/IPlan';
 import { PlanFreeIcon, PlanPremiumIcon, PlanStarterIcon } from '@/assets/icons';
 import Iconify from '@/components/iconify';
 import { useCurrencyConverter } from '@/hooks/ useCurrencyConverter';
 import useLocales from '@/hooks/useLocales';
 import { allLangs } from '@/locales/config-lang';
 import { PATH_PAGE } from '@/routes/paths';
-import type { IPlan } from '@/shared/interfaces/IPlan';
-import { Box, Button, Divider, Stack, Typography, type StackProps } from '@mui/material';
-import { useTranslation } from 'react-i18next';
 
 interface PlanCardProps extends StackProps {
   plan: IPlan;

@@ -1,6 +1,6 @@
 // @mui
-import { styled, alpha } from '@mui/material/styles';
 import { Paper, ListSubheader, ListItemButton } from '@mui/material';
+import { styled, alpha } from '@mui/material/styles';
 //
 import type { NavItemDesktopProps } from '../types';
 

@@ -1,8 +1,5 @@
-// @mui
-import { type Theme, alpha } from '@mui/material/styles';
-import { Paper, CardHeader, Box, Typography, type SxProps } from '@mui/material';
-
-// ----------------------------------------------------------------------
+import { Box, CardHeader, Paper, Typography, type SxProps } from '@mui/material';
+import { alpha, type Theme } from '@mui/material/styles';
 
 type BlockProps = {
   title?: string;
@@ -33,8 +30,6 @@ export function Block({ title, sx, children }: BlockProps) {
     </Paper>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type LabelProps = {
   title: string;

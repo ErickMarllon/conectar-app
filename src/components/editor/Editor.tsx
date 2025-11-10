@@ -1,13 +1,9 @@
 import '@/utils/highlight';
-import { Suspense } from 'react';
-// @mui
 import { Skeleton } from '@mui/material';
-//
+import { Suspense } from 'react';
 import type { EditorProps } from './types';
-import { StyledEditor } from './styles';
 import QuillEditor from './QuillEditor';
-
-// ----------------------------------------------------------------------
+import { StyledEditor } from './styles';
 
 export default function Editor({ error, value, onChange, helperText, sx, ...other }: EditorProps) {
   return (

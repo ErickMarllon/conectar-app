@@ -1,6 +1,6 @@
-import Iconify from '@/components/iconify';
 import { InputAdornment, TextField, type TextFieldProps } from '@mui/material';
 import { useState } from 'react';
+import Iconify from '@/components/iconify';
 
 type IUserSearch = TextFieldProps & {
   onSearch: (value?: string) => void;

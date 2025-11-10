@@ -1,14 +1,8 @@
-// @mui
-import { Stack, Button, Typography, Box } from '@mui/material';
-// auth
-import { useAuthStore } from '@/stores/userAuth.store';
-// locales
+import { Box, Button, Stack, Typography } from '@mui/material';
 import useLocales from '@/hooks/useLocales';
-// routes
 import { PATH_DOCS } from '@/routes/paths';
+import { useAuthStore } from '@/stores/userAuth.store';
 import { formatFullName } from '@/utils/format/formatFullName';
-
-// ----------------------------------------------------------------------
 
 export default function NavDocs() {
   const { user } = useAuthStore();

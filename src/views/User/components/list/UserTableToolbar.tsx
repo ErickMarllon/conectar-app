@@ -1,11 +1,7 @@
-// @mui
 import { Button, Grid, MenuItem, Stack, TextField } from '@mui/material';
-// components
-import Iconify from '@/components/iconify';
-import UserSearch from '../UserSearch';
 import { useMemo } from 'react';
-
-// ----------------------------------------------------------------------
+import UserSearch from '../UserSearch';
+import Iconify from '@/components/iconify';
 
 type Props = {
   isFiltered: boolean;

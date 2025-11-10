@@ -1,8 +1,8 @@
 import { List, Stack } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 import type { NavSectionProps } from '../types';
 import NavList from './NavList';
 import { StyledSubheader } from './styles';
-import { useTranslation } from 'react-i18next';
 
 export default function NavSectionVertical({ data, sx, ...other }: NavSectionProps) {
   const { t } = useTranslation('nav');

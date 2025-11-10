@@ -1,9 +1,9 @@
-import type { IPaginatedResponse } from '@/shared/interfaces/IPaginate';
-import type { IPlan } from '@/shared/interfaces/IPlan';
 import { useQuery, type UseQueryOptions } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
-import { queryFn } from './queryFn';
 import type { IList } from './type';
+import type { IPaginatedResponse } from '@/shared/interfaces/IPaginate';
+import type { IPlan } from '@/shared/interfaces/IPlan';
+import { queryFn } from './queryFn';
 
 type QueryError = AxiosError;
 type QueryFnData = IPaginatedResponse<IPlan>;

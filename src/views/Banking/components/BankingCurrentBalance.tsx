@@ -1,17 +1,13 @@
-import { useState } from 'react';
-// @mui
+
+import { alpha, Box, IconButton, MenuItem, Stack, Typography, type SxProps } from '@mui/material';
 import { styled, useTheme, type Theme } from '@mui/material/styles';
-import { Box, Typography, Stack, MenuItem, IconButton, type SxProps, alpha } from '@mui/material';
-// utils
+import { useState } from 'react';
+import Carousel, { CarouselDots } from '@/components/carousel';
+import Iconify from '@/components/iconify';
+import Image from '@/components/image';
+import MenuPopover from '@/components/menu-popover';
 import { bgGradient } from '@/utils/cssStyles';
 import { fCurrency } from '@/utils/formatNumber';
-// components
-import Image from '@/components/image';
-import Iconify from '@/components/iconify';
-import MenuPopover from '@/components/menu-popover';
-import Carousel, { CarouselDots } from '@/components/carousel';
-
-// ----------------------------------------------------------------------
 
 const HEIGHT = 276;
 
@@ -51,8 +47,6 @@ const shadowStyle = {
   bgcolor: 'grey.500',
   opacity: 0.32,
 } as const;
-
-// ----------------------------------------------------------------------
 
 type ItemProps = {
   id: string;
@@ -110,8 +104,6 @@ export default function BankingCurrentBalance({ list, sx }: Props) {
     </StyledRoot>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type CardItemProps = {
   card: ItemProps;

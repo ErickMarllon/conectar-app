@@ -1,13 +1,8 @@
-import { Link as RouterLink } from 'react-router-dom';
-
-// @mui
 import { Link, Typography } from '@mui/material';
-// routes
-import { PATH_AUTH } from '../../routes/paths';
-// components
-import Iconify from '../../components/iconify';
-// assets
+import { Link as RouterLink } from 'react-router-dom';
 import { PasswordIcon } from '../../assets/icons';
+import Iconify from '../../components/iconify';
+import { PATH_AUTH } from '../../routes/paths';
 import AuthResetPasswordForm from './components/AuthResetPasswordForm';
 
 export function ResetPasswordPage() {

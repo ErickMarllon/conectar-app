@@ -1,12 +1,12 @@
 // @mui
-import { alpha, styled } from '@mui/material/styles';
 import { Popover, ListItemButton, ListItemIcon } from '@mui/material';
+import { alpha, styled } from '@mui/material/styles';
 // utils
+import type { NavItemProps } from '../types';
+import { ICON } from '@/configs/global';
 import { bgBlur } from '@/utils/cssStyles';
 // config
-import { ICON } from '@/configs/global';
 //
-import type { NavItemProps } from '../types';
 
 // ----------------------------------------------------------------------
 

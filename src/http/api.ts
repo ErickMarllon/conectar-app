@@ -1,8 +1,8 @@
-import { LocalStorageService } from '@/services/localStorageService';
-import { refreshAccessToken } from './utils/refreshAccessToken';
 import axios from 'axios';
 import { handleHttpErrorRedirect } from './utils/handleHttpErrorRedirect';
+import { refreshAccessToken } from './utils/refreshAccessToken';
 import { PATH_AUTH } from '@/routes/paths';
+import { LocalStorageService } from '@/services/localStorageService';
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL,

@@ -1,9 +1,9 @@
-import { handleError } from '@/errors/handleError';
-import { TenantService } from '@/services/tenant';
+import { AxiosError } from 'axios';
 import type { IFilterEnterpriseGeneric } from '@/shared/interfaces/IFilter';
 import type { IPaginatedResponse } from '@/shared/interfaces/IPaginate';
 import type { ITenantAccountGeneral } from '@/shared/interfaces/ITenant';
-import { AxiosError } from 'axios';
+import { handleError } from '@/errors/handleError';
+import { TenantService } from '@/services/tenant';
 
 export const queryFn = async (
   params: Partial<IFilterEnterpriseGeneric>,

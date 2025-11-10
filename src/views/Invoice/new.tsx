@@ -1,17 +1,8 @@
-// @mui
 import { Container } from '@mui/material';
-// routes
-import { PATH_DASHBOARD } from '@/routes/paths';
-
-// components
-import { useThemesStore } from '@/stores/themes.store';
-import CustomBreadcrumbs from '@/components/custom-breadcrumbs';
 import InvoiceNewEditForm from './components/form';
-// sections
-
-// ----------------------------------------------------------------------
-
-// ----------------------------------------------------------------------
+import CustomBreadcrumbs from '@/components/custom-breadcrumbs';
+import { PATH_DASHBOARD } from '@/routes/paths';
+import { useThemesStore } from '@/stores/themes.store';
 
 export function InvoiceCreatePage() {
   const { themeStretch } = useThemesStore();

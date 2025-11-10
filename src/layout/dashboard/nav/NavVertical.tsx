@@ -1,22 +1,14 @@
+import { Box, Drawer, Stack } from '@mui/material';
 import { useEffect } from 'react';
-
-// @mui
-import { Box, Stack, Drawer } from '@mui/material';
-// hooks
-import useResponsive from '@/hooks/useResponsive';
-// config
-import { NAV } from '@/configs/global';
-// components
-import Logo from '@/components/logo';
-import Scrollbar from '@/components/scrollbar';
-import { NavSectionVertical } from '@/components/nav-section';
-//
+import { useLocation } from 'react-router-dom';
 import navConfig from './config-navigation';
 import NavAccount from './NavAccount';
 import NavToggleButton from './NavToggleButton';
-import { useLocation } from 'react-router-dom';
-
-// ----------------------------------------------------------------------
+import Logo from '@/components/logo';
+import { NavSectionVertical } from '@/components/nav-section';
+import Scrollbar from '@/components/scrollbar';
+import { NAV } from '@/configs/global';
+import useResponsive from '@/hooks/useResponsive';
 
 type Props = {
   openNav: boolean;

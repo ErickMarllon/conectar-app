@@ -1,6 +1,6 @@
 import { z } from 'zod';
-import { AvatarSchema } from './file-schema';
 import { addressSchema } from './address-schema';
+import { AvatarSchema } from './file-schema';
 
 export const tenantSchema = z.object({
   id: z.string(),

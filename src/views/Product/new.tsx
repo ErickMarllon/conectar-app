@@ -1,17 +1,8 @@
-// @mui
 import { Container } from '@mui/material';
-// routes
-import { PATH_DASHBOARD } from '@/routes/paths';
-
-// components
 import CustomBreadcrumbs from '@/components/custom-breadcrumbs';
-// sections
-import { useThemesStore } from '@/stores/themes.store';
 import ProductNewEditForm from '@/components/ProductNewEditForm';
-
-// ----------------------------------------------------------------------
-
-// ----------------------------------------------------------------------
+import { PATH_DASHBOARD } from '@/routes/paths';
+import { useThemesStore } from '@/stores/themes.store';
 
 export function EcommerceProductCreatePage() {
   const { themeStretch } = useThemesStore();

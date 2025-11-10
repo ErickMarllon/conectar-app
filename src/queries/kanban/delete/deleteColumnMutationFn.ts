@@ -1,6 +1,6 @@
-import { KanbanService } from '@/services/kanban/kanbanService';
 import type { IKanbanDeleteParams } from '@/shared/interfaces/IKanban';
 import type { AxiosResponse } from 'axios';
+import { KanbanService } from '@/services/kanban/kanbanService';
 
 export const deleteColumnMutationFn = async ({
   slug,

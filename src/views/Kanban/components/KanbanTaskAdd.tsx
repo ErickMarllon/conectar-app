@@ -1,26 +1,21 @@
-import { useState } from 'react';
-// @mui
 import {
   Box,
+  Checkbox,
+  ClickAwayListener,
+  IconButton,
+  InputBase,
   Paper,
   Stack,
   Tooltip,
-  Checkbox,
-  IconButton,
-  InputBase,
-  ClickAwayListener,
 } from '@mui/material';
-// utils
-import uuidv4 from '@/utils/uuidv4';
-// @types
+import { useState } from 'react';
 import type { IKanbanCard } from '@/shared/interfaces/IKanban';
-// components
-import Iconify from '@/components/iconify';
-import DateRangePicker, { useDateRangePicker } from '@/components/date-range-picker';
-//
 import KanbanContactsDialog from './KanbanContactsDialog';
+import DateRangePicker, { useDateRangePicker } from '@/components/date-range-picker';
+import Iconify from '@/components/iconify';
+import uuidv4 from '@/utils/uuidv4';
 
-// ----------------------------------------------------------------------
+
 
 const defaultTask = {
   attachments: [],

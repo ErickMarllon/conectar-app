@@ -1,10 +1,6 @@
-import { m, type MotionProps } from 'framer-motion';
-// @mui
 import { Box, type BoxProps } from '@mui/material';
-//
+import { m, type MotionProps } from 'framer-motion';
 import { varContainer } from './variants';
-
-// ----------------------------------------------------------------------
 
 type IProps = BoxProps & MotionProps;
 

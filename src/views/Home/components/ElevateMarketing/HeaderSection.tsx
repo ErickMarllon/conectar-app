@@ -1,8 +1,8 @@
-import { varFade } from '@/components/animate';
-import { textGradient } from '@/utils/cssStyles';
 import { Stack, Typography, useTheme } from '@mui/material';
 import { m } from 'framer-motion';
 import { Trans } from 'react-i18next';
+import { varFade } from '@/components/animate';
+import { textGradient } from '@/utils/cssStyles';
 
 export default function HeaderSection() {
   const theme = useTheme();

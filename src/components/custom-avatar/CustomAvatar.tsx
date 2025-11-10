@@ -1,10 +1,7 @@
-import { forwardRef } from 'react';
+import { Avatar, Badge } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { Badge, Avatar } from '@mui/material';
-//
+import { forwardRef } from 'react';
 import type { CustomAvatarProps } from './types';
-
-// ----------------------------------------------------------------------
 
 const getCharAtName = (name: string) => name && name.charAt(0).toUpperCase();
 
@@ -16,8 +13,6 @@ const getColorByName = (name: string) => {
   if (['V', 'W', 'X', 'M', 'Z'].includes(getCharAtName(name))) return 'error';
   return 'default';
 };
-
-// ----------------------------------------------------------------------
 
 const CustomAvatar = forwardRef<HTMLDivElement, CustomAvatarProps>(
   ({ color, name = '', BadgeProps, children, sx, ...other }, ref) => {

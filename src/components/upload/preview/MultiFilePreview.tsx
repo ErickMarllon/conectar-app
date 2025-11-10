@@ -1,17 +1,12 @@
-import { m, AnimatePresence } from 'framer-motion';
-// @mui
-import { alpha } from '@mui/material/styles';
+
 import { IconButton, Stack, Typography } from '@mui/material';
-// utils
-import { fData } from '@/utils/formatNumber';
-//
-import Iconify from '../../iconify';
+import { alpha } from '@mui/material/styles';
+import { AnimatePresence, m } from 'framer-motion';
+import type { UploadProps } from '../types';
 import { varFade } from '../../animate';
 import FileThumbnail, { fileData } from '../../file/thumbnail';
-//
-import type { UploadProps } from '../types';
-
-// ----------------------------------------------------------------------
+import Iconify from '../../iconify';
+import { fData } from '@/utils/formatNumber';
 
 export default function MultiFilePreview({ thumbnail, files, onRemove, sx }: UploadProps) {
   if (!files?.length) {

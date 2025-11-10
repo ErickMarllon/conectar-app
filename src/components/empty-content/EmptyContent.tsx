@@ -1,9 +1,5 @@
-// @mui
-import { Typography, Stack, type StackProps } from '@mui/material';
-//
+import { Stack, Typography, type StackProps } from '@mui/material';
 import Image from '../image';
-
-// ----------------------------------------------------------------------
 
 interface EmptyContentProps extends StackProps {
   title: string;

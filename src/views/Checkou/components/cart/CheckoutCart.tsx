@@ -1,20 +1,14 @@
+import { Button, Card, CardHeader, Grid, Typography } from '@mui/material';
 import sum from 'lodash/sum';
-// react router dom
 import { Link as RouterLink } from 'react-router-dom';
-// @mui
-import { Grid, Card, Button, CardHeader, Typography } from '@mui/material';
-// routes
-import { PATH_DASHBOARD } from '@/routes/paths';
-// @types
 import type { IProductCheckoutState } from '@/shared/interfaces/IProduct';
-// components
-import Iconify from '@/components/iconify';
-import EmptyContent from '@/components/empty-content';
-//
 import CheckoutSummary from '../CheckoutSummary';
 import CheckoutCartProductList from './CheckoutCartProductList';
+import EmptyContent from '@/components/empty-content';
+import Iconify from '@/components/iconify';
+import { PATH_DASHBOARD } from '@/routes/paths';
 
-// ----------------------------------------------------------------------
+
 
 type Props = {
   checkout: IProductCheckoutState;

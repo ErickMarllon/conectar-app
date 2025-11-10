@@ -1,16 +1,11 @@
-// @mui
+import { Box, CardActionArea, FormControlLabel, Radio, Stack } from '@mui/material';
 import { alpha, styled } from '@mui/material/styles';
-import { CardActionArea, Radio, FormControlLabel, Stack, Box } from '@mui/material';
-
-// ----------------------------------------------------------------------
 
 export const StyledWrap = styled(Box)(() => ({
   gap: 8,
   display: 'grid',
   gridTemplateColumns: 'repeat(2, 1fr)',
 }));
-
-// ----------------------------------------------------------------------
 
 type StyledCardProps = {
   selected: boolean;
@@ -38,8 +33,6 @@ export const StyledCard = styled(CardActionArea, {
   }),
 }));
 
-// ----------------------------------------------------------------------
-
 type StyledCircleColorProps = {
   selected: boolean;
   color: string;
@@ -63,8 +56,6 @@ export const StyledCircleColor = styled('div', {
   }),
 }));
 
-// ----------------------------------------------------------------------
-
 type MaskControlProps = {
   value: string;
 };
@@ -86,8 +77,6 @@ export function MaskControl({ value }: MaskControlProps) {
     />
   );
 }
-
-// ----------------------------------------------------------------------
 
 type LayoutIconValue = {
   layout: 'vertical' | 'horizontal' | 'mini';

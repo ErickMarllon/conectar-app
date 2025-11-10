@@ -1,8 +1,3 @@
-import { paramCase } from 'param-case';
-import { useEffect, useState } from 'react';
-// react router dom
-import { Link as RouterLink, useNavigate } from 'react-router-dom';
-// @mui
 import {
   Button,
   Card,
@@ -13,15 +8,13 @@ import {
   TableContainer,
   Tooltip,
 } from '@mui/material';
-import type { SelectChangeEvent } from '@mui/material/Select';
-
-// routes
-import { PATH_DASHBOARD } from '@/routes/paths';
-// @types
+import { paramCase } from 'param-case';
+import { useEffect, useState } from 'react';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import type { IProduct } from '@/shared/interfaces/IProduct';
-// layouts
-// import DashboardLayout from '@/layouts/dashboard';
-// components
+import type { SelectChangeEvent } from '@mui/material/Select';
+import ProductTableRow from './components/ProductTableRow';
+import ProductTableToolbar from './components/ProductTableToolbar';
 import ConfirmDialog from '@/components/confirm-dialog';
 import CustomBreadcrumbs from '@/components/custom-breadcrumbs';
 import Iconify from '@/components/iconify';
@@ -36,14 +29,10 @@ import {
   TableSkeleton,
   useTable,
 } from '@/components/table';
-// sections
 import { useListProducts } from '@/queries/products/useList/useListProducts';
+import { PATH_DASHBOARD } from '@/routes/paths';
 import { OrderDirection } from '@/shared/enums/orderDirection';
 import { useThemesStore } from '@/stores/themes.store';
-import ProductTableRow from './components/ProductTableRow';
-import ProductTableToolbar from './components/ProductTableToolbar';
-
-// ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
   { id: 'name', label: 'Product', align: 'left' },

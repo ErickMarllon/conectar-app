@@ -1,18 +1,12 @@
+import { Box, Button, IconButton, Stack, Typography, type StackProps } from '@mui/material';
+import { alpha, styled } from '@mui/material/styles';
 import { useDropzone } from 'react-dropzone';
-// @mui
-import { Box, Stack, Button, IconButton, Typography, type StackProps } from '@mui/material';
-import { styled, alpha } from '@mui/material/styles';
-// assets
-import { UploadIllustration } from '../../assets/illustrations';
-//
-import Iconify from '../iconify';
-//
 import type { UploadProps } from './types';
+import { UploadIllustration } from '../../assets/illustrations';
+import Iconify from '../iconify';
 import RejectionFiles from './errors/RejectionFiles';
 import MultiFilePreview from './preview/MultiFilePreview';
 import SingleFilePreview from './preview/SingleFilePreview';
-
-// ----------------------------------------------------------------------
 
 const StyledDropZone = styled('div')(({ theme }) => ({
   outline: 'none',
@@ -28,8 +22,6 @@ const StyledDropZone = styled('div')(({ theme }) => ({
     opacity: 0.72,
   },
 }));
-
-// ----------------------------------------------------------------------
 
 export default function Upload({
   disabled,
@@ -150,7 +142,6 @@ export default function Upload({
   );
 }
 
-// ----------------------------------------------------------------------
 type PlaceholderProps = StackProps & {
   placeholderTitle?: string;
   placeholderDescription?: string;

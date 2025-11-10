@@ -1,9 +1,5 @@
-// @mui
-import { Box, Card, Typography, type CardProps, LinearProgress, Stack } from '@mui/material';
-// utils
+import { Box, Card, LinearProgress, Stack, Typography, type CardProps } from '@mui/material';
 import { fData } from '@/utils/formatNumber';
-
-// ----------------------------------------------------------------------
 
 interface Props extends CardProps {
   title: string;

@@ -1,8 +1,8 @@
-import { create } from 'zustand';
-import { devtools, persist } from 'zustand/middleware';
 import sum from 'lodash/sum';
 import uniq from 'lodash/uniq';
 import uniqBy from 'lodash/uniqBy';
+import { create } from 'zustand';
+import { devtools, persist } from 'zustand/middleware';
 import type { IProductState, ProductStore } from '@/shared/interfaces/IProduct';
 import { cookieStorage } from '@/services/cookies';
 

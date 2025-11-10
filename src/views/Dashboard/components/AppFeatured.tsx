@@ -1,14 +1,10 @@
+import { Card, Link, Stack, Typography, type CardProps } from '@mui/material';
+import { alpha, styled, useTheme } from '@mui/material/styles';
 import { m } from 'framer-motion';
-import { useState, useRef } from 'react';
-// @mui
-import { alpha, useTheme, styled } from '@mui/material/styles';
-import { Stack, Card, Typography, Link, type CardProps } from '@mui/material';
-// components
-import Image from '@/components/image';
+import { useRef, useState } from 'react';
 import { MotionContainer, varFade } from '@/components/animate';
-import Carousel, { CarouselDots, CarouselArrows } from '@/components/carousel';
-
-// ----------------------------------------------------------------------
+import Carousel, { CarouselArrows, CarouselDots } from '@/components/carousel';
+import Image from '@/components/image';
 
 const StyledOverlay = styled('div')(({ theme }) => ({
   top: 0,
@@ -19,8 +15,6 @@ const StyledOverlay = styled('div')(({ theme }) => ({
   position: 'absolute',
   backgroundColor: alpha(theme.palette.grey[900], 0.64),
 }));
-
-// ----------------------------------------------------------------------
 
 type ItemProps = {
   id: string;
@@ -82,8 +76,6 @@ export default function AppFeatured({ list, ...other }: Props) {
     </Card>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type CarouselItemProps = {
   item: ItemProps;

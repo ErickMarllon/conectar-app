@@ -1,12 +1,7 @@
+import { Button, ClickAwayListener, Paper, TextField } from '@mui/material';
 import { useState } from 'react';
-// @mui
-import { Paper, Button, ClickAwayListener, TextField } from '@mui/material';
-
-// components
 import Iconify from '@/components/iconify';
 import { useKanbanCreate } from '@/queries/kanban/create/useKanbanCreate';
-
-// ----------------------------------------------------------------------
 
 export default function KanbanColumnAdd() {
   const [name, setName] = useState('');

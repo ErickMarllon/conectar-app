@@ -1,14 +1,8 @@
-import { m } from 'framer-motion';
-// react router dom
-import { Link as RouterLink } from 'react-router-dom';
-// @mui
 import { Button, Typography } from '@mui/material';
-// components
-import { MotionContainer, varBounce } from '../components/animate';
-// assets
+import { m } from 'framer-motion';
+import { Link as RouterLink } from 'react-router-dom';
 import { SeverErrorIllustration } from '../assets/illustrations';
-
-// ----------------------------------------------------------------------
+import { MotionContainer, varBounce } from '../components/animate';
 
 export function Page500() {
   return (

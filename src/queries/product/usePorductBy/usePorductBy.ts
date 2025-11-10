@@ -1,5 +1,5 @@
-import type { IProduct } from '@/shared/interfaces/IProduct';
 import { useQuery, useQueryClient, type UseQueryOptions } from '@tanstack/react-query';
+import type { IProduct } from '@/shared/interfaces/IProduct';
 import type { AxiosError } from 'axios';
 import { productByQueryFn } from './productByQueryFn';
 

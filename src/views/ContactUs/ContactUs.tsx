@@ -1,11 +1,8 @@
-// sections
 import { Box, Container } from '@mui/material';
-import ContactHero from './components/ContactHero';
 import ContactForm from './components/ContactForm';
+import ContactHero from './components/ContactHero';
 import ContactMap from './components/ContactMap';
 import { _mapContact } from '@/_mock/arrays';
-
-// ----------------------------------------------------------------------
 
 export function ContactPage() {
   return (

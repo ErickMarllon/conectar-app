@@ -1,14 +1,12 @@
-import { WorldMap } from '@/assets/icons';
-import { MotionViewport, varFade } from '@/components/animate';
 import { Container, Grid } from '@mui/material';
 import { alpha, styled, useTheme } from '@mui/material/styles';
 import { motion } from 'motion/react';
 import Description from './Description';
-import TriangleShape from './TriangleShape';
 import FlagsGrid from './FlagsGrid';
+import TriangleShape from './TriangleShape';
+import { WorldMap } from '@/assets/icons';
+import { MotionViewport, varFade } from '@/components/animate';
 const MotionWorldMap = motion.create(WorldMap);
-
-// ----------------------------------------------------------------------
 
 const StyledRoot = styled('div')(() => ({
   position: 'relative',

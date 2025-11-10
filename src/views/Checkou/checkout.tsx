@@ -1,17 +1,7 @@
+import { Container, Grid } from '@mui/material';
 import { useEffect } from 'react';
-// react router dom
 import { useNavigate } from 'react-router-dom';
-
-// @mui
-import { Grid, Container } from '@mui/material';
-// routes
-import { PATH_DASHBOARD } from '@/routes/paths';
-// @types
 import type { ICheckoutBillingAddress } from '@/shared/interfaces/IProduct';
-// components
-import CustomBreadcrumbs from '@/components/custom-breadcrumbs';
-// sections
-import { useThemesStore } from '@/stores/themes.store';
 import {
   CheckoutBillingAddress,
   CheckoutCart,
@@ -19,15 +9,12 @@ import {
   CheckoutPayment,
   CheckoutSteps,
 } from './components';
+import CustomBreadcrumbs from '@/components/custom-breadcrumbs';
+import { PATH_DASHBOARD } from '@/routes/paths';
+import { useThemesStore } from '@/stores/themes.store';
 import { useProductStore } from '@/stores/useProduct.store';
 
-// ----------------------------------------------------------------------
-
 const STEPS = ['Cart', 'Billing & address', 'Payment'];
-
-// ----------------------------------------------------------------------
-
-// ----------------------------------------------------------------------
 
 export function EcommerceCheckoutPage() {
   const navigate = useNavigate();

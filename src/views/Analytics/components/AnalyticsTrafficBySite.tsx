@@ -1,19 +1,14 @@
-// @mui
 import {
   Box,
   Card,
+  CardContent,
+  CardHeader,
   Paper,
   Typography,
-  CardHeader,
-  CardContent,
   type CardProps,
 } from '@mui/material';
-// utils
-import { fShortenNumber } from '@/utils/formatNumber';
-// components
 import Iconify from '@/components/iconify';
-
-// ----------------------------------------------------------------------
+import { fShortenNumber } from '@/utils/formatNumber';
 
 interface Props extends CardProps {
   title?: string;

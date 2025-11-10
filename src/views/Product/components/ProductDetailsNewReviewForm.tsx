@@ -1,26 +1,21 @@
-// form
-import { useForm, Controller } from 'react-hook-form';
-// @mui
+import { zodResolver } from '@hookform/resolvers/zod';
+import { LoadingButton } from '@mui/lab';
 import {
-  Stack,
   Button,
-  Rating,
   Dialog,
-  Typography,
-  DialogTitle,
-  type DialogProps,
   DialogActions,
   DialogContent,
+  DialogTitle,
   FormHelperText,
+  Rating,
+  Stack,
+  Typography,
+  type DialogProps,
 } from '@mui/material';
-import { LoadingButton } from '@mui/lab';
-// components
-import FormProvider, { RHFTextField } from '@/components/hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { ReviewSchema } from '@/schemas/review-schema';
+import { Controller, useForm } from 'react-hook-form';
 import type { z } from 'zod';
-
-// ----------------------------------------------------------------------
+import FormProvider, { RHFTextField } from '@/components/hook-form';
+import { ReviewSchema } from '@/schemas/review-schema';
 
 export type FormValuesProps = z.infer<typeof ReviewSchema>;
 

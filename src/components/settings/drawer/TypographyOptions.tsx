@@ -1,13 +1,9 @@
-// @mui
 import { RadioGroup, Typography } from '@mui/material';
-//
-import { useThemesStore } from '@/stores/themes.store';
-import { MaskControl, StyledCard, StyledWrap } from '../styles';
 import type { ThemeFontFamily } from '../types';
-import Block from './Block';
+import { MaskControl, StyledCard, StyledWrap } from '../styles';
 import { fontFamilyOptions } from '../typography';
-
-// ----------------------------------------------------------------------
+import Block from './Block';
+import { useThemesStore } from '@/stores/themes.store';
 
 export default function TypographyOptions() {
   const { themeFontFamily, setThemeFontFamily, themeMode } = useThemesStore();

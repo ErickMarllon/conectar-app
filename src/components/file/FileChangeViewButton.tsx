@@ -1,9 +1,5 @@
-// @mui
 import { ToggleButton, ToggleButtonGroup, type ToggleButtonGroupProps } from '@mui/material';
-// components
 import Iconify from '@/components/iconify';
-
-// ----------------------------------------------------------------------
 
 interface Props extends ToggleButtonGroupProps {
   value: string;

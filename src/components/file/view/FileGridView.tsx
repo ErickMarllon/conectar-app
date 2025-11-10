@@ -1,20 +1,15 @@
-import { useState, useRef } from 'react';
-// @mui
-import { Collapse, Box, Divider, Button } from '@mui/material';
-// @types
-import type { IFile } from '@/shared/interfaces/File';
-// components
-import Iconify from '@/components/iconify';
+
+import { Box, Button, Collapse, Divider } from '@mui/material';
+import { useRef, useState } from 'react';
 import type { TableProps } from '@/components/table';
-//
+import type { IFile } from '@/shared/interfaces/File';
 import FilePanel from '../FilePanel';
 import FileCard from '../item/FileCard';
 import FileFolderCard from '../item/FileFolderCard';
-import FileShareDialog from '../portal/FileShareDialog';
 import FileActionSelected from '../portal/FileActionSelected';
 import FileNewFolderDialog from '../portal/FileNewFolderDialog';
-
-// ----------------------------------------------------------------------
+import FileShareDialog from '../portal/FileShareDialog';
+import Iconify from '@/components/iconify';
 
 type Props = {
   table: TableProps;

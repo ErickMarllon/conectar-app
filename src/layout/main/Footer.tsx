@@ -1,16 +1,9 @@
-// react-router-dom
-import { Link as RouterLink } from 'react-router-dom';
-// @mui
 import { Box, Container, Divider, Grid, IconButton, Link, Stack, Typography } from '@mui/material';
-// routes
-import { PATH_PAGE } from '../../routes/paths';
-// _mock
+import { Link as RouterLink } from 'react-router-dom';
 import { _socials } from '../../_mock/arrays';
-// components
 import Iconify from '../../components/iconify';
 import Logo from '../../components/logo';
-
-// ----------------------------------------------------------------------
+import { PATH_PAGE } from '../../routes/paths';
 
 const LINKS = [
   {

@@ -1,34 +1,26 @@
-// @mui
+import { Button, Container, Grid } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { Container, Grid, Button } from '@mui/material';
-// _mock_
-import {
-  _ecommerceNewProducts,
-  _ecommerceSalesOverview,
-  _ecommerceBestSalesman,
-  _ecommerceLatestProducts,
-} from '@/_mock/arrays';
-// components
-// sections
-
-// assets
 import { MotivationIllustration } from '../../assets/illustrations';
 import AppWelcome from '../Dashboard/components/AppWelcome';
+import {
+  EcommerceBestSalesman,
+  EcommerceCurrentBalance,
+  EcommerceLatestProducts,
+  EcommerceNewProducts,
+  EcommerceSaleByGender,
+  EcommerceSalesOverview,
+  EcommerceWidgetSummary,
+  EcommerceYearlySales,
+} from './components';
+import {
+  _ecommerceBestSalesman,
+  _ecommerceLatestProducts,
+  _ecommerceNewProducts,
+  _ecommerceSalesOverview,
+} from '@/_mock/arrays';
 import { useThemesStore } from '@/stores/themes.store';
 import { useAuthStore } from '@/stores/userAuth.store';
 import { formatFullName } from '@/utils/format/formatFullName';
-import {
-  EcommerceNewProducts,
-  EcommerceYearlySales,
-  EcommerceBestSalesman,
-  EcommerceSaleByGender,
-  EcommerceWidgetSummary,
-  EcommerceSalesOverview,
-  EcommerceLatestProducts,
-  EcommerceCurrentBalance,
-} from './components';
-
-// ----------------------------------------------------------------------
 
 export function GeneralEcommercePage() {
   const { user } = useAuthStore();

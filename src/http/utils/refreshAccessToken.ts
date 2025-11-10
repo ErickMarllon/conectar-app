@@ -1,6 +1,6 @@
+import type { ITokens } from '@/shared/interfaces/ITokens';
 import { AuthService } from '@/services/authService';
 import { LocalStorageService } from '@/services/localStorageService';
-import type { ITokens } from '@/shared/interfaces/ITokens';
 
 export const refreshAccessToken = async (): Promise<ITokens> => {
   let tokens = LocalStorageService.getAuthTokens();

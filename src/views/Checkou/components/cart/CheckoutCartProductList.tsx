@@ -1,14 +1,8 @@
-// @mui
 import { Table, TableBody, TableContainer } from '@mui/material';
-// @types
 import type { ICheckoutCartItem } from '@/shared/interfaces/IProduct';
-// components
+import CheckoutCartProduct from './CheckoutCartProduct';
 import Scrollbar from '@/components/scrollbar';
 import { TableHeadCustom } from '@/components/table';
-//
-import CheckoutCartProduct from './CheckoutCartProduct';
-
-// ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
   { id: 'product', label: 'Product' },
@@ -17,8 +11,6 @@ const TABLE_HEAD = [
   { id: 'totalPrice', label: 'Total Price', align: 'right' },
   { id: '' },
 ];
-
-// ----------------------------------------------------------------------
 
 type Props = {
   products: ICheckoutCartItem[];

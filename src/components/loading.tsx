@@ -1,9 +1,9 @@
 import { alpha, Backdrop, Typography } from '@mui/material';
 import Lottie from 'lottie-react';
+import { useEffect } from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
 import animationData from '../assets/animation/Animation-Loading.json';
 import { MotionContainer } from './animate';
-import { useEffect } from 'react';
 
 const _loadingVariants = tv({
   base: 'flex items-center justify-center z-50 p-0 ',

@@ -1,34 +1,23 @@
-import { useState } from 'react';
-
-// @mui
+import { Box, Card, Container, Divider, Grid, Stack, Tab, Tabs, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
-import { Box, Tab, Tabs, Card, Grid, Divider, Container, Typography, Stack } from '@mui/material';
-// redux
-// routes
-import { PATH_DASHBOARD } from '@/routes/paths';
-// @types
-
-// components
+import { paramCase } from 'param-case';
+import { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import type { ICheckoutCartItem } from '@/shared/interfaces/IProduct';
+import ProductDetailsCarousel from './components/ProductDetailsCarousel';
+import ProductDetailsReview from './components/ProductDetailsReview';
+import ProductDetailsSummary from './components/ProductDetailsSummary';
+import CartWidget from '@/components/CartWidget';
+import CustomBreadcrumbs from '@/components/custom-breadcrumbs';
 import Iconify from '@/components/iconify';
 import Markdown from '@/components/markdown';
-import CustomBreadcrumbs from '@/components/custom-breadcrumbs';
 import { SkeletonProductDetails } from '@/components/skeleton';
-// sections
-
-import { useParams } from 'react-router-dom';
 import { useListProducts } from '@/queries/products/useList/useListProducts';
-import { paramCase } from 'param-case';
-import { useProductStore } from '@/stores/useProduct.store';
-import { useThemesStore } from '@/stores/themes.store';
-import type { ICheckoutCartItem } from '@/shared/interfaces/IProduct';
-import CartWidget from '@/components/CartWidget';
-import ProductDetailsReview from './components/ProductDetailsReview';
-import ProductDetailsCarousel from './components/ProductDetailsCarousel';
-import ProductDetailsSummary from './components/ProductDetailsSummary';
-import { parseIdentifier } from '@/utils/parseIdentifierSlug';
+import { PATH_DASHBOARD } from '@/routes/paths';
 import { OrderDirection } from '@/shared/enums/orderDirection';
-
-// ----------------------------------------------------------------------
+import { useThemesStore } from '@/stores/themes.store';
+import { useProductStore } from '@/stores/useProduct.store';
+import { parseIdentifier } from '@/utils/parseIdentifierSlug';
 
 const SUMMARY = [
   {

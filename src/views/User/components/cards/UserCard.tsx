@@ -1,16 +1,13 @@
-// @mui
+import { Avatar, Box, Card, IconButton, Stack, Typography } from '@mui/material';
+import { alpha, styled } from '@mui/material/styles';
+import { NavLink } from 'react-router-dom';
+import type { IUserCard, IUserSocialLink } from '@/shared/interfaces/IUser';
 import Iconify from '@/components/iconify';
 import Image from '@/components/image';
 import SvgColor from '@/components/svg-color';
 import { PATH_DASHBOARD } from '@/routes/paths';
 import { socials_link } from '@/shared/constants/socials_links';
-import type { IUserCard, IUserSocialLink } from '@/shared/interfaces/IUser';
 import { formatFullName } from '@/utils/format/formatFullName';
-import { Avatar, Box, Card, IconButton, Stack, Typography } from '@mui/material';
-import { alpha, styled } from '@mui/material/styles';
-import { NavLink } from 'react-router-dom';
-
-// ----------------------------------------------------------------------
 
 const StyledOverlay = styled('div')(({ theme }) => ({
   top: 0,
@@ -21,8 +18,6 @@ const StyledOverlay = styled('div')(({ theme }) => ({
   position: 'absolute',
   backgroundColor: alpha(theme.palette.grey[900], 0.64),
 }));
-
-// ----------------------------------------------------------------------
 
 type Props = {
   user: IUserCard;

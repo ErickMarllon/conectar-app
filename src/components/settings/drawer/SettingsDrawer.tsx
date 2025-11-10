@@ -1,31 +1,24 @@
-import { useState } from 'react';
-// @mui
+import { Box, Divider, Drawer, IconButton, Stack, Tooltip, Typography } from '@mui/material';
 import { alpha, useTheme } from '@mui/material/styles';
-import { Box, Divider, Drawer, Stack, Typography, Tooltip, IconButton } from '@mui/material';
-// utils
-import { bgBlur } from '@/utils/cssStyles';
-// config
-import { NAV } from '@/configs/global';
-//
 import { m } from 'framer-motion';
+import { useState } from 'react';
 import Iconify from '../../iconify';
 import Scrollbar from '../../scrollbar';
-//
 import { defaultSettings } from '../config-setting';
-import Block from './Block';
 import BadgeDot from './BadgeDot';
-import ModeOptions from './ModeOptions';
-import LayoutOptions from './LayoutOptions';
-import StretchOptions from './StretchOptions';
+import Block from './Block';
+import ColorPresetsOptions from './ColorPresetsOptions';
 import ContrastOptions from './ContrastOptions';
 import DirectionOptions from './DirectionOptions';
 import FullScreenOptions from './FullScreenOptions';
-import ColorPresetsOptions from './ColorPresetsOptions';
+import LayoutOptions from './LayoutOptions';
+import ModeOptions from './ModeOptions';
+import StretchOptions from './StretchOptions';
 import TypographyOptions from './TypographyOptions';
-import { useThemesStore } from '@/stores/themes.store';
 import { varRotate } from '@/components/animate';
-
-// ----------------------------------------------------------------------
+import { NAV } from '@/configs/global';
+import { useThemesStore } from '@/stores/themes.store';
+import { bgBlur } from '@/utils/cssStyles';
 
 const SPACING = 2.5;
 

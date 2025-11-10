@@ -1,33 +1,26 @@
-import { useState, memo, useEffect } from 'react';
-import parse from 'autosuggest-highlight/parse';
-import match from 'autosuggest-highlight/match';
-
-import { useNavigate, useLocation } from 'react-router-dom';
-// @mui
-import { alpha, styled } from '@mui/material/styles';
 import {
-  Box,
-  Popper,
-  InputBase,
-  type PopperProps,
   Autocomplete,
-  InputAdornment,
+  Box,
   ClickAwayListener,
   Dialog,
   DialogContent,
+  InputAdornment,
+  InputBase,
+  Popper,
+  type PopperProps,
 } from '@mui/material';
-// utils
+import { alpha, styled } from '@mui/material/styles';
+import match from 'autosuggest-highlight/match';
+import parse from 'autosuggest-highlight/parse';
+import { memo, useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import type { NavListProps } from '@/components/nav-section';
+import NavConfig from '../nav/config-navigation';
+import { IconButtonAnimate } from '@/components/animate';
+import Iconify from '@/components/iconify';
+import SearchNotFound from '@/components/search-not-found';
 import { bgBlur } from '@/utils/cssStyles';
 import flattenArray from '@/utils/flattenArray';
-// components
-import Iconify from '@/components/iconify';
-import type { NavListProps } from '@/components/nav-section';
-import { IconButtonAnimate } from '@/components/animate';
-import SearchNotFound from '@/components/search-not-found';
-//
-import NavConfig from '../nav/config-navigation';
-
-// ----------------------------------------------------------------------
 
 const APPBAR_MOBILE = 64;
 const APPBAR_DESKTOP = 92;
@@ -89,8 +82,6 @@ const StyledPopper = styled((props: PopperProps) => <Popper {...props} />)(({ th
     top: `${APPBAR_DESKTOP}px !important`,
   },
 }));
-
-// ----------------------------------------------------------------------
 
 interface Option extends NavListProps {
   subheader: string;
@@ -256,8 +247,6 @@ function Searchbar() {
 
 export default memo(Searchbar);
 
-// ----------------------------------------------------------------------
-
 type ItemProps = {
   path: string[];
   currItem: NavListProps;
@@ -287,8 +276,6 @@ function splitPath(array: NavListProps[], key: string) {
   }
   return null;
 }
-
-// ----------------------------------------------------------------------
 
 function handleLoop(array: any, subheader?: string) {
   return array?.map((list: any) => ({

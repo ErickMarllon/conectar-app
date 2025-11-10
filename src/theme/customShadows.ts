@@ -1,8 +1,8 @@
 // @mui
 import { alpha } from '@mui/material/styles';
 //
-import palette from './palette';
 import type { ThemeColorPresetsValue } from '@/components/settings/types';
+import palette from './palette';
 import { getPresets } from '@/components/settings/presets';
 
 // ----------------------------------------------------------------------

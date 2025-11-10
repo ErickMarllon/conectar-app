@@ -1,7 +1,7 @@
+import type { SxProps } from '@mui/material';
+import type { Theme } from '@mui/material/styles';
 import type { Props } from 'simplebar-react';
 // @mui
-import type { Theme } from '@mui/material/styles';
-import type { SxProps } from '@mui/material';
 
 // ----------------------------------------------------------------------
 

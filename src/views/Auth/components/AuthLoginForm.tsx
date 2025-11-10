@@ -1,23 +1,15 @@
-import { useEffect, useState } from 'react';
-// react router dom
-import { Link as RouterLink, useParams } from 'react-router-dom';
-
-// form
-import { useForm } from 'react-hook-form';
-// @mui
-import { Link, Stack, IconButton, InputAdornment, Button, Alert } from '@mui/material';
-// routes
-import { PATH_AUTH } from '@/routes/paths';
-// components
-import Iconify from '@/components/iconify';
-import FormProvider, { RHFTextField } from '@/components/hook-form';
-import { signInSchema } from '@/schemas/sign-in.schema';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { Alert, Button, IconButton, InputAdornment, Link, Stack } from '@mui/material';
+import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { Link as RouterLink, useParams } from 'react-router-dom';
 import type { z } from 'zod';
-import { useAuthUser } from '@/queries/useAuth/useAuth';
+import FormProvider, { RHFTextField } from '@/components/hook-form';
+import Iconify from '@/components/iconify';
 import { AuthActionType } from '@/queries/useAuth/types/IUseAuthTypes';
-
-// ----------------------------------------------------------------------
+import { useAuthUser } from '@/queries/useAuth/useAuth';
+import { PATH_AUTH } from '@/routes/paths';
+import { signInSchema } from '@/schemas/sign-in.schema';
 
 type FormValuesProps = z.infer<typeof signInSchema>;
 

@@ -1,10 +1,6 @@
+import { Box, Card, CardHeader, type CardProps } from '@mui/material';
 import type { ApexOptions } from 'apexcharts';
-// @mui
-import { Card, CardHeader, Box, type CardProps } from '@mui/material';
-// components
 import Chart, { useChart } from '@/components/chart';
-
-// ----------------------------------------------------------------------
 
 interface Props extends CardProps {
   title?: string;

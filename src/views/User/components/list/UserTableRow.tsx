@@ -1,10 +1,3 @@
-import ConfirmDialog from '@/components/confirm-dialog';
-import Iconify from '@/components/iconify';
-import Label from '@/components/label';
-import MenuPopover from '@/components/menu-popover';
-import type { IUserAccountGeneral } from '@/shared/interfaces/IUser';
-import { formatFullName } from '@/utils/format/formatFullName';
-import { fDateTime } from '@/utils/formatTime';
 import {
   Avatar,
   Button,
@@ -17,7 +10,14 @@ import {
   Typography,
 } from '@mui/material';
 import { useState } from 'react';
+import type { IUserAccountGeneral } from '@/shared/interfaces/IUser';
 import { statusColorMap } from '../constants/userStatusColor';
+import ConfirmDialog from '@/components/confirm-dialog';
+import Iconify from '@/components/iconify';
+import Label from '@/components/label';
+import MenuPopover from '@/components/menu-popover';
+import { formatFullName } from '@/utils/format/formatFullName';
+import { fDateTime } from '@/utils/formatTime';
 
 type Props = {
   row: IUserAccountGeneral;

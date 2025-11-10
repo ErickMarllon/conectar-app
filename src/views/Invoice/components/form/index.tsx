@@ -1,26 +1,17 @@
-import { useState, useMemo, useEffect } from 'react';
-
-// form
-import { useForm } from 'react-hook-form';
-// @mui
+import { zodResolver } from '@hookform/resolvers/zod';
 import { LoadingButton } from '@mui/lab';
 import { Card, Stack } from '@mui/material';
-// routes
-import { PATH_DASHBOARD } from '@/routes/paths';
-// mock
-import { _invoiceAddressFrom, _invoiceAddressTo } from '@/_mock/arrays';
-// components
-import FormProvider from '@/components/hook-form';
-//
-import InvoiceNewEditDetails from './InvoiceNewEditDetails';
-import InvoiceNewEditAddress from './InvoiceNewEditAddress';
-import InvoiceNewEditStatusDate from './InvoiceNewEditStatusDate';
+import { useEffect, useMemo, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { NewInvoiceSchema } from '@/schemas/new-invoice-schema';
-import { zodResolver } from '@hookform/resolvers/zod';
 import type { z } from 'zod';
-
-// ----------------------------------------------------------------------
+import InvoiceNewEditAddress from './InvoiceNewEditAddress';
+import InvoiceNewEditDetails from './InvoiceNewEditDetails';
+import InvoiceNewEditStatusDate from './InvoiceNewEditStatusDate';
+import { _invoiceAddressFrom, _invoiceAddressTo } from '@/_mock/arrays';
+import FormProvider from '@/components/hook-form';
+import { PATH_DASHBOARD } from '@/routes/paths';
+import { NewInvoiceSchema } from '@/schemas/new-invoice-schema';
 
 type FormValuesProps = z.infer<typeof NewInvoiceSchema>;
 
@@ -97,7 +88,7 @@ export default function InvoiceNewEditForm({ isEdit, currentInvoice }: Props) {
       await new Promise((resolve) => setTimeout(resolve, 500));
       reset();
       setLoadingSend(false);
-      // navigate(PATH_DASHBOARD.invoice.list);
+      // utilsnavigate(PATH_DASHBOARD.invoice.list);
       console.log('DATA', JSON.stringify(data, null, 2));
     } catch (error) {
       console.error(error);

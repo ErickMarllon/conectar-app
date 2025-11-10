@@ -1,9 +1,6 @@
 import { alpha, type Theme } from '@mui/material/styles';
 import type { ChipProps } from '@mui/material';
-//
 import { CloseIcon } from './CustomIcons';
-
-// ----------------------------------------------------------------------
 
 const COLORS = ['primary', 'secondary', 'info', 'success', 'warning', 'error'] as const;
 

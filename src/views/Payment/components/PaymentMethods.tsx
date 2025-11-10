@@ -1,22 +1,17 @@
-import { useState } from 'react';
-// @mui
 import {
   Box,
-  Stack,
+  Button,
+  FormControlLabel,
   Paper,
   Radio,
-  Button,
+  RadioGroup,
+  Stack,
   TextField,
   Typography,
-  RadioGroup,
-  FormControlLabel,
 } from '@mui/material';
-// components
-import Iconify from '@/components/iconify';
-//
+import { useState } from 'react';
 import PaymentNewCardDialog from './PaymentNewCardDialog';
-
-// ----------------------------------------------------------------------
+import Iconify from '@/components/iconify';
 
 const PAYMENT_OPTIONS = [
   {
@@ -44,8 +39,6 @@ const CARD_OPTIONS = [
     label: '**** **** **** 4545 - Cole Armstrong',
   },
 ];
-
-// ----------------------------------------------------------------------
 
 export default function PaymentMethods() {
   const [method, setMethod] = useState('paypal');
@@ -89,8 +82,6 @@ export default function PaymentMethods() {
     </>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type PaymentOptionProps = {
   option: {

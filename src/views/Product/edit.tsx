@@ -1,24 +1,13 @@
-import { paramCase } from 'param-case';
-
-// @mui
 import { Container } from '@mui/material';
-
-// routes
-import { PATH_DASHBOARD } from '@/routes/paths';
-
-// components
+import { paramCase } from 'param-case';
+import { useParams } from 'react-router-dom';
 import CustomBreadcrumbs from '@/components/custom-breadcrumbs';
-import { useThemesStore } from '@/stores/themes.store';
 import ProductNewEditForm from '@/components/ProductNewEditForm';
 import { useListProducts } from '@/queries/products/useList/useListProducts';
-import { useParams } from 'react-router-dom';
-import { parseIdentifier } from '@/utils/parseIdentifierSlug';
+import { PATH_DASHBOARD } from '@/routes/paths';
 import { OrderDirection } from '@/shared/enums/orderDirection';
-// sections
-
-// ----------------------------------------------------------------------
-
-// ----------------------------------------------------------------------
+import { useThemesStore } from '@/stores/themes.store';
+import { parseIdentifier } from '@/utils/parseIdentifierSlug';
 
 export function EcommerceProductEditPage() {
   const { themeStretch } = useThemesStore();

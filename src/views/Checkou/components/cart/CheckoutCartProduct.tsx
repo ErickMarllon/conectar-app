@@ -1,17 +1,11 @@
-// @mui
-import { Box, Stack, Divider, TableRow, TableCell, Typography, IconButton } from '@mui/material';
-// utils
-import { fCurrency } from '@/utils/formatNumber';
-// @types
+import { Box, Divider, IconButton, Stack, TableCell, TableRow, Typography } from '@mui/material';
 import type { ICheckoutCartItem } from '@/shared/interfaces/IProduct';
-// components
-import Image from '@/components/image';
-import Label from '@/components/label';
-import Iconify from '@/components/iconify';
 import { ColorPreview } from '@/components/color-utils';
 import { IncrementerButton } from '@/components/custom-input';
-
-// ----------------------------------------------------------------------
+import Iconify from '@/components/iconify';
+import Image from '@/components/image';
+import Label from '@/components/label';
+import { fCurrency } from '@/utils/formatNumber';
 
 type CheckoutProductListRowProps = {
   row: ICheckoutCartItem;

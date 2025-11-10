@@ -1,10 +1,6 @@
-import { useState, useCallback } from 'react';
-// @mui
 import { Stack } from '@mui/material';
-// components
+import { useCallback, useState } from 'react';
 import { MultiFilePreview, UploadBox } from '@/components/upload';
-
-// ----------------------------------------------------------------------
 
 type Props = {
   attachments: string[];

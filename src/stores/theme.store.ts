@@ -1,6 +1,6 @@
 import { create } from 'zustand';
-import { LocalStorageService } from '@/services/localStorageService';
 import type { IThemeMode, IThemeVariant } from '@/shared/interfaces/ITheme';
+import { LocalStorageService } from '@/services/localStorageService';
 
 interface ThemeState {
   theme: IThemeVariant;

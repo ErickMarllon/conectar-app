@@ -1,20 +1,14 @@
-// form
-import { useForm } from 'react-hook-form';
-// @mui
+import { zodResolver } from '@hookform/resolvers/zod';
 import { Button, Card, Grid, InputAdornment, Stack } from '@mui/material';
-// @types
+import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import type { IUserSocialLink } from '@/shared/interfaces/IUser';
-// components
 import FormProvider, { RHFTextField } from '@/components/hook-form';
 import Iconify from '@/components/iconify';
 import useCopyToClipboard from '@/hooks/useCopyToClipboard';
 import { useUserSocialPath } from '@/queries/user/social/path/useUserPath';
 import { userSocialSchema, type IUserSocialSchema } from '@/schemas/social-schema';
 import { SOCIAL_LINKS } from '@/shared/constants/socials_links';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { toast } from 'react-toastify';
-
-// ----------------------------------------------------------------------
 
 type FormValuesProps = IUserSocialSchema;
 

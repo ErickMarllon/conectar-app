@@ -1,15 +1,10 @@
-import { useState } from 'react';
-// @mui
-import { styled } from '@mui/material/styles';
 import { Typography } from '@mui/material';
-// config
-// components
-import Iconify from '@/components/iconify';
-import { MapControl, MapMarker, MapPopup } from '@/components/map';
+import { styled } from '@mui/material/styles';
+import { useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import type { LatLngTuple } from 'leaflet';
-
-// ----------------------------------------------------------------------
+import Iconify from '@/components/iconify';
+import { MapControl, MapMarker, MapPopup } from '@/components/map';
 
 const StyledRoot = styled('div')(({ theme }) => ({
   zIndex: 0,
@@ -21,8 +16,6 @@ const StyledRoot = styled('div')(({ theme }) => ({
     display: 'none !important',
   },
 }));
-
-// ----------------------------------------------------------------------
 
 type CountryData = {
   latlng: number[];

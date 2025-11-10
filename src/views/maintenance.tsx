@@ -1,12 +1,6 @@
-// react router dom
+import { Button, Stack, Typography } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
-// @mui
-import { Button, Typography, Stack } from '@mui/material';
-
-// assets
 import { MaintenanceIllustration } from '../assets/illustrations';
-
-// ----------------------------------------------------------------------
 
 export function MaintenancePage() {
   return (

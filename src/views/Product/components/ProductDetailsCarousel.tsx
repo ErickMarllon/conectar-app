@@ -1,17 +1,12 @@
-import { useState, useRef, useEffect } from 'react';
-// @mui
-import { alpha, useTheme, styled } from '@mui/material/styles';
+
 import { Box } from '@mui/material';
-// utils
-import { bgGradient } from '@/utils/cssStyles';
-// @types
-// components
+import { alpha, styled, useTheme } from '@mui/material/styles';
+import { useEffect, useRef, useState } from 'react';
+import type { IProduct } from '@/shared/interfaces/IProduct';
+import Carousel, { CarouselArrowIndex } from '@/components/carousel';
 import Image from '@/components/image';
 import Lightbox, { type ViewCallbackProps } from '@/components/lightbox';
-import Carousel, { CarouselArrowIndex } from '@/components/carousel';
-import type { IProduct } from '@/shared/interfaces/IProduct';
-
-// ----------------------------------------------------------------------
+import { bgGradient } from '@/utils/cssStyles';
 
 const THUMB_SIZE = 64;
 
@@ -67,8 +62,6 @@ const StyledThumbnailsContainer = styled('div', {
     },
   }),
 }));
-
-// ----------------------------------------------------------------------
 
 type Props = {
   product: IProduct;

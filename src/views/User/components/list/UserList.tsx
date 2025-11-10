@@ -1,23 +1,3 @@
-import ConfirmDialog from '@/components/confirm-dialog';
-import CustomBreadcrumbs from '@/components/custom-breadcrumbs';
-import { CustomPaginate } from '@/components/custom-paginate';
-import FormProvider from '@/components/hook-form';
-import Iconify from '@/components/iconify';
-import Scrollbar from '@/components/scrollbar';
-import {
-  TableHeadCustom,
-  TableNoData,
-  TableSelectedAction,
-  TableSkeleton,
-  useTable,
-} from '@/components/table';
-import { useDiffObjects } from '@/hooks/useDiffObjects';
-import { useUsers } from '@/queries/useListUsers/useListUsers';
-import { useUserDelete } from '@/queries/user/delete/useUserDelete';
-import { useUserPathStatus } from '@/queries/user/pathStatus/useUserPath';
-import { PATH_DASHBOARD } from '@/routes/paths';
-import type { FindUsersParams, IFilterGeneric } from '@/shared/interfaces/IFilter';
-import { useThemesStore } from '@/stores/themes.store';
 import {
   Button,
   Card,
@@ -36,15 +16,35 @@ import { useForm } from 'react-hook-form';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useDebouncedCallback } from 'use-debounce';
+import type { FindUsersParams, IFilterGeneric } from '@/shared/interfaces/IFilter';
 import { DEFAULT_FILTERS_CONFIG } from '../constants/defaultFiltersUserConfig';
 import { DEFAULT_TABLE_CONFIG } from '../constants/defaultTableUserConfig';
 import { formFindUsersFields } from '../constants/findUsersFields';
+import { TABLE_USER_HEAD } from '../constants/tableUserHead';
 import { ROLE_OPTIONS_FILTER } from '../constants/userRoles';
 import { STATUS_OPTIONS } from '../constants/userStatusOptions';
 import UserTableRow from './UserTableRow';
 import UserTableToolbar from './UserTableToolbar';
-import { TABLE_USER_HEAD } from '../constants/tableUserHead';
+import ConfirmDialog from '@/components/confirm-dialog';
+import CustomBreadcrumbs from '@/components/custom-breadcrumbs';
+import { CustomPaginate } from '@/components/custom-paginate';
 import FilterDrawer from '@/components/FilterDrawer';
+import FormProvider from '@/components/hook-form';
+import Iconify from '@/components/iconify';
+import Scrollbar from '@/components/scrollbar';
+import {
+  TableHeadCustom,
+  TableNoData,
+  TableSelectedAction,
+  TableSkeleton,
+  useTable,
+} from '@/components/table';
+import { useDiffObjects } from '@/hooks/useDiffObjects';
+import { useUsers } from '@/queries/useListUsers/useListUsers';
+import { useUserDelete } from '@/queries/user/delete/useUserDelete';
+import { useUserPathStatus } from '@/queries/user/pathStatus/useUserPath';
+import { PATH_DASHBOARD } from '@/routes/paths';
+import { useThemesStore } from '@/stores/themes.store';
 
 type IFilterState = Partial<FindUsersParams | undefined>;
 

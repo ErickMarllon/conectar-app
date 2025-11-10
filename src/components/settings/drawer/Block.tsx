@@ -1,9 +1,5 @@
-// @mui
 import { Stack, Tooltip, Typography, type StackProps } from '@mui/material';
-//
 import Iconify from '../../iconify';
-
-// ----------------------------------------------------------------------
 
 const SPACING = 2.5;
 

@@ -1,9 +1,6 @@
-import { forwardRef } from 'react';
 import { AvatarGroup } from '@mui/material';
-//
+import { forwardRef } from 'react';
 import type { CustomAvatarGroupProps } from './types';
-
-// ----------------------------------------------------------------------
 
 const SIZES = {
   tiny: 24,

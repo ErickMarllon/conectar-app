@@ -1,11 +1,7 @@
-// @mui
-import { Stack, InputAdornment, TextField, MenuItem, Button } from '@mui/material';
+import { Button, InputAdornment, MenuItem, Stack, TextField } from '@mui/material';
 import { DatePicker } from '@mui/x-date-pickers';
-// components
-import Iconify from '@/components/iconify';
 import dayjs, { Dayjs } from 'dayjs';
-
-// ----------------------------------------------------------------------
+import Iconify from '@/components/iconify';
 
 const INPUT_WIDTH = 160;
 

@@ -1,14 +1,8 @@
-// @mui
 import { IconButton, type IconButtonProps } from '@mui/material';
-// hooks
-import useResponsive from '@/hooks/useResponsive';
-// config
-import { NAV } from '@/configs/global';
-// components
 import Iconify from '@/components/iconify';
+import { NAV } from '@/configs/global';
+import useResponsive from '@/hooks/useResponsive';
 import { useThemesStore } from '@/stores/themes.store';
-
-// ----------------------------------------------------------------------
 
 export default function NavToggleButton({ sx, ...other }: IconButtonProps) {
   const { themeLayout, onToggleLayout } = useThemesStore();

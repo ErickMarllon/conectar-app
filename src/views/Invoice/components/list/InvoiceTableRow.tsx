@@ -1,30 +1,25 @@
-import { useState } from 'react';
-// @mui
+
 import {
-  Link,
-  Stack,
   Button,
-  Divider,
   Checkbox,
-  TableRow,
-  MenuItem,
-  TableCell,
+  Divider,
   IconButton,
+  Link,
+  MenuItem,
+  Stack,
+  TableCell,
+  TableRow,
   Typography,
 } from '@mui/material';
-// utils
-import { fDate } from '@/utils/formatTime';
-import { fCurrency } from '@/utils/formatNumber';
-// @types
+import { useState } from 'react';
 import type { IInvoice } from '@/shared/interfaces/IInvoice';
-// components
-import Label from '@/components/label';
-import Iconify from '@/components/iconify';
-import { CustomAvatar } from '@/components/custom-avatar';
-import MenuPopover from '@/components/menu-popover';
 import ConfirmDialog from '@/components/confirm-dialog';
-
-// ----------------------------------------------------------------------
+import { CustomAvatar } from '@/components/custom-avatar';
+import Iconify from '@/components/iconify';
+import Label from '@/components/label';
+import MenuPopover from '@/components/menu-popover';
+import { fCurrency } from '@/utils/formatNumber';
+import { fDate } from '@/utils/formatTime';
 
 type Props = {
   row: IInvoice;

@@ -1,16 +1,10 @@
-import type { ApexOptions } from 'apexcharts';
-// @mui
+import { Box, Card, Stack, Typography, type CardProps } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { Card, Typography, Stack, type CardProps, Box } from '@mui/material';
-// utils
-import { fCurrency, fPercent } from '@/utils/formatNumber';
-// theme
 import type { ColorSchema } from '@/theme/palette';
-// components
-import Iconify from '@/components/iconify';
+import type { ApexOptions } from 'apexcharts';
 import Chart, { useChart } from '@/components/chart';
-
-// ----------------------------------------------------------------------
+import Iconify from '@/components/iconify';
+import { fCurrency, fPercent } from '@/utils/formatNumber';
 
 interface Props extends CardProps {
   title: string;
@@ -116,8 +110,6 @@ export default function BankingWidgetSummary({
     </Card>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type TrendingInfoProps = {
   percent: number;

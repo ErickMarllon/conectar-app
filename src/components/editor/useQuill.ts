@@ -1,6 +1,6 @@
-import { useRef, useState, useEffect } from 'react';
 import Quill, { type QuillOptions } from 'quill';
 import ImageResize from 'quill-image-resize-module-react';
+import { useRef, useState, useEffect } from 'react';
 import { handleImageUpload } from './handleImageUpload';
 
 if (!Quill.imports['modules/imageResize']) {

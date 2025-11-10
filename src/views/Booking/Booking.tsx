@@ -1,32 +1,24 @@
-// @mui
+import { Container, Grid } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { Grid, Container } from '@mui/material';
-
-// _mock_
-import { _bookings, _bookingNew, _bookingsOverview, _bookingReview } from '../../_mock/arrays';
-// components
-import {
-  BookingDetails,
-  BookingBookedRoom,
-  BookingTotalIncomes,
-  BookingRoomAvailable,
-  BookingNewestBooking,
-  BookingWidgetSummary,
-  BookingCheckInWidgets,
-  BookingCustomerReviews,
-  BookingReservationStats,
-} from './components';
-// assets
+import { _bookingNew, _bookingReview, _bookings, _bookingsOverview } from '../../_mock/arrays';
 import {
   BookingIllustration,
   CheckInIllustration,
   CheckOutIllustration,
 } from '../../assets/illustrations';
+import {
+  BookingBookedRoom,
+  BookingCheckInWidgets,
+  BookingCustomerReviews,
+  BookingDetails,
+  BookingNewestBooking,
+  BookingReservationStats,
+  BookingRoomAvailable,
+  BookingTotalIncomes,
+  BookingWidgetSummary,
+} from './components';
 import { useThemesStore } from '@/stores/themes.store';
 
-// ----------------------------------------------------------------------
-
-// ----------------------------------------------------------------------
 export function GeneralBookingPage() {
   const theme = useTheme();
 

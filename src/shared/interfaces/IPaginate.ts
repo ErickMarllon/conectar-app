@@ -1,6 +1,6 @@
 import type { PaginateMode } from '../enums';
-import type { OrderDirection } from '../enums/orderDirection';
 import type { ISortOption } from './ISortOption';
+import type { OrderDirection } from '../enums/orderDirection';
 
 export interface IPaginatedRequest {
   limit: number;

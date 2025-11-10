@@ -1,10 +1,7 @@
-import { memo } from 'react';
 import { Box, Stack } from '@mui/material';
-//
-import type { NavSectionProps, NavListProps } from '../types';
+import { memo } from 'react';
+import type { NavListProps, NavSectionProps } from '../types';
 import NavList from './NavList';
-
-// ----------------------------------------------------------------------
 
 function NavSectionMini({ data, sx, ...other }: NavSectionProps) {
   return (
@@ -25,8 +22,6 @@ function NavSectionMini({ data, sx, ...other }: NavSectionProps) {
 }
 
 export default memo(NavSectionMini);
-
-// ----------------------------------------------------------------------
 
 type ItemsProps = {
   items: NavListProps[];

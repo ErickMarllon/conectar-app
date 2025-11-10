@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuthStore } from '@/stores/userAuth.store';
 import { FIRST_ROUTES_USER } from '@/routes/paths';
+import { useAuthStore } from '@/stores/userAuth.store';
 
 type GuestGuardProps = {
   children: React.ReactNode;

@@ -1,9 +1,9 @@
-import type { IFilterEnterpriseGeneric } from '@/shared/interfaces/IFilter';
-import type { IPaginatedResponse } from '@/shared/interfaces/IPaginate';
 import { useQuery, useQueryClient, type UseQueryOptions } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
-import { queryFn } from './queryFn';
+import type { IFilterEnterpriseGeneric } from '@/shared/interfaces/IFilter';
+import type { IPaginatedResponse } from '@/shared/interfaces/IPaginate';
 import type { ITenantAccountGeneral } from '@/shared/interfaces/ITenant';
+import { queryFn } from './queryFn';
 
 type QueryError = AxiosError;
 type QueryFnData = IPaginatedResponse<ITenantAccountGeneral>;

@@ -1,9 +1,6 @@
-// form
-import { useFormContext, Controller } from 'react-hook-form';
-// @mui
-import { Slider, type SliderProps, FormHelperText } from '@mui/material';
+import { FormHelperText, Slider, type SliderProps } from '@mui/material';
+import { Controller, useFormContext } from 'react-hook-form';
 
-// ----------------------------------------------------------------------
 
 type Props = SliderProps & {
   name: string;

@@ -1,31 +1,27 @@
-import { useState } from 'react';
-import { sentenceCase } from 'change-case';
-// @mui
+
 import {
   Box,
-  Card,
-  Table,
   Button,
+  Card,
+  CardHeader,
   Divider,
+  IconButton,
   MenuItem,
-  TableRow,
+  Table,
   TableBody,
   TableCell,
-  type CardProps,
-  CardHeader,
-  IconButton,
   TableContainer,
+  TableRow,
+  type CardProps,
 } from '@mui/material';
-// utils
-import { fCurrency } from '@/utils/formatNumber';
-// components
-import Label from '@/components/label';
+import { sentenceCase } from 'change-case';
+import { useState } from 'react';
 import Iconify from '@/components/iconify';
-import Scrollbar from '@/components/scrollbar';
+import Label from '@/components/label';
 import MenuPopover from '@/components/menu-popover';
+import Scrollbar from '@/components/scrollbar';
 import { TableHeadCustom } from '@/components/table';
-
-// ----------------------------------------------------------------------
+import { fCurrency } from '@/utils/formatNumber';
 
 type RowProps = {
   id: string;
@@ -80,8 +76,6 @@ export default function AppNewInvoice({
     </Card>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type AppNewInvoiceRowProps = {
   row: RowProps;

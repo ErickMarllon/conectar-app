@@ -1,16 +1,10 @@
-import { useState, type ChangeEvent } from 'react';
 import { Draggable } from '@hello-pangea/dnd';
-// @mui
-import { Paper, Typography, Box, Checkbox } from '@mui/material';
-// @types
+import { Box, Checkbox, Paper, Typography } from '@mui/material';
+import { useState, type ChangeEvent } from 'react';
 import type { IKanbanCard } from '@/shared/interfaces/IKanban';
-// components
-import Image from '@/components/image';
-import Iconify from '@/components/iconify';
-//
 import KanbanDetails from './details/KanbanDetails';
-
-// ----------------------------------------------------------------------
+import Iconify from '@/components/iconify';
+import Image from '@/components/image';
 
 type Props = {
   index: number;

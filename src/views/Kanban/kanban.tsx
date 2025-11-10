@@ -1,20 +1,14 @@
-// @mui
-import { Container, Stack } from '@mui/material';
 import { DragDropContext, Droppable, type DropResult } from '@hello-pangea/dnd';
-// redux
-// routes
-import { PATH_DASHBOARD } from '../../routes/paths';
-// utils
-import { hideScrollbarX } from '../../utils/cssStyles';
-// components
+import { Container, Stack } from '@mui/material';
+import { toast } from 'react-toastify';
+import type { IKanbanCommonParams, IKanbanStateFlat } from '@/shared/interfaces/IKanban';
 import CustomBreadcrumbs from '../../components/custom-breadcrumbs';
 import { SkeletonKanbanColumn } from '../../components/skeleton';
+import { PATH_DASHBOARD } from '../../routes/paths';
+import { hideScrollbarX } from '../../utils/cssStyles';
 import { KanbanColumn, KanbanColumnAdd } from './components';
 import { useKanbanBoard } from '@/queries/kanban/board/useKanbanBoard';
-import type { IKanbanCommonParams, IKanbanStateFlat } from '@/shared/interfaces/IKanban';
 import { useKanbanUpdateColumn } from '@/queries/kanban/update/useUpdateColumn';
-import { toast } from 'react-toastify';
-// sections
 
 export function KanbanPage() {
   const { data } = useKanbanBoard({

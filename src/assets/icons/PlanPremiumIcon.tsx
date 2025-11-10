@@ -1,9 +1,6 @@
-import { memo } from 'react';
-// @mui
-import { useTheme } from '@mui/material/styles';
 import { Box, type BoxProps } from '@mui/material';
-
-// ----------------------------------------------------------------------
+import { useTheme } from '@mui/material/styles';
+import { memo } from 'react';
 
 function PlanPremiumIcon({ ...other }: BoxProps) {
   const theme = useTheme();

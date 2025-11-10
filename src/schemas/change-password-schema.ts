@@ -1,5 +1,5 @@
-import { UserRole } from '@/shared/enums';
 import { z } from 'zod';
+import { UserRole } from '@/shared/enums';
 
 export const ChangePasswordSchema = (role?: UserRole) =>
   z

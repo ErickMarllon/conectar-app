@@ -1,10 +1,10 @@
-import { varFade } from '@/components/animate';
 import { Card } from '@mui/material';
 import { alpha, styled } from '@mui/material/styles';
 import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import { type ElevateCardProps } from '../../constants/ElevateMarketingCards';
 import CardContent from './CardContent';
+import { varFade } from '@/components/animate';
 
 const StyledCard = styled(Card)(({ theme }) => ({
   backgroundColor: theme.palette.background.default,

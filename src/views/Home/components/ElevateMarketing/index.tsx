@@ -1,10 +1,10 @@
-import { MotionViewport } from '@/components/animate';
-import { bgGradient } from '@/utils/cssStyles';
 import { Container } from '@mui/material';
 import { alpha, styled } from '@mui/material/styles';
 import { ELEVATEMARKETINGCARDS } from '../../constants/ElevateMarketingCards';
 import HeaderSection from './HeaderSection';
 import MarketingCard from './MarketingCard';
+import { MotionViewport } from '@/components/animate';
+import { bgGradient } from '@/utils/cssStyles';
 
 const StyledRoot = styled('div')(({ theme }) => ({
   padding: theme.spacing(10, 0),

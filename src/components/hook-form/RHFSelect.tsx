@@ -1,22 +1,19 @@
-// form
-import { useFormContext, Controller } from 'react-hook-form';
-// @mui
 import {
   Box,
-  Chip,
-  Select,
   Checkbox,
-  MenuItem,
-  TextField,
-  InputLabel,
-  type SelectProps,
+  Chip,
   FormControl,
-  OutlinedInput,
-  type TextFieldProps,
   FormHelperText,
+  InputLabel,
+  MenuItem,
+  OutlinedInput,
+  Select,
+  TextField,
+  type SelectProps,
+  type TextFieldProps,
 } from '@mui/material';
+import { Controller, useFormContext } from 'react-hook-form';
 
-// ----------------------------------------------------------------------
 
 type RHFSelectProps = TextFieldProps & {
   name: string;
@@ -79,8 +76,6 @@ export function RHFSelect({
     />
   );
 }
-
-// ----------------------------------------------------------------------
 
 type RHFMultiSelectProps = SelectProps & {
   name: string;

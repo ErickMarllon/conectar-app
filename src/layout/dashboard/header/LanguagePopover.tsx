@@ -1,16 +1,11 @@
-import { useState } from 'react';
-// @mui
 import { MenuItem, Stack } from '@mui/material';
-// locales
-import useLocales from '@/hooks/useLocales';
-// components
+import { useState } from 'react';
+import type { ThemeLangs } from '@/components/settings/types';
+import { IconButtonAnimate } from '@/components/animate';
 import Image from '@/components/image';
 import MenuPopover from '@/components/menu-popover';
-import { IconButtonAnimate } from '@/components/animate';
-import type { ThemeLangs } from '@/components/settings/types';
+import useLocales from '@/hooks/useLocales';
 import { allLangsArray } from '@/locales/config-lang';
-
-// ----------------------------------------------------------------------
 
 export default function LanguagePopover() {
   const { currentLang, onChangeLang } = useLocales();

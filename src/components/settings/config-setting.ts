@@ -1,7 +1,7 @@
 // components
 
-import { presets } from './presets';
 import type { SettingsValueProps } from './types';
+import { presets } from './presets';
 
 // PLEASE REMOVE `LOCAL STORAGE` WHEN YOU CHANGE SETTINGS.
 // ----------------------------------------------------------------------

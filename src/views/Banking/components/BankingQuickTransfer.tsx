@@ -1,33 +1,29 @@
-import { useState, useEffect, useRef } from 'react';
-// @mui
-import { useTheme } from '@mui/material/styles';
-import {
-  Box,
-  Card,
-  Link,
-  Stack,
-  Input,
-  Button,
-  Avatar,
-  Dialog,
-  Slider,
-  Tooltip,
-  TextField,
-  type CardProps,
-  Typography,
-  CardHeader,
-  type InputProps,
-  DialogTitle,
-  type DialogProps,
-  CardContent,
-  DialogActions,
-} from '@mui/material';
-// utils
-import { fCurrency } from '@/utils/formatNumber';
-// components
-import Carousel, { CarouselArrows } from '@/components/carousel';
 
-// ----------------------------------------------------------------------
+import {
+  Avatar,
+  Box,
+  Button,
+  Card,
+  CardContent,
+  CardHeader,
+  Dialog,
+  DialogActions,
+  DialogTitle,
+  Input,
+  Link,
+  Slider,
+  Stack,
+  TextField,
+  Tooltip,
+  Typography,
+  type CardProps,
+  type DialogProps,
+  type InputProps,
+} from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import { useEffect, useRef, useState } from 'react';
+import Carousel, { CarouselArrows } from '@/components/carousel';
+import { fCurrency } from '@/utils/formatNumber';
 
 const STEP = 50;
 
@@ -36,8 +32,6 @@ const MIN_AMOUNT = 0;
 const AVATAR_SIZE = 40;
 
 const MAX_AMOUNT = 1000;
-
-// ----------------------------------------------------------------------
 
 interface Props extends CardProps {
   title?: string;
@@ -263,8 +257,6 @@ export default function BankingQuickTransfer({ title, subheader, list, sx, ...ot
   );
 }
 
-// ----------------------------------------------------------------------
-
 type AmountProps = number | string | Array<number | string>;
 
 interface InputAmountProps extends InputProps {
@@ -297,8 +289,6 @@ function InputAmount({ autoWidth, amount, onBlur, onChange, sx, ...other }: Inpu
     </Stack>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type TConfirmTransferDialogProps = InputAmountProps & DialogProps;
 

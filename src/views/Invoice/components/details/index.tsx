@@ -1,31 +1,24 @@
-// @mui
-import { styled } from '@mui/material/styles';
 import {
   Box,
   Card,
+  Divider,
   Grid,
   Table,
-  Divider,
-  TableRow,
   TableBody,
-  TableHead,
   TableCell,
-  Typography,
   TableContainer,
+  TableHead,
+  TableRow,
+  Typography,
 } from '@mui/material';
-// utils
-import { fDate } from '@/utils/formatTime';
-import { fCurrency } from '@/utils/formatNumber';
-// _mock_
-// components
-import Label from '@/components/label';
-import Image from '@/components/image';
-import Scrollbar from '@/components/scrollbar';
-//
-import InvoiceToolbar from './InvoiceToolbar';
+import { styled } from '@mui/material/styles';
 import type { IInvoice } from '@/shared/interfaces/IInvoice';
-
-// ----------------------------------------------------------------------
+import InvoiceToolbar from './InvoiceToolbar';
+import Image from '@/components/image';
+import Label from '@/components/label';
+import Scrollbar from '@/components/scrollbar';
+import { fCurrency } from '@/utils/formatNumber';
+import { fDate } from '@/utils/formatTime';
 
 const StyledRowResult = styled(TableRow)(({ theme }) => ({
   '& td': {
@@ -33,8 +26,6 @@ const StyledRowResult = styled(TableRow)(({ theme }) => ({
     paddingBottom: theme.spacing(1),
   },
 }));
-
-// ----------------------------------------------------------------------
 
 type Props = {
   invoice?: IInvoice;

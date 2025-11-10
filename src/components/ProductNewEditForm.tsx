@@ -1,31 +1,23 @@
-import { useCallback, useEffect, useMemo } from 'react';
-
-// form
-import { useForm } from 'react-hook-form';
-// @mui
-import { LoadingButton } from '@mui/lab';
-import { Box, Card, Grid, Stack, Typography, InputAdornment } from '@mui/material';
-// routes
-import { PATH_DASHBOARD } from '@/routes/paths';
-// @types
-// components
-import FormProvider, {
-  RHFSwitch,
-  RHFSelect,
-  RHFEditor,
-  RHFUpload,
-  RHFTextField,
-  RHFRadioGroup,
-  RHFAutocomplete,
-} from '@/components/hook-form';
-import { NewProductSchema } from '@/schemas/new-product-schema';
-import type { IProduct } from '@/shared/interfaces/IProduct';
-import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { LoadingButton } from '@mui/lab';
+import { Box, Card, Grid, InputAdornment, Stack, Typography } from '@mui/material';
+import { useCallback, useEffect, useMemo } from 'react';
+import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { z } from 'zod';
-
-// ----------------------------------------------------------------------
+import type { IProduct } from '@/shared/interfaces/IProduct';
+import FormProvider, {
+  RHFAutocomplete,
+  RHFEditor,
+  RHFRadioGroup,
+  RHFSelect,
+  RHFSwitch,
+  RHFTextField,
+  RHFUpload,
+} from '@/components/hook-form';
+import { PATH_DASHBOARD } from '@/routes/paths';
+import { NewProductSchema } from '@/schemas/new-product-schema';
 
 const GENDER_OPTION = [
   { label: 'Men', value: 'Men' },
@@ -54,8 +46,6 @@ const TAGS_OPTION = [
   'Snatch',
   '3 Idiots',
 ];
-
-// ----------------------------------------------------------------------
 
 type FormValuesProps = z.infer<typeof NewProductSchema>;
 

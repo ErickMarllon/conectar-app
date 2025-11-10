@@ -1,35 +1,28 @@
-import { useState } from 'react';
-// @mui
 import {
   Box,
-  Card,
-  Stack,
   Button,
-  Divider,
-  MenuItem,
+  Card,
   Checkbox,
-  type CardProps,
+  Divider,
   IconButton,
+  MenuItem,
+  Stack,
+  type CardProps,
 } from '@mui/material';
-// hooks
-import useCopyToClipboard from '@/hooks/useCopyToClipboard';
-// utils
-import { fDateTime } from '@/utils/formatTime';
-import { fData } from '@/utils/formatNumber';
-// @types
+import { useState } from 'react';
+import { toast } from 'react-toastify';
 import type { IFileManager } from '@/shared/interfaces/File';
-// components
+import { FileDetailsDrawer, FileShareDialog } from '../portal';
+import ConfirmDialog from '@/components/confirm-dialog';
+import FileThumbnail from '@/components/file/thumbnail';
 import Iconify from '@/components/iconify';
 import MenuPopover from '@/components/menu-popover';
-
 import TextMaxLine from '@/components/text-max-line';
-import FileThumbnail from '@/components/file/thumbnail';
-import ConfirmDialog from '@/components/confirm-dialog';
-//
-import { toast } from 'react-toastify';
-import { FileDetailsDrawer, FileShareDialog } from '../portal';
+import useCopyToClipboard from '@/hooks/useCopyToClipboard';
+import { fData } from '@/utils/formatNumber';
+import { fDateTime } from '@/utils/formatTime';
 
-// ----------------------------------------------------------------------
+
 
 interface Props extends CardProps {
   file: IFileManager;

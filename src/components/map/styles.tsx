@@ -1,11 +1,8 @@
-import { Popup as LeafletPopup } from 'react-leaflet';
-// @mui
-import { useTheme, styled, alpha } from '@mui/material/styles';
-import { GlobalStyles } from '@mui/material';
-// utils
-import { bgBlur } from '../../utils/cssStyles';
 
-// ----------------------------------------------------------------------
+import { GlobalStyles } from '@mui/material';
+import { alpha, styled, useTheme } from '@mui/material/styles';
+import { Popup as LeafletPopup } from 'react-leaflet';
+import { bgBlur } from '../../utils/cssStyles';
 
 function StyledMapControls() {
   const theme = useTheme();
@@ -41,8 +38,6 @@ function StyledMapControls() {
 
   return inputGlobalStyles;
 }
-
-// ----------------------------------------------------------------------
 
 const StyledPopup = styled(LeafletPopup)(({ theme }) => {
   const isRTL = theme.direction === 'rtl';
@@ -89,8 +84,6 @@ const StyledPopup = styled(LeafletPopup)(({ theme }) => {
   };
 });
 
-// ----------------------------------------------------------------------
-
 const StyledControlPanel = styled('div')(({ theme }) => ({
   ...bgBlur({ color: theme.palette.grey[900] }),
   zIndex: 9,
@@ -102,4 +95,4 @@ const StyledControlPanel = styled('div')(({ theme }) => ({
   borderRadius: theme.shape.borderRadius,
 }));
 
-export { StyledMapControls, StyledPopup, StyledControlPanel };
+export { StyledControlPanel, StyledMapControls, StyledPopup };

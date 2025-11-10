@@ -1,11 +1,8 @@
-import { m } from 'framer-motion';
-// @mui
-import { styled } from '@mui/material/styles';
-import { Stack, Container, Typography } from '@mui/material';
-// components
-import { MotionContainer, TextAnimate, varFade } from '@/components/animate';
 
-// ----------------------------------------------------------------------
+import { Container, Stack, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { m } from 'framer-motion';
+import { MotionContainer, TextAnimate, varFade } from '@/components/animate';
 
 const StyledRoot = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -27,8 +24,6 @@ const StyledContent = styled('div')(({ theme }) => ({
     position: 'absolute',
   },
 }));
-
-// ----------------------------------------------------------------------
 
 export default function AboutHero() {
   return (

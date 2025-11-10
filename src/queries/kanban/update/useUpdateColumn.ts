@@ -1,8 +1,8 @@
 import { useMutation, useQueryClient, type UseMutationOptions } from '@tanstack/react-query';
-import type { AxiosError, AxiosResponse } from 'axios';
-import { handleError } from '@/errors/handleError';
 import type { IKanbanBoard, IKanbanCommonParams } from '@/shared/interfaces/IKanban';
+import type { AxiosError, AxiosResponse } from 'axios';
 import { updateColumnMutationFn } from './updateColumnMutationFn';
+import { handleError } from '@/errors/handleError';
 
 type MutationError = AxiosError;
 type MutationData = AxiosResponse<IKanbanBoard>;

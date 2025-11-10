@@ -1,8 +1,8 @@
+import { useEffect } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { useAuthStore } from '@/stores/userAuth.store';
 import type { UserRole } from '@/shared/enums';
 import { PATH_AUTH, PATH_PAGE } from '@/routes/paths';
-import { useEffect } from 'react';
+import { useAuthStore } from '@/stores/userAuth.store';
 
 type AuthGuardProps = {
   children: React.ReactNode;

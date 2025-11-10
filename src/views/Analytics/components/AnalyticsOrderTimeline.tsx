@@ -1,17 +1,13 @@
-// @mui
-import { Card, Typography, CardHeader, CardContent, type CardProps } from '@mui/material';
 import {
   Timeline,
+  TimelineConnector,
+  TimelineContent,
   TimelineDot,
   TimelineItem,
-  TimelineContent,
   TimelineSeparator,
-  TimelineConnector,
 } from '@mui/lab';
-// utils
+import { Card, CardContent, CardHeader, Typography, type CardProps } from '@mui/material';
 import { fDateTime } from '@/utils/formatTime';
-
-// ----------------------------------------------------------------------
 
 type ItemProps = {
   id: string;
@@ -47,8 +43,6 @@ export default function AnalyticsOrderTimeline({ title, subheader, list, ...othe
     </Card>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type OrderItemProps = {
   item: ItemProps;

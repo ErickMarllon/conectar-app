@@ -1,20 +1,13 @@
-import '../../utils/highlight';
+import { Divider, Link, Typography } from '@mui/material';
 import ReactMarkdown from 'react-markdown';
-// markdown plugins
+import { Link as RouterLink } from 'react-router-dom';
+import rehypeHighlight from 'rehype-highlight';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
-import rehypeHighlight from 'rehype-highlight';
-// react router dom
-import { Link as RouterLink } from 'react-router-dom';
-// @mui
-import { Link, Typography, Divider } from '@mui/material';
-//
-import Image from '../image';
-//
-import StyledMarkdown from './styles';
+import '../../utils/highlight';
 import type { MarkdownProps } from './types';
-
-// ----------------------------------------------------------------------
+import Image from '../image';
+import StyledMarkdown from './styles';
 
 export default function Markdown({ sx, ...other }: MarkdownProps) {
   return (
@@ -27,8 +20,6 @@ export default function Markdown({ sx, ...other }: MarkdownProps) {
     </StyledMarkdown>
   );
 }
-
-// ----------------------------------------------------------------------
 
 const components = {
   h1: ({ ...props }) => <Typography variant="h1" gutterBottom {...props} />,

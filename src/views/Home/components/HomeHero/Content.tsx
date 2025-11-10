@@ -1,8 +1,8 @@
-import { varFade } from '@/components/animate';
-import { HEADER } from '@/configs/global';
 import { Box, Stack } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { motion } from 'motion/react';
+import { varFade } from '@/components/animate';
+import { HEADER } from '@/configs/global';
 
 export default function Content() {
   const theme = useTheme();

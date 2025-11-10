@@ -1,10 +1,7 @@
+import { Box, Stack, Tooltip, type SxProps } from '@mui/material';
 import type { Theme } from '@mui/material/styles';
-import { Box, Tooltip, type SxProps, Stack } from '@mui/material';
-//
-import { fileData, fileFormat, fileThumb } from './utils';
 import DownloadButton from './DownloadButton';
-
-// ----------------------------------------------------------------------
+import { fileData, fileFormat, fileThumb } from './utils';
 
 type FileIconProps = {
   file: File | string;

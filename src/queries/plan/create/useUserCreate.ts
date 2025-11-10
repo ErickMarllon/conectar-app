@@ -1,10 +1,10 @@
-import { handleError } from '@/errors/handleError';
+import { useMutation, type UseMutationOptions } from '@tanstack/react-query';
+import { toast } from 'react-toastify';
 import type { IUserSchema } from '@/schemas/user-schema';
 import type { IUserAccountGeneral } from '@/shared/interfaces/IUser';
-import { useMutation, type UseMutationOptions } from '@tanstack/react-query';
 import type { AxiosError, AxiosResponse } from 'axios';
 import { userCreateMutationFn } from './userCreateMutationFn';
-import { toast } from 'react-toastify';
+import { handleError } from '@/errors/handleError';
 
 type MutationError = AxiosError;
 type MutationData = AxiosResponse<IUserAccountGeneral>;

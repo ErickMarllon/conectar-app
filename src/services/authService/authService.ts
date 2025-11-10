@@ -1,10 +1,10 @@
-import type { IUserAuth } from '@/shared/interfaces/IUser';
-import type { AxiosResponse } from 'axios';
 import type { IRefreshTokenDTO } from './dtos/IRefreshTokenDTO';
-import { api } from '@/http/api';
+import type { IChangePassword } from '@/schemas/change-password-schema';
 import type { ISignIn } from '@/schemas/sign-in.schema';
 import type { ISignUp } from '@/schemas/sign-up.schema';
-import type { IChangePassword } from '@/schemas/change-password-schema';
+import type { IUserAuth } from '@/shared/interfaces/IUser';
+import type { AxiosResponse } from 'axios';
+import { api } from '@/http/api';
 
 class AuthService {
   public static async login({ ...body }: ISignIn): Promise<AxiosResponse<IUserAuth>> {

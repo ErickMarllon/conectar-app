@@ -1,17 +1,11 @@
-import { m } from 'framer-motion';
-// @mui
+import { Box, Container, Grid, Link, Paper, Rating, Typography } from '@mui/material';
 import { alpha, styled, useTheme } from '@mui/material/styles';
-import { Box, Grid, Link, Paper, Rating, Container, Typography } from '@mui/material';
-// hooks
-import useResponsive from '@/hooks/useResponsive';
-// utils
-import { fDate } from '@/utils/formatTime';
-import { bgBlur, bgGradient } from '@/utils/cssStyles';
-// components
-import Iconify from '@/components/iconify';
+import { m } from 'framer-motion';
 import { MotionViewport, varFade } from '@/components/animate';
-
-// ----------------------------------------------------------------------
+import Iconify from '@/components/iconify';
+import useResponsive from '@/hooks/useResponsive';
+import { bgBlur, bgGradient } from '@/utils/cssStyles';
+import { fDate } from '@/utils/formatTime';
 
 const TESTIMONIALS = [
   {
@@ -66,8 +60,6 @@ const StyledRoot = styled('div')(({ theme }) => ({
     overflow: 'hidden',
   },
 }));
-
-// ----------------------------------------------------------------------
 
 export default function AboutTestimonials() {
   const isDesktop = useResponsive('up', 'md');
@@ -158,8 +150,6 @@ export default function AboutTestimonials() {
   );
 }
 
-// ----------------------------------------------------------------------
-
 type TestimonialCardProps = {
   testimonial: {
     name: string;
@@ -202,8 +192,6 @@ function TestimonialCard({ testimonial }: TestimonialCardProps) {
     </Paper>
   );
 }
-
-// ----------------------------------------------------------------------
 
 function TestimonialLink() {
   return (

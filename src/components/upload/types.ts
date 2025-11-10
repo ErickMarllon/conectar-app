@@ -1,7 +1,7 @@
-import type { DropzoneOptions } from 'react-dropzone';
 // @mui
 import type { SxProps } from '@mui/material';
 import type { Theme } from '@mui/material/styles';
+import type { DropzoneOptions } from 'react-dropzone';
 
 // ----------------------------------------------------------------------
 

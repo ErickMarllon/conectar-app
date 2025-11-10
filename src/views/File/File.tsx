@@ -1,35 +1,24 @@
-import { useState, useCallback } from 'react';
 
-// @mui
+import { Box, Container, Grid, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { Grid, Container, Box, Stack, Typography } from '@mui/material';
-// routes
-import { PATH_DASHBOARD } from '../../routes/paths';
-// hooks
-import useResponsive from '../../hooks/useResponsive';
-// _mock
-import { _folders, _files } from '../../_mock/arrays';
-// layouts
-
-// components
+import { useCallback, useState } from 'react';
+import { _files, _folders } from '../../_mock/arrays';
 import Iconify from '../../components/iconify';
 import Scrollbar from '../../components/scrollbar';
 import { UploadBox } from '../../components/upload';
-import { useThemesStore } from '@/stores/themes.store';
-// sections
+import useResponsive from '../../hooks/useResponsive';
+import { PATH_DASHBOARD } from '../../routes/paths';
 import {
-  FileGeneralWidget,
-  FileGeneralUpgrade,
-  FileGeneralRecentCard,
   FileGeneralDataActivity,
+  FileGeneralRecentCard,
   FileGeneralStorageOverview,
+  FileGeneralUpgrade,
+  FileGeneralWidget,
 } from './components';
-
 import { FilePanel } from '@/components/file';
 import { FileFolderCard } from '@/components/file/item';
 import { FileNewFolderDialog } from '@/components/file/portal';
-
-// ----------------------------------------------------------------------
+import { useThemesStore } from '@/stores/themes.store';
 
 const GB = 1000000000 * 24;
 
@@ -38,8 +27,6 @@ const TIME_LABELS = {
   month: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
   year: ['2018', '2019', '2020', '2021', '2022'],
 };
-
-// ----------------------------------------------------------------------
 
 export function GeneralFilePage() {
   const theme = useTheme();

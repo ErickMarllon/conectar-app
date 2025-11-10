@@ -1,9 +1,9 @@
-import { CookiesService } from '@/services/cookies';
 import i18n from 'i18next';
 import I18nextBrowserLanguageDetector from 'i18next-browser-languagedetector';
+import Backend from 'i18next-http-backend';
 import { initReactI18next } from 'react-i18next';
 import { defaultLang } from './config-lang';
-import Backend from 'i18next-http-backend';
+import { CookiesService } from '@/services/cookies';
 
 const savedLanguage = CookiesService.getItem('i18next') as string | undefined;
 const initialLng = savedLanguage || defaultLang.value;

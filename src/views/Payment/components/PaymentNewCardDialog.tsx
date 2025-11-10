@@ -1,22 +1,18 @@
-import { useState } from 'react';
-// @mui
 import {
-  Stack,
   Button,
   Dialog,
-  TextField,
-  IconButton,
-  DialogTitle,
-  type DialogProps,
   DialogActions,
   DialogContent,
+  DialogTitle,
+  IconButton,
   InputAdornment,
+  Stack,
+  TextField,
+  type DialogProps,
 } from '@mui/material';
-// components
+import { useState } from 'react';
 import Iconify from '@/components/iconify';
 import MenuPopover from '@/components/menu-popover';
-
-// ----------------------------------------------------------------------
 
 interface Props extends DialogProps {
   onClose: VoidFunction;

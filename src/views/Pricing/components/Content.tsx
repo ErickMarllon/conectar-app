@@ -1,13 +1,11 @@
-import { Box, Switch, Typography, Stack } from '@mui/material';
+import { Box, Stack, Switch, Typography } from '@mui/material';
 import { motion } from 'motion/react';
-import { useListPlan } from '@/queries/plan/list/useListPlan';
 import { useMemo, useState } from 'react';
-import { PlanInterval } from '@/shared/enums';
-import { varFade } from '@/components/animate';
-import PricingPlanCard from './PricingPlanCard';
 import { useTranslation } from 'react-i18next';
-
-// ----------------------------------------------------------------------
+import PricingPlanCard from './PricingPlanCard';
+import { varFade } from '@/components/animate';
+import { useListPlan } from '@/queries/plan/list/useListPlan';
+import { PlanInterval } from '@/shared/enums';
 
 export function Content() {
   const [interval, setInterval] = useState<PlanInterval>(PlanInterval.MONTHLY);

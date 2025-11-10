@@ -1,22 +1,18 @@
-import { useState } from 'react';
-// @mui
 import {
   Card,
-  Stack,
-  Divider,
-  Checkbox,
-  MenuItem,
-  type CardProps,
   CardHeader,
-  IconButton,
-  type CheckboxProps,
+  Checkbox,
+  Divider,
   FormControlLabel,
+  IconButton,
+  MenuItem,
+  Stack,
+  type CardProps,
+  type CheckboxProps,
 } from '@mui/material';
-// components
+import { useState } from 'react';
 import Iconify from '@/components/iconify';
 import MenuPopover from '@/components/menu-popover';
-
-// ----------------------------------------------------------------------
 
 type ItemProps = {
   id: string;
@@ -55,8 +51,6 @@ export default function AnalyticsTasks({ title, subheader, list, ...other }: Pro
     </Card>
   );
 }
-
-// ----------------------------------------------------------------------
 
 interface TaskItemProps extends CheckboxProps {
   task: ItemProps;

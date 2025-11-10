@@ -1,9 +1,9 @@
-import { motion } from 'motion/react';
 import { Card, Typography } from '@mui/material';
 import { styled, alpha } from '@mui/material/styles';
+import { motion } from 'motion/react';
+import { useTranslation } from 'react-i18next';
 import { varFade } from '@/components/animate';
 import Iconify from '@/components/iconify';
-import { useTranslation } from 'react-i18next';
 
 const StyledCard = styled(Card)(({ theme }) => ({
   backgroundColor: theme.palette.background.default,

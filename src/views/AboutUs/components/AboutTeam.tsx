@@ -1,17 +1,12 @@
+import { Box, Card, Container, IconButton, Stack, Typography } from '@mui/material';
+import { alpha, useTheme } from '@mui/material/styles';
 import { m } from 'framer-motion';
 import { useRef } from 'react';
-// @mui
-import { useTheme, alpha } from '@mui/material/styles';
-import { Box, Stack, Card, Container, Typography, IconButton } from '@mui/material';
-// _mock_
 import { _carouselsMembers, _socials } from '@/_mock/arrays';
-// components
-import Image from '@/components/image';
-import Iconify from '@/components/iconify';
-import Carousel, { CarouselArrows } from '@/components/carousel';
 import { MotionViewport, varFade } from '@/components/animate';
-
-// ----------------------------------------------------------------------
+import Carousel, { CarouselArrows } from '@/components/carousel';
+import Iconify from '@/components/iconify';
+import Image from '@/components/image';
 
 export default function AboutTeam() {
   const carouselRef = useRef<Carousel>(null);

@@ -1,9 +1,7 @@
 import { Typography } from '@mui/material';
-import { Trans, useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
+import { Trans, useTranslation } from 'react-i18next';
 import { varFade } from '@/components/animate';
-
-// ----------------------------------------------------------------------
 
 export default function Description() {
   const { t } = useTranslation();

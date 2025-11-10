@@ -1,12 +1,7 @@
-// @mui
-import { Typography, Stack } from '@mui/material';
-// components
-import Logo from '@/components/logo';
+import { Stack, Typography } from '@mui/material';
+import { StyledContent, StyledRoot, StyledSection, StyledSectionBg } from './styles';
 import Image from '@/components/image';
-//
-import { StyledRoot, StyledSectionBg, StyledSection, StyledContent } from './styles';
-
-// ----------------------------------------------------------------------
+import Logo from '@/components/logo';
 
 type Props = {
   title?: string;

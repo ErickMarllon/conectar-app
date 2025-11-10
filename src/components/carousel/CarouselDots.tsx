@@ -1,8 +1,5 @@
-// @mui
-import { styled, type Theme } from '@mui/material/styles';
 import { Box, Stack, type BoxProps, type SxProps } from '@mui/material';
-
-// ----------------------------------------------------------------------
+import { styled, type Theme } from '@mui/material/styles';
 
 type StyledRootProps = {
   rounded: boolean;
@@ -45,8 +42,6 @@ const StyledDot = styled('span')(({ theme }) => ({
     duration: theme.transitions.duration.short,
   }),
 }));
-
-// ----------------------------------------------------------------------
 
 export interface Props extends BoxProps {
   rounded?: boolean;

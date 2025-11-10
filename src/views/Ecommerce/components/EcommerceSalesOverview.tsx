@@ -1,9 +1,5 @@
-// @mui
-import { Card, CardHeader, Typography, Stack, LinearProgress, type CardProps } from '@mui/material';
-// utils
-import { fPercent, fCurrency } from '@/utils/formatNumber';
-
-// ----------------------------------------------------------------------
+import { Card, CardHeader, LinearProgress, Stack, Typography, type CardProps } from '@mui/material';
+import { fCurrency, fPercent } from '@/utils/formatNumber';
 
 type ItemProps = {
   label: string;
@@ -30,8 +26,6 @@ export default function EcommerceSalesOverview({ title, subheader, data, ...othe
     </Card>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type ProgressItemProps = {
   progress: ItemProps;

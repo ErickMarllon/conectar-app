@@ -1,14 +1,8 @@
-// @mui
-import { Stack, Link, Button, Typography } from '@mui/material';
-// utils
-import { fDate } from '@/utils/formatTime';
-import { fCurrency } from '@/utils/formatNumber';
-// @types
+import { Button, Link, Stack, Typography } from '@mui/material';
 import type { IUserAccountBillingInvoice } from '@/shared/interfaces/IUser';
-// components
 import Iconify from '@/components/iconify';
-
-// ----------------------------------------------------------------------
+import { fCurrency } from '@/utils/formatNumber';
+import { fDate } from '@/utils/formatTime';
 
 type Props = {
   invoices: IUserAccountBillingInvoice[];

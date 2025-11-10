@@ -1,33 +1,23 @@
-import { useState } from 'react';
+import { Container, Stack, Typography } from '@mui/material';
 import orderBy from 'lodash/orderBy';
-// form
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-// @mui
-import { Container, Typography, Stack } from '@mui/material';
-
-// routes
-import { PATH_DASHBOARD } from '@/routes/paths';
-// @types
 import type { IProduct, IProductFilter } from '@/shared/interfaces/IProduct';
-// components
-import FormProvider from '@/components/hook-form';
-import CustomBreadcrumbs from '@/components/custom-breadcrumbs';
-import CartWidget from '@/components/CartWidget';
-// sections
-
-import { useThemesStore } from '@/stores/themes.store';
 import {
-  ShopTagFiltered,
-  ShopProductSort,
-  ShopProductList,
   ShopFilterDrawer,
+  ShopProductList,
   ShopProductSearch,
+  ShopProductSort,
+  ShopTagFiltered,
 } from './components';
+import CartWidget from '@/components/CartWidget';
+import CustomBreadcrumbs from '@/components/custom-breadcrumbs';
+import FormProvider from '@/components/hook-form';
 import { useListProducts } from '@/queries/products/useList/useListProducts';
-import { useProductStore } from '@/stores/useProduct.store';
+import { PATH_DASHBOARD } from '@/routes/paths';
 import { OrderDirection } from '@/shared/enums/orderDirection';
-
-// ----------------------------------------------------------------------
+import { useThemesStore } from '@/stores/themes.store';
+import { useProductStore } from '@/stores/useProduct.store';
 
 export function EcommerceShopPage() {
   const { themeStretch } = useThemesStore();
@@ -143,8 +133,6 @@ export function EcommerceShopPage() {
   );
 }
 
-// ----------------------------------------------------------------------
-
 function applyFilter(products: IProduct[], filters: IProductFilter) {
   const { gender, category, colors, priceRange, rating, sortBy } = filters;
 
@@ -152,7 +140,7 @@ function applyFilter(products: IProduct[], filters: IProductFilter) {
 
   const max = priceRange[1];
 
-  // SORT BY
+  // utilsSORT BY
   if (sortBy === 'featured') {
     products = orderBy(products, ['sold'], [OrderDirection.DESC]);
   }
@@ -169,7 +157,7 @@ function applyFilter(products: IProduct[], filters: IProductFilter) {
     products = orderBy(products, ['price'], [OrderDirection.ASC]);
   }
 
-  // FILTER PRODUCTS
+  // utilsFILTER PRODUCTS
   if (gender.length) {
     products = products.filter((product) => gender.includes(product.gender));
   }

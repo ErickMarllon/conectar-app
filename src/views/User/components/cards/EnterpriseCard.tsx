@@ -1,15 +1,12 @@
-// @mui
+import { Avatar, Box, Card, IconButton, Stack, Typography } from '@mui/material';
+import { alpha, styled } from '@mui/material/styles';
+import { NavLink } from 'react-router-dom';
+import type { ITenantAccountGeneral, ITenantSocialLink } from '@/shared/interfaces/ITenant';
 import Iconify from '@/components/iconify';
 import Image from '@/components/image';
 import SvgColor from '@/components/svg-color';
 import { PATH_DASHBOARD } from '@/routes/paths';
 import { socials_link } from '@/shared/constants/socials_links';
-import type { ITenantAccountGeneral, ITenantSocialLink } from '@/shared/interfaces/ITenant';
-import { Avatar, Box, Card, IconButton, Stack, Typography } from '@mui/material';
-import { alpha, styled } from '@mui/material/styles';
-import { NavLink } from 'react-router-dom';
-
-// ----------------------------------------------------------------------
 
 const StyledOverlay = styled('div')(({ theme }) => ({
   top: 0,
@@ -20,8 +17,6 @@ const StyledOverlay = styled('div')(({ theme }) => ({
   position: 'absolute',
   backgroundColor: alpha(theme.palette.grey[900], 0.64),
 }));
-
-// ----------------------------------------------------------------------
 
 type Props = {
   enterprise: ITenantAccountGeneral;
@@ -103,7 +98,7 @@ export default function EnterpriseCard({ enterprise }: Props) {
       <Stack
         display="grid"
         gridTemplateColumns="repeat(4, minmax(36px)"
-        // alignItems="start"
+        // utilsalignItems="start"
         justifyContent="center"
         columnGap={3}
       >

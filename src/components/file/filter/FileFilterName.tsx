@@ -1,9 +1,5 @@
-// @mui
-import { TextField, InputAdornment } from '@mui/material';
-// components
+import { InputAdornment, TextField } from '@mui/material';
 import Iconify from '@/components/iconify';
-
-// ----------------------------------------------------------------------
 
 type Props = {
   filterName: string;

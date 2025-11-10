@@ -1,11 +1,7 @@
-// @mui
 import { Popover, type PopoverOrigin } from '@mui/material';
-//
+import type { MenuPopoverProps } from './types';
 import getPosition from './getPosition';
 import { StyledArrow } from './styles';
-import type { MenuPopoverProps } from './types';
-
-// ----------------------------------------------------------------------
 
 export default function MenuPopover({
   open,

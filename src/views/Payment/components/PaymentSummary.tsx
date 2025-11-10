@@ -1,11 +1,7 @@
-// @mui
-import { Switch, Divider, Typography, Stack, Box, type BoxProps } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
-// components
-import Label from '@/components/label';
+import { Box, Divider, Stack, Switch, Typography, type BoxProps } from '@mui/material';
 import Iconify from '@/components/iconify';
-
-// ----------------------------------------------------------------------
+import Label from '@/components/label';
 
 export default function PaymentSummary({ sx, ...other }: BoxProps) {
   return (

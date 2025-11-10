@@ -1,5 +1,5 @@
-import { UserService } from '@/services/user';
 import type { AxiosResponse } from 'axios';
+import { UserService } from '@/services/user';
 
 export const userDeleteAddressMutationFn = async (
   user_id: string,

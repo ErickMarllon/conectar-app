@@ -1,5 +1,5 @@
-import Iconify from '@/components/iconify';
 import { IconButton } from '@mui/material';
+import Iconify from '@/components/iconify';
 
 export default function FullScreenOptions() {
   const onToggleFullScreen = () => {

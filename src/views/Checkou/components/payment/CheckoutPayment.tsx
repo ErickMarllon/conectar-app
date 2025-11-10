@@ -1,28 +1,21 @@
-// form
-import { useForm } from 'react-hook-form';
-// @mui
-import { Grid, Button } from '@mui/material';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { LoadingButton } from '@mui/lab';
-// @types
+import { Button, Grid } from '@mui/material';
+import { useForm } from 'react-hook-form';
 import type {
   ICheckoutCardOption,
-  ICheckoutPaymentOption,
   ICheckoutDeliveryOption,
+  ICheckoutPaymentOption,
   IProductCheckoutState,
 } from '@/shared/interfaces/IProduct';
-// components
-import Iconify from '@/components/iconify';
-import FormProvider from '@/components/hook-form';
-//
-import CheckoutSummary from '../CheckoutSummary';
-import CheckoutDelivery from './CheckoutDelivery';
-import CheckoutBillingInfo from './CheckoutBillingInfo';
-import CheckoutPaymentMethods from './CheckoutPaymentMethods';
-import { PaymentSchema } from '@/schemas/payment-schema';
-import { zodResolver } from '@hookform/resolvers/zod';
 import type { z } from 'zod';
-
-// ----------------------------------------------------------------------
+import CheckoutSummary from '../CheckoutSummary';
+import CheckoutBillingInfo from './CheckoutBillingInfo';
+import CheckoutDelivery from './CheckoutDelivery';
+import CheckoutPaymentMethods from './CheckoutPaymentMethods';
+import FormProvider from '@/components/hook-form';
+import Iconify from '@/components/iconify';
+import { PaymentSchema } from '@/schemas/payment-schema';
 
 const DELIVERY_OPTIONS: ICheckoutDeliveryOption[] = [
   {

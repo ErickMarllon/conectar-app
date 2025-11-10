@@ -1,11 +1,6 @@
-// @mui
-import { Card, Button, Typography, CardHeader, CardContent } from '@mui/material';
-// @types
+import { Button, Card, CardContent, CardHeader, Typography } from '@mui/material';
 import type { ICheckoutBillingAddress } from '@/shared/interfaces/IProduct';
-// components
 import Iconify from '@/components/iconify';
-
-// ----------------------------------------------------------------------
 
 type Props = {
   billing: ICheckoutBillingAddress | null;

@@ -1,29 +1,23 @@
-import { useState } from 'react';
-// @mui
 import {
-  Box,
   Avatar,
-  Dialog,
+  Box,
   Button,
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  InputAdornment,
   ListItem,
+  ListItemAvatar,
+  ListItemText,
   TextField,
   Typography,
-  ListItemText,
-  ListItemAvatar,
-  InputAdornment,
-  DialogTitle,
-  DialogContent,
 } from '@mui/material';
-// _mock_
-import { _contacts } from '@/_mock/arrays';
-// @types
+import { useState } from 'react';
 import type { IKanbanAssignee } from '@/shared/interfaces/IKanban';
-// components
+import { _contacts } from '@/_mock/arrays';
 import Iconify from '@/components/iconify';
 import Scrollbar from '@/components/scrollbar';
 import SearchNotFound from '@/components/search-not-found';
-
-// ----------------------------------------------------------------------
 
 const ITEM_HEIGHT = 64;
 
@@ -118,8 +112,6 @@ export default function KanbanContactsDialog({ assignee = [], open, onClose }: P
     </Dialog>
   );
 }
-
-// ----------------------------------------------------------------------
 
 function applyFilter({ inputData, query }: { inputData: IKanbanAssignee[]; query: string }) {
   if (query) {

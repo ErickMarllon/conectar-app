@@ -1,9 +1,6 @@
+import { Box, Fab, type FabProps, type SxProps } from '@mui/material';
 import { m } from 'framer-motion';
 import { forwardRef } from 'react';
-// @mui
-import { Box, Fab, type FabProps, type SxProps } from '@mui/material';
-
-// ----------------------------------------------------------------------
 
 export interface FabButtonAnimateProps extends FabProps {
   sxWrap?: SxProps;
@@ -20,8 +17,6 @@ const FabButtonAnimate = forwardRef<HTMLButtonElement, FabButtonAnimateProps>(
 );
 
 export default FabButtonAnimate;
-
-// ----------------------------------------------------------------------
 
 type AnimateWrapProp = {
   children: React.ReactNode;

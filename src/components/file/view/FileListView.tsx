@@ -1,22 +1,16 @@
-// @mui
-import { Table, Tooltip, TableBody, IconButton, TableContainer, Box } from '@mui/material';
-// @types
-// components
+import { Box, IconButton, Table, TableBody, TableContainer, Tooltip } from '@mui/material';
+import type { IFile } from '@/shared/interfaces/File';
+import FileTableRow from '../item/FileTableRow';
 import Iconify from '@/components/iconify';
 import {
   emptyRows,
-  type TableProps,
-  TableNoData,
   TableEmptyRows,
   TableHeadCustom,
-  TableSelectedAction,
+  TableNoData,
   TablePaginationCustom,
+  TableSelectedAction,
+  type TableProps,
 } from '@/components/table';
-//
-import FileTableRow from '../item/FileTableRow';
-import type { IFile } from '@/shared/interfaces/File';
-
-// ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
   { id: 'name', label: 'Name', align: 'left' },

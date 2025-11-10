@@ -1,11 +1,7 @@
-// @mui
 import { Divider, IconButton, Stack } from '@mui/material';
-// components
 import Iconify from '@/components/iconify';
-import { AuthService } from '@/services/authService';
 import { useTenant } from '@/hooks/useTenant';
-
-// ----------------------------------------------------------------------
+import { AuthService } from '@/services/authService';
 
 export default function AuthWithSocial() {
   const redirectUrl = `${window.location.origin}/auth/callback`;

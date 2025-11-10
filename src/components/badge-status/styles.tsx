@@ -1,9 +1,5 @@
-// @mui
 import { styled } from '@mui/material/styles';
-//
-import type { BadgeStatusValue, BadgeSizeValue } from './types';
-
-// ----------------------------------------------------------------------
+import type { BadgeSizeValue, BadgeStatusValue } from './types';
 
 export const StyledBadgeStatus = styled('span')<{
   ownerState: { size: BadgeSizeValue; status: BadgeStatusValue };

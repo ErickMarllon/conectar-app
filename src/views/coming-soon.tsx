@@ -1,17 +1,10 @@
-// @mui
+import { Box, Button, IconButton, InputAdornment, Stack, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
-import { Box, Stack, Button, Typography, IconButton, InputAdornment } from '@mui/material';
-// hooks
-import useCountdown from '@/hooks/useCountdown';
-// _mock
 import { _socials } from '@/_mock/arrays';
-// components
-import Iconify from '@/components/iconify';
-import { CustomTextField } from '@/components/custom-input';
-// assets
 import { ComingSoonIllustration } from '@/assets/illustrations';
-
-// ----------------------------------------------------------------------
+import { CustomTextField } from '@/components/custom-input';
+import Iconify from '@/components/iconify';
+import useCountdown from '@/hooks/useCountdown';
 
 export function ComingSoonPage() {
   const { days, hours, minutes, seconds } = useCountdown(new Date('08/15/2025 21:30'));
@@ -77,8 +70,6 @@ export function ComingSoonPage() {
     </>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type TimeBlockProps = {
   label: string;

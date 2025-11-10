@@ -1,56 +1,45 @@
-import { useState } from 'react';
-import sumBy from 'lodash/sumBy';
-
-import { Link as RouterLink } from 'react-router-dom';
-// @mui
-import { useTheme } from '@mui/material/styles';
 import {
-  Tab,
-  Tabs,
-  Card,
-  Table,
-  Stack,
   Button,
-  Tooltip,
-  Divider,
-  TableBody,
+  Card,
   Container,
+  Divider,
   IconButton,
+  Stack,
+  Tab,
+  Table,
+  TableBody,
   TableContainer,
+  Tabs,
+  Tooltip,
 } from '@mui/material';
-// routes
-import { PATH_DASHBOARD } from '@/routes/paths';
-// utils
-import { fTimestamp } from '@/utils/formatTime';
-// _mock_
-import { _invoices } from '@/_mock/arrays';
-// @types
-
-// components
-import Label from '@/components/label';
-import Iconify from '@/components/iconify';
-import Scrollbar from '@/components/scrollbar';
-import ConfirmDialog from '@/components/confirm-dialog';
-import CustomBreadcrumbs from '@/components/custom-breadcrumbs';
-import { useThemesStore } from '@/stores/themes.store';
-import {
-  useTable,
-  getComparator,
-  emptyRows,
-  TableNoData,
-  TableEmptyRows,
-  TableHeadCustom,
-  TableSelectedAction,
-  TablePaginationCustom,
-} from '@/components/table';
-// sections
+import { useTheme } from '@mui/material/styles';
+import sumBy from 'lodash/sumBy';
+import { useState } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import type { IInvoice } from '@/shared/interfaces/IInvoice';
 import InvoiceAnalytic from './components/InvoiceAnalytic';
 import { InvoiceTableRow, InvoiceTableToolbar } from './components/list';
+import { _invoices } from '@/_mock/arrays';
+import ConfirmDialog from '@/components/confirm-dialog';
+import CustomBreadcrumbs from '@/components/custom-breadcrumbs';
+import Iconify from '@/components/iconify';
+import Label from '@/components/label';
+import Scrollbar from '@/components/scrollbar';
+import {
+  emptyRows,
+  getComparator,
+  TableEmptyRows,
+  TableHeadCustom,
+  TableNoData,
+  TablePaginationCustom,
+  TableSelectedAction,
+  useTable,
+} from '@/components/table';
+import { PATH_DASHBOARD } from '@/routes/paths';
 import { OrderDirection } from '@/shared/enums/orderDirection';
-
-// ----------------------------------------------------------------------
+import { useThemesStore } from '@/stores/themes.store';
+import { fTimestamp } from '@/utils/formatTime';
 
 const SERVICE_OPTIONS = [
   'all',
@@ -70,10 +59,6 @@ const TABLE_HEAD = [
   { id: 'status', label: 'Status', align: 'left' },
   { id: '' },
 ];
-
-// ----------------------------------------------------------------------
-
-// ----------------------------------------------------------------------
 
 export function InvoiceListPage() {
   const theme = useTheme();
@@ -478,8 +463,6 @@ export function InvoiceListPage() {
     </>
   );
 }
-
-// ----------------------------------------------------------------------
 
 function applyFilter({
   inputData,

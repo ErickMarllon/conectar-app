@@ -1,14 +1,12 @@
-import { Card, Button, Typography, Box, Stack, type CardProps, Divider } from '@mui/material';
-import Label from '@/components/label';
-import Iconify from '@/components/iconify';
-import { PlanFreeIcon, PlanStarterIcon, PlanPremiumIcon } from '@/assets/icons';
-import type { IPlan } from '@/shared/interfaces/IPlan';
-import { useCurrencyConverter } from '@/hooks/ useCurrencyConverter';
+import { Box, Button, Card, Divider, Stack, Typography, type CardProps } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { allLangs } from '@/locales/config-lang';
+import type { IPlan } from '@/shared/interfaces/IPlan';
+import { PlanFreeIcon, PlanPremiumIcon, PlanStarterIcon } from '@/assets/icons';
+import Iconify from '@/components/iconify';
+import Label from '@/components/label';
+import { useCurrencyConverter } from '@/hooks/ useCurrencyConverter';
 import useLocales from '@/hooks/useLocales';
-
-// ----------------------------------------------------------------------
+import { allLangs } from '@/locales/config-lang';
 
 interface Props extends CardProps {
   card: IPlan;

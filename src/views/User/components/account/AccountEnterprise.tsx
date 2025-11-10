@@ -1,3 +1,11 @@
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Box, Button, Card, Grid, InputAdornment, Stack, Typography } from '@mui/material';
+import { useCallback, useEffect, useMemo } from 'react';
+import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
+import type { IAddressSchema } from '@/schemas/address-schema';
+import { AddressForm } from '../AddressForm';
+import AddressManager from '../AddressManager';
 import FormProvider, {
   RHFSwitch,
   RHFTextField,
@@ -11,17 +19,9 @@ import useCopyToClipboard from '@/hooks/useCopyToClipboard';
 import { useFileDrop } from '@/hooks/useFileDrop';
 import { useTenantPath } from '@/queries/tenant/path/useTenantPath';
 import { useGetTenant } from '@/queries/tenant/useGet/useGetTenant';
-import type { IAddressSchema } from '@/schemas/address-schema';
 import { tenantSchema, type ITenantSchema } from '@/schemas/tenant-schema';
 import { diffObjects } from '@/utils/diffObjects';
 import { fData } from '@/utils/formatNumber';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { Box, Button, Card, Grid, InputAdornment, Stack, Typography } from '@mui/material';
-import { useCallback, useEffect, useMemo } from 'react';
-import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
-import { AddressForm } from '../AddressForm';
-import AddressManager from '../AddressManager';
 import { generateSlug } from '@/utils/generate-slug';
 
 type FormValuesProps = ITenantSchema;

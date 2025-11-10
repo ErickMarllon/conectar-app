@@ -1,15 +1,9 @@
-import { useState, useEffect } from 'react';
-// react router dom
-import { useLocation } from 'react-router-dom';
-// @mui
 import { Collapse } from '@mui/material';
-// hooks
-import useActiveLink from '@/hooks/useActiveLink';
-//
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import type { NavListProps } from '../types';
 import NavItem from './NavItem';
-
-// ----------------------------------------------------------------------
+import useActiveLink from '@/hooks/useActiveLink';
 
 type NavListRootProps = {
   data: NavListProps;
@@ -58,8 +52,6 @@ export default function NavList({ data, depth, hasChild }: NavListRootProps) {
     </>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type NavListSubProps = {
   data: NavListProps[];

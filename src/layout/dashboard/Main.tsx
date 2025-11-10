@@ -1,13 +1,7 @@
-// @mui
 import { Box, type BoxProps } from '@mui/material';
-// hooks
-import useResponsive from '@/hooks/useResponsive';
-// config
 import { HEADER, NAV } from '@/configs/global';
+import useResponsive from '@/hooks/useResponsive';
 import { useThemesStore } from '@/stores/themes.store';
-// components
-
-// ----------------------------------------------------------------------
 
 const SPACING = 8;
 

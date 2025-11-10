@@ -1,11 +1,7 @@
-// @mui
 import { RadioGroup } from '@mui/material';
-//
 import SvgColor from '../../svg-color';
-import { StyledCard, StyledWrap, MaskControl } from '../styles';
+import { MaskControl, StyledCard, StyledWrap } from '../styles';
 import { useThemesStore } from '@/stores/themes.store';
-
-// ----------------------------------------------------------------------
 
 const OPTIONS = ['light', 'dark'] as const;
 

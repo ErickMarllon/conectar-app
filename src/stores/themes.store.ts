@@ -1,8 +1,8 @@
+import { create } from 'zustand';
+import type { ThemeActions, ThemeSettings } from '@/components/settings/types';
 import { defaultSettings } from '@/components/settings/config-setting';
 import { presetsOption } from '@/components/settings/presets';
-import type { ThemeActions, ThemeSettings } from '@/components/settings/types';
 import { CookiesService } from '@/services/cookies';
-import { create } from 'zustand';
 
 type ThemeState = ThemeSettings & ThemeActions;
 

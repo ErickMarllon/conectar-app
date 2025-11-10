@@ -1,13 +1,9 @@
-import { useState } from 'react';
-// @mui
-import { Stack, Button, Tooltip, IconButton } from '@mui/material';
-// hooks
-import useResponsive from '@/hooks/useResponsive';
-// components
-import Iconify from '@/components/iconify';
-import ConfirmDialog from '@/components/confirm-dialog';
 
-// ----------------------------------------------------------------------
+import { Button, IconButton, Stack, Tooltip } from '@mui/material';
+import { useState } from 'react';
+import ConfirmDialog from '@/components/confirm-dialog';
+import Iconify from '@/components/iconify';
+import useResponsive from '@/hooks/useResponsive';
 
 type Props = {
   fileInputRef: React.RefObject<HTMLInputElement | null>;

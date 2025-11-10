@@ -1,21 +1,9 @@
-// react router dom
-import { Link as RouterLink } from 'react-router-dom';
-
-// @mui
 import { Link, Typography } from '@mui/material';
-// routes
-import { PATH_AUTH } from '../../routes/paths';
-// components
-import Iconify from '../../components/iconify';
-// sections
-// assets
+import { Link as RouterLink } from 'react-router-dom';
 import { SentIcon } from '../../assets/icons';
+import Iconify from '../../components/iconify';
+import { PATH_AUTH } from '../../routes/paths';
 import AuthNewPasswordForm from './components/AuthNewPasswordForm';
-
-// ----------------------------------------------------------------------
-
-// ----------------------------------------------------------------------
-// CompactLayout
 export function NewPasswordPage() {
   return (
     <>

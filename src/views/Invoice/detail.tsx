@@ -1,21 +1,11 @@
-// @mui
 import { Container } from '@mui/material';
-// routes
-import { PATH_DASHBOARD } from '@/routes/paths';
-// _mock_
-import { _invoices } from '@/_mock/arrays';
-
-// components
-import { useThemesStore } from '@/stores/themes.store';
-import CustomBreadcrumbs from '@/components/custom-breadcrumbs';
-// sections
 import { useParams } from 'react-router-dom';
-import { parseIdentifier } from '@/utils/parseIdentifierSlug';
 import InvoiceDetails from './components/details';
-
-// ----------------------------------------------------------------------
-
-// ----------------------------------------------------------------------
+import { _invoices } from '@/_mock/arrays';
+import CustomBreadcrumbs from '@/components/custom-breadcrumbs';
+import { PATH_DASHBOARD } from '@/routes/paths';
+import { useThemesStore } from '@/stores/themes.store';
+import { parseIdentifier } from '@/utils/parseIdentifierSlug';
 
 export function InvoiceDetailsPage() {
   const { themeStretch } = useThemesStore();

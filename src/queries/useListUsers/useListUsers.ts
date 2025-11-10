@@ -1,8 +1,8 @@
+import { useQuery, useQueryClient, type UseQueryOptions } from '@tanstack/react-query';
+import { AxiosError } from 'axios';
 import type { IFilterGeneric } from '@/shared/interfaces/IFilter';
 import type { IPaginatedResponse } from '@/shared/interfaces/IPaginate';
 import type { IUserAccountGeneral } from '@/shared/interfaces/IUser';
-import { useQuery, useQueryClient, type UseQueryOptions } from '@tanstack/react-query';
-import { AxiosError } from 'axios';
 import { listUsersQueryFn } from './listUsersQueryFn';
 
 type QueryError = AxiosError;

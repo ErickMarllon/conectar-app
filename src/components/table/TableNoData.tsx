@@ -1,9 +1,5 @@
-// @mui
-import { TableRow, TableCell } from '@mui/material';
-//
+import { TableCell, TableRow } from '@mui/material';
 import EmptyContent from '../empty-content';
-
-// ----------------------------------------------------------------------
 
 type Props = {
   isNotFound: boolean;

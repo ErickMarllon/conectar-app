@@ -1,12 +1,7 @@
-// @mui
-import { alpha } from '@mui/material/styles';
 import { Box } from '@mui/material';
-//
-import Iconify from '../iconify';
-//
+import { alpha } from '@mui/material/styles';
 import type { ColorIconProps } from './types';
-
-// ----------------------------------------------------------------------
+import Iconify from '../iconify';
 
 export default function Icon({ checked, whiteColor, sx, ...other }: ColorIconProps) {
   const shadow = (

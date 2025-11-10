@@ -1,10 +1,10 @@
+import { useMutation, useQueryClient, type UseMutationOptions } from '@tanstack/react-query';
+import { toast } from 'react-toastify';
+import type { ITenantAccountGeneral } from '@/shared/interfaces/ITenant';
+import type { AxiosError, AxiosResponse } from 'axios';
+import { mutationFn } from './mutationFn';
 import { handleError } from '@/errors/handleError';
 import { type IAddressPayloadSchema } from '@/schemas/address-payload-schema';
-import type { ITenantAccountGeneral } from '@/shared/interfaces/ITenant';
-import { useMutation, useQueryClient, type UseMutationOptions } from '@tanstack/react-query';
-import type { AxiosError, AxiosResponse } from 'axios';
-import { toast } from 'react-toastify';
-import { mutationFn } from './mutationFn';
 
 type MutationError = AxiosError;
 type MutationData = AxiosResponse<ITenantAccountGeneral>;

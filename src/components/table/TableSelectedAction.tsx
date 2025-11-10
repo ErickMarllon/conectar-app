@@ -1,7 +1,4 @@
-// @mui
 import { Checkbox, Stack, Typography, type StackProps } from '@mui/material';
-
-// ----------------------------------------------------------------------
 
 interface Props extends StackProps {
   dense?: boolean;

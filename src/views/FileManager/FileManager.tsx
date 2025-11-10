@@ -1,37 +1,26 @@
+import { Button, Container, Stack } from '@mui/material';
 import { useState } from 'react';
-
-// @mui
-import { Stack, Button, Container } from '@mui/material';
-// routes
-import { PATH_DASHBOARD } from '@/routes/paths';
-// utils
-import { fTimestamp } from '@/utils/formatTime';
-// layouts
-// _mock_
+import type { IFile } from '@/shared/interfaces/File';
 import { _allFiles } from '@/_mock/arrays';
-// @types
-// components
-import Iconify from '@/components/iconify';
 import ConfirmDialog from '@/components/confirm-dialog';
 import CustomBreadcrumbs from '@/components/custom-breadcrumbs';
-import { useTable, getComparator } from '@/components/table';
-// sections
+import DateRangePicker, { useDateRangePicker } from '@/components/date-range-picker';
 import {
-  FileListView,
-  FileGridView,
-  FileFilterType,
-  FileFilterName,
-  FileFilterButton,
   FileChangeViewButton,
+  FileFilterButton,
+  FileFilterName,
+  FileFilterType,
+  FileGridView,
+  FileListView,
   FileNewFolderDialog,
   fileFormat,
 } from '@/components/file';
-import { useThemesStore } from '@/stores/themes.store';
-import DateRangePicker, { useDateRangePicker } from '@/components/date-range-picker';
-import type { IFile } from '@/shared/interfaces/File';
+import Iconify from '@/components/iconify';
+import { getComparator, useTable } from '@/components/table';
+import { PATH_DASHBOARD } from '@/routes/paths';
 import { OrderDirection } from '@/shared/enums/orderDirection';
-
-// ----------------------------------------------------------------------
+import { useThemesStore } from '@/stores/themes.store';
+import { fTimestamp } from '@/utils/formatTime';
 
 const FILE_TYPE_OPTIONS = [
   'folder',
@@ -47,10 +36,6 @@ const FILE_TYPE_OPTIONS = [
   'photoshop',
   'illustrator',
 ];
-
-// ----------------------------------------------------------------------
-
-// ----------------------------------------------------------------------
 
 export function FileManagerPage() {
   const table = useTable({ defaultRowsPerPage: 10 });
@@ -322,8 +307,6 @@ export function FileManagerPage() {
     </>
   );
 }
-
-// ----------------------------------------------------------------------
 
 function applyFilter({
   inputData,

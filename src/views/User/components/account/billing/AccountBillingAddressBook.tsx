@@ -1,22 +1,17 @@
-// @mui
-import { Box, Card, Button, Typography, Stack, Divider } from '@mui/material';
-// @types
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Box, Button, Card, Divider, Stack, Typography } from '@mui/material';
+import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
+import type { IAddressSchema } from '@/schemas/address-schema';
 import type { IUserAccountBillingAddress } from '@/shared/interfaces/IUser';
-// components
+import { AddressFormDialog } from '../../AddressFormDialog';
+import ConfirmDialog from '@/components/confirm-dialog';
 import Iconify from '@/components/iconify';
 import { useUserDeleteAddress } from '@/queries/user/address/delete/useUserDeleteAddress';
 import { useUserPathAddress } from '@/queries/user/address/path/useUserPathAddress';
-import { toast } from 'react-toastify';
-import ConfirmDialog from '@/components/confirm-dialog';
-import { useEffect, useState } from 'react';
-import { AddressFormDialog } from '../../AddressFormDialog';
-import { useForm } from 'react-hook-form';
 import { addressPayloadSchema, type IAddressPayloadSchema } from '@/schemas/address-payload-schema';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { fetchAddressByZip } from '@/services/fetchAddressByZip';
-import type { IAddressSchema } from '@/schemas/address-schema';
-
-// ----------------------------------------------------------------------
 
 type Props = {
   addressBook?: IUserAccountBillingAddress[];

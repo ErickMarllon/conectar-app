@@ -1,35 +1,30 @@
-import { useState } from 'react';
-// @mui
 import {
+  Autocomplete,
   Box,
+  Button,
+  Checkbox,
   Chip,
+  Divider,
+  Drawer,
+  IconButton,
   List,
   Stack,
-  Drawer,
-  Button,
-  Divider,
-  Checkbox,
   TextField,
   Typography,
-  IconButton,
-  type StackProps,
   type DrawerProps,
-  Autocomplete,
+  type StackProps,
 } from '@mui/material';
-// utils
-import { fData } from '@/utils/formatNumber';
-import { fDateTime } from '@/utils/formatTime';
-// @types
+import { useState } from 'react';
 import type { IFile } from '@/shared/interfaces/File';
-// components
+import FileInvitedItem from '../FileInvitedItem';
+import FileShareDialog from './FileShareDialog';
+import FileThumbnail, { fileFormat } from '@/components/file/thumbnail';
 import Iconify from '@/components/iconify';
 import Scrollbar from '@/components/scrollbar';
-import FileThumbnail, { fileFormat } from '@/components/file/thumbnail';
-//
-import FileShareDialog from './FileShareDialog';
-import FileInvitedItem from '../FileInvitedItem';
+import { fData } from '@/utils/formatNumber';
+import { fDateTime } from '@/utils/formatTime';
 
-// ----------------------------------------------------------------------
+
 
 interface Props extends DrawerProps {
   item: IFile;
@@ -237,8 +232,6 @@ export default function FileDetailsDrawer({
   );
 }
 
-// ----------------------------------------------------------------------
-
 interface PanelProps extends StackProps {
   label: string;
   toggle: boolean;
@@ -256,8 +249,6 @@ function Panel({ label, toggle, onToggle, ...other }: PanelProps) {
     </Stack>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type RowProps = {
   label: string;

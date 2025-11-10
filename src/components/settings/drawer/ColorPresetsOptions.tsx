@@ -1,12 +1,8 @@
-// @mui
-import { alpha } from '@mui/material/styles';
 import { RadioGroup } from '@mui/material';
-//
-import { StyledCard, StyledWrap, MaskControl, StyledCircleColor } from '../styles';
-import { useThemesStore } from '@/stores/themes.store';
+import { alpha } from '@mui/material/styles';
 import type { ThemeColorPresetsValue } from '../types';
-
-// ----------------------------------------------------------------------
+import { MaskControl, StyledCard, StyledCircleColor, StyledWrap } from '../styles';
+import { useThemesStore } from '@/stores/themes.store';
 
 export default function ColorPresetsOptions() {
   const { themeColorPresets, setThemeColorPresets, presetsOption } = useThemesStore();

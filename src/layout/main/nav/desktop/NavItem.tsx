@@ -1,18 +1,11 @@
+import { CardActionArea, Link, type LinkProps } from '@mui/material';
 import { m } from 'framer-motion';
 import { forwardRef } from 'react';
-// react router dom
 import { Link as RouterLink } from 'react-router-dom';
-
-// @mui
-import { Link, type LinkProps, CardActionArea } from '@mui/material';
-// components
-import Image from '@/components/image';
-import Iconify from '@/components/iconify';
-//
 import type { NavItemDesktopProps, NavItemProps } from '../types';
 import { ListItem } from './styles';
-
-// ----------------------------------------------------------------------
+import Iconify from '@/components/iconify';
+import Image from '@/components/image';
 
 export const NavItem = forwardRef<HTMLDivElement, NavItemDesktopProps>(
   ({ item, open, isOffset, active, subItem, isExternalLink, ...other }, ref) => {
@@ -56,8 +49,6 @@ export const NavItem = forwardRef<HTMLDivElement, NavItemDesktopProps>(
     );
   },
 );
-
-// ----------------------------------------------------------------------
 
 interface NavItemDashboardProps extends LinkProps {
   item: NavItemProps;

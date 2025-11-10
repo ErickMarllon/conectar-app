@@ -1,24 +1,18 @@
-// @mui
 import {
-  List,
-  Stack,
-  Dialog,
   Button,
-  TextField,
-  type DialogProps,
-  DialogTitle,
+  Dialog,
   DialogActions,
   DialogContent,
+  DialogTitle,
+  List,
+  Stack,
+  TextField,
+  type DialogProps,
 } from '@mui/material';
-// @types
 import type { IFileShared } from '@/shared/interfaces/File';
-// components
+import FileInvitedItem from '../FileInvitedItem';
 import Iconify from '@/components/iconify';
 import Scrollbar from '@/components/scrollbar';
-//
-import FileInvitedItem from '../FileInvitedItem';
-
-// ----------------------------------------------------------------------
 
 interface Props extends DialogProps {
   inviteEmail?: string;

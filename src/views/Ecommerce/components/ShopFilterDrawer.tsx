@@ -1,39 +1,32 @@
-// form
-import { Controller, useFormContext } from 'react-hook-form';
-// @mui
-import { alpha } from '@mui/material/styles';
+
 import {
-  Box,
-  Radio,
-  Stack,
-  Input,
   Badge,
+  Box,
   Button,
-  Drawer,
-  Rating,
   Divider,
-  IconButton,
-  Typography,
-  RadioGroup,
+  Drawer,
   FormControlLabel,
+  IconButton,
+  Input,
+  Radio,
+  RadioGroup,
+  Rating,
+  Stack,
+  Typography,
 } from '@mui/material';
-// config
-import { NAV } from '@/configs/global';
-// components
-import Iconify from '@/components/iconify';
-import Scrollbar from '@/components/scrollbar';
-import { ColorMultiPicker } from '@/components/color-utils';
-import { RHFMultiCheckbox, RHFRadioGroup, RHFSlider } from '@/components/hook-form';
+import { alpha } from '@mui/material/styles';
+import { Controller, useFormContext } from 'react-hook-form';
 import {
   FILTER_CATEGORY_OPTIONS,
   FILTER_COLOR_OPTIONS,
   FILTER_GENDER_OPTIONS,
   FILTER_RATING_OPTIONS,
 } from '../constants/options';
-
-// ----------------------------------------------------------------------
-
-// ----------------------------------------------------------------------
+import { ColorMultiPicker } from '@/components/color-utils';
+import { RHFMultiCheckbox, RHFRadioGroup, RHFSlider } from '@/components/hook-form';
+import Iconify from '@/components/iconify';
+import Scrollbar from '@/components/scrollbar';
+import { NAV } from '@/configs/global';
 
 type Props = {
   open: boolean;
@@ -224,8 +217,6 @@ export default function ShopFilterDrawer({
     </>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type InputRangeProps = {
   type: 'min' | 'max';

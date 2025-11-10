@@ -1,15 +1,11 @@
-import { useDropzone } from 'react-dropzone';
-// @mui
+
 import { Typography } from '@mui/material';
-import { styled, alpha } from '@mui/material/styles';
-//
-import Iconify from '../iconify';
-//
+import { alpha, styled } from '@mui/material/styles';
+import { useDropzone } from 'react-dropzone';
 import type { UploadProps } from './types';
+import Iconify from '../iconify';
 import RejectionFiles from './errors/RejectionFiles';
 import AvatarPreview from './preview/AvatarPreview';
-
-// ----------------------------------------------------------------------
 
 const StyledDropZone = styled('div')(({ theme }) => ({
   width: 144,
@@ -42,8 +38,6 @@ const StyledPlaceholder = styled('div')(({ theme }) => ({
     duration: theme.transitions.duration.shorter,
   }),
 }));
-
-// ----------------------------------------------------------------------
 
 export default function UploadAvatar({
   error,

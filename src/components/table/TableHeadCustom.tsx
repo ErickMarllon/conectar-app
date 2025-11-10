@@ -1,13 +1,12 @@
-// @mui
-import type { Theme } from '@mui/material/styles';
 import {
   type SxProps,
   Checkbox,
-  TableRow,
   TableCell,
   TableHead,
+  TableRow,
   TableSortLabel,
 } from '@mui/material';
+import type { Theme } from '@mui/material/styles';
 import { OrderDirection } from '@/shared/enums/orderDirection';
 
 type Props = {

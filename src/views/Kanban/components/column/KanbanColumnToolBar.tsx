@@ -1,15 +1,10 @@
-import { useRef, useState, useEffect } from 'react';
-// @mui
-import { Stack, MenuItem, IconButton, Button, Box } from '@mui/material';
-// components
+import { Box, Button, IconButton, MenuItem, Stack } from '@mui/material';
+import { useEffect, useRef, useState } from 'react';
+import { useDebouncedCallback } from 'use-debounce';
+import KanbanInputName from '../KanbanInputName';
+import ConfirmDialog from '@/components/confirm-dialog';
 import Iconify from '@/components/iconify';
 import MenuPopover from '@/components/menu-popover';
-import ConfirmDialog from '@/components/confirm-dialog';
-//
-import KanbanInputName from '../KanbanInputName';
-import { useDebouncedCallback } from 'use-debounce';
-
-// ----------------------------------------------------------------------
 
 type Props = {
   columnName: string;

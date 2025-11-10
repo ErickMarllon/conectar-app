@@ -1,22 +1,17 @@
-import { useState } from 'react';
-// @mui
 import {
-  Stack,
-  Dialog,
   Button,
+  Dialog,
+  InputAdornment,
+  ListItemButton,
+  Stack,
   TextField,
   Typography,
-  ListItemButton,
-  InputAdornment,
 } from '@mui/material';
-// @types
+import { useState } from 'react';
 import type { IInvoiceAddress } from '@/shared/interfaces/IInvoice';
-// components
 import Iconify from '@/components/iconify';
 import Scrollbar from '@/components/scrollbar';
 import SearchNotFound from '@/components/search-not-found';
-
-// ----------------------------------------------------------------------
 
 type Props = {
   open: boolean;
@@ -129,8 +124,6 @@ export default function InvoiceAddressListDialog({
     </Dialog>
   );
 }
-
-// ----------------------------------------------------------------------
 
 function applyFilter(array: IInvoiceAddress[], query: string) {
   if (query) {

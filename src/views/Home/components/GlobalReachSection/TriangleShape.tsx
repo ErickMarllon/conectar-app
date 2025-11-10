@@ -1,6 +1,6 @@
-import { filterStyles } from '@/utils/cssStyles';
 import { Box, type BoxProps } from '@mui/material';
 import { alpha, useTheme } from '@mui/material/styles';
+import { filterStyles } from '@/utils/cssStyles';
 
 interface TriangleShapeProps extends BoxProps {
   anchor?: 'top' | 'bottom';

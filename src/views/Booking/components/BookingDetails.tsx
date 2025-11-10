@@ -1,34 +1,30 @@
-import { useState } from 'react';
-import { format } from 'date-fns';
-import { sentenceCase } from 'change-case';
-// @mui
-import { useTheme } from '@mui/material/styles';
 import {
+  Avatar,
   Box,
+  Button,
   Card,
+  CardHeader,
+  Divider,
+  IconButton,
+  MenuItem,
   Stack,
   Table,
-  Avatar,
-  Button,
-  Divider,
-  MenuItem,
-  TableRow,
   TableBody,
   TableCell,
-  type CardProps,
-  CardHeader,
-  Typography,
-  IconButton,
   TableContainer,
+  TableRow,
+  Typography,
+  type CardProps,
 } from '@mui/material';
-// components
-import Label from '@/components/label';
+import { useTheme } from '@mui/material/styles';
+import { sentenceCase } from 'change-case';
+import { format } from 'date-fns';
+import { useState } from 'react';
 import Iconify from '@/components/iconify';
-import Scrollbar from '@/components/scrollbar';
+import Label from '@/components/label';
 import MenuPopover from '@/components/menu-popover';
+import Scrollbar from '@/components/scrollbar';
 import { TableHeadCustom } from '@/components/table';
-
-// ----------------------------------------------------------------------
 
 type RowProps = {
   id: string;
@@ -87,8 +83,6 @@ export default function BookingDetails({
     </Card>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type BookingDetailsRowProps = {
   row: RowProps;

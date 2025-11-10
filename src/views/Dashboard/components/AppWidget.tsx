@@ -1,16 +1,11 @@
-import type { ApexOptions } from 'apexcharts';
-// @mui
-import { useTheme } from '@mui/material/styles';
-import { Typography, Box, type CardProps, Stack } from '@mui/material';
-// utils
-import { fNumber } from '@/utils/formatNumber';
-// components
-import Iconify from '@/components/iconify';
-import Chart, { useChart } from '@/components/chart';
-// theme
-import type { ColorSchema } from '@/theme/palette';
 
-// ----------------------------------------------------------------------
+import { Box, type CardProps, Stack, Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import type { ColorSchema } from '@/theme/palette';
+import type { ApexOptions } from 'apexcharts';
+import Chart, { useChart } from '@/components/chart';
+import Iconify from '@/components/iconify';
+import { fNumber } from '@/utils/formatNumber';
 
 interface Props extends CardProps {
   icon: string;

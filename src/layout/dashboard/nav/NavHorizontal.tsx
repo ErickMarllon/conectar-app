@@ -1,17 +1,10 @@
-import { memo } from 'react';
-// @mui
-import { useTheme } from '@mui/material/styles';
 import { AppBar, Box, type BoxProps, Toolbar } from '@mui/material';
-// config
-import { HEADER } from '@/configs/global';
-// utils
-import { bgBlur } from '@/utils/cssStyles';
-// components
-import { NavSectionHorizontal } from '@/components/nav-section';
-//
+import { useTheme } from '@mui/material/styles';
+import { memo } from 'react';
 import navConfig from './config-navigation';
-
-// ----------------------------------------------------------------------
+import { NavSectionHorizontal } from '@/components/nav-section';
+import { HEADER } from '@/configs/global';
+import { bgBlur } from '@/utils/cssStyles';
 
 function NavHorizontal() {
   const theme = useTheme();
@@ -41,8 +34,6 @@ function NavHorizontal() {
 }
 
 export default memo(NavHorizontal);
-
-// ----------------------------------------------------------------------
 
 function Shadow({ sx, ...other }: BoxProps) {
   return (

@@ -1,20 +1,16 @@
-import { useEffect, useState, useCallback } from 'react';
-// @mui
 import {
-  Stack,
-  Dialog,
   Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Stack,
   TextField,
   type DialogProps,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
 } from '@mui/material';
-// components
+import { useCallback, useEffect, useState } from 'react';
 import Iconify from '@/components/iconify';
 import { Upload } from '@/components/upload';
-
-// ----------------------------------------------------------------------
 
 interface Props extends DialogProps {
   title?: string;

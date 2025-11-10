@@ -1,20 +1,14 @@
-import { useState } from 'react';
-// form
-import { useForm } from 'react-hook-form';
-// @mui
-import { Stack, IconButton, InputAdornment, Button } from '@mui/material';
-// auth
-// components
-import Iconify from '@/components/iconify';
-import FormProvider, { RHFTextField } from '@/components/hook-form';
-import { signUpSchema } from '@/schemas/sign-up.schema';
 import { zodResolver } from '@hookform/resolvers/zod';
-import type { z } from 'zod';
-import { useAuthUser } from '@/queries/useAuth/useAuth';
-import { AuthActionType } from '@/queries/useAuth/types/IUseAuthTypes';
+import { Button, IconButton, InputAdornment, Stack } from '@mui/material';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
-
-// ----------------------------------------------------------------------
+import type { z } from 'zod';
+import FormProvider, { RHFTextField } from '@/components/hook-form';
+import Iconify from '@/components/iconify';
+import { AuthActionType } from '@/queries/useAuth/types/IUseAuthTypes';
+import { useAuthUser } from '@/queries/useAuth/useAuth';
+import { signUpSchema } from '@/schemas/sign-up.schema';
 
 type FormValuesProps = z.infer<typeof signUpSchema>;
 

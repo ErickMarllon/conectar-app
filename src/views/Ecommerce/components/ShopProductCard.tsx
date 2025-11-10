@@ -1,23 +1,14 @@
+import { Box, Card, Fab, Link, Stack } from '@mui/material';
 import { paramCase } from 'param-case';
-// react router dom
 import { Link as RouterLink } from 'react-router-dom';
-// @mui
-import { Box, Card, Link, Stack, Fab } from '@mui/material';
-// routes
-import { PATH_DASHBOARD } from '@/routes/paths';
-// utils
-import { fCurrency } from '@/utils/formatNumber';
-
-// @types
-// components
-import Iconify from '@/components/iconify';
-import Label from '@/components/label';
-import Image from '@/components/image';
-import { ColorPreview } from '@/components/color-utils';
 import type { IProduct } from '@/shared/interfaces/IProduct';
+import { ColorPreview } from '@/components/color-utils';
+import Iconify from '@/components/iconify';
+import Image from '@/components/image';
+import Label from '@/components/label';
+import { PATH_DASHBOARD } from '@/routes/paths';
 import { useProductStore } from '@/stores/useProduct.store';
-
-// ----------------------------------------------------------------------
+import { fCurrency } from '@/utils/formatNumber';
 
 type Props = {
   product: IProduct;

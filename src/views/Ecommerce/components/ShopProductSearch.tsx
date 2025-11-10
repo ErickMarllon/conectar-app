@@ -1,23 +1,17 @@
-import { useState } from 'react';
-import { paramCase } from 'param-case';
-import parse from 'autosuggest-highlight/parse';
+import { Autocomplete, InputAdornment, Link, Typography } from '@mui/material';
 import match from 'autosuggest-highlight/match';
-// @mui
-import { Link, Typography, Autocomplete, InputAdornment } from '@mui/material';
-// routes
-import { PATH_DASHBOARD } from '@/routes/paths';
-// @types
-import type { IProduct } from '@/shared/interfaces/IProduct';
-// components
-import Image from '@/components/image';
-import Iconify from '@/components/iconify';
-import { CustomTextField } from '@/components/custom-input';
-import SearchNotFound from '@/components/search-not-found';
+import parse from 'autosuggest-highlight/parse';
+import { paramCase } from 'param-case';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import type { IProduct } from '@/shared/interfaces/IProduct';
+import { CustomTextField } from '@/components/custom-input';
+import Iconify from '@/components/iconify';
+import Image from '@/components/image';
+import SearchNotFound from '@/components/search-not-found';
 import { useListProducts } from '@/queries/products/useList/useListProducts';
+import { PATH_DASHBOARD } from '@/routes/paths';
 import { OrderDirection } from '@/shared/enums/orderDirection';
-
-// ----------------------------------------------------------------------
 
 export default function ShopProductSearch() {
   const navigate = useNavigate();

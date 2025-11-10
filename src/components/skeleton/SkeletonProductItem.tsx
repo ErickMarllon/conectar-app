@@ -1,7 +1,4 @@
-// @mui
 import { Card, Skeleton, Stack, type CardProps } from '@mui/material';
-
-// ----------------------------------------------------------------------
 
 export default function SkeletonProductItem({ ...other }: CardProps) {
   return (

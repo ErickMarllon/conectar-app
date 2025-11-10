@@ -1,31 +1,24 @@
-// @mui
+import { Button, Container, Grid, Stack } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { Container, Grid, Stack, Button } from '@mui/material';
-// auth
-// _mock_
-import {
-  _appFeatured,
-  _appAuthors,
-  _appInstalled,
-  _appRelated,
-  _appInvoices,
-} from '@/_mock/arrays';
-// components
-import { useThemesStore } from '@/stores/themes.store';
-// sections
-
-// assets
-import { SeoIllustration } from '@/assets/illustrations';
-import AppWelcome from './components/AppWelcome';
-import AppFeatured from './components/AppFeatured';
-import AppWidgetSummary from './components/AppWidgetSummary';
-import AppCurrentDownload from './components/AppCurrentDownload';
 import AppAreaInstalled from './components/AppAreaInstalled';
+import AppCurrentDownload from './components/AppCurrentDownload';
+import AppFeatured from './components/AppFeatured';
 import AppNewInvoice from './components/AppNewInvoice';
-import AppTopRelated from './components/AppTopRelated';
-import AppTopInstalledCountries from './components/AppTopInstalledCountries';
 import AppTopAuthors from './components/AppTopAuthors';
+import AppTopInstalledCountries from './components/AppTopInstalledCountries';
+import AppTopRelated from './components/AppTopRelated';
+import AppWelcome from './components/AppWelcome';
 import AppWidget from './components/AppWidget';
+import AppWidgetSummary from './components/AppWidgetSummary';
+import {
+  _appAuthors,
+  _appFeatured,
+  _appInstalled,
+  _appInvoices,
+  _appRelated,
+} from '@/_mock/arrays';
+import { SeoIllustration } from '@/assets/illustrations';
+import { useThemesStore } from '@/stores/themes.store';
 import { useAuthStore } from '@/stores/userAuth.store';
 import { formatFullName } from '@/utils/format/formatFullName';
 

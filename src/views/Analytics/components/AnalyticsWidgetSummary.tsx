@@ -1,15 +1,9 @@
-// @mui
-import { alpha, useTheme } from '@mui/material/styles';
 import { Card, Typography, type CardProps } from '@mui/material';
-// utils
+import { alpha, useTheme } from '@mui/material/styles';
+import type { ColorSchema } from '@/theme/palette';
+import Iconify from '@/components/iconify';
 import { bgGradient } from '@/utils/cssStyles';
 import { fShortenNumber } from '@/utils/formatNumber';
-// theme
-import type { ColorSchema } from '@/theme/palette';
-// components
-import Iconify from '@/components/iconify';
-
-// ----------------------------------------------------------------------
 
 interface Props extends CardProps {
   title: string;

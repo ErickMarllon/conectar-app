@@ -1,6 +1,6 @@
-import { PATH_AUTH, PATH_PAGE } from '@/routes/paths';
-import { PATH_AFTER_LOGIN } from '@/configs/global';
 import Iconify from '@/components/iconify';
+import { PATH_AFTER_LOGIN } from '@/configs/global';
+import { PATH_AUTH, PATH_PAGE } from '@/routes/paths';
 
 const navConfig = [
   {

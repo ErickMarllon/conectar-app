@@ -1,7 +1,4 @@
-// @mui
-import { Box, Skeleton, Grid, type GridProps } from '@mui/material';
-
-// ----------------------------------------------------------------------
+import { Box, Grid, Skeleton, type GridProps } from '@mui/material';
 
 export default function SkeletonPostItem({ ...other }: GridProps) {
   return (

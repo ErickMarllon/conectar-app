@@ -1,10 +1,6 @@
-// @mui
 import { Box, Checkbox } from '@mui/material';
-//
-import Icon from './Icon';
 import type { ColorMultiPickerProps } from './types';
-
-// ----------------------------------------------------------------------
+import Icon from './Icon';
 
 export default function ColorMultiPicker({
   colors,

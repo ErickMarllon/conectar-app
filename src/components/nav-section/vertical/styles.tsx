@@ -1,12 +1,7 @@
-// @mui
+import { ListItemButton, ListItemIcon, ListSubheader } from '@mui/material';
 import { alpha, styled } from '@mui/material/styles';
-import { ListItemIcon, ListSubheader, ListItemButton } from '@mui/material';
-// config
-import { ICON, NAV } from '@/configs/global';
-//
 import type { NavItemProps } from '../types';
-
-// ----------------------------------------------------------------------
+import { ICON, NAV } from '@/configs/global';
 
 type StyledItemProps = Omit<NavItemProps, 'item'> & {
   caption?: boolean;
@@ -43,7 +38,6 @@ export const StyledItem = styled(ListItemButton, {
     color: theme.palette.text.secondary,
     borderRadius: theme.shape.borderRadius,
     height: NAV.H_DASHBOARD_ITEM,
-    // Sub item
     ...(subItem && {
       height: NAV.H_DASHBOARD_ITEM_SUB,
       ...(depth > 2 && {
@@ -53,14 +47,12 @@ export const StyledItem = styled(ListItemButton, {
         height: NAV.H_DASHBOARD_ITEM,
       }),
     }),
-    // Active item
     ...(active && {
       ...activeStyle,
       '&:hover': {
         ...activeStyle,
       },
     }),
-    // Active sub item
     ...(subItem &&
       active && {
         ...activeSubStyle,
@@ -68,7 +60,6 @@ export const StyledItem = styled(ListItemButton, {
           ...activeSubStyle,
         },
       }),
-    // Disabled
     ...(disabled && {
       '&.Mui-disabled': {
         opacity: 0.64,
@@ -77,8 +68,6 @@ export const StyledItem = styled(ListItemButton, {
   };
 });
 
-// ----------------------------------------------------------------------
-
 export const StyledIcon = styled(ListItemIcon)({
   display: 'flex',
   alignItems: 'center',
@@ -86,8 +75,6 @@ export const StyledIcon = styled(ListItemIcon)({
   width: ICON.NAV_ITEM,
   height: ICON.NAV_ITEM,
 });
-
-// ----------------------------------------------------------------------
 
 type StyledDotIconProps = {
   active?: boolean;
@@ -108,8 +95,6 @@ export const StyledDotIcon = styled('span', {
     backgroundColor: theme.palette.primary.main,
   }),
 }));
-
-// ----------------------------------------------------------------------
 
 export const StyledSubheader = styled(ListSubheader)(({ theme }) => ({
   ...theme.typography.overline,

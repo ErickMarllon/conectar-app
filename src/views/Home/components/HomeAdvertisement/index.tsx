@@ -1,15 +1,9 @@
-// @mui
 import { Container, Stack } from '@mui/material';
 import { styled, useTheme } from '@mui/material/styles';
-// utils
-import { bgGradient } from '@/utils/cssStyles';
-// routes
-// components
-import { MotionViewport } from '@/components/animate';
 import Content from './Content';
 import Description from './Description';
-
-// ----------------------------------------------------------------------
+import { MotionViewport } from '@/components/animate';
+import { bgGradient } from '@/utils/cssStyles';
 
 const StyledRoot = styled('div')(({ theme }) => ({
   position: 'relative',

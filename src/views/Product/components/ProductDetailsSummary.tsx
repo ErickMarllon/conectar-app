@@ -1,37 +1,27 @@
-import { useEffect } from 'react';
-import { sentenceCase } from 'change-case';
-
-// form
-import { Controller, useForm } from 'react-hook-form';
-// @mui
 import {
   Box,
-  Link,
-  Stack,
   Button,
-  Rating,
   Divider,
-  MenuItem,
-  Typography,
   IconButton,
+  Link,
+  MenuItem,
+  Rating,
+  Stack,
+  Typography,
 } from '@mui/material';
-// routes
-import { PATH_DASHBOARD } from '@/routes/paths';
-// utils
-import { fShortenNumber, fCurrency } from '@/utils/formatNumber';
-// @types
-import type { IProduct, ICheckoutCartItem } from '@/shared/interfaces/IProduct';
-// _mock
-import { _socials } from '@/_mock/arrays';
-// components
-import Label from '@/components/label';
-import Iconify from '@/components/iconify';
-import { IncrementerButton } from '@/components/custom-input';
-import { ColorSinglePicker } from '@/components/color-utils';
-import FormProvider, { RHFSelect } from '@/components/hook-form';
+import { sentenceCase } from 'change-case';
+import { useEffect } from 'react';
+import { Controller, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-
-// ----------------------------------------------------------------------
+import type { ICheckoutCartItem, IProduct } from '@/shared/interfaces/IProduct';
+import { _socials } from '@/_mock/arrays';
+import { ColorSinglePicker } from '@/components/color-utils';
+import { IncrementerButton } from '@/components/custom-input';
+import FormProvider, { RHFSelect } from '@/components/hook-form';
+import Iconify from '@/components/iconify';
+import Label from '@/components/label';
+import { PATH_DASHBOARD } from '@/routes/paths';
+import { fCurrency, fShortenNumber } from '@/utils/formatNumber';
 
 interface FormValuesProps extends Omit<ICheckoutCartItem, 'colors'> {
   colors: string;

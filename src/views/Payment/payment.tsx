@@ -1,13 +1,8 @@
-// @mui
-import { Box, Grid, Container, Typography } from '@mui/material';
-// hooks
-import useResponsive from '@/hooks/useResponsive';
+import { Box, Container, Grid, Typography } from '@mui/material';
 import PaymentBillingAddress from './components/PaymentBillingAddress';
 import PaymentMethods from './components/PaymentMethods';
 import PaymentSummary from './components/PaymentSummary';
-//componets
-
-// ----------------------------------------------------------------------
+import useResponsive from '@/hooks/useResponsive';
 
 export function PaymentPage() {
   const isDesktop = useResponsive('up', 'md');

@@ -1,9 +1,9 @@
-import { handleError } from '@/errors/handleError';
-import { type IAddressPayloadSchema } from '@/schemas/address-payload-schema';
-import type { IUserAccountGeneral } from '@/shared/interfaces/IUser';
 import { useMutation, useQueryClient, type UseMutationOptions } from '@tanstack/react-query';
+import type { IUserAccountGeneral } from '@/shared/interfaces/IUser';
 import type { AxiosError, AxiosResponse } from 'axios';
 import { userCreateAddressMutationFn } from './userCreateAddressMutationFn';
+import { handleError } from '@/errors/handleError';
+import { type IAddressPayloadSchema } from '@/schemas/address-payload-schema';
 
 type MutationError = AxiosError;
 type MutationData = AxiosResponse<IUserAccountGeneral>;

@@ -1,18 +1,14 @@
-// @mui
-import { styled } from '@mui/material/styles';
 import {
   Box,
-  Step,
-  Stack,
-  Stepper,
-  StepLabel,
-  type StepperProps,
   StepConnector as MUIStepConnector,
+  Stack,
+  Step,
+  StepLabel,
+  Stepper,
+  type StepperProps,
 } from '@mui/material';
-// components
+import { styled } from '@mui/material/styles';
 import Iconify from '@/components/iconify';
-
-// ----------------------------------------------------------------------
 
 const StepConnector = styled(MUIStepConnector)(({ theme }) => ({
   top: 10,
@@ -28,8 +24,6 @@ const StepConnector = styled(MUIStepConnector)(({ theme }) => ({
     },
   },
 }));
-
-// ----------------------------------------------------------------------
 
 interface Props extends StepperProps {
   steps: string[];
@@ -64,8 +58,6 @@ export default function CheckoutSteps({ steps, activeStep, sx, ...other }: Props
     </Stepper>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type StepIconProps = {
   active: boolean;

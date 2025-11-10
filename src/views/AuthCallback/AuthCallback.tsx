@@ -1,10 +1,10 @@
+import { useEffect } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import type { UserRole } from '@/shared/enums';
 import Loading from '@/components/loading';
 import { use0Auth } from '@/queries/use0Auth/use0Auth';
 import { FIRST_ROUTES_USER, PATH_PAGE } from '@/routes/paths';
-import type { UserRole } from '@/shared/enums';
 import { useAuthStore } from '@/stores/userAuth.store';
-import { useEffect } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
 
 export function AuthCallback() {
   const [searchParams] = useSearchParams();

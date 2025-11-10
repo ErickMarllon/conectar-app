@@ -1,10 +1,6 @@
+import { Button, IconButton, Stack, Typography, type StackProps } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
-// @mui
-import { Stack, Button, Typography, type StackProps, IconButton } from '@mui/material';
-// components
 import Iconify from '@/components/iconify';
-
-// ----------------------------------------------------------------------
 
 interface Props extends StackProps {
   title: string;

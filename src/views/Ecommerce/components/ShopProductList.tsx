@@ -1,13 +1,7 @@
-// @mui
 import { Box, type BoxProps } from '@mui/material';
-// @type
 import type { IProduct } from '@/shared/interfaces/IProduct';
-// components
-import { SkeletonProductItem } from '@/components/skeleton';
-//
 import ShopProductCard from './ShopProductCard';
-
-// ----------------------------------------------------------------------
+import { SkeletonProductItem } from '@/components/skeleton';
 
 interface Props extends BoxProps {
   products: IProduct[];

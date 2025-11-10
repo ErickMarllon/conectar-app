@@ -1,3 +1,7 @@
+import { Box, Divider, MenuItem, Stack, Typography } from '@mui/material';
+import { alpha } from '@mui/material/styles';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { IconButtonAnimate } from '@/components/animate';
 import { CustomAvatar } from '@/components/custom-avatar';
 import MenuPopover from '@/components/menu-popover';
@@ -5,12 +9,6 @@ import { PATH_DASHBOARD } from '@/routes/paths';
 import { UserRole } from '@/shared/enums/role.enum';
 import { useAuthStore } from '@/stores/userAuth.store';
 import { formatFullName } from '@/utils/format/formatFullName';
-import { Box, Divider, MenuItem, Stack, Typography } from '@mui/material';
-import { alpha } from '@mui/material/styles';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-
-// ----------------------------------------------------------------------
 
 const OPTIONS = [
   {
@@ -26,8 +24,6 @@ const OPTIONS = [
     linkTo: PATH_DASHBOARD.user.account,
   },
 ];
-
-// ----------------------------------------------------------------------
 
 export default function AccountPopover() {
   const navigate = useNavigate();

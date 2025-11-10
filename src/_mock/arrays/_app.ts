@@ -17,7 +17,7 @@ export const _appRelated = ['Chrome', 'Drive', 'Dropbox', 'Evernote', 'Github'].
       (name === 'Dropbox' && '/assets/icons/apps/ic_dropbox.svg') ||
       (name === 'Evernote' && '/assets/icons/apps/ic_evernote.svg') ||
       '/assets/icons/apps/ic_github.svg',
-  })
+  }),
 );
 
 // ----------------------------------------------------------------------

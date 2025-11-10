@@ -1,9 +1,9 @@
 // components
+import { useTranslation } from 'react-i18next';
+import type { ThemeLangs } from '@/components/settings/types';
+import { allLangs, defaultLang, type IAllLangs } from '@/locales/config-lang';
 import { useThemesStore } from '@/stores/themes.store';
 //
-import { allLangs, defaultLang, type IAllLangs } from '@/locales/config-lang';
-import type { ThemeLangs } from '@/components/settings/types';
-import { useTranslation } from 'react-i18next';
 
 // ----------------------------------------------------------------------
 function ChangeLng(lang?: string | null): IAllLangs {

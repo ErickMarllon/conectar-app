@@ -1,8 +1,5 @@
-import { memo } from 'react';
-// @mui
 import { useTheme } from '@mui/material/styles';
-
-// ----------------------------------------------------------------------
+import { memo } from 'react';
 
 function BackgroundIllustration() {
   const theme = useTheme();

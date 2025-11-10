@@ -1,18 +1,14 @@
-// @mui
-import { alpha } from '@mui/material/styles';
 import {
+  Box,
   Card,
   CardHeader,
-  Typography,
-  Stack,
   LinearProgress,
-  Box,
+  Stack,
+  Typography,
   type CardProps,
 } from '@mui/material';
-// utils
+import { alpha } from '@mui/material/styles';
 import { fShortenNumber } from '@/utils/formatNumber';
-
-// ----------------------------------------------------------------------
 
 interface Props extends CardProps {
   title?: string;

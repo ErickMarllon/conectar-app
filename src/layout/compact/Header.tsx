@@ -1,13 +1,11 @@
-import { Link as RouterLink } from 'react-router-dom';
+import { AppBar, Box, type BoxProps, Link, Toolbar } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { AppBar, Toolbar, Box, type BoxProps, Link } from '@mui/material';
-import { HEADER } from '@/configs/global';
-import { bgBlur } from '@/utils/cssStyles';
-import { PATH_PAGE } from '@/routes/paths';
+import { Link as RouterLink } from 'react-router-dom';
 import Logo from '@/components/logo';
 import SettingsDrawer from '@/components/settings/drawer';
-
-// ----------------------------------------------------------------------
+import { HEADER } from '@/configs/global';
+import { PATH_PAGE } from '@/routes/paths';
+import { bgBlur } from '@/utils/cssStyles';
 
 type Props = {
   isOffset: boolean;
@@ -50,8 +48,6 @@ export default function Header({ isOffset }: Props) {
     </AppBar>
   );
 }
-
-// ----------------------------------------------------------------------
 
 function Shadow({ sx, ...other }: BoxProps) {
   return (

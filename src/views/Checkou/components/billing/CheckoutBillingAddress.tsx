@@ -1,18 +1,11 @@
+import { Box, Button, Card, Grid, Stack, Typography } from '@mui/material';
 import { useState } from 'react';
-// @mui
-import { Grid, Card, Button, Typography, Stack, Box } from '@mui/material';
-// @types
 import type { ICheckoutBillingAddress, IProductCheckoutState } from '@/shared/interfaces/IProduct';
-// _mock
-import { _addressBooks } from '@/_mock/arrays';
-// components
-import Label from '@/components/label';
-import Iconify from '@/components/iconify';
-//
 import CheckoutSummary from '../CheckoutSummary';
 import CheckoutBillingNewAddressForm from './CheckoutBillingNewAddressForm';
-
-// ----------------------------------------------------------------------
+import { _addressBooks } from '@/_mock/arrays';
+import Iconify from '@/components/iconify';
+import Label from '@/components/label';
 
 type Props = {
   checkout: IProductCheckoutState;
@@ -79,8 +72,6 @@ export default function CheckoutBillingAddress({ checkout, onBackStep, onCreateB
     </>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type AddressItemProps = {
   address: ICheckoutBillingAddress;

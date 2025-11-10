@@ -1,13 +1,8 @@
-import { memo } from 'react';
-// @mui
 import { Stack } from '@mui/material';
-// utils
-import { hideScrollbarY } from '@/utils/cssStyles';
-//
-import type { NavSectionProps, NavListProps } from '../types';
+import { memo } from 'react';
+import type { NavListProps, NavSectionProps } from '../types';
 import NavList from './NavList';
-
-// ----------------------------------------------------------------------
+import { hideScrollbarY } from '@/utils/cssStyles';
 
 function NavSectionHorizontal({ data, sx, ...other }: NavSectionProps) {
   return (
@@ -29,8 +24,6 @@ function NavSectionHorizontal({ data, sx, ...other }: NavSectionProps) {
 }
 
 export default memo(NavSectionHorizontal);
-
-// ----------------------------------------------------------------------
 
 type ItemsProps = {
   items: NavListProps[];

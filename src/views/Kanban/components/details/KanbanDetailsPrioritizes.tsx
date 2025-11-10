@@ -1,10 +1,6 @@
-// @mui
+import { Box, FormControlLabel, Radio, RadioGroup, Stack } from '@mui/material';
 import { alpha } from '@mui/material/styles';
-import { Box, Stack, Radio, RadioGroup, FormControlLabel } from '@mui/material';
-// components
 import Iconify from '@/components/iconify';
-
-// ----------------------------------------------------------------------
 
 const PRIORITIZES_OPTIONS = [
   { value: 'low', label: 'Low', color: 'info' },

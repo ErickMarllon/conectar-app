@@ -1,6 +1,6 @@
 import { toast } from 'react-toastify';
-import { ErrorHandling } from './errorHandling/ErrorHandling';
 import type { IHandleError, IHandleErrorResponse } from '@/shared/interfaces/IError';
+import { ErrorHandling } from './errorHandling/ErrorHandling';
 
 export function handleError({
   error,

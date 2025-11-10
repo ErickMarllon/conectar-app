@@ -1,13 +1,9 @@
-import type { FileRejection } from 'react-dropzone';
-// @mui
-import { alpha } from '@mui/material/styles';
-import { Box, Paper, Typography } from '@mui/material';
-// utils
-import { fData } from '@/utils/formatNumber';
-//
-import { fileData } from '../../file/thumbnail';
 
-// ----------------------------------------------------------------------
+import { Box, Paper, Typography } from '@mui/material';
+import { alpha } from '@mui/material/styles';
+import type { FileRejection } from 'react-dropzone';
+import { fileData } from '../../file/thumbnail';
+import { fData } from '@/utils/formatNumber';
 
 type Props = {
   fileRejections: readonly FileRejection[];

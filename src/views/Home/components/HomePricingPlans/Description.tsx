@@ -1,9 +1,7 @@
-import { varFade } from '@/components/animate';
 import { Stack, Typography } from '@mui/material';
 import { m } from 'framer-motion';
 import { Trans, useTranslation } from 'react-i18next';
-
-// ----------------------------------------------------------------------
+import { varFade } from '@/components/animate';
 
 export default function Description() {
   const { t } = useTranslation();

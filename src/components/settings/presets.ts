@@ -1,7 +1,7 @@
 // theme
+import type { ColorVariants, PresetsOption, ThemeColorPresetsValue } from './types';
 import palette from '../../theme/palette';
 //
-import type { ColorVariants, PresetsOption, ThemeColorPresetsValue } from './types';
 
 // ----------------------------------------------------------------------
 

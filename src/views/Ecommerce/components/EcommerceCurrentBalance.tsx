@@ -1,9 +1,5 @@
-// @mui
-import { Button, Card, Typography, Stack, type CardProps } from '@mui/material';
-// utils
+import { Button, Card, Stack, Typography, type CardProps } from '@mui/material';
 import { fCurrency } from '@/utils/formatNumber';
-
-// ----------------------------------------------------------------------
 
 interface Props extends CardProps {
   title: string;

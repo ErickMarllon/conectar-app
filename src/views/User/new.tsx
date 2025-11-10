@@ -1,8 +1,8 @@
+import { Container } from '@mui/material';
+import UserNewEditForm from './components/UserNewEditForm';
 import CustomBreadcrumbs from '@/components/custom-breadcrumbs';
 import { PATH_DASHBOARD } from '@/routes/paths';
 import { useThemesStore } from '@/stores/themes.store';
-import { Container } from '@mui/material';
-import UserNewEditForm from './components/UserNewEditForm';
 
 export function UserCreatePage() {
   const { themeStretch } = useThemesStore();

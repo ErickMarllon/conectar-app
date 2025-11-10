@@ -1,20 +1,16 @@
-// @mui
 import {
-  Box,
-  Card,
-  Stack,
-  Button,
   Avatar,
-  Tooltip,
-  type CardProps,
-  Typography,
+  Box,
+  Button,
+  Card,
   CardHeader,
   IconButton,
+  Stack,
+  Tooltip,
+  Typography,
+  type CardProps,
 } from '@mui/material';
-// components
 import Iconify from '@/components/iconify';
-
-// ----------------------------------------------------------------------
 
 interface Props extends CardProps {
   title?: string;

@@ -1,9 +1,9 @@
-import { handleError } from '@/errors/handleError';
-import { PlanService } from '@/services/plan/planService';
-import type { IPaginatedResponse } from '@/shared/interfaces/IPaginate';
-import type { IPlan } from '@/shared/interfaces/IPlan';
 import { AxiosError } from 'axios';
 import type { IList } from './type';
+import type { IPaginatedResponse } from '@/shared/interfaces/IPaginate';
+import type { IPlan } from '@/shared/interfaces/IPlan';
+import { handleError } from '@/errors/handleError';
+import { PlanService } from '@/services/plan/planService';
 
 export const queryFn = async (params: IList): Promise<IPaginatedResponse<IPlan>> => {
   try {

@@ -1,32 +1,25 @@
-import { useState } from 'react';
-// form
-import { Controller, useFormContext } from 'react-hook-form';
-// @mui
 import {
   Box,
-  Card,
-  Radio,
-  Stack,
-  Paper,
   Button,
-  TextField,
-  type CardProps,
-  Typography,
-  RadioGroup,
-  CardHeader,
+  Card,
   CardContent,
-  FormHelperText,
+  CardHeader,
   FormControlLabel,
+  FormHelperText,
+  Paper,
+  Radio,
+  RadioGroup,
+  Stack,
+  TextField,
+  Typography,
+  type CardProps,
 } from '@mui/material';
-// @types
+import { useState } from 'react';
+import { Controller, useFormContext } from 'react-hook-form';
 import type { ICheckoutCardOption, ICheckoutPaymentOption } from '@/shared/interfaces/IProduct';
-// components
-import Image from '@/components/image';
 import Iconify from '@/components/iconify';
+import Image from '@/components/image';
 import PaymentNewCardDialog from '@/views/Payment/components/PaymentNewCardDialog';
-// section
-
-// ----------------------------------------------------------------------
 
 interface Props extends CardProps {
   paymentOptions: ICheckoutPaymentOption[];
@@ -90,8 +83,6 @@ export default function CheckoutPaymentMethods({ paymentOptions, cardOptions, ..
     </>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type PaymentOptionProps = {
   option: ICheckoutPaymentOption;

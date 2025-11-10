@@ -1,20 +1,14 @@
-import { useState } from 'react';
-// @mui
+import { ListItemAvatar, ListItemText, MenuItem, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
-import { Typography, ListItemText, ListItemAvatar, MenuItem } from '@mui/material';
-// utils
-import { fToNow } from '@/utils/formatTime';
-// _mock_
+import { useState } from 'react';
 import { _contacts } from '@/_mock/arrays';
-// components
+import { IconButtonAnimate } from '@/components/animate';
+import BadgeStatus from '@/components/badge-status';
 import { CustomAvatar } from '@/components/custom-avatar';
 import Iconify from '@/components/iconify';
-import Scrollbar from '@/components/scrollbar';
 import MenuPopover from '@/components/menu-popover';
-import BadgeStatus from '@/components/badge-status';
-import { IconButtonAnimate } from '@/components/animate';
-
-// ----------------------------------------------------------------------
+import Scrollbar from '@/components/scrollbar';
+import { fToNow } from '@/utils/formatTime';
 
 const ITEM_HEIGHT = 64;
 

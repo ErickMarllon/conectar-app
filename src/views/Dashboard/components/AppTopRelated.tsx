@@ -1,13 +1,8 @@
-// @mui
-import { Box, Card, Rating, CardHeader, Typography, Stack, type CardProps } from '@mui/material';
-// utils
-import { fCurrency, fShortenNumber } from '@/utils/formatNumber';
-// components
-import Label from '@/components/label';
+import { Box, Card, CardHeader, Rating, Stack, Typography, type CardProps } from '@mui/material';
 import Iconify from '@/components/iconify';
+import Label from '@/components/label';
 import Scrollbar from '@/components/scrollbar';
-
-// ----------------------------------------------------------------------
+import { fCurrency, fShortenNumber } from '@/utils/formatNumber';
 
 type ItemProps = {
   id: string;
@@ -40,8 +35,6 @@ export default function AppTopRelated({ title, subheader, list, ...other }: Prop
     </Card>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type ApplicationItemProps = {
   app: ItemProps;

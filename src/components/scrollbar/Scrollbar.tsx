@@ -1,11 +1,7 @@
-import { memo } from 'react';
-// @mui
 import { Box } from '@mui/material';
-//
-import { StyledRootScrollbar, StyledScrollbar } from './styles';
+import { memo } from 'react';
 import type { ScrollbarProps } from './types';
-
-// ----------------------------------------------------------------------
+import { StyledRootScrollbar, StyledScrollbar } from './styles';
 
 function Scrollbar({ children, sx, ...other }: ScrollbarProps) {
   const userAgent = typeof navigator === 'undefined' ? 'SSR' : navigator.userAgent;

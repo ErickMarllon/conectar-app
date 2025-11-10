@@ -1,18 +1,11 @@
+import { Box, Link, ListItemText, Tooltip } from '@mui/material';
 import { forwardRef } from 'react';
-// react router dom
-import { Link as RouterLink } from 'react-router-dom';
-// @mui
-import { Box, Tooltip, ListItemText, Link } from '@mui/material';
-// locales
-// auth
-import RoleBasedGuard from '@/auth/RoleBasedGuard';
-//
-import Iconify from '../../iconify';
-import type { NavItemProps } from '../types';
-import { StyledItem, StyledIcon } from './styles';
 import { useTranslation } from 'react-i18next';
-
-// ----------------------------------------------------------------------
+import { Link as RouterLink } from 'react-router-dom';
+import type { NavItemProps } from '../types';
+import Iconify from '../../iconify';
+import { StyledIcon, StyledItem } from './styles';
+import RoleBasedGuard from '@/auth/RoleBasedGuard';
 
 const NavItem = forwardRef<HTMLDivElement, NavItemProps>(
   ({ item, depth, open, active, isExternalLink, ...other }, ref) => {

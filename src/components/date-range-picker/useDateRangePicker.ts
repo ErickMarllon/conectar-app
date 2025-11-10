@@ -1,9 +1,9 @@
-import { useState } from 'react';
 import { isSameDay, isSameMonth, getYear, isBefore } from 'date-fns';
+import { useState } from 'react';
 // utils
+import type { DateRangePickerProps } from './types';
 import { fDate } from '../../utils/formatTime';
 //
-import type { DateRangePickerProps } from './types';
 
 // ----------------------------------------------------------------------
 

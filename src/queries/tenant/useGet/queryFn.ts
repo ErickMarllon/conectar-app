@@ -1,7 +1,7 @@
+import { AxiosError } from 'axios';
+import type { ITenantAccountGeneral } from '@/shared/interfaces/ITenant';
 import { handleError } from '@/errors/handleError';
 import { TenantService } from '@/services/tenant';
-import type { ITenantAccountGeneral } from '@/shared/interfaces/ITenant';
-import { AxiosError } from 'axios';
 
 export const queryFn = async (tenantId?: string): Promise<ITenantAccountGeneral> => {
   try {

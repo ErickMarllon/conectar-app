@@ -1,11 +1,7 @@
+import { Link, Typography } from '@mui/material';
 import { forwardRef } from 'react';
-// @mui
-import { Typography, Link } from '@mui/material';
-//
 import type { TextMaxLineProps } from './types';
 import useTypography from './useTypography';
-
-// ----------------------------------------------------------------------
 
 const TextMaxLine = forwardRef<HTMLAnchorElement, TextMaxLineProps>(
   ({ asLink, variant = 'body1', line = 2, persistent = false, children, sx, ...other }, ref) => {

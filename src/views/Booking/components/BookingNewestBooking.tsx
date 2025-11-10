@@ -1,16 +1,12 @@
-import { useRef } from 'react';
-// @mui
-import { useTheme } from '@mui/material/styles';
-import { Box, Stack, Paper, Avatar, type BoxProps, Typography, CardHeader } from '@mui/material';
-// utils
-import { fDateTime } from '@/utils/formatTime';
-// components
-import Label from '@/components/label';
-import Image from '@/components/image';
-import Iconify from '@/components/iconify';
-import Carousel, { CarouselArrows } from '@/components/carousel';
 
-// ----------------------------------------------------------------------
+import { Avatar, Box, type BoxProps, CardHeader, Paper, Stack, Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import { useRef } from 'react';
+import Carousel, { CarouselArrows } from '@/components/carousel';
+import Iconify from '@/components/iconify';
+import Image from '@/components/image';
+import Label from '@/components/label';
+import { fDateTime } from '@/utils/formatTime';
 
 type ItemProps = {
   id: string;
@@ -91,8 +87,6 @@ export default function BookingNewestBooking({ title, subheader, list, sx, ...ot
     </Box>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type BookingItemProps = {
   item: ItemProps;

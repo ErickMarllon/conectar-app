@@ -1,15 +1,9 @@
-import type { ApexOptions } from 'apexcharts';
-// @mui
+import { Card, Divider, Stack, Typography, type CardProps } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { Card, Typography, Stack, Divider, type CardProps } from '@mui/material';
-// hooks
-import useResponsive from '@/hooks/useResponsive';
-// utils
-import { fNumber } from '@/utils/formatNumber';
-// components
+import type { ApexOptions } from 'apexcharts';
 import Chart, { useChart } from '@/components/chart';
-
-// ----------------------------------------------------------------------
+import useResponsive from '@/hooks/useResponsive';
+import { fNumber } from '@/utils/formatNumber';
 
 const CHART_SIZE = { width: 106, height: 106 };
 

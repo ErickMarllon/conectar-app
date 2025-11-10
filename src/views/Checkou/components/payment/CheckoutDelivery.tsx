@@ -1,24 +1,18 @@
-// form
-import { Controller, useFormContext } from 'react-hook-form';
-// @mui
 import {
   Box,
   Card,
-  Radio,
-  Paper,
-  type CardProps,
-  Typography,
-  RadioGroup,
-  CardHeader,
   CardContent,
+  CardHeader,
   FormControlLabel,
+  Paper,
+  Radio,
+  RadioGroup,
+  Typography,
+  type CardProps,
 } from '@mui/material';
-// @types
+import { Controller, useFormContext } from 'react-hook-form';
 import type { ICheckoutDeliveryOption } from '@/shared/interfaces/IProduct';
-// components
 import Iconify from '@/components/iconify';
-
-// ----------------------------------------------------------------------
 
 interface Props extends CardProps {
   deliveryOptions: ICheckoutDeliveryOption[];
@@ -68,8 +62,6 @@ export default function CheckoutDelivery({ deliveryOptions, onApplyShipping, ...
     </Card>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type DeliveryOptionProps = {
   option: ICheckoutDeliveryOption;

@@ -1,21 +1,15 @@
+import { Draggable, Droppable } from '@hello-pangea/dnd';
+import { Button, Paper, Stack } from '@mui/material';
 import { useState } from 'react';
-import { Droppable, Draggable } from '@hello-pangea/dnd';
-// @mui
-import { Paper, Stack, Button } from '@mui/material';
-// @types
+import { toast } from 'react-toastify';
 import type { IKanbanCard, IKanbanColumn } from '@/shared/interfaces/IKanban';
-// components
-import Iconify from '@/components/iconify';
-//
 import KanbanTaskAdd from '../KanbanTaskAdd';
 import KanbanTaskCard from '../KanbanTaskCard';
 import KanbanColumnToolBar from './KanbanColumnToolBar';
-import { toast } from 'react-toastify';
+import Iconify from '@/components/iconify';
+import { useKanbanCreate } from '@/queries/kanban/create/useKanbanCreate';
 import { useKanbanDeleteColumn } from '@/queries/kanban/delete/useKanbanDeleteColumn';
 import { useKanbanUpdateColumn } from '@/queries/kanban/update/useUpdateColumn';
-import { useKanbanCreate } from '@/queries/kanban/create/useKanbanCreate';
-
-// ----------------------------------------------------------------------
 
 type Props = {
   index: number;

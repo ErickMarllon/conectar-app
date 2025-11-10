@@ -1,22 +1,16 @@
-import { useState } from 'react';
-// react router dom
-import { useNavigate } from 'react-router-dom';
-// form
-import { useForm } from 'react-hook-form';
-// @mui
-import { Stack, IconButton, InputAdornment, FormHelperText } from '@mui/material';
-import { LoadingButton } from '@mui/lab';
-// routes
-import { PATH_DASHBOARD } from '@/routes/paths';
-// components
-import Iconify from '@/components/iconify';
-import FormProvider, { RHFTextField, RHFCodes } from '@/components/hook-form';
-import { resetPasswordSchema } from '@/schemas/reset-password-schema';
-import type { z } from 'zod';
-import { toast } from 'react-toastify';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { LoadingButton } from '@mui/lab';
+import { FormHelperText, IconButton, InputAdornment, Stack } from '@mui/material';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import type { z } from 'zod';
+import FormProvider, { RHFCodes, RHFTextField } from '@/components/hook-form';
+import Iconify from '@/components/iconify';
+import { PATH_DASHBOARD } from '@/routes/paths';
+import { resetPasswordSchema } from '@/schemas/reset-password-schema';
 
-// ----------------------------------------------------------------------
 export type FormValuesProps = z.infer<typeof resetPasswordSchema>;
 
 export default function AuthNewPasswordForm() {

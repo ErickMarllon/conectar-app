@@ -1,23 +1,18 @@
-import { useState, useRef } from 'react';
-// @mui
-import { styled, alpha } from '@mui/material/styles';
-import { Stack, Drawer, Avatar, Tooltip, Divider, TextField, Box, IconButton } from '@mui/material';
-// @types
+
+import { Avatar, Box, Divider, Drawer, IconButton, Stack, TextField, Tooltip } from '@mui/material';
+import { alpha, styled } from '@mui/material/styles';
+import { useRef, useState } from 'react';
 import type { IKanbanCard } from '@/shared/interfaces/IKanban';
-// components
+import KanbanContactsDialog from '../KanbanContactsDialog';
+import KanbanInputName from '../KanbanInputName';
+import KanbanDetailsAttachments from './KanbanDetailsAttachments';
+import KanbanDetailsCommentInput from './KanbanDetailsCommentInput';
+import KanbanDetailsCommentList from './KanbanDetailsCommentList';
+import KanbanDetailsPrioritizes from './KanbanDetailsPrioritizes';
+import KanbanDetailsToolbar from './KanbanDetailsToolbar';
+import DateRangePicker, { useDateRangePicker } from '@/components/date-range-picker';
 import Iconify from '@/components/iconify';
 import Scrollbar from '@/components/scrollbar';
-import DateRangePicker, { useDateRangePicker } from '@/components/date-range-picker';
-//
-import KanbanInputName from '../KanbanInputName';
-import KanbanDetailsToolbar from './KanbanDetailsToolbar';
-import KanbanContactsDialog from '../KanbanContactsDialog';
-import KanbanDetailsCommentList from './KanbanDetailsCommentList';
-import KanbanDetailsAttachments from './KanbanDetailsAttachments';
-import KanbanDetailsPrioritizes from './KanbanDetailsPrioritizes';
-import KanbanDetailsCommentInput from './KanbanDetailsCommentInput';
-
-// ----------------------------------------------------------------------
 
 const StyledLabel = styled('span')(({ theme }) => ({
   ...theme.typography.caption,
@@ -25,8 +20,6 @@ const StyledLabel = styled('span')(({ theme }) => ({
   flexShrink: 0,
   color: theme.palette.text.secondary,
 }));
-
-// ----------------------------------------------------------------------
 
 type Props = {
   task: IKanbanCard;

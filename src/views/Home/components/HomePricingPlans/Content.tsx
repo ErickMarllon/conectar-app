@@ -1,13 +1,13 @@
-import { varFade } from '@/components/animate';
-import useResponsive from '@/hooks/useResponsive';
-import { useListPlan } from '@/queries/plan/list/useListPlan';
-import { PATH_PAGE } from '@/routes/paths';
-import { PlanInterval } from '@/shared/enums';
 import { Box, Button, Stack, Switch, Tab, Tabs, Typography } from '@mui/material';
 import { motion } from 'motion/react';
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import PlanCard from './PlanCard';
+import { varFade } from '@/components/animate';
+import useResponsive from '@/hooks/useResponsive';
+import { useListPlan } from '@/queries/plan/list/useListPlan';
+import { PATH_PAGE } from '@/routes/paths';
+import { PlanInterval } from '@/shared/enums';
 
 export default function Content() {
   const isDesktop = useResponsive('up', 'md');

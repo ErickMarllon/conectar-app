@@ -1,8 +1,8 @@
+import { create } from 'zustand';
+import type { IUserAuth } from '@/shared/interfaces/IUser';
 import { PATH_AUTH, PROTECTED_ROUTES } from '@/routes/paths';
 import { AuthService } from '@/services/authService';
 import { LocalStorageService } from '@/services/localStorageService';
-import type { IUserAuth } from '@/shared/interfaces/IUser';
-import { create } from 'zustand';
 
 interface AuthState {
   user?: Partial<IUserAuth> | null;

@@ -1,10 +1,10 @@
-import { api } from '@/http/api';
-import { type IAddressPayloadSchema } from '@/schemas/address-payload-schema';
 import type { ITenantSchema } from '@/schemas/tenant-schema';
 import type { IFilterEnterpriseGeneric } from '@/shared/interfaces/IFilter';
 import type { IPaginatedResponse } from '@/shared/interfaces/IPaginate';
 import type { ITenantAccountGeneral } from '@/shared/interfaces/ITenant';
 import type { AxiosResponse } from 'axios';
+import { api } from '@/http/api';
+import { type IAddressPayloadSchema } from '@/schemas/address-payload-schema';
 
 class TenantService {
   public static async list(

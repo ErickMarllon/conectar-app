@@ -1,10 +1,6 @@
+import { Button, Stack, TextField, Typography } from '@mui/material';
 import { m } from 'framer-motion';
-// @mui
-import { Button, Typography, TextField, Stack } from '@mui/material';
-//
-import { varFade, MotionViewport } from '@/components/animate';
-
-// ----------------------------------------------------------------------
+import { MotionViewport, varFade } from '@/components/animate';
 
 export default function FaqsForm() {
   return (

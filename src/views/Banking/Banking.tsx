@@ -1,29 +1,22 @@
-// @mui
+import { Container, Grid, Stack } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { Grid, Container, Stack } from '@mui/material';
-// layouts
-
-// _mock_
 import {
   _bankingContacts,
   _bankingCreditCard,
   _bankingRecentTransitions,
 } from '../../_mock/arrays';
-// components
-import { useThemesStore } from '@/stores/themes.store';
-// sections
 import {
+  BankingBalanceStatistics,
   BankingContacts,
-  BankingWidgetSummary,
+  BankingCurrentBalance,
+  BankingExpensesCategories,
   BankingInviteFriends,
   BankingQuickTransfer,
-  BankingCurrentBalance,
-  BankingBalanceStatistics,
   BankingRecentTransitions,
-  BankingExpensesCategories,
+  BankingWidgetSummary,
 } from './components';
+import { useThemesStore } from '@/stores/themes.store';
 
-// ----------------------------------------------------------------------
 export function GeneralBankingPage() {
   const theme = useTheme();
 

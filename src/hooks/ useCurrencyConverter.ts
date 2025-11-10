@@ -1,6 +1,6 @@
+import { useState, useEffect } from 'react';
 import { allLangsArray, defaultLang } from '@/locales/config-lang';
 import { getCachedRates, type ExchangeRates } from '@/services/currencyService';
-import { useState, useEffect } from 'react';
 
 interface UseCurrencyConverterReturn {
   rates: ExchangeRates | null;

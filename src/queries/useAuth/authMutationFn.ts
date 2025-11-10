@@ -1,9 +1,9 @@
-import { AuthService } from '@/services/authService';
-import { AuthActionType } from './types/IUseAuthTypes';
-import type { IUserAuth } from '@/shared/interfaces/IUser';
-import type { AxiosResponse } from 'axios';
 import type { ISignIn } from '@/schemas/sign-in.schema';
 import type { ISignUp } from '@/schemas/sign-up.schema';
+import type { IUserAuth } from '@/shared/interfaces/IUser';
+import type { AxiosResponse } from 'axios';
+import { AuthActionType } from './types/IUseAuthTypes';
+import { AuthService } from '@/services/authService';
 
 const authMutationFn = async (
   type: AuthActionType,

@@ -1,27 +1,20 @@
-import sum from 'lodash/sum';
-import { useCallback, useEffect, useState } from 'react';
-// form
-import { useFormContext, useFieldArray } from 'react-hook-form';
-// @mui
 import {
   Box,
-  Stack,
   Button,
   Divider,
-  Typography,
   InputAdornment,
   MenuItem,
+  Stack,
   TextField,
+  Typography,
 } from '@mui/material';
-// utils
-import { fCurrency } from '@/utils/formatNumber';
-// @types
+import sum from 'lodash/sum';
+import { useCallback, useEffect, useState } from 'react';
+import { useFieldArray, useFormContext } from 'react-hook-form';
 import type { IInvoiceItem } from '@/shared/interfaces/IInvoice';
-// components
-import Iconify from '@/components/iconify';
 import { RHFSelect, RHFTextField } from '@/components/hook-form';
-
-// ----------------------------------------------------------------------
+import Iconify from '@/components/iconify';
+import { fCurrency } from '@/utils/formatNumber';
 
 const SERVICE_OPTIONS = [
   { id: 1, name: 'full stack development', price: 90.99 },
@@ -30,8 +23,6 @@ const SERVICE_OPTIONS = [
   { id: 4, name: 'ui/ux design', price: 60.99 },
   { id: 5, name: 'front end development', price: 40.99 },
 ];
-
-// ----------------------------------------------------------------------
 
 export default function InvoiceNewEditDetails() {
   const { control, setValue, watch, resetField, trigger } = useFormContext();

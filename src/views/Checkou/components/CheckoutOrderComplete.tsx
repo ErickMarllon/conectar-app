@@ -1,12 +1,7 @@
-// @mui
-import { Link, Button, Divider, Typography, Stack, type DialogProps } from '@mui/material';
-// components
-import Iconify from '@/components/iconify';
-import { DialogAnimate } from '@/components/animate';
-// assets
+import { Button, Divider, Link, Stack, Typography, type DialogProps } from '@mui/material';
 import { OrderCompleteIllustration } from '@/assets/illustrations';
-
-// ----------------------------------------------------------------------
+import { DialogAnimate } from '@/components/animate';
+import Iconify from '@/components/iconify';
 
 interface Props extends DialogProps {
   onReset: VoidFunction;

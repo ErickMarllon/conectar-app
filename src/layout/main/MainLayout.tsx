@@ -1,12 +1,7 @@
-// react-router-dom
-import { Outlet, useLocation } from 'react-router-dom';
-// @mui
 import { Box } from '@mui/material';
-//
-import Header from './Header';
+import { Outlet, useLocation } from 'react-router-dom';
 import Footer from './Footer';
-
-// ----------------------------------------------------------------------
+import Header from './Header';
 
 export default function MainLayout() {
   const { pathname } = useLocation();

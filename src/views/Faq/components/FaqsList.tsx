@@ -1,11 +1,6 @@
-// @mui
-import { Accordion, Typography, AccordionSummary, AccordionDetails } from '@mui/material';
-// _mock_
+import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material';
 import { _faqs } from '@/_mock/arrays';
-// components
 import Iconify from '@/components/iconify';
-
-// ----------------------------------------------------------------------
 
 export default function FaqsList() {
   return (

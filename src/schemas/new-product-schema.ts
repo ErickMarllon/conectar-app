@@ -1,5 +1,5 @@
-import type { CustomFile } from '@/components/upload';
 import { z } from 'zod';
+import type { CustomFile } from '@/components/upload';
 
 export const NewProductSchema = z.object({
   name: z.string().nonempty('Name is required'),

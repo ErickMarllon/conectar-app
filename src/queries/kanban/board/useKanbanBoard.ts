@@ -1,7 +1,7 @@
 import { useQuery, useQueryClient, type UseQueryOptions } from '@tanstack/react-query';
+import type { IKanbanBoard } from '@/shared/interfaces/IKanban';
 import type { AxiosError } from 'axios';
 import { boardQueryFn } from './boardQueryFn';
-import type { IKanbanBoard } from '@/shared/interfaces/IKanban';
 
 type QueryError = AxiosError;
 type QueryFnData = IKanbanBoard;

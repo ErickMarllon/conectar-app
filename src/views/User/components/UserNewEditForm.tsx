@@ -1,3 +1,13 @@
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Box, Button, Card, Grid, MenuItem, Typography } from '@mui/material';
+import { useCallback, useEffect, useMemo } from 'react';
+import { useForm } from 'react-hook-form';
+import { useNavigate, useParams } from 'react-router-dom';
+import type { IAddressSchema } from '@/schemas/address-schema';
+import { AddressForm } from './AddressForm';
+import AddressManager from './AddressManager';
+import { ROLE_OPTIONS } from './constants/userRoles';
+import { statusColorMap } from './constants/userStatusColor';
 import FormProvider, {
   RHFSelect,
   RHFSwitch,
@@ -12,24 +22,12 @@ import { useUserPath } from '@/queries/user/path/useUserPath';
 import { useUserPathStatus } from '@/queries/user/pathStatus/useUserPath';
 import { useUserById } from '@/queries/user/useUserById/useUserById';
 import { PATH_DASHBOARD } from '@/routes/paths';
-import type { IAddressSchema } from '@/schemas/address-schema';
 import { userSchema, type IUserSchema } from '@/schemas/user-schema';
 import { UserStatus } from '@/shared/enums';
 import { useAuthStore } from '@/stores/userAuth.store';
 import { diffObjects } from '@/utils/diffObjects';
 import { fData } from '@/utils/formatNumber';
 import { parseIdentifier } from '@/utils/parseIdentifierSlug';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { Box, Button, Card, Grid, MenuItem, Typography } from '@mui/material';
-import { useCallback, useEffect, useMemo } from 'react';
-import { useForm } from 'react-hook-form';
-import { useNavigate, useParams } from 'react-router-dom';
-import { AddressForm } from './AddressForm';
-import AddressManager from './AddressManager';
-import { ROLE_OPTIONS } from './constants/userRoles';
-import { statusColorMap } from './constants/userStatusColor';
-
-// ----------------------------------------------------------------------
 
 type FormValuesProps = IUserSchema;
 
@@ -37,8 +35,6 @@ type Props = {
   isEdit?: boolean;
   isLoadingUser?: boolean;
 };
-
-// ----------------------------------------------------------------------
 
 export default function UserNewEditForm({ isEdit = false }: Props) {
   const navigate = useNavigate();

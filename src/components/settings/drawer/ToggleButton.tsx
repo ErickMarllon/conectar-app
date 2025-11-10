@@ -1,16 +1,11 @@
-import { useState, useEffect } from 'react';
-// @mui
+
+import { Box, Tooltip } from '@mui/material';
 import { alpha, useTheme } from '@mui/material/styles';
-import { Tooltip, Box } from '@mui/material';
-// utils
-import { bgBlur } from '@/utils/cssStyles';
-//
+import { useEffect, useState } from 'react';
 import { IconButtonAnimate } from '../../animate';
 import SvgColor from '../../svg-color';
-//
 import BadgeDot from './BadgeDot';
-
-// ----------------------------------------------------------------------
+import { bgBlur } from '@/utils/cssStyles';
 
 type Props = {
   open: boolean;

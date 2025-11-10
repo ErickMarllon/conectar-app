@@ -1,11 +1,8 @@
-import { forwardRef } from 'react';
-// @mui
-import { alpha } from '@mui/material/styles';
-import { Stack, IconButton, type StackProps } from '@mui/material';
-// components
-import Iconify from '../iconify';
 
-// ----------------------------------------------------------------------
+import { IconButton, Stack, type StackProps } from '@mui/material';
+import { alpha } from '@mui/material/styles';
+import { forwardRef } from 'react';
+import Iconify from '../iconify';
 
 interface IncrementerButtonProps extends StackProps {
   name?: string;

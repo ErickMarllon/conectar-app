@@ -1,10 +1,6 @@
-// @mui
+import { Box, Stack, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
-import { Box, Typography, Stack } from '@mui/material';
-//
 import type { ColorPreviewProps } from './types';
-
-// ----------------------------------------------------------------------
 
 export default function ColorPreview({ colors, limit = 3, sx }: ColorPreviewProps) {
   const showColor = colors.slice(0, limit);

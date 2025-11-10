@@ -1,35 +1,28 @@
-import { useState } from 'react';
-// @mui
 import {
-  Box,
-  Stack,
   Avatar,
-  Divider,
+  AvatarGroup,
+  Box,
   Checkbox,
+  Divider,
+  IconButton,
   MenuItem,
+  Stack,
   Typography,
   type PaperProps,
-  IconButton,
-  AvatarGroup,
 } from '@mui/material';
-// hooks
-import useResponsive from '@/hooks/useResponsive';
+import { useState } from 'react';
+import { toast } from 'react-toastify';
+import type { IFileManager } from '@/shared/interfaces/File';
+import { FileDetailsDrawer, FileShareDialog } from '@/components/file/portal';
+import FileThumbnail from '@/components/file/thumbnail';
+import Iconify from '@/components/iconify';
+import MenuPopover from '@/components/menu-popover';
 import useCopyToClipboard from '@/hooks/useCopyToClipboard';
-// utils
+import useResponsive from '@/hooks/useResponsive';
 import { fData } from '@/utils/formatNumber';
 import { fDateTime } from '@/utils/formatTime';
-// @types
-import type { IFileManager } from '@/shared/interfaces/File';
-// components
-import Iconify from '@/components/iconify';
 
-import MenuPopover from '@/components/menu-popover';
-import FileThumbnail from '@/components/file/thumbnail';
-import { toast } from 'react-toastify';
-import { FileDetailsDrawer, FileShareDialog } from '@/components/file/portal';
-//
 
-// ----------------------------------------------------------------------
 
 interface Props extends PaperProps {
   file: IFileManager;

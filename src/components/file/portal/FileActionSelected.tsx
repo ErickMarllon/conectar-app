@@ -1,10 +1,6 @@
-// @mui
+import { Box, Checkbox, Portal, Typography } from '@mui/material';
 import { styled, type SxProps, type Theme } from '@mui/material/styles';
-import { Box, Typography, Checkbox, Portal } from '@mui/material';
-// components
 import Iconify from '@/components/iconify';
-
-// ----------------------------------------------------------------------
 
 const StyledRoot = styled('div')(({ theme }) => ({
   right: 24,
@@ -18,8 +14,6 @@ const StyledRoot = styled('div')(({ theme }) => ({
   borderRadius: theme.shape.borderRadius,
   backgroundColor: theme.palette.text.primary,
 }));
-
-// ----------------------------------------------------------------------
 
 type Props = {
   action?: React.ReactNode;

@@ -1,10 +1,6 @@
-// form
-import { Controller, useFormContext } from 'react-hook-form';
-// @mui
 import { InputAdornment, TextField, type TextFieldProps } from '@mui/material';
+import { Controller, useFormContext } from 'react-hook-form';
 import Iconify from '../iconify';
-
-// ----------------------------------------------------------------------
 
 type Props = TextFieldProps & {
   name: string;

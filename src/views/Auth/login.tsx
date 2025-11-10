@@ -1,10 +1,5 @@
-// auth
-import GuestGuard from '@/guard/GuestGuard';
-// sections
 import Login from './components/Login';
-// import Login from '@/sections/auth/LoginAuth0';
-
-// ----------------------------------------------------------------------
+import GuestGuard from '@/guard/GuestGuard';
 
 export function LoginPage() {
   return (

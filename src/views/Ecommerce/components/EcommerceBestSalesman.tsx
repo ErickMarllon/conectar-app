@@ -1,27 +1,22 @@
-// @mui
 import {
+  Avatar,
   Box,
   Card,
-  Table,
+  CardHeader,
   Stack,
-  Avatar,
-  TableRow,
+  Table,
   TableBody,
   TableCell,
-  type CardProps,
-  CardHeader,
-  Typography,
   TableContainer,
+  TableRow,
+  Typography,
+  type CardProps,
 } from '@mui/material';
-// utils
-import { fCurrency } from '@/utils/formatNumber';
-// components
-import Label from '@/components/label';
 import Image from '@/components/image';
+import Label from '@/components/label';
 import Scrollbar from '@/components/scrollbar';
 import { TableHeadCustom } from '@/components/table';
-
-// ----------------------------------------------------------------------
+import { fCurrency } from '@/utils/formatNumber';
 
 type RowProps = {
   id: string;
@@ -68,8 +63,6 @@ export default function EcommerceBestSalesman({
     </Card>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type EcommerceBestSalesmanRowProps = {
   row: RowProps;

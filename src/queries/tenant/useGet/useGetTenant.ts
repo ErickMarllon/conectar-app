@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 import type { BaseQueryOptions } from '../../type';
+import type { ITenantAccountGeneral } from '@/shared/interfaces/ITenant';
 import type { AxiosError } from 'axios';
 import { queryFn } from './queryFn';
-import type { ITenantAccountGeneral } from '@/shared/interfaces/ITenant';
 
 type QueryError = AxiosError;
 type QueryFnData = ITenantAccountGeneral;

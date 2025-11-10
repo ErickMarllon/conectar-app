@@ -1,11 +1,11 @@
-import type { AxiosResponse } from 'axios';
-// import { api } from '@/http/api';
+import axios from 'axios';
 import type {
   IKanbanBoard,
   IKanbanCommonParams,
   IKanbanDeleteParams,
 } from '@/shared/interfaces/IKanban';
-import axios from 'axios';
+import type { AxiosResponse } from 'axios';
+// import { api } from '@/http/api';
 import { removeEmpty } from '@/utils/removeEmpty';
 
 const api = axios.create({

@@ -1,17 +1,10 @@
-// react router dom
+import { Link, Stack, Typography } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
-
-// @mui
-import { Stack, Typography, Link } from '@mui/material';
-// layouts
-// routes
-import { PATH_AUTH } from '@/routes/paths';
-//
-import AuthWithSocial from './AuthWithSocial';
 import AuthRegisterForm from './AuthRegisterForm';
+import AuthWithSocial from './AuthWithSocial';
 import AccessLayout from '@/layout/access';
+import { PATH_AUTH } from '@/routes/paths';
 
-// ----------------------------------------------------------------------
 export default function Register() {
   return (
     <AccessLayout title="Manage the job more effectively with Flux">

@@ -1,8 +1,8 @@
-import { api } from '@/http/api';
 import type { IList } from '@/queries/plan/list/type';
 import type { IPaginatedResponse } from '@/shared/interfaces/IPaginate';
 import type { IPlan } from '@/shared/interfaces/IPlan';
 import type { AxiosResponse } from 'axios';
+import { api } from '@/http/api';
 
 class PlanService {
   public static async list(params: IList): Promise<AxiosResponse<IPaginatedResponse<IPlan>>> {

@@ -1,9 +1,6 @@
 //
-import Image from '../../image';
-//
 import type { CustomFile } from '../types';
-
-// ----------------------------------------------------------------------
+import Image from '../../image';
 
 type Props = {
   file: CustomFile | string | null;

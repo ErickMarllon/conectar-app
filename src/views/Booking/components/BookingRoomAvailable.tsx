@@ -1,14 +1,10 @@
-import type { ApexOptions } from 'apexcharts';
-import sumBy from 'lodash/sumBy';
-// @mui
-import { useTheme, alpha } from '@mui/material/styles';
-import { Card, CardHeader, Stack, Box, Typography, type CardProps } from '@mui/material';
-// utils
-import { fNumber } from '@/utils/formatNumber';
-// components
-import Chart, { useChart } from '@/components/chart';
 
-// ----------------------------------------------------------------------
+import { Box, Card, CardHeader, Stack, Typography, type CardProps } from '@mui/material';
+import { alpha, useTheme } from '@mui/material/styles';
+import sumBy from 'lodash/sumBy';
+import type { ApexOptions } from 'apexcharts';
+import Chart, { useChart } from '@/components/chart';
+import { fNumber } from '@/utils/formatNumber';
 
 type ItemProps = {
   label: string;
@@ -82,8 +78,6 @@ export default function BookingRoomAvailable({ title, subheader, chart, ...other
     </Card>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type LegendProps = {
   item: ItemProps;

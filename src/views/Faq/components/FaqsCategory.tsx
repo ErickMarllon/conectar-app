@@ -1,26 +1,22 @@
-import { useState } from 'react';
-import { m } from 'framer-motion';
-// @mui
-import { alpha } from '@mui/material/styles';
-import {
-  Box,
-  Paper,
-  AppBar,
-  Drawer,
-  Button,
-  Toolbar,
-  Divider,
-  ListItemButton,
-} from '@mui/material';
-// hooks
-import useResponsive from '@/hooks/useResponsive';
-// components
-import Image from '@/components/image';
-import Iconify from '@/components/iconify';
-import TextMaxLine from '@/components/text-max-line';
-import { MotionViewport, varFade } from '@/components/animate';
 
-// ----------------------------------------------------------------------
+import {
+  AppBar,
+  Box,
+  Button,
+  Divider,
+  Drawer,
+  ListItemButton,
+  Paper,
+  Toolbar,
+} from '@mui/material';
+import { alpha } from '@mui/material/styles';
+import { m } from 'framer-motion';
+import { useState } from 'react';
+import { MotionViewport, varFade } from '@/components/animate';
+import Iconify from '@/components/iconify';
+import Image from '@/components/image';
+import TextMaxLine from '@/components/text-max-line';
+import useResponsive from '@/hooks/useResponsive';
 
 const CATEGORIES = [
   {
@@ -54,8 +50,6 @@ const CATEGORIES = [
     href: '#',
   },
 ];
-
-// ----------------------------------------------------------------------
 
 export default function FaqsCategory() {
   const isDesktop = useResponsive('up', 'md');
@@ -116,8 +110,6 @@ export default function FaqsCategory() {
   );
 }
 
-// ----------------------------------------------------------------------
-
 type CardProps = {
   category: {
     label: string;
@@ -155,8 +147,6 @@ function CardDesktop({ category }: CardProps) {
     </Paper>
   );
 }
-
-// ----------------------------------------------------------------------
 
 function CardMobile({ category }: CardProps) {
   const { label, icon } = category;

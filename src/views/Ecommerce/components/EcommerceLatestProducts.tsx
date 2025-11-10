@@ -1,13 +1,8 @@
-// @mui
-import { Box, Link, Card, CardHeader, Typography, Stack, type CardProps } from '@mui/material';
-// utils
-import { fCurrency } from '@/utils/formatNumber';
-//
+import { Box, Card, CardHeader, Link, Stack, Typography, type CardProps } from '@mui/material';
+import { ColorPreview } from '@/components/color-utils';
 import Image from '@/components/image';
 import Scrollbar from '@/components/scrollbar';
-import { ColorPreview } from '@/components/color-utils';
-
-// ----------------------------------------------------------------------
+import { fCurrency } from '@/utils/formatNumber';
 
 type ItemProps = {
   id: string;
@@ -39,8 +34,6 @@ export default function EcommerceLatestProducts({ title, subheader, list, ...oth
     </Card>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type ProductItemProps = {
   product: ItemProps;

@@ -1,19 +1,12 @@
-import { useState, useEffect } from 'react';
-// react router dom
+import { Drawer, IconButton, List } from '@mui/material';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-// @mui
-import { List, Drawer, IconButton } from '@mui/material';
-// config
-import { NAV } from '@/configs/global';
-// components
-import Logo from '@/components/logo';
-import Iconify from '@/components/iconify';
-import Scrollbar from '@/components/scrollbar';
-//
-import NavList from './NavList';
 import type { NavProps } from '../types';
-
-// ----------------------------------------------------------------------
+import NavList from './NavList';
+import Iconify from '@/components/iconify';
+import Logo from '@/components/logo';
+import Scrollbar from '@/components/scrollbar';
+import { NAV } from '@/configs/global';
 
 export default function NavMobile({ isOffset, data }: NavProps) {
   const { pathname } = useLocation();

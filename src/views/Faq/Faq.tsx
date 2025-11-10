@@ -1,11 +1,8 @@
-// sections
 import { Box, Container, Typography } from '@mui/material';
-import FaqsHero from './components/FaqsHero';
 import FaqsCategory from './components/FaqsCategory';
-import FaqsList from './components/FaqsList';
 import FaqsForm from './components/FaqsForm';
-
-// ----------------------------------------------------------------------
+import FaqsHero from './components/FaqsHero';
+import FaqsList from './components/FaqsList';
 
 export function FaqPage() {
   return (

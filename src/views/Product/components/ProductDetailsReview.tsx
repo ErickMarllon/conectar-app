@@ -1,18 +1,13 @@
-import { useState } from 'react';
+import { Box, Button, Divider, LinearProgress, Rating, Stack, Typography } from '@mui/material';
 import sumBy from 'lodash/sumBy';
-// @mui
-import { Divider, Typography, Rating, Button, LinearProgress, Stack, Box } from '@mui/material';
-// utils
-import { fShortenNumber } from '@/utils/formatNumber';
-// @types
+import { useState } from 'react';
 import type { IProduct } from '@/shared/interfaces/IProduct';
-// components
-import Iconify from '@/components/iconify';
-//
-import ProductDetailsReviewList from './ProductDetailsReviewList';
 import ProductDetailsReviewNewDialog from './ProductDetailsNewReviewForm';
+import ProductDetailsReviewList from './ProductDetailsReviewList';
+import Iconify from '@/components/iconify';
+import { fShortenNumber } from '@/utils/formatNumber';
 
-// ----------------------------------------------------------------------
+
 
 type Props = {
   product: IProduct;
@@ -109,8 +104,6 @@ export default function ProductDetailsReview({ product }: Props) {
     </>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type ProgressItemProps = {
   star: {

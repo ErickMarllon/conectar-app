@@ -1,12 +1,7 @@
-// @mui
-import { useTheme, styled, alpha } from '@mui/material/styles';
-import { Stack, type StackProps, type IconButtonProps, IconButton } from '@mui/material';
-//
+import { IconButton, Stack, type IconButtonProps, type StackProps } from '@mui/material';
+import { alpha, styled, useTheme } from '@mui/material/styles';
 import type { IconifyProps } from '../iconify';
-//
 import { LeftIcon, RightIcon } from './Icon';
-
-// ----------------------------------------------------------------------
 
 interface StyledIconButtonProps extends IconButtonProps {
   filled?: boolean;
@@ -46,13 +41,11 @@ const StyledIconButton = styled(IconButton, {
   }),
 }));
 
-// ----------------------------------------------------------------------
-
 interface Props extends StackProps {
   shape?: 'circular' | 'rounded';
   filled?: boolean;
   children?: React.ReactNode;
-  icon?: IconifyProps; // Right icon
+  icon?: IconifyProps;
   onNext?: VoidFunction;
   onPrevious?: VoidFunction;
   leftButtonProps?: IconButtonProps;

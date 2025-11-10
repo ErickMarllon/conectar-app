@@ -1,10 +1,6 @@
-// @mui
+import { Stack, Typography, type CardProps } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { Typography, type CardProps, Stack } from '@mui/material';
-// utils
 import { bgGradient } from '@/utils/cssStyles';
-
-// ----------------------------------------------------------------------
 
 const StyledRoot = styled('div')(({ theme }) => ({
   height: '100%',
@@ -43,8 +39,6 @@ const StyledBg = styled('div')(({ theme }) => ({
     }),
   },
 }));
-
-// ----------------------------------------------------------------------
 
 interface Props extends CardProps {
   title?: string;

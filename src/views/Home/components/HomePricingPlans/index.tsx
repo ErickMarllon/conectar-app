@@ -1,10 +1,8 @@
-import { MotionViewport } from '@/components/animate';
 import { Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Content from './Content';
 import Description from './Description';
-
-// ----------------------------------------------------------------------
+import { MotionViewport } from '@/components/animate';
 
 const StyledRoot = styled('div')(({ theme }) => ({
   padding: theme.spacing(10, 0),
@@ -13,8 +11,6 @@ const StyledRoot = styled('div')(({ theme }) => ({
     padding: theme.spacing(15, 0),
   },
 }));
-
-// ----------------------------------------------------------------------
 
 export default function HomePricingPlans() {
   return (

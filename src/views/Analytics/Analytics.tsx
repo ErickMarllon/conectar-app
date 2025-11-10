@@ -1,27 +1,18 @@
-// @mui
+import { Container, Grid, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { Grid, Container, Typography } from '@mui/material';
-
-// _mock_
-import { _analyticPost, _analyticOrderTimeline, _analyticTraffic } from '../../_mock/arrays';
-// components
-import { useThemesStore } from '@/stores/themes.store';
-// sections
+import { _analyticOrderTimeline, _analyticPost, _analyticTraffic } from '../../_mock/arrays';
 import {
-  AnalyticsTasks,
+  AnalyticsConversionRates,
+  AnalyticsCurrentSubject,
+  AnalyticsCurrentVisits,
   AnalyticsNewsUpdate,
   AnalyticsOrderTimeline,
-  AnalyticsCurrentVisits,
-  AnalyticsWebsiteVisits,
+  AnalyticsTasks,
   AnalyticsTrafficBySite,
+  AnalyticsWebsiteVisits,
   AnalyticsWidgetSummary,
-  AnalyticsCurrentSubject,
-  AnalyticsConversionRates,
 } from './components';
-
-// ----------------------------------------------------------------------
-
-// ----------------------------------------------------------------------
+import { useThemesStore } from '@/stores/themes.store';
 
 export function GeneralAnalyticsPage() {
   const theme = useTheme();

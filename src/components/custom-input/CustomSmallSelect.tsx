@@ -1,8 +1,5 @@
-// @mui
-import { alpha, styled } from '@mui/material/styles';
 import { TextField, type TextFieldProps } from '@mui/material';
-
-// ----------------------------------------------------------------------
+import { alpha, styled } from '@mui/material/styles';
 
 const CustomSmallSelect = styled((props: TextFieldProps) => (
   <TextField select SelectProps={{ native: true }} {...props} />

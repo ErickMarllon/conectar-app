@@ -1,8 +1,8 @@
 import { useMutation, useQueryClient, type UseMutationOptions } from '@tanstack/react-query';
-import type { AxiosError, AxiosResponse } from 'axios';
-import { handleError } from '@/errors/handleError';
-import { deleteColumnMutationFn } from './deleteColumnMutationFn';
 import type { IKanbanDeleteParams } from '@/shared/interfaces/IKanban';
+import type { AxiosError, AxiosResponse } from 'axios';
+import { deleteColumnMutationFn } from './deleteColumnMutationFn';
+import { handleError } from '@/errors/handleError';
 
 type MutationData = AxiosResponse<void>;
 type MutationError = AxiosError;

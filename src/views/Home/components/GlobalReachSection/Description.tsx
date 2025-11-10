@@ -1,11 +1,11 @@
-import { varFade } from '@/components/animate';
-import { PATH_PAGE } from '@/routes/paths';
-import { bgGradient, textGradient } from '@/utils/cssStyles';
 import { Button, Typography } from '@mui/material';
 import { alpha, styled, useTheme } from '@mui/material/styles';
 import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
+import { varFade } from '@/components/animate';
+import { PATH_PAGE } from '@/routes/paths';
+import { bgGradient, textGradient } from '@/utils/cssStyles';
 
 const StyledDescription = styled('div')(({ theme }) => ({
   zIndex: 8,

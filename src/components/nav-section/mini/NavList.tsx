@@ -1,14 +1,9 @@
-import { useState, useEffect, useRef } from 'react';
-// react router dom
+import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-// hooks
-import useActiveLink from '@/hooks/useActiveLink';
-//
 import type { NavListProps } from '../types';
-import { StyledPopover } from './styles';
 import NavItem from './NavItem';
-
-// ----------------------------------------------------------------------
+import { StyledPopover } from './styles';
+import useActiveLink from '@/hooks/useActiveLink';
 
 type NavListRootProps = {
   data: NavListProps;
@@ -35,11 +30,9 @@ export default function NavList({ data, depth, hasChild }: NavListRootProps) {
   useEffect(() => {
     const appBarEl = Array.from(document.querySelectorAll('.MuiAppBar-root')) as Array<HTMLElement>;
 
-    // Reset styles when hover
     const styles = () => {
       document.body.style.overflow = '';
       document.body.style.padding = '';
-      // Apply for Window
       appBarEl.forEach((elem) => {
         elem.style.padding = '';
       });
@@ -90,8 +83,6 @@ export default function NavList({ data, depth, hasChild }: NavListRootProps) {
     </>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type NavListSubProps = {
   data: NavListProps[];

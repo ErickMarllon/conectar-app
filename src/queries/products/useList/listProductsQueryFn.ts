@@ -1,9 +1,9 @@
-import { handleError } from '@/errors/handleError';
-import { ProductsService } from '@/services/products/productsService';
-import type { IPaginatedResponse } from '@/shared/interfaces/IPaginate';
-import type { IProduct } from '@/shared/interfaces/IProduct';
 import { AxiosError } from 'axios';
 import type { useListProductsParams } from './type';
+import type { IPaginatedResponse } from '@/shared/interfaces/IPaginate';
+import type { IProduct } from '@/shared/interfaces/IProduct';
+import { handleError } from '@/errors/handleError';
+import { ProductsService } from '@/services/products/productsService';
 
 export const listProductsQueryFn = async (
   params: useListProductsParams, // params: Partial<IProduct>,

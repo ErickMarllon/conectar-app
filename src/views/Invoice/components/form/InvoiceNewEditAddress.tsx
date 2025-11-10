@@ -1,18 +1,12 @@
+import { Button, Divider, Stack, Typography } from '@mui/material';
 import { useState } from 'react';
-// form
 import { useFormContext } from 'react-hook-form';
-// @mui
-import { Stack, Divider, Typography, Button } from '@mui/material';
-// hooks
-import useResponsive from '@/hooks/useResponsive';
-// _mock
-import { _invoiceAddressFrom, _invoiceAddressTo } from '@/_mock/arrays';
-// components
-import Iconify from '@/components/iconify';
-//
 import InvoiceAddressListDialog from './InvoiceAddressListDialog';
+import { _invoiceAddressFrom, _invoiceAddressTo } from '@/_mock/arrays';
+import Iconify from '@/components/iconify';
+import useResponsive from '@/hooks/useResponsive';
 
-// ----------------------------------------------------------------------
+
 
 export default function InvoiceNewEditAddress() {
   const {
@@ -124,8 +118,6 @@ export default function InvoiceNewEditAddress() {
     </Stack>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type AddressInfoProps = {
   name: string;

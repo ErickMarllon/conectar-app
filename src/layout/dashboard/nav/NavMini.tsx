@@ -1,17 +1,10 @@
-// @mui
-import { Stack, Box } from '@mui/material';
-// config
-import { NAV } from '@/configs/global';
-// utils
-import { hideScrollbarX } from '@/utils/cssStyles';
-// components
-import Logo from '@/components/logo';
-import { NavSectionMini } from '@/components/nav-section';
-//
+import { Box, Stack } from '@mui/material';
 import navConfig from './config-navigation';
 import NavToggleButton from './NavToggleButton';
-
-// ----------------------------------------------------------------------
+import Logo from '@/components/logo';
+import { NavSectionMini } from '@/components/nav-section';
+import { NAV } from '@/configs/global';
+import { hideScrollbarX } from '@/utils/cssStyles';
 
 export default function NavMini() {
   return (

@@ -1,29 +1,24 @@
-import { useState } from 'react';
-import { sentenceCase } from 'change-case';
-// @mui
-import {
-  Link,
-  Stack,
-  Button,
-  TableRow,
-  Checkbox,
-  MenuItem,
-  TableCell,
-  IconButton,
-} from '@mui/material';
-// utils
-import { fDate } from '@/utils/formatTime';
-import { fCurrency } from '@/utils/formatNumber';
-// @types
-import type { IProduct } from '@/shared/interfaces/IProduct';
-// components
-import Label from '@/components/label';
-import Image from '@/components/image';
-import Iconify from '@/components/iconify';
-import MenuPopover from '@/components/menu-popover';
-import ConfirmDialog from '@/components/confirm-dialog';
 
-// ----------------------------------------------------------------------
+import {
+  Button,
+  Checkbox,
+  IconButton,
+  Link,
+  MenuItem,
+  Stack,
+  TableCell,
+  TableRow,
+} from '@mui/material';
+import { sentenceCase } from 'change-case';
+import { useState } from 'react';
+import type { IProduct } from '@/shared/interfaces/IProduct';
+import ConfirmDialog from '@/components/confirm-dialog';
+import Iconify from '@/components/iconify';
+import Image from '@/components/image';
+import Label from '@/components/label';
+import MenuPopover from '@/components/menu-popover';
+import { fCurrency } from '@/utils/formatNumber';
+import { fDate } from '@/utils/formatTime';
 
 type Props = {
   row: IProduct;

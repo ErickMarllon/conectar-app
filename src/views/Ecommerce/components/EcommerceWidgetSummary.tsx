@@ -1,14 +1,10 @@
-import type { ApexOptions } from 'apexcharts';
-// @mui
-import { alpha } from '@mui/material/styles';
-import { Box, Card, Typography, Stack, type CardProps } from '@mui/material';
-// utils
-import { fNumber, fPercent } from '@/utils/formatNumber';
-// components
-import Iconify from '@/components/iconify';
-import Chart, { useChart } from '@/components/chart';
 
-// ----------------------------------------------------------------------
+import { Box, Card, Stack, Typography, type CardProps } from '@mui/material';
+import { alpha } from '@mui/material/styles';
+import type { ApexOptions } from 'apexcharts';
+import Chart, { useChart } from '@/components/chart';
+import Iconify from '@/components/iconify';
+import { fNumber, fPercent } from '@/utils/formatNumber';
 
 interface Props extends CardProps {
   title: string;
@@ -85,8 +81,6 @@ export default function EcommerceWidgetSummary({
     </Card>
   );
 }
-
-// ----------------------------------------------------------------------
 
 type TrendingInfoProps = {
   percent: number;

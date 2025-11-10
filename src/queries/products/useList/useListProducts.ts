@@ -1,9 +1,9 @@
-import type { IPaginatedResponse } from '@/shared/interfaces/IPaginate';
-import type { IProduct } from '@/shared/interfaces/IProduct';
 import { useQuery, useQueryClient, type UseQueryOptions } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
-import { listProductsQueryFn } from './listProductsQueryFn';
 import type { useListProductsParams } from './type';
+import type { IPaginatedResponse } from '@/shared/interfaces/IPaginate';
+import type { IProduct } from '@/shared/interfaces/IProduct';
+import { listProductsQueryFn } from './listProductsQueryFn';
 
 type QueryError = AxiosError;
 type QueryFnData = IPaginatedResponse<IProduct>;

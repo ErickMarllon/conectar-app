@@ -1,18 +1,11 @@
-// form
-import { useFormContext, Controller } from 'react-hook-form';
-// @mui
 import { FormHelperText } from '@mui/material';
-//
-import { UploadAvatar, Upload, UploadBox, type UploadProps } from '../upload';
-
-// ----------------------------------------------------------------------
+import { Controller, useFormContext } from 'react-hook-form';
+import { Upload, UploadAvatar, UploadBox, type UploadProps } from '../upload';
 
 interface Props extends Omit<UploadProps, 'file'> {
   name: string;
   multiple?: boolean;
 }
-
-// ----------------------------------------------------------------------
 
 export function RHFUploadAvatar({ name, ...other }: Props) {
   const { control } = useFormContext();
@@ -43,8 +36,6 @@ export function RHFUploadAvatar({ name, ...other }: Props) {
   );
 }
 
-// ----------------------------------------------------------------------
-
 export function RHFUploadBox({ name, ...other }: Props) {
   const { control } = useFormContext();
 
@@ -58,8 +49,6 @@ export function RHFUploadBox({ name, ...other }: Props) {
     />
   );
 }
-
-// ----------------------------------------------------------------------
 
 export function RHFUpload({
   name,

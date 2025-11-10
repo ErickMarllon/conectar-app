@@ -1,14 +1,12 @@
-import { m } from 'framer-motion';
-import { Link as RouterLink } from 'react-router-dom';
 import { Button, Stack, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { PATH_AUTH, PATH_PAGE } from '@/routes/paths';
-import { textGradient } from '@/utils/cssStyles';
+import { m } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { Link as RouterLink } from 'react-router-dom';
 import { varFade } from '@/components/animate';
 import Iconify from '@/components/iconify';
-import { useTranslation } from 'react-i18next';
-
-// ----------------------------------------------------------------------
+import { PATH_AUTH, PATH_PAGE } from '@/routes/paths';
+import { textGradient } from '@/utils/cssStyles';
 
 const StyledDescription = styled('div')(({ theme }) => ({
   maxWidth: 480,

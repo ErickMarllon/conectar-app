@@ -1,10 +1,10 @@
-import { m } from 'framer-motion';
 import { Box, Button, Stack } from '@mui/material';
-import { PATH_FREE_VERSION, PATH_PAGE } from '@/routes/paths';
+import { m } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { Link as RouterLink } from 'react-router-dom';
 import { varFade } from '@/components/animate';
 import Iconify from '@/components/iconify';
-import { Link as RouterLink } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import { PATH_FREE_VERSION, PATH_PAGE } from '@/routes/paths';
 
 export default function Description() {
   const { t } = useTranslation();

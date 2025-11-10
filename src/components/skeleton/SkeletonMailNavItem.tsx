@@ -1,7 +1,4 @@
-// @mui
-import { Stack, Skeleton, type StackProps } from '@mui/material';
-
-// ----------------------------------------------------------------------
+import { Skeleton, Stack, type StackProps } from '@mui/material';
 
 export default function SkeletonMailNavItem({ sx, ...other }: StackProps) {
   return (

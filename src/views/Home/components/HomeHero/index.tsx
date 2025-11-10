@@ -1,12 +1,10 @@
 import { Box, Container, Grid } from '@mui/material';
 import { alpha, styled } from '@mui/material/styles';
+import Content from './Content';
+import Description from './Description';
+import { MotionContainer } from '@/components/animate';
 import useResponsive from '@/hooks/useResponsive';
 import { bgGradient } from '@/utils/cssStyles';
-import { MotionContainer } from '@/components/animate';
-import Description from './Description';
-import Content from './Content';
-
-// ----------------------------------------------------------------------
 
 const StyledRoot = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -45,8 +43,6 @@ const StyledEllipseBottom = styled('div')(({ theme }) => ({
   WebkitFilter: 'blur(100px)',
   backgroundColor: alpha(theme.palette.primary.darker, 0.08),
 }));
-
-// ----------------------------------------------------------------------
 
 export default function HomeHero() {
   const isDesktop = useResponsive('up', 'md');

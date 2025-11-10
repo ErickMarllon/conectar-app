@@ -1,6 +1,6 @@
-import { OrderDirection } from '@/shared/enums/orderDirection';
-import type { IFilterGeneric } from '@/shared/interfaces/IFilter';
 import { create } from 'zustand';
+import type { IFilterGeneric } from '@/shared/interfaces/IFilter';
+import { OrderDirection } from '@/shared/enums/orderDirection';
 
 interface UserFilterState extends IFilterGeneric {
   setFilters: (filters: Partial<IFilterGeneric>) => void;
