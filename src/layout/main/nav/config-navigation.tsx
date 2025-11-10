@@ -1,11 +1,6 @@
-// routes
-import { PATH_AUTH, PATH_DOCS, PATH_PAGE } from '@/routes/paths';
-// config
+import { PATH_AUTH, PATH_PAGE } from '@/routes/paths';
 import { PATH_AFTER_LOGIN } from '@/configs/global';
-// components
 import Iconify from '@/components/iconify';
-
-// ----------------------------------------------------------------------
 
 const navConfig = [
   {
@@ -27,9 +22,6 @@ const navConfig = [
           { id: 'contact', title: 'Contact us', path: PATH_PAGE.contact },
           { id: 'faqs', title: 'FAQs', path: PATH_PAGE.faqs },
           { id: 'pricing', title: 'Pricing', path: PATH_PAGE.pricing },
-          { id: 'payment', title: 'Payment', path: PATH_PAGE.payment },
-          { id: 'maintenance', title: 'Maintenance', path: PATH_PAGE.maintenance },
-          { id: 'comingSoon', title: 'Coming Soon', path: PATH_PAGE.comingSoon },
         ],
       },
       {
@@ -42,24 +34,10 @@ const navConfig = [
         ],
       },
       {
-        subheader: 'Error',
-        items: [
-          { id: 'page403', title: 'Page 403', path: PATH_PAGE.page403 },
-          { id: 'page404', title: 'Page 404', path: PATH_PAGE.page404 },
-          { id: 'page500', title: 'Page 500', path: PATH_PAGE.page500 },
-        ],
-      },
-      {
         subheader: 'Dashboard',
         items: [{ id: 'dashboard', title: 'Dashboard', path: PATH_AFTER_LOGIN }],
       },
     ],
-  },
-  {
-    id: 'docs',
-    title: 'Documentation',
-    icon: <Iconify icon="eva:book-open-fill" />,
-    path: PATH_DOCS.root,
   },
 ];
 
