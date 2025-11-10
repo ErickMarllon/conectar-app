@@ -18,7 +18,7 @@ export interface IAllLangs {
   systemValue: any;
   icon: string;
   currency: string;
-  currencySymbol?: string;
+  currencySymbol: string;
 }
 
 export const allLangs: Record<string, IAllLangs> = {
