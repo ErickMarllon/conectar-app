@@ -48,6 +48,7 @@ export default defineConfig(({ mode }) => {
         '@components': path.resolve(__dirname, 'src/components'),
         '@lib': path.resolve(__dirname, 'src/lib'),
         '@assets': path.resolve(__dirname, './public/assets'),
+        'lottie-web': 'lottie-web/build/player/lottie_light.js',
       },
     },
   };
