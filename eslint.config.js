@@ -1,11 +1,12 @@
 import js from '@eslint/js';
-import globals from 'globals';
+import tsParser from '@typescript-eslint/parser';
+import prettier from 'eslint-config-prettier';
+import importPlugin from 'eslint-plugin-import';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
-import tseslint from 'typescript-eslint';
-import prettier from 'eslint-config-prettier';
 import unusedImports from 'eslint-plugin-unused-imports';
-import tsParser from '@typescript-eslint/parser';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
   { ignores: ['dist'] },
@@ -19,6 +20,7 @@ export default tseslint.config(
       parserOptions: { ecmaFeatures: { jsx: true }, sourceType: 'module' },
     },
     plugins: {
+      import: importPlugin, 
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
       'unused-imports': unusedImports,
@@ -27,7 +29,6 @@ export default tseslint.config(
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
       '@typescript-eslint/no-explicit-any': 'off',
-      // 'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': 'off',
 
       'unused-imports/no-unused-imports': 'warn',
@@ -43,10 +44,30 @@ export default tseslint.config(
         },
       ],
 
+      'import/order': [
+        'error',
+        {
+          groups: [
+            'builtin',
+            'external',
+            'internal',
+            'type',
+            'parent',
+            'sibling',
+            'index',
+            'object',
+          ],
+          pathGroupsExcludedImportTypes: ['builtin'],
+
+          'newlines-between': 'never',
+          alphabetize: { order: 'asc', caseInsensitive: true },
+        },
+      ],
+
       'react/prop-types': 'off',
       'react/jsx-uses-react': 'off',
       'react/react-in-jsx-scope': 'off',
     },
     settings: { react: { version: 'detect' } },
-  },
+  }
 );
