@@ -4,32 +4,45 @@ import { defineConfig, loadEnv } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import svgr from 'vite-plugin-svgr';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd());
 
+  const plugins = [
+    react(),
+    tailwindcss(),
+    tsconfigPaths(),
+    svgr({
+      svgrOptions: {
+        icon: true,
+        prettier: false,
+        svgo: true,
+        svgoConfig: {
+          plugins: [
+            {
+              name: 'removeViewBox',
+              active: false,
+            },
+          ],
+        },
+      },
+    }),
+  ];
+
+  if (mode === 'analyze') {
+    plugins.push(
+      visualizer({
+        filename: `dist/bundle-analysis-${mode}.html`,
+        open: true,
+        gzipSize: true,
+      }) as any
+    );
+  }
+
   return {
     envDir: './',
-    plugins: [
-      react(),
-      tailwindcss(),
-      tsconfigPaths(),
-      svgr({
-        svgrOptions: {
-          icon: true,
-          prettier: false,
-          svgo: true,
-          svgoConfig: {
-            plugins: [
-              {
-                name: 'removeViewBox',
-                active: false,
-              },
-            ],
-          },
-        },
-      }),
-    ],
+    plugins,
     server: {
       port: Number(env.VITE_APP_PORT) || 3000,
       open: true,
@@ -38,6 +51,15 @@ export default defineConfig(({ mode }) => {
       },
     },
     build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'react-vendor': ['react', 'react-dom'],
+            'charts-vendor': ['react-apexcharts', 'apexcharts'],
+            'ui-vendor': ['@mui/material', '@emotion/react'],
+          }
+        }
+      },
       chunkSizeWarningLimit: 2000,
       outDir: 'dist',
       assetsInclude: ['**/*.json'],
