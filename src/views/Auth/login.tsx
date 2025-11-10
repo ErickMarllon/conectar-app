@@ -1,7 +1,7 @@
 import Login from './components/Login';
 import GuestGuard from '@/guard/GuestGuard';
 
-export function LoginPage() {
+export default function LoginPage() {
   return (
     <GuestGuard>
       <Login />

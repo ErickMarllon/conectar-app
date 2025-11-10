@@ -5,7 +5,7 @@ import Iconify from '../../components/iconify';
 import { PATH_AUTH } from '../../routes/paths';
 import AuthResetPasswordForm from './components/AuthResetPasswordForm';
 
-export function ResetPasswordPage() {
+export default function ResetPasswordPage() {
   return (
     <>
       <PasswordIcon sx={{ mb: 5, height: 96 }} />

@@ -3,7 +3,7 @@ import { Box, type CardProps, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import type { ColorSchema } from '@/theme/palette';
 import type { ApexOptions } from 'apexcharts';
-import Chart, { useChart } from '@/components/chart';
+import { Chart, useChart } from '@/components/chart';
 import Iconify from '@/components/iconify';
 import { fNumber } from '@/utils/formatNumber';
 

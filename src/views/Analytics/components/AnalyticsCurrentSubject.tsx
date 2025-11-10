@@ -2,7 +2,7 @@
 import { Card, CardHeader, type CardProps } from '@mui/material';
 import { styled, useTheme } from '@mui/material/styles';
 import type { ApexOptions } from 'apexcharts';
-import Chart, { useChart } from '@/components/chart';
+import { Chart, useChart } from '@/components/chart';
 
 const CHART_HEIGHT = 400;
 

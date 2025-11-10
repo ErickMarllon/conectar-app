@@ -1,10 +1,8 @@
 import { useTheme, alpha } from '@mui/material/styles';
 import merge from 'lodash/merge';
 import type { ApexOptions } from 'apexcharts';
-// @mui
-
-// ----------------------------------------------------------------------
-
+ 
+ 
 export default function useChart(options?: ApexOptions) {
   const theme = useTheme();
 

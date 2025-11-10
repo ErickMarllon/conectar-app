@@ -4,7 +4,8 @@ import { SentIcon } from '../../assets/icons';
 import Iconify from '../../components/iconify';
 import { PATH_AUTH } from '../../routes/paths';
 import AuthNewPasswordForm from './components/AuthNewPasswordForm';
-export function NewPasswordPage() {
+
+export default function NewPasswordPage() {
   return (
     <>
       <SentIcon sx={{ mb: 5, height: 96 }} />

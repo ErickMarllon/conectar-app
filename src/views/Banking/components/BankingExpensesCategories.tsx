@@ -2,7 +2,7 @@
 import { Box, Card, CardHeader, Divider, Stack, Typography, type CardProps } from '@mui/material';
 import { styled, useTheme } from '@mui/material/styles';
 import type { ApexOptions } from 'apexcharts';
-import Chart, { useChart } from '@/components/chart';
+import { Chart, useChart } from '@/components/chart';
 import useResponsive from '@/hooks/useResponsive';
 
 const StyledRoot = styled(Card)(({ theme }) => ({

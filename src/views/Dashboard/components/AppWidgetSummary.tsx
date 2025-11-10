@@ -2,8 +2,8 @@
 import { Box, Card, Stack, Typography, type CardProps } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import type { ApexOptions } from 'apexcharts';
-import Chart from '@/components/chart';
-import Iconify from '@/components/iconify';
+import { Chart } from '@/components/chart';
+ import Iconify from '@/components/iconify';
 import { fNumber, fPercent } from '@/utils/formatNumber';
 
 interface Props extends CardProps {

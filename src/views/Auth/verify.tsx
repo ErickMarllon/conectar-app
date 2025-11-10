@@ -5,7 +5,7 @@ import Iconify from '../../components/iconify';
 import { PATH_AUTH } from '../../routes/paths';
 import AuthVerifyCodeForm from './components/AuthVerifyCodeForm';
 
-export function VerifyCodePage() {
+export default function VerifyCodePage() {
   return (
     <>
       <EmailInboxIcon sx={{ mb: 5, height: 96 }} />

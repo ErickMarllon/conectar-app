@@ -3,7 +3,7 @@ import { Box, Card, CardHeader, Stack, Typography, type CardProps } from '@mui/m
 import { alpha, useTheme } from '@mui/material/styles';
 import sumBy from 'lodash/sumBy';
 import type { ApexOptions } from 'apexcharts';
-import Chart, { useChart } from '@/components/chart';
+import { Chart, useChart } from '@/components/chart';
 import { fNumber } from '@/utils/formatNumber';
 
 type ItemProps = {

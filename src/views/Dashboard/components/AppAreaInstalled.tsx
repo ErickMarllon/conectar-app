@@ -1,7 +1,7 @@
 import { Box, Card, CardHeader, type CardProps } from '@mui/material';
 import { useState } from 'react';
 import type { ApexOptions } from 'apexcharts';
-import Chart, { useChart } from '@/components/chart';
+import { Chart, useChart } from '@/components/chart';
 import { CustomSmallSelect } from '@/components/custom-input';
 
 interface Props extends CardProps {

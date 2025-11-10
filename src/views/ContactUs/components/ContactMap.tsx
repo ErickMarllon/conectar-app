@@ -1,10 +1,13 @@
 import { Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import type { LatLngTuple } from 'leaflet';
 import Iconify from '@/components/iconify';
-import { MapControl, MapMarker, MapPopup } from '@/components/map';
+
+const MapPopup = React.lazy(() => import('@/components/map/MapPopup'));
+const MapMarker = React.lazy(() => import('@/components/map/MapMarker'));
+const MapControl = React.lazy(() => import('@/components/map/MapControl'));
 
 const StyledRoot = styled('div')(({ theme }) => ({
   zIndex: 0,

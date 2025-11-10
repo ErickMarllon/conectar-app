@@ -1,5 +1,5 @@
 import Register from './components/Register';
 
-export function RegisterUnprotectedPage() {
+export default function RegisterUnprotectedPage() {
   return <Register />;
 }

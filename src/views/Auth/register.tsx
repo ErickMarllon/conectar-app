@@ -1,7 +1,7 @@
 import Register from './components/Register';
 import GuestGuard from '@/guard/GuestGuard';
 
-export function RegisterPage() {
+export default function RegisterPage() {
   return (
     <GuestGuard>
       <Register />
