@@ -1,18 +1,11 @@
-// @mui
-import { useTheme } from '@mui/material/styles';
-import { AppBar, Toolbar, Box, type BoxProps, Link } from '@mui/material';
-// config
-import { HEADER } from '../../configs/global';
-// utils
-import { bgBlur } from '../../utils/cssStyles';
-// routes
-import { PATH_PAGE } from '../../routes/paths';
-// components
-import Logo from '../../components/logo';
-
-import { Link as RouterLink } from 'react-router-dom';
 import SettingsDrawer from '@/components/settings/drawer';
-// ----------------------------------------------------------------------
+import { AppBar, Box, type BoxProps, Link, Toolbar } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import { Link as RouterLink } from 'react-router-dom';
+import Logo from '../../components/logo';
+import { HEADER } from '../../configs/global';
+import { PATH_PAGE } from '../../routes/paths';
+import { bgBlur } from '../../utils/cssStyles';
 
 type Props = {
   isOffset: boolean;
