@@ -15,7 +15,6 @@ export { GeneralFilePage } from './File';
 export { FileManagerPage } from './FileManager';
 export { Home } from './Home';
 export { MaintenancePage } from './maintenance';
-export { NotFound } from './NotFound';
 export { PaymentPage } from './Payment';
 export { PricingPage } from './Pricing';
 export { KanbanPage } from './Kanban';

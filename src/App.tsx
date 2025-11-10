@@ -44,7 +44,6 @@ import {
   LoginPage,
   MaintenancePage,
   NewPasswordPage,
-  NotFound,
   Page403,
   Page404,
   Page500,
@@ -93,6 +92,7 @@ function App() {
                       path={PATH_AUTH.root}
                       element={<Navigate to={PATH_AUTH.login} replace />}
                     />
+
                     <Route path={PATH_AUTH.login} element={<LoginPage />} />
                     <Route path={PATH_AUTH.register} element={<RegisterPage />} />
 
@@ -103,7 +103,6 @@ function App() {
                   </Route>
 
                   <Route element={<SimpleLayout />}>
-                    <Route path={PATH_PAGE.pricing} element={<PricingPage />} />
                     <Route path={PATH_PAGE.payment} element={<PaymentPage />} />
                   </Route>
 
@@ -190,6 +189,7 @@ function App() {
                     <Route path={PATH_PAGE.about} element={<AboutPage />} />
                     <Route path={PATH_PAGE.faqs} element={<FaqPage />} />
                     <Route path={PATH_PAGE.contact} element={<ContactPage />} />
+                    <Route path={PATH_PAGE.pricing} element={<PricingPage />} />
                   </Route>
 
                   <Route element={<CompactLayout />}>
@@ -202,7 +202,6 @@ function App() {
                     <Route path={PATH_AUTH.resetPassword} element={<ResetPasswordPage />} />
                     <Route path={PATH_AUTH.verify} element={<VerifyCodePage />} />
                     <Route path={PATH_AUTH.newPassword} element={<NewPasswordPage />} />
-                    <Route path="/notfound" element={<NotFound />} />
                   </Route>
                 </Routes>
               </BrowserRouter>
