@@ -1,32 +1,23 @@
-// @mui
-import { AppBar, Box, Button, Container, Stack, Toolbar, type BoxProps } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
-// hooks
+import Logo from '@/components/logo';
+import SettingsDrawer from '@/components/settings/drawer';
+import { HEADER } from '@/configs/global';
 import useOffSetTop from '@/hooks/useOffSetTop';
 import useResponsive from '@/hooks/useResponsive';
-// utils
-import { bgBlur } from '@/utils/cssStyles';
-// config
-import { HEADER } from '@/configs/global';
-// routes
 import { PATH_PAGE } from '@/routes/paths';
-// components
-import Logo from '@/components/logo';
-//
-import SettingsDrawer from '@/components/settings/drawer';
+import { bgBlur } from '@/utils/cssStyles';
+import { AppBar, Box, Button, Container, Link, Stack, Toolbar, type BoxProps } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import { useTranslation } from 'react-i18next';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
+import LanguagePopover from '../dashboard/header/LanguagePopover';
 import navConfig from './nav/config-navigation';
 import NavDesktop from './nav/desktop';
 import NavMobile from './nav/mobile';
-import { Link as RouterLink } from 'react-router-dom';
-import LanguagePopover from '../dashboard/header/LanguagePopover';
-import { useTranslation } from 'react-i18next';
-
-// ----------------------------------------------------------------------
 
 export default function Header() {
   const theme = useTheme();
   const { t } = useTranslation();
-
+  const { pathname } = useLocation();
   const isDesktop = useResponsive('up', 'md');
 
   const isOffset = useOffSetTop(HEADER.H_MAIN_DESKTOP);
@@ -78,18 +69,24 @@ export default function Header() {
               ml: theme.direction == 'ltr' ? 4 : 0,
             }}
           >
-            <Button
-              variant="contained"
-              component={RouterLink}
-              size={isDesktop ? 'medium' : 'small'}
-              rel="noopener"
-              sx={{
-                whiteSpace: 'nowrap',
-              }}
-              to={PATH_PAGE.pricing}
-            >
-              {t('actions:purchasenow')}
-            </Button>
+            {pathname !== PATH_PAGE.pricing ? (
+              <Button
+                variant="contained"
+                component={RouterLink}
+                size={isDesktop ? 'medium' : 'small'}
+                rel="noopener"
+                sx={{
+                  whiteSpace: 'nowrap',
+                }}
+                to={PATH_PAGE.pricing}
+              >
+                {t('actions:purchasenow')}
+              </Button>
+            ) : (
+              <Link component={RouterLink} to={PATH_PAGE.faqs} variant="subtitle2" color="inherit">
+                Need Help?
+              </Link>
+            )}
 
             <LanguagePopover />
             <SettingsDrawer />
