@@ -1,17 +1,10 @@
-import { useState } from 'react';
-// react router dom
-import { useLocation } from 'react-router-dom';
-// @mui
-import { Collapse } from '@mui/material';
-// hooks
-import useActiveLink from '@/hooks/useActiveLink';
-// components
 import { NavSectionVertical } from '@/components/nav-section';
-//
+import useActiveLink from '@/hooks/useActiveLink';
+import { Collapse } from '@mui/material';
+import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import type { NavItemProps } from '../types';
 import NavItem from './NavItem';
-
-// ----------------------------------------------------------------------
 
 type NavListProps = {
   item: NavItemProps;
