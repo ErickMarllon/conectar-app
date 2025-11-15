@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import PricingPlanCard from './PricingPlanCard';
 import { varFade } from '@/components/animate';
+import Loading from '@/components/loading';
 import { useListPlan } from '@/queries/plan/list/useListPlan';
 import { usePlanStore } from '@/stores/plan.store';
 
@@ -11,7 +12,7 @@ export function Content() {
   const { selectedInterval, toggleInterval } = usePlanStore();
   const { t } = useTranslation();
 
-  const { data } = useListPlan({
+  const { data, isLoading } = useListPlan({
     params: {
       limit: 6,
     },
@@ -26,7 +27,16 @@ export function Content() {
     () => data?.data?.find((plan) => plan?.tier?.toLowerCase() === 'enterprise')?.details?.discount,
     [data],
   );
-
+  if (isLoading) {
+    return (
+      <Loading
+        mode="global"
+        sx={(theme) => ({
+          background: theme.palette.background.default,
+        })}
+      />
+    );
+  }
   return (
     <>
       <motion.div

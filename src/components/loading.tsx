@@ -1,4 +1,4 @@
-import { alpha, Backdrop, Typography } from '@mui/material';
+import { alpha, Backdrop, Typography, type SxProps, type Theme } from '@mui/material';
 import { lazy, useEffect } from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
 import animationData from '../assets/animation/Animation-Loading.json';
@@ -31,6 +31,7 @@ const _loadingVariants = tv({
 });
 interface LoadingProps extends VariantProps<typeof _loadingVariants> {
   className?: string;
+  sx?: SxProps<Theme>;
 }
 
 const animation = (
@@ -43,9 +44,9 @@ const animation = (
   />
 );
 
-export default function Loading({ mode }: LoadingProps) {
-  if (mode === 'modal') return LoadingModal();
-  if (mode === 'global') return LoadingGlobal();
+export default function Loading({ ...props }: LoadingProps) {
+  if (props?.mode === 'modal') return LoadingModal(props);
+  if (props?.mode === 'global') return LoadingGlobal({ ...props });
 
   return (
     <MotionContainer>
@@ -60,7 +61,7 @@ export default function Loading({ mode }: LoadingProps) {
   );
 }
 
-export function LoadingGlobal() {
+export function LoadingGlobal({ sx }: LoadingProps) {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     return () => {
@@ -69,23 +70,26 @@ export function LoadingGlobal() {
   }, []);
   return (
     <Backdrop
-      invisible={true}
-      sx={(theme) => ({
-        background: alpha(theme.palette.grey[900], 0.4),
-        zIndex: theme.zIndex.drawer + 10,
-        position: 'fixed',
-        overflow: 'hidden',
-        maxHeight: '100dvh',
-        minHeight: '100dvh',
-        height: '100dvh',
-        '& > div': {
-          zIndex: `${theme.zIndex.drawer + 20} `,
+      invisible={false}
+      sx={[
+        (theme) => ({
+          background: alpha(theme.palette.grey[900], 0.4),
+          zIndex: theme.zIndex.drawer + 10,
           position: 'fixed',
+          overflow: 'hidden',
           maxHeight: '100dvh',
           minHeight: '100dvh',
           height: '100dvh',
-        },
-      })}
+          '& > div': {
+            zIndex: `${theme.zIndex.drawer + 20} `,
+            position: 'fixed',
+            maxHeight: '100dvh',
+            minHeight: '100dvh',
+            height: '100dvh',
+          },
+        }),
+        ...(sx ? (Array.isArray(sx) ? sx : [sx]) : []),
+      ]}
       open={true}
     >
       <Typography visibility={'hidden'} position={'absolute'}>
@@ -99,21 +103,24 @@ export function LoadingGlobal() {
   );
 }
 
-export function LoadingModal() {
+export function LoadingModal({ sx }: LoadingProps) {
   return (
     <Backdrop
       invisible={true}
-      sx={{
-        position: 'absolute',
-        overflow: 'hidden',
-        height: '100%',
-        zIndex: 100,
-
-        '& > div': {
+      sx={[
+        {
           position: 'absolute',
+          overflow: 'hidden',
+          height: '100%',
           zIndex: 100,
+
+          '& > div': {
+            position: 'absolute',
+            zIndex: 100,
+          },
         },
-      }}
+        ...(sx ? (Array.isArray(sx) ? sx : [sx]) : []),
+      ]}
       open={true}
     >
       <Typography visibility={'hidden'} position={'absolute'}>

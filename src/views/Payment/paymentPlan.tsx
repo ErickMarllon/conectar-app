@@ -42,7 +42,14 @@ export function PaymentPlanPage() {
   const onSubmit = (data: any) => console.log(data);
 
   if (isLoading) {
-    return <Loading mode="global" />;
+    return (
+      <Loading
+        mode="global"
+        sx={(theme) => ({
+          background: theme.palette.background.default,
+        })}
+      />
+    );
   }
   return (
     <Container
