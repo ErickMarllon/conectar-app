@@ -1,6 +1,6 @@
 import { Box, Button, Stack, Switch, Tab, Tabs, Typography } from '@mui/material';
 import { motion } from 'motion/react';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, type Dispatch, type SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
 import PlanCard from './PlanCard';
 import { varFade } from '@/components/animate';
@@ -9,13 +9,16 @@ import { useListPlan } from '@/queries/plan/list/useListPlan';
 import { PATH_PAGE } from '@/routes/paths';
 import { usePlanStore } from '@/stores/plan.store';
 
-export default function Content() {
+interface Props {
+  onLoading: Dispatch<SetStateAction<boolean>>;
+}
+export default function Content({ onLoading }: Props) {
   const isDesktop = useResponsive('up', 'md');
   const { t } = useTranslation();
   const { selectedInterval, toggleInterval } = usePlanStore();
   const [currentTab, setCurrentTab] = useState<string>('Free');
 
-  const { data } = useListPlan({
+  const { data, isLoading } = useListPlan({
     params: {
       limit: 6,
     },
@@ -79,6 +82,9 @@ export default function Content() {
     () => data?.data?.find((plan) => plan?.tier?.toLowerCase() === 'enterprise')?.details?.discount,
     [data],
   );
+  useEffect(() => {
+    onLoading(isLoading);
+  }, [isLoading, onLoading]);
   return (
     <>
       <motion.div

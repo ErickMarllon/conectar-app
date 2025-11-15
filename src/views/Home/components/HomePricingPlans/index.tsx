@@ -1,5 +1,6 @@
 import { Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { useState } from 'react';
 import Content from './Content';
 import Description from './Description';
 import { MotionViewport } from '@/components/animate';
@@ -13,11 +14,16 @@ const StyledRoot = styled('div')(({ theme }) => ({
 }));
 
 export default function HomePricingPlans() {
+  const [isLoading, setIsLoading] = useState(true);
   return (
-    <StyledRoot>
+    <StyledRoot
+      style={{
+        display: isLoading ? 'none ' : 'block',
+      }}
+    >
       <Container component={MotionViewport}>
         <Description />
-        <Content />
+        <Content onLoading={setIsLoading} />
       </Container>
     </StyledRoot>
   );
