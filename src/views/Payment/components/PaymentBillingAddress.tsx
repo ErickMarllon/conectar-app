@@ -38,6 +38,3 @@ export default function PaymentBillingAddress() {
     </div>
   );
 }
-
-// Client ID= AW4esy0HIgXkarY2nwYn1T2aS9QjwhcaanNf8VrdY_cjgMAQTP1rKVF_wGrOpcEgTTan0yvWtENaAuSl
-// Secret key 1= EMYlRcrj-dAZrWuEVCFEBF4iWemOeuEuowSe2jGQqBdM8IIZX8o-fufVVg9ycHxkQeRmnBrmAzCgcNHH
