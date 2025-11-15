@@ -43,7 +43,6 @@ const CARD_OPTIONS = [
 
 export default function PaymentMethods() {
   const [method, setMethod] = useState('paypal');
-  const { slug } = useParams<{ slug: string }>();
 
   const [open, setOpen] = useState(false);
 
