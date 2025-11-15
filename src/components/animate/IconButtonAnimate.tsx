@@ -2,7 +2,6 @@ import { Box, IconButton, type IconButtonProps } from '@mui/material';
 import { m } from 'framer-motion';
 import { forwardRef } from 'react';
 
-
 const IconButtonAnimate = forwardRef<HTMLButtonElement, IconButtonProps>(
   ({ children, size = 'medium', ...other }, ref) => (
     <AnimateWrap size={size}>

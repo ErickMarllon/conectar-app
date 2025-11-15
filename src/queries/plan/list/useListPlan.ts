@@ -19,6 +19,7 @@ type useListPlanProps = {
 
 export const useListPlan = ({ params, options }: useListPlanProps = {} as useListPlanProps) => {
   const queryKey: QueryKeyType = ['plan', params];
+
   return useQuery<QueryFnData, QueryError, QueryFnData, QueryKeyType>({
     queryKey,
     queryFn: () => queryFn(params),

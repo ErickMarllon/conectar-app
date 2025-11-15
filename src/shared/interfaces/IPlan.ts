@@ -4,6 +4,8 @@ export interface IPlanDetail {
   id: string;
   plan_id: string;
   price?: number;
+  discount?: number;
+  original_price?: number;
   billing_period?: string;
   cta_label?: string;
   included_features?: string[];

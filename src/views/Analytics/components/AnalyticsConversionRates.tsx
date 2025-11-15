@@ -3,7 +3,6 @@ import type { ApexOptions } from 'apexcharts';
 import { Chart, useChart } from '@/components/chart';
 import { fNumber } from '@/utils/formatNumber';
 
-
 interface Props extends CardProps {
   title?: string;
   subheader?: string;

@@ -1,4 +1,3 @@
-
 import { Box, type CardProps, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import type { ColorSchema } from '@/theme/palette';

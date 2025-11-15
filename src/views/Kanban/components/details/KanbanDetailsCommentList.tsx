@@ -5,7 +5,6 @@ import Image from '@/components/image';
 import Lightbox from '@/components/lightbox';
 import { fToNow } from '@/utils/formatTime';
 
-
 type Props = {
   comments: IKanbanComment[];
 };

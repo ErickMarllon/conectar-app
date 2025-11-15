@@ -1,4 +1,3 @@
-
 import { Box, Button, Container, Grid, LinearProgress, Typography } from '@mui/material';
 import { alpha, styled, useTheme } from '@mui/material/styles';
 import { m } from 'framer-motion';

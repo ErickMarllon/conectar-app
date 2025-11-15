@@ -1,4 +1,3 @@
-
 import { Avatar, Box, type BoxProps, CardHeader, Paper, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useRef } from 'react';

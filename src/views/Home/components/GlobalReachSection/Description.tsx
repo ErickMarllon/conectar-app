@@ -93,7 +93,6 @@ export default function Description() {
         <Button
           variant="contained"
           component={RouterLink}
-          rel="noopener"
           sx={{
             mt: 3,
             whiteSpace: 'nowrap',

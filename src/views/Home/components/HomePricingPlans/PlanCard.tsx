@@ -1,5 +1,6 @@
 import { Box, Button, Divider, Stack, Typography, type StackProps } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import { Link as RouterLink } from 'react-router-dom';
 import type { IPlan } from '@/shared/interfaces/IPlan';
 import { PlanFreeIcon, PlanPremiumIcon, PlanStarterIcon } from '@/assets/icons';
 import Iconify from '@/components/iconify';
@@ -152,9 +153,8 @@ export default function PlanCard({ plan, idx, sx, ...other }: PlanCardProps) {
       <Stack alignItems="flex-end" position="absolute" bottom={20} right={10}>
         <Button
           size="small"
-          target="_blank"
-          rel="noopener"
-          href={PATH_PAGE.pricing}
+          component={RouterLink}
+          to={PATH_PAGE.pricing}
           endIcon={<Iconify icon="eva:chevron-right-fill" />}
           sx={{
             textAlign: 'center',

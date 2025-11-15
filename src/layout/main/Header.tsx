@@ -2,10 +2,10 @@ import { AppBar, Box, Button, Container, Link, Stack, Toolbar, type BoxProps } f
 import { useTheme } from '@mui/material/styles';
 import { useTranslation } from 'react-i18next';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
-import LanguagePopover from '../dashboard/header/LanguagePopover';
 import navConfig from './nav/config-navigation';
 import NavDesktop from './nav/desktop';
 import NavMobile from './nav/mobile';
+import LanguagePopover from '@/components/LanguagePopover';
 import Logo from '@/components/logo';
 import SettingsDrawer from '@/components/settings/drawer';
 import { HEADER } from '@/configs/global';

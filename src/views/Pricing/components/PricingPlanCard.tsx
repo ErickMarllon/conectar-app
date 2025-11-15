@@ -7,18 +7,20 @@ import Label from '@/components/label';
 import { useCurrencyConverter } from '@/hooks/ useCurrencyConverter';
 import useLocales from '@/hooks/useLocales';
 import { allLangs } from '@/locales/config-lang';
+import { PATH_PAGE } from '@/routes/paths';
 
 interface Props extends CardProps {
-  card: IPlan;
+  plan: IPlan;
   index: number;
+ 
 }
 
-export default function PricingPlanCard({ card, index, sx, ...other }: Props) {
+export default function PricingPlanCard({ plan, index,   sx, ...other }: Props) {
   const { convert } = useCurrencyConverter();
   const { t } = useTranslation();
   const { currentLang } = useLocales();
 
-  const { tier, interval, features, details } = card;
+  const { tier, interval, features, details } = plan;
   function cleanString(str?: string): string {
     return str
       ? str
@@ -144,6 +146,7 @@ export default function PricingPlanCard({ card, index, sx, ...other }: Props) {
           fullWidth
           size="large"
           variant="contained"
+          href={PATH_PAGE.paymentPlanSlug(plan.tier)}
           sx={{
             position: 'absolute',
           }}

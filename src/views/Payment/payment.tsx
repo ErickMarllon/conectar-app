@@ -8,50 +8,48 @@ export function PaymentPage() {
   const isDesktop = useResponsive('up', 'md');
 
   return (
-    <>
-      <Container
-        sx={{
-          pt: 15,
-          pb: 10,
-          minHeight: 1,
-        }}
-      >
-        <Typography variant="h3" align="center" paragraph>
-          Let&apos;s finish powering you up!
-        </Typography>
+    <Container
+      sx={{
+        pt: 15,
+        pb: 10,
+        minHeight: 1,
+      }}
+    >
+      <Typography variant="h3" align="center">
+        Let&apos;s finish powering you up!
+      </Typography>
 
-        <Typography align="center" sx={{ color: 'text.secondary', mb: 5 }}>
-          Professional plan is right for you.
-        </Typography>
+      <Typography align="center" sx={{ color: 'text.secondary', mb: 5 }}>
+        Professional plan is right for you.
+      </Typography>
 
-        <Grid container spacing={isDesktop ? 3 : 5}>
-          <Grid size={{ xs: 12, md: 8 }}>
-            <Box
-              gap={5}
-              display="grid"
-              gridTemplateColumns={{
-                xs: 'repeat(1, 1fr)',
-                md: 'repeat(2, 1fr)',
-              }}
-              sx={{
-                p: { md: 5 },
-                borderRadius: 2,
-                border: (theme) => ({
-                  md: `dashed 1px ${theme.palette.divider}`,
-                }),
-              }}
-            >
-              <PaymentBillingAddress />
+      <Grid container spacing={isDesktop ? 3 : 5}>
+        <Grid size={{ xs: 12, md: 8 }}>
+          <Box
+            gap={5}
+            display="grid"
+            gridTemplateColumns={{
+              xs: 'repeat(1, 1fr)',
+              md: 'repeat(2, 1fr)',
+            }}
+            sx={{
+              p: { md: 5 },
+              borderRadius: 2,
+              border: (theme) => ({
+                md: `dashed 1px ${theme.palette.divider}`,
+              }),
+            }}
+          >
+            <PaymentBillingAddress />
 
-              <PaymentMethods />
-            </Box>
-          </Grid>
-
-          <Grid sx={{ xs: 12, md: 4 }}>
-            <PaymentSummary />
-          </Grid>
+            <PaymentMethods />
+          </Box>
         </Grid>
-      </Container>
-    </>
+
+        <Grid sx={{ xs: 12, md: 4 }}>
+          <PaymentSummary />
+        </Grid>
+      </Grid>
+    </Container>
   );
 }

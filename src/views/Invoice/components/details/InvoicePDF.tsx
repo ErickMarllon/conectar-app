@@ -4,7 +4,6 @@ import styles from './InvoiceStyle';
 import { fCurrency } from '@/utils/formatNumber';
 import { fDate } from '@/utils/formatTime';
 
-
 type Props = {
   invoice: IInvoice;
 };

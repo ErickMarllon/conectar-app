@@ -1,4 +1,3 @@
-
 import { Box, Card, CardHeader, Stack, Typography, type CardProps } from '@mui/material';
 import { alpha, useTheme } from '@mui/material/styles';
 import sumBy from 'lodash/sumBy';

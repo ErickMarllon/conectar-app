@@ -1,7 +1,6 @@
 import { Autocomplete, type AutocompleteProps, TextField } from '@mui/material';
 import { Controller, useFormContext } from 'react-hook-form';
 
-
 interface Props<
   T,
   Multiple extends boolean | undefined,

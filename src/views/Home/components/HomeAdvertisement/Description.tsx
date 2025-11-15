@@ -53,9 +53,8 @@ export default function Description() {
             color="inherit"
             size="large"
             variant="outlined"
-            target="_blank"
-            rel="noopener"
-            href={PATH_FREE_VERSION}
+            component={RouterLink}
+            to={PATH_FREE_VERSION}
             endIcon={<Iconify icon="eva:external-link-fill" width={16} sx={{ mr: 0.5 }} />}
             sx={{ color: 'common.white', '&:hover': { borderColor: 'currentColor' } }}
           >

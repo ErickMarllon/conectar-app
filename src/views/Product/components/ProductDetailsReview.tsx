@@ -7,8 +7,6 @@ import ProductDetailsReviewList from './ProductDetailsReviewList';
 import Iconify from '@/components/iconify';
 import { fShortenNumber } from '@/utils/formatNumber';
 
-
-
 type Props = {
   product: IProduct;
 };

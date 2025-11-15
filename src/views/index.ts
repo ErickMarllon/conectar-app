@@ -15,11 +15,11 @@ export { GeneralFilePage } from './File';
 export { FileManagerPage } from './FileManager';
 export { Home } from './Home';
 export { MaintenancePage } from './maintenance';
-export { PaymentPage } from './Payment';
 export { PricingPage } from './Pricing';
 export { KanbanPage } from './Kanban';
 
 export * from './Auth';
+export * from './Payment';
 export * from './Ecommerce';
 export * from './Product';
 export * from './User';

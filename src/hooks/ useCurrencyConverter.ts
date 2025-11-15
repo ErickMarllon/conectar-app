@@ -62,6 +62,7 @@ export const useCurrencyConverter = (): UseCurrencyConverterReturn => {
       return amount;
     }
   };
+
   const getCurrencySymbol = (currency: string): string => {
     const foundLang = allLangsArray.find((lang) => lang.currency === currency) ?? defaultLang;
 

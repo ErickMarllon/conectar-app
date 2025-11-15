@@ -11,8 +11,8 @@ import 'yet-another-react-lightbox/plugins/thumbnails.css';
 import 'yet-another-react-lightbox/styles.css';
 import '../src/locales/i18n.ts';
 import App from './App.tsx';
-import { reportWebVitals } from './reportWebVitals.ts';
+// import { reportWebVitals } from './reportWebVitals.ts';
 import './styles/global.css';
 
 createRoot(document.getElementById('root')!).render(<App />);
-reportWebVitals(console.info);
+// reportWebVitals(console.info);

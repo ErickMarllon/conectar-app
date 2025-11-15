@@ -24,8 +24,6 @@ import useDoubleClick from '@/hooks/useDoubleClick';
 import { fData } from '@/utils/formatNumber';
 import { fDate } from '@/utils/formatTime';
 
-
-
 type Props = {
   row: IFileManager;
   selected: boolean;

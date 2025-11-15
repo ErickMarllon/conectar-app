@@ -9,7 +9,6 @@ import {
 } from '@mui/material';
 import { Controller, useFormContext } from 'react-hook-form';
 
-
 type Props = RadioGroupProps & {
   name: string;
   options: { label: string; value: any }[];

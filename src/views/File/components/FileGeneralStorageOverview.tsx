@@ -1,4 +1,3 @@
-
 import { Avatar, Card, Stack, Typography, type CardProps } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import type { ApexOptions } from 'apexcharts';

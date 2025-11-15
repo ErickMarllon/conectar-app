@@ -3,7 +3,6 @@ import { useTheme } from '@mui/material/styles';
 import { forwardRef } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
-
 export interface LogoProps extends BoxProps {
   disabledLink?: boolean;
 }

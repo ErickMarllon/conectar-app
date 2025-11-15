@@ -8,6 +8,7 @@ import { PlanService } from '@/services/plan/planService';
 export const queryFn = async (params: IList): Promise<IPaginatedResponse<IPlan>> => {
   try {
     const response = await PlanService.list(params);
+
     return response.data;
   } catch (error) {
     const axiosError = error as AxiosError;

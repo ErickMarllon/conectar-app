@@ -10,6 +10,7 @@ import {
   Typography,
 } from '@mui/material';
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import PaymentNewCardDialog from './PaymentNewCardDialog';
 import Iconify from '@/components/iconify';
 
@@ -42,6 +43,7 @@ const CARD_OPTIONS = [
 
 export default function PaymentMethods() {
   const [method, setMethod] = useState('paypal');
+  const { slug } = useParams<{ slug: string }>();
 
   const [open, setOpen] = useState(false);
 
@@ -150,8 +152,10 @@ function PaymentOption({
             select
             fullWidth
             label="Card"
-            SelectProps={{
-              native: true,
+            slotProps={{
+              select: {
+                native: true,
+              },
             }}
           >
             {CARD_OPTIONS.map((card) => (

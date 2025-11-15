@@ -5,6 +5,7 @@ import Logo from '../../components/logo';
 import { HEADER } from '../../configs/global';
 import { PATH_PAGE } from '../../routes/paths';
 import { bgBlur } from '../../utils/cssStyles';
+import LanguagePopover from '@/components/LanguagePopover';
 import SettingsDrawer from '@/components/settings/drawer';
 
 type Props = {
@@ -38,6 +39,7 @@ export default function Header({ isOffset }: Props) {
         <Logo />
 
         <Box sx={{ height: 1, display: 'flex', gap: 2, alignItems: 'center' }}>
+          <LanguagePopover />
           <Link component={RouterLink} to={PATH_PAGE.faqs} variant="subtitle2" color="inherit">
             Need Help?
           </Link>

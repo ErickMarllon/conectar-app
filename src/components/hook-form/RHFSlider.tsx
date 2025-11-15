@@ -1,7 +1,6 @@
 import { FormHelperText, Slider, type SliderProps } from '@mui/material';
 import { Controller, useFormContext } from 'react-hook-form';
 
-
 type Props = SliderProps & {
   name: string;
   helperText?: React.ReactNode;

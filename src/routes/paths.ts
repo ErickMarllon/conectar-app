@@ -27,6 +27,7 @@ export const PATH_PAGE = {
   maintenance: '/maintenance',
   pricing: '/pricing',
   payment: '/payment',
+  paymentPlan: '/payment/plan/:slug',
   about: '/about-us',
   contact: '/contact-us',
   faqs: '/faqs',
@@ -34,6 +35,7 @@ export const PATH_PAGE = {
   page404: '/404',
   page500: '/500',
   components: '/components',
+  paymentPlanSlug: (slug: string) => `/payment/plan/${slug?.toLowerCase()}`,
 };
 
 export const PATH_DASHBOARD = {
@@ -136,7 +138,8 @@ export const FIRST_ROUTES_USER: Record<UserRole, string> = {
   [UserRole.USER]: PATH_DASHBOARD.user.account,
 };
 
-export const PATH_FREE_VERSION = 'https://mui.com/store/items/minimal-dashboard-free/';
+export const PATH_FREE_VERSION = '/payment/plan/free';
+export const PATH_TALK_SALES = 'https://wa.me/5521986828876?text=Ol%C3%A1!%20Quero%20saber%20mais.';
 
 export const PATH_DOCS = {
   root: 'https://docs.minimals.cc',

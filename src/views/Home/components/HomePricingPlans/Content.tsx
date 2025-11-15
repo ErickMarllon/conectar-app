@@ -7,22 +7,25 @@ import { varFade } from '@/components/animate';
 import useResponsive from '@/hooks/useResponsive';
 import { useListPlan } from '@/queries/plan/list/useListPlan';
 import { PATH_PAGE } from '@/routes/paths';
-import { PlanInterval } from '@/shared/enums';
+import { usePlanStore } from '@/stores/plan.store';
 
 export default function Content() {
   const isDesktop = useResponsive('up', 'md');
   const { t } = useTranslation();
-  const [interval, setInterval] = useState<PlanInterval>(PlanInterval.MONTHLY);
+  const { selectedInterval, toggleInterval } = usePlanStore();
   const [currentTab, setCurrentTab] = useState<string>('Free');
+
   const { data } = useListPlan({
     params: {
       limit: 6,
     },
   });
+
   const plansByInterval = useMemo(
-    () => data?.data?.filter((plan) => plan?.interval === interval) ?? [],
-    [data, interval],
+    () => data?.data?.filter((plan) => plan?.interval === selectedInterval) ?? [],
+    [data, selectedInterval],
   );
+
   const desktopList = (
     <Box
       display="grid"
@@ -72,28 +75,10 @@ export default function Content() {
     </>
   );
 
-  const formattedPercent = useMemo(() => {
-    const monthlyPlan = data?.data?.find(
-      (p) => p.tier === 'Enterprise' && p.interval === PlanInterval.MONTHLY,
-    );
-    const annualPlan = data?.data?.find(
-      (p) => p.tier === 'Enterprise' && p.interval === PlanInterval.ANNUALLY,
-    );
-    if (!monthlyPlan || !annualPlan) return '0.00';
-
-    const percent =
-      (((monthlyPlan.details?.price ?? 0) * 12 - (annualPlan.details?.price ?? 0)) /
-        ((monthlyPlan.details?.price ?? 0) * 12)) *
-      100;
-
-    return percent.toFixed(2);
-  }, [data]);
-
-  const handleToggleInterval = () => {
-    setInterval((prev) =>
-      prev === PlanInterval.MONTHLY ? PlanInterval.ANNUALLY : PlanInterval.MONTHLY,
-    );
-  };
+  const formattedPercent = useMemo(
+    () => data?.data?.find((plan) => plan?.tier?.toLowerCase() === 'enterprise')?.details?.discount,
+    [data],
+  );
   return (
     <>
       <motion.div
@@ -108,7 +93,7 @@ export default function Content() {
               {t(`home:pricingPlans.monthly`)}
             </Typography>
 
-            <Switch onChange={handleToggleInterval} />
+            <Switch onChange={toggleInterval} />
             <Typography variant="overline" sx={{ ml: 1.5 }}>
               {t(`home:pricingPlans.yearly`)}
               {` (${t('home:pricingPlans.savePercent', { percent: formattedPercent })})`}

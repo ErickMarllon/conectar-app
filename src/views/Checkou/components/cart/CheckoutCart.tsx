@@ -8,8 +8,6 @@ import EmptyContent from '@/components/empty-content';
 import Iconify from '@/components/iconify';
 import { PATH_DASHBOARD } from '@/routes/paths';
 
-
-
 type Props = {
   checkout: IProductCheckoutState;
   onNextStep: VoidFunction;

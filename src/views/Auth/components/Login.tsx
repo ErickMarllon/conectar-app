@@ -1,4 +1,4 @@
-import { Alert, Box, Link, Stack, Typography } from '@mui/material';
+import { Box, Link, Stack, Typography } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import AuthLoginForm from './AuthLoginForm';
 import AuthWithSocial from './AuthWithSocial';
@@ -19,20 +19,13 @@ export default function Login() {
           </Link>
         </Stack>
 
-        {/* <Tooltip title={method} placement="left"> */}
         <Box
           component="img"
           alt={'ic_jwt'}
           src={`/assets/icons/auth/ic_jwt.png`}
           sx={{ width: 32, height: 32, position: 'absolute', right: 0 }}
         />
-        {/* </Tooltip> */}
       </Stack>
-
-      <Alert severity="info" sx={{ mb: 3 }}>
-        Use email : <strong>teste@teste.com</strong> <br />
-        password : <strong>123456aA@</strong>
-      </Alert>
 
       <AuthLoginForm />
 

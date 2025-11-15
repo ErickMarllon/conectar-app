@@ -24,8 +24,6 @@ import Scrollbar from '@/components/scrollbar';
 import { fData } from '@/utils/formatNumber';
 import { fDateTime } from '@/utils/formatTime';
 
-
-
 interface Props extends DrawerProps {
   item: IFile;
   favorited?: boolean;

@@ -22,8 +22,6 @@ import useResponsive from '@/hooks/useResponsive';
 import { fData } from '@/utils/formatNumber';
 import { fDateTime } from '@/utils/formatTime';
 
-
-
 interface Props extends PaperProps {
   file: IFileManager;
   onDelete: VoidFunction;

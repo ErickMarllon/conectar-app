@@ -1,4 +1,3 @@
-
 import { Box, Card, CardHeader, Divider, Stack, Typography, type CardProps } from '@mui/material';
 import { styled, useTheme } from '@mui/material/styles';
 import type { ApexOptions } from 'apexcharts';

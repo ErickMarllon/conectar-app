@@ -1,4 +1,3 @@
-
 import Label from '@/components/label';
 import SvgColor from '@/components/svg-color';
 import { PATH_DASHBOARD } from '@/routes/paths';

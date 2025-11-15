@@ -15,8 +15,8 @@ if (!i18n.isInitialized) {
     .init({
       fallbackLng: defaultLang.value,
       debug: false,
-      ns: ['nav', 'home', 'actions', 'pricingPlans'],
-      defaultNS: 'nav',
+      ns: ['nav', 'home', 'actions', 'pricingPlans', 'paymentPlans'],
+      defaultNS: 'home',
       backend: {
         loadPath: '/locales/{{lng}}/{{ns}}.json',
       },

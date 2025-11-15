@@ -9,7 +9,6 @@ import {
 } from '@mui/material';
 import { Controller, useFormContext } from 'react-hook-form';
 
-
 interface RHFCheckboxProps extends Omit<FormControlLabelProps, 'control'> {
   name: string;
   helperText?: React.ReactNode;

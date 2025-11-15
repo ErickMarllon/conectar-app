@@ -1,4 +1,3 @@
-
 import { Box, Button, Collapse, Divider } from '@mui/material';
 import { useRef, useState } from 'react';
 import type { TableProps } from '@/components/table';

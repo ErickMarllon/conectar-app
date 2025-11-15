@@ -5,8 +5,6 @@ import Iconify from '@/components/iconify';
 import { fShortenNumber } from '@/utils/formatNumber';
 import { fDate } from '@/utils/formatTime';
 
-
-
 type Props = {
   reviews: IProductReview[];
 };

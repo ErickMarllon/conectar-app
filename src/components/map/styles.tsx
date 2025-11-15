@@ -1,4 +1,3 @@
-
 import { GlobalStyles } from '@mui/material';
 import { alpha, styled, useTheme } from '@mui/material/styles';
 import { Popup as LeafletPopup } from 'react-leaflet';

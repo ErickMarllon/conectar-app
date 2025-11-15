@@ -1,47 +1,32 @@
 import { Box, Stack, Switch, Typography } from '@mui/material';
 import { motion } from 'motion/react';
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import PricingPlanCard from './PricingPlanCard';
 import { varFade } from '@/components/animate';
 import { useListPlan } from '@/queries/plan/list/useListPlan';
-import { PlanInterval } from '@/shared/enums';
+import { usePlanStore } from '@/stores/plan.store';
 
 export function Content() {
-  const [interval, setInterval] = useState<PlanInterval>(PlanInterval.MONTHLY);
-
+  const { selectedInterval, toggleInterval } = usePlanStore();
   const { t } = useTranslation();
+
   const { data } = useListPlan({
     params: {
       limit: 6,
     },
   });
+
   const plansByInterval = useMemo(
-    () => data?.data?.filter((plan) => plan?.interval === interval) ?? [],
-    [data, interval],
+    () => data?.data?.filter((plan) => plan?.interval === selectedInterval) ?? [],
+    [data, selectedInterval],
   );
-  const formattedPercent = useMemo(() => {
-    const monthlyPlan = data?.data?.find(
-      (p) => p.tier === 'Enterprise' && p.interval === PlanInterval.MONTHLY,
-    );
-    const annualPlan = data?.data?.find(
-      (p) => p.tier === 'Enterprise' && p.interval === PlanInterval.ANNUALLY,
-    );
-    if (!monthlyPlan || !annualPlan) return '0.00';
 
-    const percent =
-      (((monthlyPlan.details?.price ?? 0) * 12 - (annualPlan.details?.price ?? 0)) /
-        ((monthlyPlan.details?.price ?? 0) * 12)) *
-      100;
+  const formattedPercent = useMemo(
+    () => data?.data?.find((plan) => plan?.tier?.toLowerCase() === 'enterprise')?.details?.discount,
+    [data],
+  );
 
-    return percent.toFixed(2);
-  }, [data]);
-
-  const handleToggleInterval = () => {
-    setInterval((prev) =>
-      prev === PlanInterval.MONTHLY ? PlanInterval.ANNUALLY : PlanInterval.MONTHLY,
-    );
-  };
   return (
     <>
       <motion.div
@@ -56,7 +41,7 @@ export function Content() {
               {t(`pricingPlans:monthly`)}
             </Typography>
 
-            <Switch onChange={handleToggleInterval} />
+            <Switch onChange={toggleInterval} />
             <Typography variant="overline" sx={{ ml: 1.5 }}>
               {t(`pricingPlans:yearly`)}
               {` (${t('pricingPlans:savepercent', { percent: formattedPercent })})`}
@@ -74,8 +59,8 @@ export function Content() {
       </motion.div>
 
       <Box gap={3} display="grid" gridTemplateColumns={{ md: 'repeat(3, 1fr)' }}>
-        {plansByInterval?.map((card, index) => (
-          <PricingPlanCard key={card.tier} card={card} index={index} />
+        {plansByInterval?.map((plan, index) => (
+          <PricingPlanCard key={plan.tier} plan={plan} index={index} />
         ))}
       </Box>
     </>

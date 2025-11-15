@@ -22,8 +22,6 @@ import useCopyToClipboard from '@/hooks/useCopyToClipboard';
 import { fData } from '@/utils/formatNumber';
 import { fDateTime } from '@/utils/formatTime';
 
-
-
 interface Props extends CardProps {
   file: IFileManager;
   selected?: boolean;

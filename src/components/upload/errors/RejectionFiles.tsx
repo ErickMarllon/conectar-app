@@ -1,4 +1,3 @@
-
 import { Box, Paper, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import type { FileRejection } from 'react-dropzone';

@@ -41,6 +41,7 @@ import {
   Page404,
   Page500,
   PaymentPage,
+  PaymentPlanPage,
   PricingPage,
   RegisterPage,
   ResetPasswordPage,
@@ -92,6 +93,7 @@ function App() {
 
                   <Route element={<SimpleLayout />}>
                     <Route path={PATH_PAGE.payment} element={<PaymentPage />} />
+                    <Route path={PATH_PAGE.paymentPlan} element={<PaymentPlanPage />} />
                   </Route>
 
                   <Route element={<DashboardLayout />}>

@@ -8,7 +8,6 @@ import {
 } from '@mui/material';
 import { Controller, useFormContext } from 'react-hook-form';
 
-
 interface Props extends Omit<FormControlLabelProps, 'control' | 'label'> {
   name: string;
   helperText?: React.ReactNode;

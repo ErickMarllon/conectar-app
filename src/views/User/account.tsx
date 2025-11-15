@@ -1,7 +1,12 @@
 import { Box, Container, Tab, Tabs } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { AccountChangePassword, AccountEnterprise, AccountSocialLinks } from './components/account';
+import {
+  AccountBilling,
+  AccountChangePassword,
+  AccountEnterprise,
+  AccountSocialLinks,
+} from './components/account';
 import UserNewEditForm from './components/UserNewEditForm';
 import CustomBreadcrumbs from '@/components/custom-breadcrumbs';
 import Iconify from '@/components/iconify';
@@ -11,6 +16,42 @@ import { UserRole } from '@/shared/enums/role.enum';
 import { useThemesStore } from '@/stores/themes.store';
 import { useAuthStore } from '@/stores/userAuth.store';
 import { parseIdentifier } from '@/utils/parseIdentifierSlug';
+export const mockBillingData = {
+  cards: [
+    {
+      id: 'card_1',
+      cardNumber: '4242 4242 4242 4242',
+      cardType: 'Visa',
+    },
+    {
+      id: 'card_2',
+      cardNumber: '5555 5555 5555 4444',
+      cardType: 'Mastercard',
+    },
+    {
+      id: 'card_3',
+      cardNumber: '3782 822463 10005',
+      cardType: 'American Express',
+    },
+  ],
+  invoices: [
+    {
+      id: 'inv_1',
+      createdAt: '2025-11-01T14:35:00Z',
+      price: 199.9,
+    },
+    {
+      id: 'inv_2',
+      createdAt: '2025-10-01T12:00:00Z',
+      price: 99.9,
+    },
+    {
+      id: 'inv_3',
+      createdAt: '2025-09-01T09:00:00Z',
+      price: 49.9,
+    },
+  ],
+};
 
 type ITabs = 'enterprise' | 'general' | 'social_links' | 'change_password';
 export function UserAccountPage() {
@@ -40,12 +81,14 @@ export function UserAccountPage() {
       component: <UserNewEditForm isEdit />,
       hideWhenUser: false,
     },
-    // utils{
-    // utils  value: 'billing',
-    // utils  label: 'Billing',
-    // utils  icon: <Iconify icon="ic:round-receipt" />,
-    // utils  component: <AccountBilling cards={_userPayment} invoices={_userInvoices} />,
-    // utils},
+    {
+      value: 'billing',
+      label: 'Billing',
+      icon: <Iconify icon="ic:round-receipt" />,
+      component: (
+        <AccountBilling cards={mockBillingData.cards} invoices={mockBillingData.invoices} />
+      ),
+    },
     {
       value: 'social_links',
       label: 'Social links',

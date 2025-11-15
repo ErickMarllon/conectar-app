@@ -16,8 +16,6 @@ import InvoicePDF from './InvoicePDF';
 import Iconify from '@/components/iconify';
 import { PATH_DASHBOARD } from '@/routes/paths';
 
-
-
 type Props = {
   invoice: IInvoice;
 };

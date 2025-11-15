@@ -15,8 +15,6 @@ import DateRangePicker, { useDateRangePicker } from '@/components/date-range-pic
 import Iconify from '@/components/iconify';
 import uuidv4 from '@/utils/uuidv4';
 
-
-
 const defaultTask = {
   attachments: [],
   comments: [],

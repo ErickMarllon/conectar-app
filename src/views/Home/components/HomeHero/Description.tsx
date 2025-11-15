@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
 import { varFade } from '@/components/animate';
 import Iconify from '@/components/iconify';
-import { PATH_AUTH, PATH_PAGE } from '@/routes/paths';
+import { PATH_FREE_VERSION, PATH_TALK_SALES } from '@/routes/paths';
 import { textGradient } from '@/utils/cssStyles';
 
 const StyledDescription = styled('div')(({ theme }) => ({
@@ -73,7 +73,7 @@ export default function Description() {
           <Stack alignItems="center" gap={2}>
             <Button
               component={RouterLink}
-              to={PATH_AUTH.register}
+              to={PATH_FREE_VERSION}
               color="inherit"
               size="large"
               variant="contained"
@@ -94,7 +94,9 @@ export default function Description() {
             variant="outlined"
             startIcon={<Iconify icon="logos:whatsapp-monochrome-icon" width={24} />}
             rel="noopener"
-            href={PATH_PAGE.comingSoon}
+            target="_blank"
+            component={RouterLink}
+            to={PATH_TALK_SALES}
             sx={{
               borderColor: 'text.primary',
               gap: 1,
