@@ -88,12 +88,13 @@ export default function PaymentSummary({ plan, sx, ...other }: PaymentSummaryPro
         <Stack direction="row" alignItems="center" justifyContent="space-between">
           <Typography variant="h6">{t('paymentPlans:totalBilled')}</Typography>
 
-          <Typography variant="h6">
-            {currentLang.currencySymbol}
-            {plan?.details?.price && plan?.details?.price > 0
-              ? convert(plan?.details.price, allLangs['pt-BR'].currency, currentLang.currency)
-              : 'Free'}
-            *
+          <Typography variant="h6" gap={0.5} display="flex">
+            <span>{currentLang.currencySymbol}</span>
+            <span>
+              {plan?.details?.price && plan?.details?.price > 0
+                ? convert(plan?.details.price, allLangs['pt-BR'].currency, currentLang.currency)
+                : '0.00'}
+            </span>
           </Typography>
         </Stack>
 
