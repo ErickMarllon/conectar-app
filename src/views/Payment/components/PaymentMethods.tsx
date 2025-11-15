@@ -10,7 +10,6 @@ import {
   Typography,
 } from '@mui/material';
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
 import PaymentNewCardDialog from './PaymentNewCardDialog';
 import Iconify from '@/components/iconify';
 
